@@ -66,6 +66,25 @@ int main(int argc, char *argv[]) {
     printf("client: connecting to %s\n", s);
 
     freeaddrinfo(servinfo); // all done with this structure
+    send(server_socket, argv[1], strlen(argv[1]), 0);
+    char send_buffer[WORD_BUF_SIZE], recv_buffer[WORD_BUF_SIZE];
+    int cpid = fork();
+    if (cpid == 0) {
+        // child
+        while (1) {
+            bzero(&send_buffer, sizeof(send_buffer));
+            fgets(send_buffer, 10000, stdin);
+            send(server_socket, send_buffer, sizeof(send_buffer), 0);
+        }
+    } else {
+        // parent
+        while (1) {
+            bzero(&recv_buffer, sizeof(recv_buffer));
+            recv(server_socket, recv_buffer, sizeof(recv_buffer), 0);
+            printf("SERVER : %s", recv_buffer);
+        }
+    }
+
     char username[WORD_BUF_SIZE] = "Bueno";
     send(server_socket, username,WORD_BUF_SIZE, 0);
     unsigned char s_header_flag;
@@ -78,18 +97,6 @@ int main(int argc, char *argv[]) {
         printf("%s", buf);
     }
 
-//    while(1) {
-//        if ((numbytes = recv(server_socket, buf, WORD_BUF_SIZE - 1, 0)) == -1) {
-//            perror("recv");
-//            exit(1);
-//        }
-//
-//        buf[numbytes] = '\0';
-//
-//        printf("client: received '%s'\n", buf);
-//    }
-    sleep(10);
     close(server_socket);
-
     return 0;
 }
