@@ -8,8 +8,9 @@
 #define OK 1
 #define CANVAS 2
 #define CHAT 3
-#define DRAW 4
-#define INVALID_USERNAME 5
+#define DRAW_NEXT 4
+#define INPUT_USERNAME 5
+#define INVALID_USERNAME 6
 
 
 struct SocketHeader {
