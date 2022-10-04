@@ -1,10 +1,12 @@
 #include "word_generator.h"
 #include "server.h"
 #include "player.h"
+#include "s_header.h"
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
 int test_players() {
     struct Players *players = malloc(sizeof(struct Players));
@@ -17,12 +19,22 @@ int test_players() {
     return 0;
 }
 
+void print_buf_to_hex(void *buffer, int len) {
+    int i;
+    for (i = 0; i < len; i++)
+    {
+        if (i > 0) printf(":");
+        printf("%02X", ((char *)buffer)[i]);
+    }
+    printf("\n");
+}
+
+
 int main() {
 //    struct Words *words = read_words("./resources/words.txt");
-//    char rnd_word[256];
+//    char *rnd_word = malloc(256);
 //    get_random_word(words, rnd_word);
 //    free_words(&words);
-//
 //    printf("%s", rnd_word);
 
 //    test_players();

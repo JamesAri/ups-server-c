@@ -76,6 +76,18 @@ build CMakeFiles/ups_server_c.dir/s_header.c.o: C_COMPILER__ups_server_c_Debug /
   OBJECT_DIR = CMakeFiles/ups_server_c.dir
   OBJECT_FILE_DIR = CMakeFiles/ups_server_c.dir
 
+build CMakeFiles/ups_server_c.dir/ser_buffer.c.o: C_COMPILER__ups_server_c_Debug /Users/jakub.slechta/git/ups-server-c/ser_buffer.c || cmake_object_order_depends_target_ups_server_c
+  DEP_FILE = CMakeFiles/ups_server_c.dir/ser_buffer.c.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99
+  OBJECT_DIR = CMakeFiles/ups_server_c.dir
+  OBJECT_FILE_DIR = CMakeFiles/ups_server_c.dir
+
+build CMakeFiles/ups_server_c.dir/socket_utils.c.o: C_COMPILER__ups_server_c_Debug /Users/jakub.slechta/git/ups-server-c/socket_utils.c || cmake_object_order_depends_target_ups_server_c
+  DEP_FILE = CMakeFiles/ups_server_c.dir/socket_utils.c.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99
+  OBJECT_DIR = CMakeFiles/ups_server_c.dir
+  OBJECT_FILE_DIR = CMakeFiles/ups_server_c.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ups_server_c
@@ -84,7 +96,7 @@ build CMakeFiles/ups_server_c.dir/s_header.c.o: C_COMPILER__ups_server_c_Debug /
 #############################################
 # Link the executable ups_server_c
 
-build ups_server_c: C_EXECUTABLE_LINKER__ups_server_c_Debug CMakeFiles/ups_server_c.dir/main.c.o CMakeFiles/ups_server_c.dir/word_generator.c.o CMakeFiles/ups_server_c.dir/server.c.o CMakeFiles/ups_server_c.dir/player.c.o CMakeFiles/ups_server_c.dir/s_header.c.o
+build ups_server_c: C_EXECUTABLE_LINKER__ups_server_c_Debug CMakeFiles/ups_server_c.dir/main.c.o CMakeFiles/ups_server_c.dir/word_generator.c.o CMakeFiles/ups_server_c.dir/server.c.o CMakeFiles/ups_server_c.dir/player.c.o CMakeFiles/ups_server_c.dir/s_header.c.o CMakeFiles/ups_server_c.dir/ser_buffer.c.o CMakeFiles/ups_server_c.dir/socket_utils.c.o
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/ups_server_c.dir
   POST_BUILD = :

@@ -1,6 +1,8 @@
 #include "server.h"
 #include "player.h"
 #include "s_header.h"
+#include "ser_buffer.h"
+#include "socket_utils.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,128 +11,7 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
-#include <netdb.h>
 #include <poll.h>
-
-int recvall(int s, void *buf, int *len) {
-    int total = 0;        // how many bytes we've received.
-    int bytesleft = *len; // how many bytes we have left to receive
-    int n;
-
-    while(total < *len) {
-        n = (int)recv(s, buf+total, bytesleft, 0);
-        if (n == -1 || n == 0) { break; }
-        total += n;
-        bytesleft -= n;
-    }
-
-    *len = total; // return number actually received here
-
-    return n;
-}
-
-int sendall(int s, char *buf, int *len) {
-    int total = 0;        // how many bytes we've sent
-    int bytesleft = *len; // how many we have left to send
-    int n;
-
-    while(total < *len) {
-        n = (int)send(s, buf+total, bytesleft, 0);
-        if (n == -1 || n == 0) { break; }
-        total += n;
-        bytesleft -= n;
-    }
-
-    *len = total; // return number actually sent here
-
-    return n;
-}
-
-/*
- * Gets address based on family of the passed sockaddr struct.
- */
-void *get_in_addr(struct sockaddr *sa) {
-    if (sa->sa_family == AF_INET) {
-        return &(((struct sockaddr_in*)sa)->sin_addr);
-    }
-
-    return &(((struct sockaddr_in6*)sa)->sin6_addr);
-}
-
-/*
- * Returns server listening socket.
- */
-int get_listener_socket() {
-    int listener;     // Listening socket descriptor
-    int yes=1;        // For setsockopt() SO_REUSEADDR, below
-    int rv;
-
-    // *ai - list of available addrinfo structures
-    // *p - temp addrinfo to loop over with
-    // hints - settings for *ai creation
-    struct addrinfo hints, *ai, *p;
-
-    memset(&hints, 0, sizeof hints);
-    hints.ai_family = AF_UNSPEC;
-    hints.ai_socktype = SOCK_STREAM;
-    hints.ai_flags = AI_PASSIVE; // use with NULL as first param in getaddrinfo for auto-IP detection.
-    if ((rv = getaddrinfo(NULL, PORT, &hints, &ai)) != 0) {
-        fprintf(stderr, "selectserver: %s\n", gai_strerror(rv));
-        exit(1);
-    }
-
-    for(p = ai; p != NULL; p = p->ai_next) {
-        listener = socket(p->ai_family, p->ai_socktype, p->ai_protocol);
-        if (listener < 0) {
-            continue;
-        }
-
-        // Reuse address on socket-level (if possible)
-        setsockopt(listener, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int));
-
-        if (bind(listener, p->ai_addr, p->ai_addrlen) < 0) {
-            close(listener);
-            continue;
-        }
-
-        break;
-    }
-
-    freeaddrinfo(ai);
-
-    if (p == NULL) {
-        return -1;
-    }
-
-    if (listen(listener, BACKLOG) == -1) {
-        return -1;
-    }
-
-    return listener;
-}
-
-
-void add_to_pfds(struct pollfd *pfds[], int newfd, int *fd_count, int *fd_size) {
-    // If we don't have room, add more space in the pfds array
-    if (*fd_count == *fd_size) {
-        *fd_size *= 2;
-
-        *pfds = realloc(*pfds, sizeof(**pfds) * (*fd_size));
-    }
-
-    (*pfds)[*fd_count].fd = newfd;
-    (*pfds)[*fd_count].events = POLLIN; // Check ready-to-read
-
-    (*fd_count)++;
-}
-
-// Remove an index from the set
-void del_from_pfds(struct pollfd pfds[], int i, int *fd_count) {
-    // Copy the one from the end over this one
-    pfds[i] = pfds[*fd_count-1];
-
-    (*fd_count)--;
-}
 
 int broadcast(struct pollfd *pfds, int fd_count, int listener,
         int sender_fd, void *buffer, int length) {
@@ -152,17 +33,160 @@ int broadcast(struct pollfd *pfds, int fd_count, int listener,
     return  0;
 }
 
+int broadcast_by_header(struct pollfd *pfds, int fd_count, int listener, int sender_fd,
+        struct SocketHeader *sock_header, void *data, int data_len) {
+    int sock_header_size = sizeof(struct SocketHeader);
+    int padding = sock_header_size;
+    void *buffer;
+    switch(sock_header->flag) {
+        case CHAT:
+            padding += sizeof(int);
+            buffer = malloc(data_len + padding);
+            memcpy(buffer, sock_header, sock_header_size);
+            unsigned int htonl_int = htonl(data_len);
+            memcpy(buffer + sock_header_size, &htonl_int, sizeof(htonl_int));
+            break;
+        default:
+            buffer = malloc (data_len + padding);
+            memcpy(buffer, sock_header, sock_header_size);
+    }
+    memcpy(buffer + padding, data, data_len);
+    int buff_size = data_len + padding;
+    int res = broadcast(pfds, fd_count, listener, sender_fd, buffer, buff_size);
+    free(buffer);
+    return res;
+}
+
+int broadcast_received_data(struct pollfd *pfds, int *fd_count, int pfds_i,
+        struct Players *players, int drawing_fd, int listener) {
+    struct Player *player;
+    int sender_fd = pfds[pfds_i].fd;
+    if ((player = get_player_by_fd(players, sender_fd)) == NULL) {
+        fprintf(stderr, "unknown player");
+        return -1;
+    }
+    struct SocketHeader *sock_header = (struct SocketHeader *)malloc(sizeof(struct SocketHeader));
+    int data_len, padding, temp;
+
+    temp = sizeof(struct SocketHeader);
+    recvall(sender_fd, sock_header, &temp);
+    struct Buffer *buffer = (struct Buffer *) malloc(sizeof(struct Buffer));
+
+    reserve_space(buffer, sizeof(struct SocketHeader));
+    memcpy(buffer->data + buffer->next, sock_header, sizeof(struct SocketHeader));
+    buffer->next += sizeof(struct SocketHeader);
+
+    if (drawing_fd == player->fd) {
+        if(sock_header->flag != CANVAS) {
+            fprintf(stderr, "drawing player error - removing from game");
+            del_from_pfds(pfds, drawing_fd, fd_count);
+            player->is_online = 0;
+            free(sock_header);
+            free_buffer(&buffer);
+            return -1;
+        }
+        data_len = CANVAS_BUF_SIZE;
+        padding = sizeof(struct SocketHeader);
+        reserve_space(buffer, padding + data_len);
+
+    } else {
+        if(sock_header->flag != CHAT) {
+            fprintf(stderr, "guessing player error - removing from game");
+            del_from_pfds(pfds, sender_fd, fd_count);
+            player->is_online = 0;
+            free(sock_header);
+            free_buffer(&buffer);
+            return -1;
+        }
+        temp = sizeof(int);
+        if (recvall(sender_fd, &data_len, &temp) <= 0) {
+            free(sock_header);
+            free_buffer(&buffer);
+            return -1;
+        }
+        data_len = ntohl(data_len);
+        padding = sizeof(struct SocketHeader) + sizeof(data_len);
+        reserve_space(buffer, padding + data_len);
+        memcpy(buffer->data + buffer->next, &data_len, sizeof(data_len));
+        buffer->next += sizeof(data_len);
+    }
+    temp = data_len;
+    int recv_res = recvall(sender_fd, buffer->data, &temp);
+    buffer->next += data_len;
+
+    if (recv_res <= 0) {
+        if (recv_res == 0) fprintf(stderr, "pollserver: socket %d hung up\n", sender_fd);
+        else fprintf(stderr, "recv: socket %d lost\n", sender_fd);
+        del_from_pfds(pfds, pfds_i, fd_count);
+        close(sender_fd);
+        player->is_online = 0;
+    } else {
+        broadcast(pfds, *fd_count, listener, sender_fd, buffer->data, buffer->next);
+    }
+
+    free(sock_header);
+    free_buffer(&buffer);
+    return 0;
+}
+
+int send_correct_guess(int fd) {
+    return 0;
+}
+
+int send_wrong_guess(int fd) {
+    return 0;
+}
+
+int send_game_guess_start(struct pollfd *pfds, int *fd_count, int listener, int drawing_fd) {
+    return 0;
+}
+
+int send_game_draw_start(int drawing_fd) {
+    return 0;
+}
+
 int send_invalid_username(int fd) {
     struct SocketHeader *s_header = (struct SocketHeader *)malloc(sizeof(struct SocketHeader));
     s_header->flag = INVALID_USERNAME;
-    int res = (int)send(fd, s_header, sizeof(struct SocketHeader), 0);
-    if (res - sizeof(struct SocketHeader)) return -1;
+    int temp = sizeof(struct SocketHeader);
+    int res = (int)sendall(fd, s_header, &temp);
+    free(s_header);
+    if (res <= 0) return -1;
+    return 0;
+}
+
+int manage_new_player(int newfd, struct Players *players) {
+    struct SocketHeader *sock_header = (struct SocketHeader *)malloc(sizeof(struct SocketHeader));
+    if (sock_header == NULL) return -1;
+    char username[WORD_BUF_SIZE];
+    int username_len, temp;
+
+    temp = sizeof(struct SocketHeader);
+    if(recvall(newfd, sock_header, &temp) <= 0) {
+        free(sock_header);
+        return -1;
+    }
+    if (sock_header->flag != INPUT_USERNAME) {
+        fprintf(stderr, "invalid register-username header\n");
+        close(newfd);
+        return -1;
+    }
+    free(sock_header);
+    temp = sizeof(int);
+    if (recvall(newfd, &username_len, &temp) <= 0) return -1;
+    username_len = ntohl(username_len);
+    if (recvall(newfd, username, &username_len) <= 0) return -1;
+
+    if (update_players(players, username, newfd) == NULL) {
+        send_invalid_username(newfd);
+        fprintf(stderr, "invalid username - player already logged in\n");
+        return -1;
+    }
     return 0;
 }
 
 int start() {
     int listener, drawing_fd = -1; // file descriptors - sockets
-    int poll_count; // Number of currently waiting fds.
     int newfd;        // Newly accept()ed socket descriptor
     struct sockaddr_storage remoteaddr; // Client address
     socklen_t addrlen;
@@ -171,14 +195,11 @@ int start() {
     players->playerList = NULL;
     players->count = 0;
 
-    struct SocketHeader *s_header = (struct SocketHeader *)malloc(sizeof(struct SocketHeader));
-
     char remoteIP[INET6_ADDRSTRLEN];
 
     int fd_count = 0;
     int fd_size = BACKLOG;
     struct pollfd *pfds = (struct pollfd *)malloc(sizeof *pfds * fd_size);
-    struct SocketHeader *sock_header = (struct SocketHeader *)malloc(sizeof(struct SocketHeader));
 
     listener = get_listener_socket();
 
@@ -190,9 +211,7 @@ int start() {
     add_to_pfds(&pfds, listener, &fd_count, &fd_size);
 
     for(;;) {
-        poll_count = poll(pfds, fd_count, -1);
-
-        if (poll_count == -1) {
+        if (poll(pfds, fd_count, -1) == -1) {
             fprintf(stderr, "poll");
             exit(1);
         }
@@ -202,109 +221,29 @@ int start() {
             if (!(pfds[i].revents & POLLIN)) {
                 continue;
             }
-
             if (pfds[i].fd == listener) {
+
                 addrlen = sizeof remoteaddr;
-                newfd = accept(listener,
-                               (struct sockaddr *)&remoteaddr,
-                               &addrlen);
+                newfd = accept(listener, (struct sockaddr *)&remoteaddr, &addrlen);
 
                 if (newfd == -1) {
                     fprintf(stderr, "accept");
                 } else {
-                    char username[WORD_BUF_SIZE];
-                    struct Player *player;
-                    int len;
 
-                    recv(newfd, sock_header, sizeof(struct SocketHeader), 0);
-                    if (sock_header->flag != INPUT_USERNAME) {
-                        fprintf(stderr, "invalid username protocol");
-                        close(newfd);
-                        continue;
-                    }
+                    if (manage_new_player(newfd, players) == -1) continue;
 
-                    recv(newfd, &len, sizeof(int), 0);
-                    len = ntohs(len);
-                    recvall(newfd, username, &len);
-                    player = update_players(players, username, newfd);
-
-                    if (player == NULL) { // User with this username is already online
-                        send_invalid_username(newfd);
-                        continue;
-                    }
-
-                    if (players->count == 1) {
-                        // TODO
-                        // drawing_fd = newfd;
-                    }
-                    fprintf(stdout, "\nListener: newfd->%d, fd_size->%d\n", newfd, fd_size);
                     add_to_pfds(&pfds, newfd, &fd_count, &fd_size);
 
-                    fprintf(stdout, "pollserver: new connection from %s on socket %d (user: %s)\n",
-                           inet_ntop(remoteaddr.ss_family,
-                                     get_in_addr((struct sockaddr *) &remoteaddr),
-                                     remoteIP, INET6_ADDRSTRLEN),
-                           newfd,
-                           username);
-
-//                    char msg[WORD_BUF_SIZE];
-//                    int raw_data_size = sizeof msg + sizeof(struct SocketHeader);
-//                    unsigned char raw_data[raw_data_size];
-//                    raw_data[0] = OK;
-//                    sprintf(&((char *)raw_data)[1], "User %s joined the game!", username);
-//                    fprintf(stdout, "%s\n", &raw_data[1]);
-//                    if (broadcast(pfds, fd_count, listener, -1, raw_data, raw_data_size) == -1) {
-//                        fprintf(stderr, "broadcast failed");
-//                    }
+                    fprintf(stdout, "pollserver: new connection from %s on socket %d.\n"
+                                    "fd_count: %d\n",
+                            inet_ntop(remoteaddr.ss_family,
+                                      get_in_addr((struct sockaddr *) &remoteaddr),
+                                      remoteIP, INET6_ADDRSTRLEN),
+                            newfd,
+                            fd_count);
                 }
             } else {
-                int sender_fd = pfds[i].fd;
-                int expected_bytes, recv_res, len, padding;
-                struct Player *player;
-
-                if ((player = get_player_by_fd(players, sender_fd)) == NULL) {
-                    fprintf(stderr, "unknown player");
-                    continue;
-                }
-                recv(sender_fd, sock_header, sizeof(struct SocketHeader), 0);
-                // TODO FIX THE MESS BELOW
-
-                if (drawing_fd == player->fd) {
-                    if(sock_header->flag != CANVAS) {
-                        fprintf(stderr, "drawing player error - removing from game");
-                        del_from_pfds(pfds, drawing_fd, &fd_count);
-                        player->is_online = 0;
-                        continue;
-                    }
-                    len = CANVAS_BUF_SIZE;
-                    padding = sizeof(struct SocketHeader);
-                } else {
-                    if(sock_header->flag != CHAT) {
-                        fprintf(stderr, "guessing player error - removing from game");
-                        del_from_pfds(pfds, sender_fd, &fd_count);
-                        player->is_online = 0;
-                        continue;
-                    }
-                    recv(sender_fd, &len, sizeof(int), 0);
-                    len = ntohs(len);
-                    padding = sizeof(struct SocketHeader) + sizeof(int);
-                }
-                char buffer[padding + len];
-                recv_res = recvall(sender_fd, buffer + padding, &len);
-                // TODO:    construct new buffer with data -> [SOCKET_HEADER][USED_BUFFER] -> 1 (B) + EXPECTED_TYPES (B)
-                //          and broadcast it.
-                buffer[0] = (char)sock_header->flag;
-                if (sock_header->flag == CHAT) buffer[1] = htons(len);
-
-                if (recv_res <= 0) {
-                    if (recv_res == 0) fprintf(stderr, "pollserver: socket %d hung up\n", sender_fd);
-                    else fprintf(stderr, "recv: socket %d lost\n", sender_fd);
-                    player->is_online = 0;
-                    del_from_pfds(pfds, i, &fd_count);
-                    close(sender_fd);
-                } else {
-                    broadcast(pfds, fd_count, listener, sender_fd, buffer, padding + len);
-                }
+                broadcast_received_data(pfds, &fd_count, i, players, drawing_fd, listener);
             }
         }
     }
