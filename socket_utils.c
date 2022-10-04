@@ -10,13 +10,29 @@
 #include <netdb.h>
 #include <poll.h>
 
+#ifdef _WIN32
+
+#else
+
+#endif
+
 int recvall(int s, void *buf, int *len) {
     int total = 0;        // how many bytes we've received.
     int bytesleft = *len; // how many bytes we have left to receive
     int n;
 
-    while(total < *len) {
-        n = (int)recv(s, buf+total, bytesleft, 0);
+#ifdef _WIN32
+    DWORD timeout = timeout_in_seconds * 1000;
+    setsockopt(socket, SOL_SOCKET, SO_RCVTIMEO, (const char *) &timeout, sizeof timeout);
+#else
+    struct timeval tv;
+    tv.tv_sec = RECV_TIMEOUT_SEC;
+    tv.tv_usec = 0;
+    setsockopt(s, SOL_SOCKET, SO_RCVTIMEO, (const char *) &tv, sizeof tv);
+#endif
+
+    while (total < *len) {
+        n = (int) recv(s, buf + total, bytesleft, 0);
         if (n == -1 || n == 0) { break; }
         total += n;
         bytesleft -= n;
@@ -32,8 +48,8 @@ int sendall(int s, void *buf, int *len) {
     int bytesleft = *len; // how many we have left to send
     int n;
 
-    while(total < *len) {
-        n = (int)send(s, buf+total, bytesleft, 0);
+    while (total < *len) {
+        n = (int) send(s, buf + total, bytesleft, 0);
         if (n == -1 || n == 0) { break; }
         total += n;
         bytesleft -= n;
@@ -46,15 +62,15 @@ int sendall(int s, void *buf, int *len) {
 
 void *get_in_addr(struct sockaddr *sa) {
     if (sa->sa_family == AF_INET) {
-        return &(((struct sockaddr_in*)sa)->sin_addr);
+        return &(((struct sockaddr_in *) sa)->sin_addr);
     }
 
-    return &(((struct sockaddr_in6*)sa)->sin6_addr);
+    return &(((struct sockaddr_in6 *) sa)->sin6_addr);
 }
 
 int get_listener_socket() {
     int listener;     // Listening socket descriptor
-    int yes=1;        // For setsockopt() SO_REUSEADDR, below
+    int yes = 1;        // For setsockopt() SO_REUSEADDR, below
     int rv;
 
     // *ai - list of available addrinfo structures
@@ -71,7 +87,7 @@ int get_listener_socket() {
         exit(1);
     }
 
-    for(p = ai; p != NULL; p = p->ai_next) {
+    for (p = ai; p != NULL; p = p->ai_next) {
         listener = socket(p->ai_family, p->ai_socktype, p->ai_protocol);
         if (listener < 0) {
             continue;
@@ -117,7 +133,7 @@ void add_to_pfds(struct pollfd *pfds[], int newfd, int *fd_count, int *fd_size) 
 
 void del_from_pfds(struct pollfd pfds[], int i, int *fd_count) {
     // Copy the one from the end over this one
-    pfds[i] = pfds[*fd_count-1];
+    pfds[i] = pfds[*fd_count - 1];
 
     (*fd_count)--;
 }
