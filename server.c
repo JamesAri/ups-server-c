@@ -14,7 +14,7 @@
 #include <poll.h>
 
 int broadcast(struct pollfd *pfds, int fd_count, int listener,
-        int sender_fd, void *buffer, int length) {
+              int sender_fd, void *buffer, int length) {
 
     for(int j = 0; j < fd_count; j++) {
         int dest_fd = pfds[j].fd;
@@ -33,8 +33,51 @@ int broadcast(struct pollfd *pfds, int fd_count, int listener,
     return  0;
 }
 
+int send_wrong_guess(int fd) {
+    struct SocketHeader *sock_header = (struct SocketHeader *)malloc(sizeof(struct SocketHeader));
+    sock_header->flag = WRONG_GUESS;
+    int temp = sizeof(struct SocketHeader);
+    int send_res = sendall(fd, sock_header, &temp);
+    free(sock_header);
+    return send_res;
+}
+
+int send_correct_guess(int fd) {
+    struct SocketHeader *sock_header = (struct SocketHeader *)malloc(sizeof(struct SocketHeader));
+    sock_header->flag = CORRECT_GUESS;
+    int temp = sizeof(struct SocketHeader);
+    int send_res = sendall(fd, sock_header, &temp);
+    free(sock_header);
+    return send_res;
+}
+
+int send_game_guess_start(struct pollfd *pfds, int fd_count, int listener, int drawing_fd) {
+    struct SocketHeader *sock_header = (struct SocketHeader *)malloc(sizeof(struct SocketHeader));
+    sock_header->flag = WRONG_GUESS;
+    int send_res = broadcast(pfds, fd_count, listener, drawing_fd, sock_header, sizeof(struct SocketHeader));
+    free(sock_header);
+    return send_res;
+}
+
+int send_game_draw_start(int drawing_fd, char *guess_word) {
+    struct SocketHeader *sock_header = (struct SocketHeader *)malloc(sizeof(struct SocketHeader));
+    struct Buffer *buffer = new_buffer();
+    sock_header->flag = START_AND_DRAW;
+    int str_len = (int)strlen(guess_word);
+    int temp = (int)sizeof(struct SocketHeader) + str_len;
+    reserve_space(buffer, temp);
+    memcpy(buffer->data, sock_header, sizeof(struct SocketHeader));
+    buffer->next += sizeof(struct SocketHeader);
+    memcpy(buffer->data + buffer->next, guess_word, str_len);
+    buffer->next += str_len;
+    int send_res = sendall(drawing_fd, sock_header, &temp);
+    free(sock_header);
+    free_buffer(&buffer);
+    return send_res;
+}
+
 int broadcast_by_header(struct pollfd *pfds, int fd_count, int listener, int sender_fd,
-        struct SocketHeader *sock_header, void *data, int data_len) {
+                        struct SocketHeader *sock_header, void *data, int data_len) {
     int sock_header_size = sizeof(struct SocketHeader);
     int padding = sock_header_size;
     void *buffer;
@@ -57,8 +100,60 @@ int broadcast_by_header(struct pollfd *pfds, int fd_count, int listener, int sen
     return res;
 }
 
+int recv_from_drawing_player(struct SocketHeader *sock_header, struct pollfd *pfds, int *fd_count,
+        int pfds_i, struct Player *player, struct Buffer *buffer) {
+    int sender_fd = pfds[pfds_i].fd, data_len, padding, temp, recv_res;
+    if(sock_header->flag != CANVAS) {
+        fprintf(stderr, "drawing player error - removing from game");
+        del_from_pfds(pfds, pfds_i, fd_count);
+        player->is_online = 0;
+        free(sock_header);
+        free_buffer(&buffer);
+        return -1;
+    }
+    data_len = CANVAS_BUF_SIZE;
+    padding = sizeof(struct SocketHeader);
+    reserve_space(buffer, padding + data_len);
+    temp = data_len;
+    recv_res = recvall(sender_fd, buffer->data, &temp);
+    buffer->next += data_len;
+    return recv_res;
+}
+
+int recv_from_guessing_player(struct SocketHeader *sock_header, struct pollfd *pfds, int *fd_count, int pfds_i,
+    struct Player *player, struct Buffer *buffer, char *guess_word) {
+    int sender_fd = pfds[pfds_i].fd, data_len, padding, recv_res, temp;
+    if(sock_header->flag != CHAT) {
+        fprintf(stderr, "guessing player error - removing from game");
+        del_from_pfds(pfds, pfds_i, fd_count);
+        player->is_online = 0;
+        free(sock_header);
+        free_buffer(&buffer);
+        return -1;
+    }
+    temp = sizeof(int);
+    if (recvall(sender_fd, &data_len, &temp) <= 0) {
+        free(sock_header);
+        free_buffer(&buffer);
+        return -1;
+    }
+    data_len = ntohl(data_len);
+    padding = sizeof(struct SocketHeader) + sizeof(data_len);
+    reserve_space(buffer, padding + data_len);
+    memcpy(buffer->data + buffer->next, &data_len, sizeof(data_len));
+    buffer->next += sizeof(data_len);
+    temp = data_len;
+    recv_res = recvall(sender_fd, buffer->data, &temp);
+    if (!strcmp(guess_word, buffer->data)) send_correct_guess(sender_fd);
+    else send_wrong_guess(sender_fd);
+    buffer->next += data_len;
+    return recv_res;
+}
+
+
 int broadcast_received_data(struct pollfd *pfds, int *fd_count, int pfds_i,
-        struct Players *players, int drawing_fd, int listener) {
+                            struct Players *players, int drawing_fd, int listener) {
+    char *guess_word = "coffee";
     struct Player *player;
     int sender_fd = pfds[pfds_i].fd;
     if ((player = get_player_by_fd(players, sender_fd)) == NULL) {
@@ -66,53 +161,21 @@ int broadcast_received_data(struct pollfd *pfds, int *fd_count, int pfds_i,
         return -1;
     }
     struct SocketHeader *sock_header = (struct SocketHeader *)malloc(sizeof(struct SocketHeader));
-    int data_len, padding, temp;
+    int temp, recv_res;
 
     temp = sizeof(struct SocketHeader);
     recvall(sender_fd, sock_header, &temp);
-    struct Buffer *buffer = (struct Buffer *) malloc(sizeof(struct Buffer));
+    struct Buffer *buffer = new_buffer();
 
     reserve_space(buffer, sizeof(struct SocketHeader));
     memcpy(buffer->data + buffer->next, sock_header, sizeof(struct SocketHeader));
     buffer->next += sizeof(struct SocketHeader);
 
     if (drawing_fd == player->fd) {
-        if(sock_header->flag != CANVAS) {
-            fprintf(stderr, "drawing player error - removing from game");
-            del_from_pfds(pfds, drawing_fd, fd_count);
-            player->is_online = 0;
-            free(sock_header);
-            free_buffer(&buffer);
-            return -1;
-        }
-        data_len = CANVAS_BUF_SIZE;
-        padding = sizeof(struct SocketHeader);
-        reserve_space(buffer, padding + data_len);
-
+        recv_res = recv_from_drawing_player(sock_header, pfds, fd_count, pfds_i, player, buffer);
     } else {
-        if(sock_header->flag != CHAT) {
-            fprintf(stderr, "guessing player error - removing from game");
-            del_from_pfds(pfds, sender_fd, fd_count);
-            player->is_online = 0;
-            free(sock_header);
-            free_buffer(&buffer);
-            return -1;
-        }
-        temp = sizeof(int);
-        if (recvall(sender_fd, &data_len, &temp) <= 0) {
-            free(sock_header);
-            free_buffer(&buffer);
-            return -1;
-        }
-        data_len = ntohl(data_len);
-        padding = sizeof(struct SocketHeader) + sizeof(data_len);
-        reserve_space(buffer, padding + data_len);
-        memcpy(buffer->data + buffer->next, &data_len, sizeof(data_len));
-        buffer->next += sizeof(data_len);
+        recv_res = recv_from_guessing_player(sock_header, pfds, fd_count, pfds_i, player, buffer, guess_word);
     }
-    temp = data_len;
-    int recv_res = recvall(sender_fd, buffer->data, &temp);
-    buffer->next += data_len;
 
     if (recv_res <= 0) {
         if (recv_res == 0) fprintf(stderr, "pollserver: socket %d hung up\n", sender_fd);
@@ -126,22 +189,6 @@ int broadcast_received_data(struct pollfd *pfds, int *fd_count, int pfds_i,
 
     free(sock_header);
     free_buffer(&buffer);
-    return 0;
-}
-
-int send_correct_guess(int fd) {
-    return 0;
-}
-
-int send_wrong_guess(int fd) {
-    return 0;
-}
-
-int send_game_guess_start(struct pollfd *pfds, int *fd_count, int listener, int drawing_fd) {
-    return 0;
-}
-
-int send_game_draw_start(int drawing_fd) {
     return 0;
 }
 
@@ -185,7 +232,7 @@ int manage_new_player(int newfd, struct Players *players) {
     return 0;
 }
 
-int start() {
+void start() {
     int listener, drawing_fd = -1; // file descriptors - sockets
     int newfd;        // Newly accept()ed socket descriptor
     struct sockaddr_storage remoteaddr; // Client address
@@ -247,5 +294,4 @@ int start() {
             }
         }
     }
-    return 0;
 }

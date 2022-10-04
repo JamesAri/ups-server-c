@@ -12,7 +12,7 @@ struct Buffer {
     int next;
     int size;
 };
-
+struct Buffer *new_buffer();
 void reserve_space(struct Buffer *b, int bytes);
 void free_buffer(struct Buffer **buffer);
 
