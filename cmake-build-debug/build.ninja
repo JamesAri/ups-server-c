@@ -94,6 +94,12 @@ build CMakeFiles/ups_server_c.dir/utils/debug.c.o: C_COMPILER__ups_server_c_Debu
   OBJECT_DIR = CMakeFiles/ups_server_c.dir
   OBJECT_FILE_DIR = CMakeFiles/ups_server_c.dir/utils
 
+build CMakeFiles/ups_server_c.dir/utils/serialization.c.o: C_COMPILER__ups_server_c_Debug /Users/jakub.slechta/git/ups-server-c/utils/serialization.c || cmake_object_order_depends_target_ups_server_c
+  DEP_FILE = CMakeFiles/ups_server_c.dir/utils/serialization.c.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99
+  OBJECT_DIR = CMakeFiles/ups_server_c.dir
+  OBJECT_FILE_DIR = CMakeFiles/ups_server_c.dir/utils
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ups_server_c
@@ -102,7 +108,7 @@ build CMakeFiles/ups_server_c.dir/utils/debug.c.o: C_COMPILER__ups_server_c_Debu
 #############################################
 # Link the executable ups_server_c
 
-build ups_server_c: C_EXECUTABLE_LINKER__ups_server_c_Debug CMakeFiles/ups_server_c.dir/main.c.o CMakeFiles/ups_server_c.dir/word_generator.c.o CMakeFiles/ups_server_c.dir/server.c.o CMakeFiles/ups_server_c.dir/player.c.o CMakeFiles/ups_server_c.dir/s_header.c.o CMakeFiles/ups_server_c.dir/ser_buffer.c.o CMakeFiles/ups_server_c.dir/socket_utils.c.o CMakeFiles/ups_server_c.dir/utils/debug.c.o
+build ups_server_c: C_EXECUTABLE_LINKER__ups_server_c_Debug CMakeFiles/ups_server_c.dir/main.c.o CMakeFiles/ups_server_c.dir/word_generator.c.o CMakeFiles/ups_server_c.dir/server.c.o CMakeFiles/ups_server_c.dir/player.c.o CMakeFiles/ups_server_c.dir/s_header.c.o CMakeFiles/ups_server_c.dir/ser_buffer.c.o CMakeFiles/ups_server_c.dir/socket_utils.c.o CMakeFiles/ups_server_c.dir/utils/debug.c.o CMakeFiles/ups_server_c.dir/utils/serialization.c.o
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/ups_server_c.dir
   POST_BUILD = :

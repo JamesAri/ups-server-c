@@ -1,5 +1,5 @@
-#include "socket_utils.h"
-#include "server.h"
+#include "sock_utils.h"
+#include "../server.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -22,14 +22,13 @@ int recvall(int s, void *buf, int *len) {
     int n;
 
 #ifdef _WIN32
-    DWORD timeout = timeout_in_seconds * 1000;
-    setsockopt(socket, SOL_SOCKET, SO_RCVTIMEO, (const char *) &timeout, sizeof timeout);
+    DWORD tv = RECV_TIMEOUT_SEC;
 #else
     struct timeval tv;
     tv.tv_sec = RECV_TIMEOUT_SEC;
     tv.tv_usec = 0;
-    setsockopt(s, SOL_SOCKET, SO_RCVTIMEO, (const char *) &tv, sizeof tv);
 #endif
+    setsockopt(s, SOL_SOCKET, SO_RCVTIMEO, (const char *) &tv, sizeof tv);
 
     while (total < *len) {
         n = (int) recv(s, buf + total, bytesleft, 0);

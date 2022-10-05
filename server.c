@@ -1,8 +1,9 @@
 #include "server.h"
-#include "player.h"
-#include "s_header.h"
-#include "ser_buffer.h"
-#include "socket_utils.h"
+#include "model/player.h"
+#include "utils/sock_header.h"
+#include "utils/sock_utils.h"
+#include "utils/serialization.h"
+#include "utils/debug.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,11 +14,34 @@
 #include <arpa/inet.h>
 #include <poll.h>
 
-#include "utils/debug.h"
+int send_buffer(int dest_fd, struct Buffer *buffer) {
+    int temp = buffer->next;
+    return sendall(dest_fd, buffer->data, &temp);
+}
+
+int send_header_only(int fd, int flag) {
+    struct Buffer *buffer = new_buffer();
+    int res_send;
+    serialize_sock_header(flag, buffer);
+    res_send = send_buffer(fd, buffer);
+    free_buffer(&buffer);
+    return res_send;
+}
+
+int send_header_with_msg(int fd, int flag, char *msg) {
+    struct Buffer *buffer = new_buffer();
+    int res_send;
+    serialize_sock_header(flag, buffer);
+    serialize_int((int) strlen(msg), buffer);
+    serialize_string(msg, buffer);
+    res_send = send_buffer(fd, buffer);
+    free_buffer(&buffer);
+    return res_send;
+}
 
 int broadcast(struct pollfd *pfds, int fd_count, int listener,
               int sender_fd, void *buffer, int length) {
-
+//TODO:  make with Buffer struct
     for (int j = 0; j < fd_count; j++) {
         int dest_fd = pfds[j].fd;
         if (dest_fd != listener && dest_fd != sender_fd) {
@@ -36,122 +60,77 @@ int broadcast(struct pollfd *pfds, int fd_count, int listener,
 }
 
 int send_wrong_guess(int fd) {
-    struct SocketHeader *sock_header = (struct SocketHeader *) malloc(sizeof(struct SocketHeader));
-    sock_header->flag = WRONG_GUESS;
-    int temp = sizeof(struct SocketHeader);
-    int send_res = sendall(fd, sock_header, &temp);
-    free(sock_header);
-    return send_res;
+    return send_header_only(fd, WRONG_GUESS);
 }
 
 int send_correct_guess(int fd) {
-    struct SocketHeader *sock_header = (struct SocketHeader *) malloc(sizeof(struct SocketHeader));
-    sock_header->flag = CORRECT_GUESS;
-    int temp = sizeof(struct SocketHeader);
-    int send_res = sendall(fd, sock_header, &temp);
-    free(sock_header);
-    return send_res;
+    return send_header_only(fd, CORRECT_GUESS);
 }
 
 int send_game_guess_start(struct pollfd *pfds, int fd_count, int listener, int drawing_fd) {
-    struct SocketHeader *sock_header = (struct SocketHeader *) malloc(sizeof(struct SocketHeader));
-    sock_header->flag = WRONG_GUESS;
-    int send_res = broadcast(pfds, fd_count, listener, drawing_fd, sock_header, sizeof(struct SocketHeader));
-    free(sock_header);
+    struct SocketHeader *sock_header = new_sock_header(WRONG_GUESS);
+    int send_res;
+    send_res = broadcast(pfds, fd_count, listener, drawing_fd, sock_header, sizeof(struct SocketHeader));
+    free_sock_header(&sock_header);
     return send_res;
 }
+
 
 int send_game_draw_start(int drawing_fd, char *guess_word) {
-    struct SocketHeader *sock_header = (struct SocketHeader *) malloc(sizeof(struct SocketHeader));
-    struct Buffer *buffer = new_buffer();
-    sock_header->flag = START_AND_DRAW;
-    int str_len = (int) strlen(guess_word);
-    int temp = (int) sizeof(struct SocketHeader) + str_len + (int) sizeof(int);
-    reserve_space(buffer, temp);
-
-    memcpy(buffer->data, sock_header, sizeof(struct SocketHeader));
-    buffer->next += sizeof(struct SocketHeader);
-
-    uint32_t htonl_str_len = htonl(str_len);
-    memcpy(buffer->data + buffer->next, &htonl_str_len, sizeof(int));
-    buffer->next += sizeof(int);
-
-    memcpy(buffer->data + buffer->next, guess_word, str_len);
-    buffer->next += str_len;
-
-    int send_res = sendall(drawing_fd, sock_header, &temp);
-    free(sock_header);
-    free_buffer(&buffer);
-    return send_res;
+//    struct SocketHeader *sock_header = new_sock_header(START_AND_DRAW);
+//    struct Buffer *buffer = new_buffer();
+//    int send_res;
+//
+//    serialize_sock_header(sock_header->flag, buffer);
+//    serialize_int((int) strlen(guess_word), buffer);
+//    serialize_string(guess_word, buffer);
+//
+//    send_res = send_buffer(drawing_fd, buffer);
+//
+//    free_sock_header(&sock_header);
+//    free_buffer(&buffer);
+    return send_header_with_msg(drawing_fd, START_AND_DRAW, guess_word);
 }
 
-int broadcast_by_header(struct pollfd *pfds, int fd_count, int listener, int sender_fd,
-                        struct SocketHeader *sock_header, void *data, int data_len) {
-    int sock_header_size = sizeof(struct SocketHeader);
-    int padding = sock_header_size;
-    void *buffer;
-    switch (sock_header->flag) {
-        case CHAT:
-            padding += sizeof(int);
-            buffer = malloc(data_len + padding);
-            memcpy(buffer, sock_header, sock_header_size);
-            unsigned int htonl_int = htonl(data_len);
-            memcpy(buffer + sock_header_size, &htonl_int, sizeof(htonl_int));
-            break;
-        default:
-            buffer = malloc(data_len + padding);
-            memcpy(buffer, sock_header, sock_header_size);
-    }
-    memcpy(buffer + padding, data, data_len);
-    int buff_size = data_len + padding;
-    int res = broadcast(pfds, fd_count, listener, sender_fd, buffer, buff_size);
-    free(buffer);
-    return res;
-}
-
-int manage_drawing_player(struct SocketHeader *sock_header, struct pollfd *pfds, int *fd_count,
-                          int pfds_i, struct Player *player, struct Buffer *buffer) {
-    int sender_fd = pfds[pfds_i].fd, data_len, temp, recv_res;
+int manage_drawing_player(struct SocketHeader *sock_header, int sender_fd, struct Buffer *buffer) {
+    int temp, recv_res;
     if (sock_header->flag != CANVAS) {
         fprintf(stderr, "invalid header: drawing player error - removing from game\n");
-        del_from_pfds(pfds, pfds_i, fd_count);
-        player->is_online = 0;
         return -1;
     }
-    data_len = CANVAS_BUF_SIZE;
+    serialize_sock_header(CANVAS, buffer);
 
-    reserve_space(buffer, data_len);
-    temp = data_len;
+    reserve_space(buffer, CANVAS_BUF_SIZE);
+    temp = CANVAS_BUF_SIZE;
     recv_res = recvall(sender_fd, buffer->data + buffer->next, &temp);
-    buffer->next += data_len;
+    buffer->next += CANVAS_BUF_SIZE;
 
     return recv_res;
 }
 
-int manage_guessing_player(struct SocketHeader *sock_header, struct pollfd *pfds, int *fd_count, int pfds_i,
-                           struct Player *player, struct Buffer *buffer, char *guess_word) {
-    int sender_fd = pfds[pfds_i].fd, data_len, recv_res, temp;
+int manage_guessing_player(struct SocketHeader *sock_header, int sender_fd, struct Buffer *buffer, char *guess_word) {
+    int guess_str_len, recv_res, temp;
     if (sock_header->flag != CHAT) {
         fprintf(stderr, "invalid header: guessing player error - removing from game\n");
-        del_from_pfds(pfds, pfds_i, fd_count);
-        player->is_online = 0;
         return -1;
     }
+
     temp = sizeof(int);
-    if (recvall(sender_fd, &data_len, &temp) <= 0) return -1;
+    if (recvall(sender_fd, &guess_str_len, &temp) <= 0) return -1;
 
-    reserve_space(buffer, sizeof(int));
-    data_len = ntohl(data_len);
-    memcpy(buffer->data + buffer->next, &data_len, sizeof(data_len));
-    buffer->next += sizeof(int);
+    char str_buf[guess_str_len];
+    temp = guess_str_len;
+    recv_res = recvall(sender_fd, str_buf, &temp);
 
-    reserve_space(buffer, data_len);
-    temp = data_len;
-    recv_res = recvall(sender_fd, buffer->data + buffer->next, &temp);
-    buffer->next += data_len;
+    if (recv_res <= 0) {
+        return recv_res;
+    }
 
-    if (!strcmp(guess_word, buffer->data + sizeof(struct SocketHeader) + sizeof(int)))
-        send_correct_guess(sender_fd);
+    serialize_sock_header(CHAT, buffer);
+    serialize_int(guess_str_len, buffer);
+    serialize_string(str_buf, buffer);
+
+    if (!strcmp(guess_word, str_buf)) send_correct_guess(sender_fd);
     else send_wrong_guess(sender_fd);
     return recv_res;
 }
@@ -161,30 +140,25 @@ int broadcast_received_data(struct pollfd *pfds, int *fd_count, int pfds_i,
                             struct Players *players, int drawing_fd, int listener) {
     char *guess_word = "coffee";
     struct Player *player;
-    int sender_fd = pfds[pfds_i].fd;
+    int temp, recv_res, sender_fd = pfds[pfds_i].fd;
     if ((player = get_player_by_fd(players, sender_fd)) == NULL) {
         fprintf(stderr, "unknown player\n");
         return -1;
     }
-    struct SocketHeader *sock_header = (struct SocketHeader *) malloc(sizeof(struct SocketHeader));
+    struct SocketHeader *sock_header = new_sock_header(EMPTY);
     struct Buffer *buffer = new_buffer();
-    int temp, recv_res;
 
     temp = sizeof(struct SocketHeader);
     recvall(sender_fd, sock_header, &temp);
 
-    reserve_space(buffer, sizeof(struct SocketHeader));
-    memcpy(buffer->data, sock_header, sizeof(struct SocketHeader));
-    buffer->next += sizeof(struct SocketHeader);
-
     if (drawing_fd == player->fd)
-        recv_res = manage_drawing_player(sock_header, pfds, fd_count, pfds_i, player, buffer);
+        recv_res = manage_drawing_player(sock_header, sender_fd, buffer);
     else
-        recv_res = manage_guessing_player(sock_header, pfds, fd_count, pfds_i, player, buffer, guess_word);
+        recv_res = manage_guessing_player(sock_header, sender_fd, buffer, guess_word);
 
     if (recv_res <= 0) {
         if (recv_res == 0) fprintf(stderr, "pollserver: socket %d hung up\n", sender_fd);
-        else fprintf(stderr, "recv: socket %d lost\n", sender_fd);
+        else fprintf(stderr, "recv: socket %d is invalid, closing\n", sender_fd);
         del_from_pfds(pfds, pfds_i, fd_count);
         close(sender_fd);
         player->is_online = 0;
@@ -197,14 +171,9 @@ int broadcast_received_data(struct pollfd *pfds, int *fd_count, int pfds_i,
     return 0;
 }
 
+
 int send_invalid_username(int fd) {
-    struct SocketHeader *s_header = (struct SocketHeader *) malloc(sizeof(struct SocketHeader));
-    s_header->flag = INVALID_USERNAME;
-    int temp = sizeof(struct SocketHeader);
-    int res = (int) sendall(fd, s_header, &temp);
-    free(s_header);
-    if (res <= 0) return -1;
-    return 0;
+    return send_header_only(fd, INVALID_USERNAME);
 }
 
 int manage_new_player(int newfd, struct Players *players) {
@@ -300,12 +269,13 @@ void start() {
 
                     add_to_pfds(&pfds, newfd, &fd_count, &fd_size);
 
-                    fprintf(stdout, "pollserver: new connection from %s on socket %d.\n"
+                    fprintf(stdout, "pollserver: new connection from %s on socket %d (user: %s)\n"
                                     "fd_count: %d\n",
                             inet_ntop(remoteaddr.ss_family,
                                       get_in_addr((struct sockaddr *) &remoteaddr),
                                       remoteIP, INET6_ADDRSTRLEN),
                             newfd,
+                            get_player_by_fd(players, newfd)->username,
                             fd_count);
                 }
             } else {

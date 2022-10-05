@@ -1,7 +1,7 @@
-#include "word_generator.h"
+#include "model/word_generator.h"
 #include "server.h"
-#include "player.h"
-#include "s_header.h"
+#include "model/player.h"
+#include "utils/sock_header.h"
 #include "ser_buffer.h"
 #include "utils/debug.h"
 

@@ -1,5 +1,5 @@
 #include "client.h"
-#include "../s_header.h"
+#include "../utils/sock_header.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -118,7 +118,10 @@ int main(int argc, char *argv[]) {
     reserve_space(buffer, temp);
     memcpy(buffer->data + buffer->next, argv[1], temp);
     buffer->next += temp;
+
     print_buf_to_hex(buffer->data, buffer->next);
+
+    // send username...
     send(server_socket, buffer->data, buffer->next, 0);
 
     memset(buffer->data, 0, buffer->size);
