@@ -67,29 +67,20 @@ int send_correct_guess(int fd) {
     return send_header_only(fd, CORRECT_GUESS);
 }
 
+int send_invalid_username(int fd) {
+    return send_header_only(fd, INVALID_USERNAME);
+}
+
+int send_game_draw_start(int drawing_fd, char *guess_word) {
+    return send_header_with_msg(drawing_fd, START_AND_DRAW, guess_word);
+}
+
 int send_game_guess_start(struct pollfd *pfds, int fd_count, int listener, int drawing_fd) {
     struct SocketHeader *sock_header = new_sock_header(WRONG_GUESS);
     int send_res;
     send_res = broadcast(pfds, fd_count, listener, drawing_fd, sock_header, sizeof(struct SocketHeader));
     free_sock_header(&sock_header);
     return send_res;
-}
-
-
-int send_game_draw_start(int drawing_fd, char *guess_word) {
-//    struct SocketHeader *sock_header = new_sock_header(START_AND_DRAW);
-//    struct Buffer *buffer = new_buffer();
-//    int send_res;
-//
-//    serialize_sock_header(sock_header->flag, buffer);
-//    serialize_int((int) strlen(guess_word), buffer);
-//    serialize_string(guess_word, buffer);
-//
-//    send_res = send_buffer(drawing_fd, buffer);
-//
-//    free_sock_header(&sock_header);
-//    free_buffer(&buffer);
-    return send_header_with_msg(drawing_fd, START_AND_DRAW, guess_word);
 }
 
 int manage_drawing_player(struct SocketHeader *sock_header, int sender_fd, struct Buffer *buffer) {
@@ -172,21 +163,11 @@ int broadcast_received_data(struct pollfd *pfds, int *fd_count, int pfds_i,
 }
 
 
-int send_invalid_username(int fd) {
-    return send_header_only(fd, INVALID_USERNAME);
-}
-
 int manage_new_player(int newfd, struct Players *players) {
-    struct SocketHeader *sock_header = (struct SocketHeader *) malloc(sizeof(struct SocketHeader));
+    struct SocketHeader *sock_header = new_sock_header(EMPTY);
     if (sock_header == NULL) return -1;
     char username[WORD_BUF_SIZE];
     int username_len, temp;
-
-//    int temp1 = sizeof(struct SocketHeader) + 8;
-//    int temp2 = temp1;
-//    void *test_buffer = malloc(temp2);
-//    recvall(newfd, test_buffer, &temp2);
-//    print_buf_to_hex(test_buffer, temp1);
 
     temp = sizeof(struct SocketHeader);
     if (recvall(newfd, sock_header, &temp) <= 0) {
