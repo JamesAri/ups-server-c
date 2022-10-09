@@ -4,6 +4,7 @@
 #include "utils/sock_header.h"
 
 #include <poll.h>
+#include <stdbool.h>
 
 
 #define PORT "9034"
@@ -21,6 +22,7 @@ struct Game {
     struct pollfd *pfds;
     int fd_size;
     int fd_count;
+    bool in_progress;
 };
 
 void start();

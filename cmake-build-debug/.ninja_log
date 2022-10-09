@@ -86,3 +86,9 @@
 193	262	1665335325349797595	ups_server_c	c7ccb1abcccf3889
 1	237	1665335674652729330	CMakeFiles/ups_server_c.dir/server.c.o	be4b6a8e59f6f22a
 237	320	1665335674738927544	ups_server_c	c7ccb1abcccf3889
+4	135	1665351120475041456	CMakeFiles/ups_server_c.dir/utils/sock_header.c.o	fdef5d4d3347460c
+2	151	1665351120491585599	CMakeFiles/ups_server_c.dir/main.c.o	d76f4d71119475c1
+3	174	1665351120514544256	CMakeFiles/ups_server_c.dir/server.c.o	be4b6a8e59f6f22a
+135	222	1665351120562162780	CMakeFiles/ups_server_c.dir/utils/sock_utils.c.o	139c06d937dfbc2c
+151	223	1665351120564738622	CMakeFiles/ups_server_c.dir/utils/serialization.c.o	dbce045c5056a597
+223	300	1665351120642394252	ups_server_c	c7ccb1abcccf3889

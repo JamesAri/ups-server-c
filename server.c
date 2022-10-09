@@ -1,5 +1,6 @@
 #include "server.h"
 #include "model/player.h"
+#include "model/word_generator.h"
 #include "utils/sock_header.h"
 #include "utils/sock_utils.h"
 #include "utils/serialization.h"
@@ -16,17 +17,15 @@
 #include <poll.h>
 
 // ======================================================================= //
-//                             SERVER UTILS                                //
+//                              MISC UTILS                                 //
 // ======================================================================= //
 
 void remove_player_from_game(struct Game *game, int player_fd, int i) {
     struct Player *player;
 
-    if (player_fd != game->pfds[i].fd)
-        log_error("internal error: player's fd doesn't match poll pfds (%d != %d)", player_fd, game->pfds[i].fd);
-
     player = get_player_by_fd(game->players, player_fd);
-    if (player != NULL) {
+    if (player != NULL) { // if player exits, set to offline
+        log_trace("removing player %s (fd: %d) from game", player->username, player_fd);
         player->is_online = 0;
     }
 
@@ -140,9 +139,11 @@ void broadcast_game_guess_start(struct Game *game, int listener, int drawing_fd)
     free_buffer(&buffer);
 }
 
-void broadcast_waiting_for_players(struct Game *game, int listener) {
+void broadcast_waiting_for_players(struct Game *game, int listener, int connected_clients) {
     struct Buffer *buffer = new_buffer();
     serialize_sock_header(WAITING_FOR_PLAYERS, buffer);
+    serialize_int(connected_clients, buffer);
+    serialize_int(MIN_PLAYERS, buffer);
     broadcast_buffer(game, listener, listener, buffer);
     free_buffer(&buffer);
 }
@@ -255,6 +256,42 @@ int manage_client(struct Game *game, int drawing_fd, int sender_fd, int listener
 
 
 // ======================================================================= //
+//                         GAME SPECIFIC UTILS                             //
+// ======================================================================= //
+
+struct Game *new_game() {
+    struct Game *game = (struct Game *) malloc(sizeof(struct Game));
+    game->fd_count = 0;
+    game->fd_size = BACKLOG;
+    game->pfds = (struct pollfd *) malloc(sizeof(struct pollfd *) * game->fd_size);
+    game->players = new_players();
+    game->in_progress = false;
+    return game;
+}
+
+int start_round(struct Game *game, int drawing_fd, int listener) {
+    int send_res;
+    char guess_word[MAX_GUESS_LEN];
+    struct Words *words = read_words(WORDS_FN);
+    get_random_word(words, guess_word);
+    free_words(&words);
+
+    game->in_progress = true;
+    send_res = send_game_draw_start(drawing_fd, guess_word);
+    broadcast_game_guess_start(game, listener, drawing_fd);
+
+    log_trace("new round started");
+    return send_res;
+}
+
+void end_round(struct Game *game) {
+    game->in_progress = false;
+
+    log_trace("round ended");
+}
+
+
+// ======================================================================= //
 //                              MAIN LOOP                                  //
 // ======================================================================= //
 
@@ -271,15 +308,9 @@ void start() {
 
     struct sockaddr_storage remote_addr; // Client address
     socklen_t addr_len;
-
     char remote_ip[INET6_ADDRSTRLEN];
 
-    struct Game *game = (struct Game *) malloc(sizeof(struct Game));
-
-    game->fd_count = 0;
-    game->fd_size = BACKLOG;
-    game->pfds = (struct pollfd *) malloc(sizeof(struct pollfd *) * game->fd_size);
-    game->players = new_players();
+    struct Game *game = new_game();
 
     struct Player *cur_player;
 
@@ -326,13 +357,16 @@ void start() {
                     connected_clients = game->fd_count - 1; // -1 for listener
 
                     if (connected_clients < MIN_PLAYERS) {
-                        broadcast_buffer(game, listener, listener, buffer)
+                        broadcast_waiting_for_players(game, listener, connected_clients);
+                    } else {
+                        if (start_round(game, drawing_fd, listener) <= 0) {
+                            remove_player_from_game(game, drawing_fd, i);
+                        }
                     }
 
                     log_info("poll-server: new connection from %s on socket %d (user: %s)",
-                             inet_ntop(remote_addr.ss_family,
-                                       get_in_addr((struct sockaddr *) &remote_addr),
-                                       remote_ip, INET6_ADDRSTRLEN),
+                             inet_ntop(remote_addr.ss_family, get_in_addr((struct sockaddr *) &remote_addr),
+                                       remote_ip, sizeof(remote_ip)),
                              new_fd,
                              get_player_by_fd(game->players, new_fd)->username);
 
@@ -340,6 +374,13 @@ void start() {
                 }
             } else {
                 sender_fd = game->pfds[i].fd;
+                connected_clients = game->fd_count - 1;
+
+                if (connected_clients < MIN_PLAYERS && !game->in_progress) {
+                    log_warn("socket %d isn't waiting for other clients, closing", sender_fd);
+                    remove_player_from_game(game, sender_fd, i);
+                    continue;
+                }
 
                 // Unknown player
                 if ((cur_player = get_player_by_fd(game->players, sender_fd)) == NULL) {
@@ -353,11 +394,11 @@ void start() {
                 // Known player
                 if (recv_res <= 0) {
                     if (recv_res == 0)
-                        log_info("poll-server: socket %d hung up (user: %s)",
-                                 sender_fd, cur_player->username);
+                        log_info("poll-server: socket %d hung up (user: %s)", sender_fd,
+                                 cur_player->username);
                     else
-                        log_error("recv: socket %d is invalid, closing (user: %s), err_code: %d",
-                                  sender_fd, cur_player->username, recv_res);
+                        log_error("recv error (%d): socket: %d, user: %s, closing", recv_res, sender_fd,
+                                  cur_player->username);
                     remove_player_from_game(game, sender_fd, i);
                 }
             }

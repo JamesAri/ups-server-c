@@ -59,19 +59,18 @@ void *get_in_addr(struct sockaddr *sa) {
 }
 
 int get_listener_socket() {
-    int listener;     // Listening socket descriptor
-    int yes = 1;        // For setsockopt() SO_REUSEADDR, below
-    int rv;
+    int listener, rv, yes = 1;
 
+    // hints - settings for *ai creation
     // *ai - list of available addrinfo structures
     // *p - temp addrinfo to loop over with
-    // hints - settings for *ai creation
     struct addrinfo hints, *ai, *p;
 
     memset(&hints, 0, sizeof hints);
     hints.ai_family = AF_UNSPEC;
     hints.ai_socktype = SOCK_STREAM;
     hints.ai_flags = AI_PASSIVE; // use with NULL as first param in getaddrinfo for auto-IP detection.
+
     if ((rv = getaddrinfo(NULL, PORT, &hints, &ai)) != 0) {
         log_error("selecting server error: %s\n", gai_strerror(rv));
         exit(EXIT_FAILURE);
@@ -79,9 +78,8 @@ int get_listener_socket() {
 
     for (p = ai; p != NULL; p = p->ai_next) {
         listener = socket(p->ai_family, p->ai_socktype, p->ai_protocol);
-        if (listener < 0) {
-            continue;
-        }
+
+        if (listener < 0) continue;
 
         // Reuse address on socket-level (if possible)
         setsockopt(listener, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int));
@@ -96,19 +94,14 @@ int get_listener_socket() {
 
     freeaddrinfo(ai);
 
-    if (p == NULL) {
-        return -1;
-    }
+    if (p == NULL) return -1;
 
-    if (listen(listener, BACKLOG) == -1) {
-        return -1;
-    }
+    if (listen(listener, BACKLOG) == -1) return -1;
 
     return listener;
 }
 
 void add_to_pfds(struct pollfd *pfds[], int newfd, int *fd_count, int *fd_size) {
-    // If we don't have room, add more space in the pfds array
     if (*fd_count == *fd_size) {
         *fd_size *= 2;
 

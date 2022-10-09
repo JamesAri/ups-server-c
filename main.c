@@ -16,15 +16,13 @@ int test_players() {
 }
 
 void setup_logger() {
-    log_set_level(LOG_INFO);
+    log_set_level(LOG_TRACE); // default setting (all -> stderr)
     FILE *fp = fopen("./server.log", "a+");
     if (fp == NULL) {
         fprintf(stderr, "couldn't open log file\n");
     } else {
-        log_add_fp(fp, LOG_TRACE);
+        log_add_fp(fp, LOG_INFO);
     }
-//    FILE *fp_stdout = stdout;
-//    log_add_fp(fp_stdout, LOG_TRACE);
 }
 
 int main() {
