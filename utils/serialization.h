@@ -3,6 +3,9 @@
 
 #define INITIAL_SIZE 10
 
+#define INT_OFFSET sizeof(struct SocketHeader)
+#define STRING_OFFSET (INT_OFFSET + sizeof(int))
+
 struct Buffer {
     void *data;
     int next;
@@ -24,5 +27,9 @@ void serialize_int(int x, struct Buffer *buffer);
 void serialize_string(char *string, struct Buffer *buffer);
 
 void serialize_his(int flag, char *string, struct Buffer *buffer);
+
+void unpack_int(struct Buffer *buffer, int *res);
+
+void unpack_string(struct Buffer *buffer, char *res);
 
 #endif //UPS_SERVER_C_SERIALIZATION_H

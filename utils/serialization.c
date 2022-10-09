@@ -59,6 +59,14 @@ void serialize_string(char *string, struct Buffer *buffer) {
     buffer->next += str_len;
 }
 
+void unpack_int(struct Buffer *buffer, int *res) {
+    *res = ntohl(*(int *) (buffer->data + INT_OFFSET));
+}
+
+void unpack_string(struct Buffer *buffer, char *res) {
+    strcpy(res, (buffer->data + STRING_OFFSET));
+}
+
 void serialize_his(int flag, char *string, struct Buffer *buffer) {
     serialize_sock_header(flag, buffer);
     serialize_int((int) strlen(string), buffer);
