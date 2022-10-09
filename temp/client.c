@@ -2,7 +2,6 @@
 #include "../utils/serialization.h"
 #include "../utils/sock_header.h"
 #include "../utils/sock_utils.h"
-#include "../utils/debug.h"
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -20,8 +19,6 @@ int recv_buffer(int fd, struct Buffer *buffer, int size) {
     reserve_space(buffer, size);
     res_recv = recvall(fd, buffer->data + buffer->next, &temp);
     buffer->next += size;
-    fprintf(stdout, "recieved data: ");
-    print_buf_to_hex(buffer->data, buffer->next);
     return res_recv;
 }
 
@@ -102,11 +99,10 @@ int main(int argc, char *argv[]) {
     serialize_string(username, out_buffer);
 
     send_buffer(server_socket, out_buffer);
-    print_buf_to_hex(out_buffer->data, out_buffer->next);
     clear_buffer(out_buffer);
-    fprintf(stderr, "<username: %s>\n", username);
+    fprintf(stderr, "<username: %s>\n\n", username);
 
-    int server_msg_len;
+    int server_msg_len, cur_players_count, min_players_count;
     int int_offset = sizeof(struct SocketHeader);
     int string_offset = int_offset + sizeof(int);
 
@@ -167,8 +163,31 @@ int main(int argc, char *argv[]) {
                 case INVALID_USERNAME:
                     fprintf(stdout, "received INVALID_USERNAME flag\n");
                     break;
+                case START_AND_GUESS:
+                    fprintf(stdout, "received START_AND_GUESS flag\n");
+                    break;
                 case CORRECT_GUESS_ANNOUNCEMENT:
                     fprintf(stdout, "received CORRECT_GUESS_ANNOUNCEMENT flag\n");
+
+                    recv_buffer_int(server_socket, in_buffer);
+
+                    unpack_int(in_buffer, &server_msg_len);
+
+                    recv_buffer_string(server_socket, in_buffer, server_msg_len);
+
+                    fprintf(stdout, "%s\n", (char *) (in_buffer->data + string_offset));
+                    break;
+                case WAITING_FOR_PLAYERS:
+                    fprintf(stdout, "received WAITING_FOR_PLAYERS flag\n");
+                    recv_buffer_int(server_socket, in_buffer);
+                    recv_buffer_int(server_socket, in_buffer);
+                    unpack_int(in_buffer, &cur_players_count);
+                    unpack_int_var(in_buffer, &min_players_count, STRING_OFFSET);
+                    printf("%d/%d players, waiting for %d player(s)\n",
+                           cur_players_count, min_players_count, min_players_count - cur_players_count);
+                    break;
+                case START_AND_DRAW:
+                    fprintf(stdout, "received START_AND_DRAW flag\n");
                     recv_buffer_int(server_socket, in_buffer);
                     server_msg_len = ntohl(*(int *) (in_buffer->data + int_offset));
                     recv_buffer_string(server_socket, in_buffer, server_msg_len);

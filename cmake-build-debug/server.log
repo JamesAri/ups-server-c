@@ -1,13 +1,14 @@
-2022-10-09 19:14:35 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:262: server listening on port 9034
-2022-10-09 19:14:37 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:302: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
-2022-10-09 19:14:37 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:304: connected clients: 1
-2022-10-09 19:14:40 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:302: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Honza)
-2022-10-09 19:14:40 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:304: connected clients: 2
-2022-10-09 19:14:58 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:159: client guess word: AHOOJ
-2022-10-09 19:15:11 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:159: client guess word: lololo
-2022-10-09 19:15:12 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:159: client guess word: coffee
-2022-10-09 19:15:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:159: client guess word: yeaa
-2022-10-09 19:15:17 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:159: client guess word: coffee
-2022-10-09 19:15:19 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:322: poll-server: socket 7 hung up (user: Honza)
-2022-10-09 19:15:24 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:322: poll-server: socket 6 hung up (user: Kuba)
-2022-10-09 23:32:01 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:309: server listening on port 9034
+2022-10-10 00:35:47 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:328: server listening on port 9034
+2022-10-10 00:35:49 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:374: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-10 00:35:49 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:376: connected clients: 1
+2022-10-10 00:37:46 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:328: server listening on port 9034
+2022-10-10 00:37:48 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:374: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-10 00:37:48 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:376: connected clients: 1
+2022-10-10 00:40:26 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:329: server listening on port 9034
+2022-10-10 00:40:27 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:375: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-10 00:40:27 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:377: connected clients: 1
+2022-10-10 00:42:28 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:329: server listening on port 9034
+2022-10-10 00:42:29 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:375: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-10 00:42:29 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:377: connected clients: 1
+ups_server_c(92948,0x10d783600) malloc: *** error for object 0x3272b410: pointer being freed was not allocated
+ups_server_c(92948,0x10d783600) malloc: *** set a breakpoint in malloc_error_break to debug

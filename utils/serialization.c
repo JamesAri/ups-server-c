@@ -63,6 +63,10 @@ void unpack_int(struct Buffer *buffer, int *res) {
     *res = ntohl(*(int *) (buffer->data + INT_OFFSET));
 }
 
+void unpack_int_var(struct Buffer *buffer, int *res, int offset) {
+    *res = ntohl(*(int *) (buffer->data + offset));
+}
+
 void unpack_string(struct Buffer *buffer, char *res) {
     strcpy(res, (buffer->data + STRING_OFFSET));
 }

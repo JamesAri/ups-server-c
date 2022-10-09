@@ -30,6 +30,8 @@ void serialize_his(int flag, char *string, struct Buffer *buffer);
 
 void unpack_int(struct Buffer *buffer, int *res);
 
+void unpack_int_var(struct Buffer *buffer, int *res, int offset);
+
 void unpack_string(struct Buffer *buffer, char *res);
 
 #endif //UPS_SERVER_C_SERIALIZATION_H

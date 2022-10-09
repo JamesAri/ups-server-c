@@ -43,13 +43,14 @@ int recv_buffer(int fd, struct Buffer *buffer, int size) {
     recv_res = recvall(fd, buffer->data + buffer->next, &temp);
     buffer->next += size;
 
+    char hex_buf_str[HEX_STRING_MAX_SIZE];
+    memset(hex_buf_str, 0, sizeof(hex_buf_str));
+    buf_to_hex_string(buffer->data, buffer->next, hex_buf_str);
     if (recv_res <= 0) {
-        char hex_buf_str[HEX_STRING_MAX_SIZE];
-        buf_to_hex_string(buffer->data, buffer->next, hex_buf_str);
         if (recv_res < 0)
             log_error("error(%d): received buffer (from fd: %d): %s", recv_res, fd, hex_buf_str, recv_res);
-    }
-
+    } else
+        log_trace("received buffer (from fd: %d): %s", fd, hex_buf_str);
     return recv_res;
 }
 
@@ -75,10 +76,14 @@ int send_buffer(int dest_fd, struct Buffer *buffer) {
 
     send_res = sendall(dest_fd, buffer->data, &temp);
 
+    char hex_buf_str[HEX_STRING_MAX_SIZE];
+    memset(hex_buf_str, 0, sizeof(hex_buf_str));
+    buf_to_hex_string(buffer->data, buffer->next, hex_buf_str);
     if (send_res <= 0) {
-        char hex_buf_str[HEX_STRING_MAX_SIZE];
-        buf_to_hex_string(buffer->data, buffer->next, hex_buf_str);
-        log_info("error(%d): sent buffer (to fd: %d): %s", send_res, dest_fd, hex_buf_str);
+        if (send_res < 0)
+            log_info("error(%d): sent buffer (to fd: %d): %s", send_res, dest_fd, hex_buf_str);
+    } else {
+        log_trace("sent buffer (to fd: %d): %s", dest_fd, hex_buf_str);
     }
 
     return send_res;
@@ -304,7 +309,7 @@ void start() {
     tv.tv_usec = 0;
 #endif
 
-    int listener, new_fd, sender_fd, drawing_fd = -1, recv_res, poll_res, connected_clients;
+    int listener, new_fd, sender_fd, drawing_fd = 6, recv_res, poll_res, connected_clients;
 
     struct sockaddr_storage remote_addr; // Client address
     socklen_t addr_len;
@@ -356,13 +361,10 @@ void start() {
 
                     connected_clients = game->fd_count - 1; // -1 for listener
 
-                    if (connected_clients < MIN_PLAYERS) {
+                    if (connected_clients < MIN_PLAYERS)
                         broadcast_waiting_for_players(game, listener, connected_clients);
-                    } else {
-                        if (start_round(game, drawing_fd, listener) <= 0) {
-                            remove_player_from_game(game, drawing_fd, i);
-                        }
-                    }
+                    else if (start_round(game, drawing_fd, listener) <= 0)
+                        remove_player_from_game(game, drawing_fd, i);
 
                     log_info("poll-server: new connection from %s on socket %d (user: %s)",
                              inet_ntop(remote_addr.ss_family, get_in_addr((struct sockaddr *) &remote_addr),
