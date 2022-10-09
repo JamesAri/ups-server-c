@@ -14,6 +14,8 @@
 #define MAX_STRING_LEN 256
 #define CANVAS_BUF_SIZE 1024
 
+#define MIN_PLAYERS 2
+
 struct Game {
     struct Players *players;
     struct pollfd *pfds;
