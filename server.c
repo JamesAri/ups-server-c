@@ -4,6 +4,7 @@
 #include "utils/sock_utils.h"
 #include "utils/serialization.h"
 #include "utils/debug.h"
+#include "utils/log.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -16,11 +17,16 @@
 
 
 int recv_buffer(int fd, struct Buffer *buffer, int size) {
-    int res_recv, temp = size;
+    int recv_res, temp = size;
     reserve_space(buffer, size);
-    res_recv = recvall(fd, buffer->data + buffer->next, &temp);
+    recv_res = recvall(fd, buffer->data + buffer->next, &temp);
     buffer->next += size;
-    return res_recv;
+
+    char hex_buf_str[HEX_STRING_MAX_SIZE];
+    buf_to_hex_string(buffer->data, buffer->next, hex_buf_str);
+    log_info("received buffer (from fd: %d): %s", fd, hex_buf_str);
+
+    return recv_res;
 }
 
 int recv_buffer_sock_header(int fd, struct Buffer *buffer) {
@@ -37,6 +43,11 @@ int recv_buffer_string(int fd, struct Buffer *buffer, int str_len) {
 
 int send_buffer(int dest_fd, struct Buffer *buffer) {
     int temp = buffer->next;
+
+    char hex_buf_str[HEX_STRING_MAX_SIZE];
+    buf_to_hex_string(buffer->data, buffer->next, hex_buf_str);
+    log_info("sending buffer (to fd: %d): %s", dest_fd, hex_buf_str);
+
     return sendall(dest_fd, buffer->data, &temp);
 }
 
@@ -52,9 +63,7 @@ int send_header_only(int fd, int flag) {
 int send_header_with_msg(int fd, int flag, char *msg) {
     struct Buffer *buffer = new_buffer();
     int res_send;
-    serialize_sock_header(flag, buffer);
-    serialize_int((int) strlen(msg), buffer);
-    serialize_string(msg, buffer);
+    serialize_his(flag, msg, buffer);
     res_send = send_buffer(fd, buffer);
     free_buffer(&buffer);
     return res_send;
@@ -66,7 +75,7 @@ int broadcast(struct pollfd *pfds, int fd_count, int listener, int sender_fd, st
         int dest_fd = pfds[j].fd;
         if (dest_fd != listener && dest_fd != sender_fd) {
             if (send_buffer(dest_fd, buffer) <= 0) {
-                fprintf(stderr, "broadcast error\n");
+                log_error("broadcast error");
                 return -1;
             }
         }
@@ -93,84 +102,83 @@ int send_game_draw_start(int drawing_fd, char *guess_word) {
 int send_game_guess_start(struct pollfd *pfds, int fd_count, int listener, int drawing_fd) {
     int send_res;
     struct Buffer *buffer = new_buffer();
-    serialize_sock_header(WRONG_GUESS, buffer);
+    serialize_sock_header(START_AND_GUESS, buffer);
     send_res = broadcast(pfds, fd_count, listener, drawing_fd, buffer);
     free_buffer(&buffer);
     return send_res;
 }
 
-int manage_drawing_player(struct SocketHeader *sock_header, int sender_fd, struct Buffer *buffer) {
-    if (sock_header->flag != CANVAS) {
-        fprintf(stderr, "invalid header: drawing player error - removing from game\n");
+int manage_drawing_player(int sender_fd, struct Buffer *buffer) {
+    if (((struct SocketHeader *) buffer->data)->flag != CANVAS) {
+        log_error("invalid header: drawing player error");
         return -1;
     }
 
-    serialize_sock_header(CANVAS, buffer);
     return recv_buffer(sender_fd, buffer, CANVAS_BUF_SIZE);
 }
 
-int manage_guessing_player(struct SocketHeader *sock_header, int sender_fd, struct Buffer *buffer, char *guess_word) {
-    int guess_str_len, recv_res, *buf_int_ptr;
-    char *buf_str_ptr;
-    if (sock_header->flag != CHAT) {
-        fprintf(stderr, "invalid header: guessing player error - removing from game\n");
+int manage_guessing_player(int sender_fd, struct Buffer *buffer, char *guess_word,
+                           struct Player *player) {
+    int guess_str_len, recv_res;
+    int int_offset = sizeof(struct SocketHeader);
+    int string_offset = int_offset + (int) sizeof(int);
+    char buff_client_guess[MAX_GUESS_LEN], broadcast_response_msg[MAX_STRING_LEN];
+
+    if (((struct SocketHeader *) buffer->data)->flag != CHAT) {
+        log_error("invalid header: guessing player error");
         return -1;
     }
 
-    // buffer = [SOCK_HEADER]
-    // buffer = [SOCK_HEADER][INT]
-    // buffer = [SOCK_HEADER][INT][STRING(len: guess_str_len)]
-    //               1B       4B              var B
-
-    serialize_sock_header(CHAT, buffer);
-
-    buf_int_ptr = buffer->data + buffer->next;
     if ((recv_res = recv_buffer_int(sender_fd, buffer)) <= 0) return recv_res;
 
-    guess_str_len = ntohl(*buf_int_ptr);
+    guess_str_len = ntohl(*(int *) (buffer->data + int_offset));
 
-    buf_str_ptr = buffer->data + buffer->next;
     if ((recv_res = recv_buffer_string(sender_fd, buffer, guess_str_len)) <= 0) return recv_res;
 
-    if (!strcmp(guess_word, buf_str_ptr)) send_correct_guess(sender_fd);
-    else send_wrong_guess(sender_fd);
-    return recv_res;
+    memset(broadcast_response_msg, 0, sizeof(broadcast_response_msg));
+    memset(buff_client_guess, 0, sizeof(buff_client_guess));
+
+    strcpy(buff_client_guess, buffer->data + string_offset);
+    buff_client_guess[MAX_GUESS_LEN - 1] = '\0';
+
+    log_trace("client guess word: %s", buff_client_guess);
+
+    int correct_guess = !strcmp(guess_word, buff_client_guess);
+
+    if (correct_guess) {
+        sprintf(broadcast_response_msg, "Player %s got the answer!", player->username);
+        clear_buffer(buffer);
+        serialize_his(CORRECT_GUESS_ANNOUNCEMENT, broadcast_response_msg, buffer);
+    } else {
+        sprintf(broadcast_response_msg, "%s: %s", player->username, buff_client_guess);
+        clear_buffer(buffer);
+        serialize_his(CHAT, broadcast_response_msg, buffer);
+    }
+
+    if (correct_guess) return send_correct_guess(sender_fd);
+    else return send_wrong_guess(sender_fd);
 }
 
 
-int broadcast_received_data(struct pollfd *pfds, int *fd_count, int pfds_i,
-                            struct Players *players, int drawing_fd, int listener) {
+int manage_client_data(struct pollfd *pfds, int fd_count, int drawing_fd, int sender_fd, int listener,
+                       struct Player *player) {
     char *guess_word = "coffee";
-    struct Player *player;
-    int temp, recv_res, sender_fd = pfds[pfds_i].fd;
-    if ((player = get_player_by_fd(players, sender_fd)) == NULL) {
-        fprintf(stderr, "unknown player\n");
-        return -1;
-    }
-    struct SocketHeader *sock_header = new_sock_header(EMPTY);
     struct Buffer *buffer = new_buffer();
+    int recv_res;
 
-    temp = sizeof(struct SocketHeader);
-    recvall(sender_fd, sock_header, &temp);
+    if ((recv_res = recv_buffer_sock_header(sender_fd, buffer)) <= 0) return recv_res;
 
-    if (drawing_fd == player->fd)
-        recv_res = manage_drawing_player(sock_header, sender_fd, buffer);
+    if (drawing_fd == sender_fd)
+        recv_res = manage_drawing_player(sender_fd, buffer);
     else
-        recv_res = manage_guessing_player(sock_header, sender_fd, buffer, guess_word);
+        recv_res = manage_guessing_player(sender_fd, buffer, guess_word, player);
 
-    if (recv_res <= 0) {
-        if (recv_res == 0) fprintf(stderr, "pollserver: socket %d hung up\n", sender_fd);
-        else fprintf(stderr, "recv: socket %d is invalid, closing\n", sender_fd);
-        del_from_pfds(pfds, pfds_i, fd_count);
-        close(sender_fd);
-        player->is_online = 0;
-    } else {
-        broadcast(pfds, *fd_count, listener, sender_fd, buffer);
+    if (recv_res > 0) {
+        broadcast(pfds, fd_count, listener, sender_fd, buffer);
     }
 
-    free_sock_header(&sock_header);
     free_buffer(&buffer);
-    return 0;
+    return recv_res;
 }
 
 
@@ -181,14 +189,14 @@ int manage_new_player(int newfd, struct Players *players) {
 
     if ((recv_res = recv_buffer_sock_header(newfd, buffer)) <= 0) {
         free_buffer(&buffer);
-        fprintf(stderr, "received incomplete data from socket %d\n", newfd);
+        log_error("received incomplete data from socket %d", newfd);
         return recv_res;
     }
 
     flag = ((struct SocketHeader *) buffer->data)->flag;
     if (flag != INPUT_USERNAME) {
         free_buffer(&buffer);
-        fprintf(stderr, "invalid register-username header (received flag: 0x%02X)\n", flag);
+        log_error("invalid register-username header (received flag: 0x%02X)", flag);
         return -1;
     }
 
@@ -203,7 +211,7 @@ int manage_new_player(int newfd, struct Players *players) {
     if (update_players(players, buf_string_ptr, newfd) == NULL) {
         free_buffer(&buffer);
         send_invalid_username(newfd);
-        fprintf(stderr, "invalid username - player already logged in\n");
+        log_error("invalid username - player already logged in");
         return -1;
     }
 
@@ -212,34 +220,45 @@ int manage_new_player(int newfd, struct Players *players) {
 }
 
 void start() {
-    int listener, newfd, drawing_fd = -1;
-    struct sockaddr_storage remoteaddr; // Client address
-    socklen_t addrlen;
+#ifdef _WIN32
+    DWORD tv = RECV_TIMEOUT_SEC;
+#else
+    struct timeval tv;
+    tv.tv_sec = RECV_TIMEOUT_SEC;
+    tv.tv_usec = 0;
+#endif
 
-    char remoteIP[INET6_ADDRSTRLEN];
+    int listener, new_fd, sender_fd, drawing_fd = -1;
+    struct sockaddr_storage remote_addr; // Client address
+    socklen_t addr_len;
 
+    char remote_ip[INET6_ADDRSTRLEN];
+
+    int recv_res, poll_res;
     int fd_count = 0;
     int fd_size = BACKLOG;
     struct pollfd *pfds = (struct pollfd *) malloc(sizeof *pfds * fd_size);
 
     struct Players *players = new_players();
+    struct Player *cur_player;
+
 
     if ((listener = get_listener_socket()) == -1) {
-        fprintf(stderr, "error getting listening socket\n");
-        exit(1);
+        log_error("error getting listening socket");
+        exit(EXIT_FAILURE);
     }
 
-    fprintf(stderr, "server listening on port %s\n", PORT);
+    log_info("server listening on port %s", PORT);
 
     add_to_pfds(&pfds, listener, &fd_count, &fd_size);
 
     for (;;) {
-        int poll_res = poll(pfds, fd_count, POLL_TIMEOUT);
+        poll_res = poll(pfds, fd_count, POLL_TIMEOUT);
         if (poll_res == -1) {
-            fprintf(stderr, "poll-error\n");
-            exit(1);
+            log_error("poll-error");
+            exit(EXIT_FAILURE);
         } else if (poll_res == 0) {
-            fprintf(stderr, "poll-timeout\n");
+            log_error("poll-timeout");
         }
 
         for (int i = 0; i < fd_count; i++) {
@@ -248,32 +267,55 @@ void start() {
 
             if (pfds[i].fd == listener) {
 
-                addrlen = sizeof remoteaddr;
-                newfd = accept(listener, (struct sockaddr *) &remoteaddr, &addrlen);
+                addr_len = sizeof remote_addr;
+                new_fd = accept(listener, (struct sockaddr *) &remote_addr, &addr_len);
 
-                if (newfd == -1) {
-                    fprintf(stderr, "accept\n");
+                if (new_fd == -1) {
+                    log_error("accept");
                 } else {
+                    setsockopt(new_fd, SOL_SOCKET, SO_RCVTIMEO, (const char *) &tv, sizeof tv);
 
-                    if (manage_new_player(newfd, players) == -1) {
-                        fprintf(stderr, "closing connection for socket %d\n", newfd);
-                        close(newfd);
+                    if (manage_new_player(new_fd, players) == -1) {
+                        log_error("closing connection for socket %d", new_fd);
+                        close(new_fd);
                         continue;
                     }
 
-                    add_to_pfds(&pfds, newfd, &fd_count, &fd_size);
+                    add_to_pfds(&pfds, new_fd, &fd_count, &fd_size);
 
-                    fprintf(stdout, "pollserver: new connection from %s on socket %d (user: %s)\n"
-                                    "fd_count: %d\n",
-                            inet_ntop(remoteaddr.ss_family,
-                                      get_in_addr((struct sockaddr *) &remoteaddr),
-                                      remoteIP, INET6_ADDRSTRLEN),
-                            newfd,
-                            get_player_by_fd(players, newfd)->username,
-                            fd_count);
+                    log_info("poll-server: new connection from %s on socket %d (user: %s)",
+                             inet_ntop(remote_addr.ss_family,
+                                       get_in_addr((struct sockaddr *) &remote_addr),
+                                       remote_ip, INET6_ADDRSTRLEN),
+                             new_fd,
+                             get_player_by_fd(players, new_fd)->username);
+
+                    log_info("connected clients: %d", fd_count - 1);
                 }
             } else {
-                broadcast_received_data(pfds, &fd_count, i, players, drawing_fd, listener);
+                sender_fd = pfds[i].fd;
+
+                // Unknown player
+                if ((cur_player = get_player_by_fd(players, sender_fd)) == NULL) {
+                    log_error("unknown cur_player");
+                    disconnect_fd(pfds, i, &fd_count);
+                    continue;
+                }
+
+                recv_res = manage_client_data(pfds, fd_count, drawing_fd, sender_fd, listener, cur_player);
+
+                // Known player
+                if (recv_res <= 0) {
+                    if (recv_res == 0)
+                        log_error("poll-server: socket %d hung up (user: %s)",
+                                  sender_fd, cur_player->username);
+                    else
+                        log_error("recv: socket %d is invalid, closing (user: %s)",
+                                  sender_fd, cur_player->username);
+
+                    disconnect_fd(pfds, i, &fd_count);
+                    cur_player->is_online = 0;
+                }
             }
         }
     }

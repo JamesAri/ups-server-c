@@ -1,0 +1,105 @@
+2022-10-09 16:52:49 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:250: server listening on port 9034
+
+2022-10-09 16:56:04 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:250: server listening on port 9034
+
+2022-10-09 16:58:06 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:250: server listening on port 9034
+2022-10-09 16:58:39 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:250: server listening on port 9034
+2022-10-09 17:14:10 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:245: server listening on port 9034
+2022-10-09 17:18:09 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:245: server listening on port 9034
+2022-10-09 17:18:11 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:287: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)connected clients: 1
+
+2022-10-09 17:19:22 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:41: sending buffer (to 7): 
+2022-10-09 17:19:22 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:208: invalid username - player already logged in
+2022-10-09 17:19:22 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:273: closing connection for socket 7
+2022-10-09 17:33:18 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:248: server listening on port 9034
+2022-10-09 17:33:22 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:290: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)connected clients: 1
+
+2022-10-09 17:33:28 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:137: client guess word: hello
+2022-10-09 17:33:28 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:141: received buffer (from 6): :6
+2022-10-09 17:33:28 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:43: sending buffer (to 6): 0
+2022-10-09 17:34:42 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:248: server listening on port 9034
+2022-10-09 17:34:49 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:290: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+connected clients: 1
+2022-10-09 17:36:58 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:248: server listening on port 9034
+2022-10-09 17:37:04 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:288: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-09 17:37:04 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:290: connected clients: 1
+2022-10-09 17:37:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:137: client guess word: hi
+2022-10-09 17:37:14 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:141: received buffer (from 6): :6
+2022-10-09 17:37:14 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:43: sending buffer (to 6): 0
+2022-10-09 17:37:22 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:308: poll-server: socket 6 hung up (user: Kuba)
+2022-10-09 17:39:27 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:248: server listening on port 9034
+2022-10-09 17:39:31 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:288: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-09 17:39:31 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:290: connected clients: 1
+2022-10-09 17:39:34 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:137: client guess word: hii
+2022-10-09 17:39:34 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:141: received buffer (from 6): 0
+2022-10-09 17:39:34 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:43: sending buffer (to 6): 0
+2022-10-09 17:42:39 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:248: server listening on port 9034
+2022-10-09 17:42:49 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:288: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-09 17:42:49 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:290: connected clients: 1
+2022-10-09 17:42:50 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:137: client guess word: xx
+2022-10-09 17:42:50 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:141: received buffer (from 6): 03:00:00:00:02:78:78:
+2022-10-09 17:42:50 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:43: sending buffer (to 6): 08:
+2022-10-09 17:43:22 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:248: server listening on port 9034
+2022-10-09 17:43:29 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:288: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-09 17:43:29 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:290: connected clients: 1
+2022-10-09 17:43:32 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:137: client guess word: xxx
+2022-10-09 17:43:32 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:141: received buffer (from 6): 03
+2022-10-09 17:43:32 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:43: sending buffer (to 6): 08
+2022-10-09 17:46:30 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:248: server listening on port 9034
+2022-10-09 17:46:36 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:288: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-09 17:46:36 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:290: connected clients: 1
+2022-10-09 17:46:40 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:137: client guess word: xx
+2022-10-09 17:46:40 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:141: received buffer (from 6): 03:00:00:00:02:78:78:
+2022-10-09 17:46:40 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:43: sending buffer (to 6): 08:
+2022-10-09 17:48:55 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:248: server listening on port 9034
+2022-10-09 17:49:01 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:288: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-09 17:49:01 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:290: connected clients: 1
+2022-10-09 17:49:01 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:137: client guess word: xx
+2022-10-09 17:49:01 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:141: received buffer (from 6): 03:00:00:00:02:78:78:
+2022-10-09 17:49:01 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:43: sending buffer (to 6): 08:
+2022-10-09 17:49:05 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:137: client guess word: xxx
+2022-10-09 17:49:05 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:141: received buffer (from 6): 03:00:00:00:03:78:78:78:
+2022-10-09 17:49:05 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:43: sending buffer (to 6): 08:
+2022-10-09 17:49:08 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:137: client guess word: xx
+2022-10-09 17:49:08 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:141: received buffer (from 6): 03:00:00:00:02:78:78:
+2022-10-09 17:49:08 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:43: sending buffer (to 6): 08:
+2022-10-09 17:49:27 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:137: client guess word: 11111111
+2022-10-09 17:49:27 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:141: received buffer (from 6): 03:00:00:00:08:31:31:31:31:31:31:31:31:
+2022-10-09 17:49:27 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:43: sending buffer (to 6): 08:
+2022-10-09 17:50:03 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:248: server listening on port 9034
+2022-10-09 17:50:25 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:288: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-09 17:50:25 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:290: connected clients: 1
+2022-10-09 17:50:28 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:137: client guess word: kubaa
+2022-10-09 17:50:28 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:141: received buffer (from 6): 03
+2022-10-09 17:50:28 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:43: sending buffer (to 6): 08
+2022-10-09 17:52:11 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:248: server listening on port 9034
+2022-10-09 17:52:13 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:288: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-09 17:52:13 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:290: connected clients: 1
+2022-10-09 17:52:16 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:137: client guess word: ahoj
+2022-10-09 17:52:16 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:141: received buffer (from 6): 03
+2022-10-09 17:52:16 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:43: sending buffer (to 6): 08
+2022-10-09 17:55:07 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:248: server listening on port 9034
+2022-10-09 17:55:09 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:288: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-09 17:55:09 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:290: connected clients: 1
+2022-10-09 17:55:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:137: client guess word: 12345
+2022-10-09 17:55:14 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:141: received buffer (from 6): 03
+2022-10-09 17:55:14 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:43: sending buffer (to 6): 08
+2022-10-09 17:56:48 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:308: poll-server: socket 6 hung up (user: Kuba)
+2022-10-09 17:56:59 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:248: server listening on port 9034
+2022-10-09 17:57:08 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:288: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-09 17:57:08 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:290: connected clients: 1
+2022-10-09 17:57:09 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:137: client guess word: xxx
+2022-10-09 17:57:09 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:141: received buffer (from 6): 03
+2022-10-09 17:57:09 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:43: sending buffer (to 6): 08
+2022-10-09 17:58:35 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:248: server listening on port 9034
+2022-10-09 17:58:42 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:288: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-09 17:58:42 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:290: connected clients: 1
+2022-10-09 17:58:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:137: client guess word: kubaaaa
+2022-10-09 17:58:44 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:141: received buffer (from 6): 03:00:00:00:07:6B:75:62:61:61:61:61:
+2022-10-09 17:58:44 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:43: sending buffer (to 6): 08:
+2022-10-09 18:00:37 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:248: server listening on port 9034
+2022-10-09 18:00:42 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:288: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-09 18:00:42 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:290: connected clients: 1
+2022-10-09 18:00:45 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:137: client guess word: cool stuff
+2022-10-09 18:00:45 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:141: received buffer (from 6): 03:00:00:00:0A:63:6F:6F:6C:266
+2022-10-09 18:00:45 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:43: sending buffer (to 6): 08

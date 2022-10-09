@@ -3,7 +3,8 @@
 
 #define PORT "9034"
 #define BACKLOG 5
-#define WORD_BUF_SIZE 256
+#define MAX_GUESS_LEN 256
+#define MAX_STRING_LEN 256
 #define CANVAS_BUF_SIZE 1024
 #define POLL_TIMEOUT (-1)
 

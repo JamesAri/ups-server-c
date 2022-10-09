@@ -1,11 +1,13 @@
 #include "debug.h"
 #include <stdio.h>
+#include <string.h>
 
-void print_buf_to_hex(void *buffer, int len) {
+void buf_to_hex_string(void *buffer, int len, char *hex_string) {
     int i;
-    for (i = 0; i < len; i++) {
-        if (i > 0) printf(":");
-        printf("%02X", ((char *) buffer)[i]);
+    int print_size = sizeof(char) * 3;
+    for (i = 0; i < len - 1; i++) {
+        snprintf(hex_string + i * print_size, sizeof(hex_string), "%02X:", ((char *) buffer)[i]);
     }
-    printf("\n");
+    print_size = sizeof(char) * 2;
+    snprintf(hex_string + i * print_size, sizeof(hex_string), "%02X", ((char *) buffer)[i]);
 }

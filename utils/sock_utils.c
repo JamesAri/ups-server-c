@@ -1,7 +1,7 @@
 #include "sock_utils.h"
 #include "../server.h"
+#include "log.h"
 
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
@@ -20,15 +20,6 @@ int recvall(int s, void *buf, int *len) {
     int total = 0;        // how many bytes we've received.
     int bytesleft = *len; // how many bytes we have left to receive
     int n;
-
-#ifdef _WIN32
-    DWORD tv = RECV_TIMEOUT_SEC;
-#else
-    struct timeval tv;
-    tv.tv_sec = RECV_TIMEOUT_SEC;
-    tv.tv_usec = 0;
-#endif
-    setsockopt(s, SOL_SOCKET, SO_RCVTIMEO, (const char *) &tv, sizeof tv);
 
     while (total < *len) {
         n = (int) recv(s, buf + total, bytesleft, 0);
@@ -54,7 +45,7 @@ int sendall(int s, void *buf, int *len) {
         bytesleft -= n;
     }
 
-    *len = total; // return number actually sent here
+    *len = total; // return number actually sent
 
     return n;
 }
@@ -82,8 +73,8 @@ int get_listener_socket() {
     hints.ai_socktype = SOCK_STREAM;
     hints.ai_flags = AI_PASSIVE; // use with NULL as first param in getaddrinfo for auto-IP detection.
     if ((rv = getaddrinfo(NULL, PORT, &hints, &ai)) != 0) {
-        fprintf(stderr, "selectserver: %s\n", gai_strerror(rv));
-        exit(1);
+        log_error("selecting server error: %s\n", gai_strerror(rv));
+        exit(EXIT_FAILURE);
     }
 
     for (p = ai; p != NULL; p = p->ai_next) {
@@ -131,8 +122,16 @@ void add_to_pfds(struct pollfd *pfds[], int newfd, int *fd_count, int *fd_size) 
 }
 
 void del_from_pfds(struct pollfd pfds[], int i, int *fd_count) {
-    // Copy the one from the end over this one
     pfds[i] = pfds[*fd_count - 1];
+    pfds[*fd_count - 1].fd = 0;
+    pfds[*fd_count - 1].events = 0;
+    pfds[*fd_count - 1].revents = 0;
 
     (*fd_count)--;
 }
+
+void disconnect_fd(struct pollfd pfds[], int i, int *fd_count) {
+    close(pfds[i].fd);
+    del_from_pfds(pfds, i, fd_count);
+}
+

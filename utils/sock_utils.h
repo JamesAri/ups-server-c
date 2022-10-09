@@ -18,4 +18,8 @@ void add_to_pfds(struct pollfd *pfds[], int newfd, int *fd_count, int *fd_size);
 
 void del_from_pfds(struct pollfd pfds[], int i, int *fd_count);
 
+void disconnect_fd(struct pollfd pfds[], int i, int *fd_count);
+
+void print_pfds(struct pollfd *pfds);
+
 #endif //UPS_SERVER_C_SOCKET_UTILS_H

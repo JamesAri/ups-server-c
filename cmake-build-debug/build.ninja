@@ -52,11 +52,11 @@ build CMakeFiles/ups_server_c.dir/main.c.o: C_COMPILER__ups_server_c_Debug /User
   OBJECT_DIR = CMakeFiles/ups_server_c.dir
   OBJECT_FILE_DIR = CMakeFiles/ups_server_c.dir
 
-build CMakeFiles/ups_server_c.dir/word_generator.c.o: C_COMPILER__ups_server_c_Debug /Users/jakub.slechta/git/ups-server-c/word_generator.c || cmake_object_order_depends_target_ups_server_c
-  DEP_FILE = CMakeFiles/ups_server_c.dir/word_generator.c.o.d
+build CMakeFiles/ups_server_c.dir/model/word_generator.c.o: C_COMPILER__ups_server_c_Debug /Users/jakub.slechta/git/ups-server-c/model/word_generator.c || cmake_object_order_depends_target_ups_server_c
+  DEP_FILE = CMakeFiles/ups_server_c.dir/model/word_generator.c.o.d
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99
   OBJECT_DIR = CMakeFiles/ups_server_c.dir
-  OBJECT_FILE_DIR = CMakeFiles/ups_server_c.dir
+  OBJECT_FILE_DIR = CMakeFiles/ups_server_c.dir/model
 
 build CMakeFiles/ups_server_c.dir/server.c.o: C_COMPILER__ups_server_c_Debug /Users/jakub.slechta/git/ups-server-c/server.c || cmake_object_order_depends_target_ups_server_c
   DEP_FILE = CMakeFiles/ups_server_c.dir/server.c.o.d
@@ -64,29 +64,23 @@ build CMakeFiles/ups_server_c.dir/server.c.o: C_COMPILER__ups_server_c_Debug /Us
   OBJECT_DIR = CMakeFiles/ups_server_c.dir
   OBJECT_FILE_DIR = CMakeFiles/ups_server_c.dir
 
-build CMakeFiles/ups_server_c.dir/player.c.o: C_COMPILER__ups_server_c_Debug /Users/jakub.slechta/git/ups-server-c/player.c || cmake_object_order_depends_target_ups_server_c
-  DEP_FILE = CMakeFiles/ups_server_c.dir/player.c.o.d
+build CMakeFiles/ups_server_c.dir/model/player.c.o: C_COMPILER__ups_server_c_Debug /Users/jakub.slechta/git/ups-server-c/model/player.c || cmake_object_order_depends_target_ups_server_c
+  DEP_FILE = CMakeFiles/ups_server_c.dir/model/player.c.o.d
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99
   OBJECT_DIR = CMakeFiles/ups_server_c.dir
-  OBJECT_FILE_DIR = CMakeFiles/ups_server_c.dir
+  OBJECT_FILE_DIR = CMakeFiles/ups_server_c.dir/model
 
-build CMakeFiles/ups_server_c.dir/s_header.c.o: C_COMPILER__ups_server_c_Debug /Users/jakub.slechta/git/ups-server-c/s_header.c || cmake_object_order_depends_target_ups_server_c
-  DEP_FILE = CMakeFiles/ups_server_c.dir/s_header.c.o.d
+build CMakeFiles/ups_server_c.dir/utils/sock_header.c.o: C_COMPILER__ups_server_c_Debug /Users/jakub.slechta/git/ups-server-c/utils/sock_header.c || cmake_object_order_depends_target_ups_server_c
+  DEP_FILE = CMakeFiles/ups_server_c.dir/utils/sock_header.c.o.d
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99
   OBJECT_DIR = CMakeFiles/ups_server_c.dir
-  OBJECT_FILE_DIR = CMakeFiles/ups_server_c.dir
+  OBJECT_FILE_DIR = CMakeFiles/ups_server_c.dir/utils
 
-build CMakeFiles/ups_server_c.dir/ser_buffer.c.o: C_COMPILER__ups_server_c_Debug /Users/jakub.slechta/git/ups-server-c/ser_buffer.c || cmake_object_order_depends_target_ups_server_c
-  DEP_FILE = CMakeFiles/ups_server_c.dir/ser_buffer.c.o.d
+build CMakeFiles/ups_server_c.dir/utils/sock_utils.c.o: C_COMPILER__ups_server_c_Debug /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c || cmake_object_order_depends_target_ups_server_c
+  DEP_FILE = CMakeFiles/ups_server_c.dir/utils/sock_utils.c.o.d
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99
   OBJECT_DIR = CMakeFiles/ups_server_c.dir
-  OBJECT_FILE_DIR = CMakeFiles/ups_server_c.dir
-
-build CMakeFiles/ups_server_c.dir/socket_utils.c.o: C_COMPILER__ups_server_c_Debug /Users/jakub.slechta/git/ups-server-c/socket_utils.c || cmake_object_order_depends_target_ups_server_c
-  DEP_FILE = CMakeFiles/ups_server_c.dir/socket_utils.c.o.d
-  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99
-  OBJECT_DIR = CMakeFiles/ups_server_c.dir
-  OBJECT_FILE_DIR = CMakeFiles/ups_server_c.dir
+  OBJECT_FILE_DIR = CMakeFiles/ups_server_c.dir/utils
 
 build CMakeFiles/ups_server_c.dir/utils/debug.c.o: C_COMPILER__ups_server_c_Debug /Users/jakub.slechta/git/ups-server-c/utils/debug.c || cmake_object_order_depends_target_ups_server_c
   DEP_FILE = CMakeFiles/ups_server_c.dir/utils/debug.c.o.d
@@ -100,6 +94,12 @@ build CMakeFiles/ups_server_c.dir/utils/serialization.c.o: C_COMPILER__ups_serve
   OBJECT_DIR = CMakeFiles/ups_server_c.dir
   OBJECT_FILE_DIR = CMakeFiles/ups_server_c.dir/utils
 
+build CMakeFiles/ups_server_c.dir/utils/log.c.o: C_COMPILER__ups_server_c_Debug /Users/jakub.slechta/git/ups-server-c/utils/log.c || cmake_object_order_depends_target_ups_server_c
+  DEP_FILE = CMakeFiles/ups_server_c.dir/utils/log.c.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99
+  OBJECT_DIR = CMakeFiles/ups_server_c.dir
+  OBJECT_FILE_DIR = CMakeFiles/ups_server_c.dir/utils
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ups_server_c
@@ -108,7 +108,7 @@ build CMakeFiles/ups_server_c.dir/utils/serialization.c.o: C_COMPILER__ups_serve
 #############################################
 # Link the executable ups_server_c
 
-build ups_server_c: C_EXECUTABLE_LINKER__ups_server_c_Debug CMakeFiles/ups_server_c.dir/main.c.o CMakeFiles/ups_server_c.dir/word_generator.c.o CMakeFiles/ups_server_c.dir/server.c.o CMakeFiles/ups_server_c.dir/player.c.o CMakeFiles/ups_server_c.dir/s_header.c.o CMakeFiles/ups_server_c.dir/ser_buffer.c.o CMakeFiles/ups_server_c.dir/socket_utils.c.o CMakeFiles/ups_server_c.dir/utils/debug.c.o CMakeFiles/ups_server_c.dir/utils/serialization.c.o
+build ups_server_c: C_EXECUTABLE_LINKER__ups_server_c_Debug CMakeFiles/ups_server_c.dir/main.c.o CMakeFiles/ups_server_c.dir/model/word_generator.c.o CMakeFiles/ups_server_c.dir/server.c.o CMakeFiles/ups_server_c.dir/model/player.c.o CMakeFiles/ups_server_c.dir/utils/sock_header.c.o CMakeFiles/ups_server_c.dir/utils/sock_utils.c.o CMakeFiles/ups_server_c.dir/utils/debug.c.o CMakeFiles/ups_server_c.dir/utils/serialization.c.o CMakeFiles/ups_server_c.dir/utils/log.c.o
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/ups_server_c.dir
   POST_BUILD = :
