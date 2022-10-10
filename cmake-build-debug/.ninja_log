@@ -37,3 +37,16 @@
 111	214	1665355225550619672	ups_server_c	c7ccb1abcccf3889
 1	58	1665355347545104195	CMakeFiles/ups_server_c.dir/utils/debug.c.o	5296760d33dca762
 58	123	1665355347610807852	ups_server_c	c7ccb1abcccf3889
+2	1008	1665386810099886262	CMakeFiles/ups_server_c.dir/model/word_generator.c.o	62d9500c937bae53
+4	1016	1665386810117856760	CMakeFiles/ups_server_c.dir/server.c.o	be4b6a8e59f6f22a
+1016	1139	1665386810242656973	ups_server_c	c7ccb1abcccf3889
+1	108	1665387168031103826	CMakeFiles/ups_server_c.dir/server.c.o	be4b6a8e59f6f22a
+108	170	1665387168096031381	ups_server_c	c7ccb1abcccf3889
+1	101	1665391869002912119	CMakeFiles/ups_server_c.dir/main.c.o	d76f4d71119475c1
+3	194	1665391869096557464	CMakeFiles/ups_server_c.dir/server.c.o	be4b6a8e59f6f22a
+195	288	1665391869192485197	ups_server_c	c7ccb1abcccf3889
+1	130	1665391983775100591	CMakeFiles/ups_server_c.dir/server.c.o	be4b6a8e59f6f22a
+130	210	1665391983856148267	ups_server_c	c7ccb1abcccf3889
+1	89	1665392366510782422	CMakeFiles/ups_server_c.dir/model/word_generator.c.o	62d9500c937bae53
+2	121	1665392366543236664	CMakeFiles/ups_server_c.dir/server.c.o	be4b6a8e59f6f22a
+121	176	1665392366598802734	ups_server_c	c7ccb1abcccf3889

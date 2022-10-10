@@ -31,8 +31,6 @@ struct Words *read_words(char *file_name) {
         words_array->word_count++;
     }
     fclose(fp);
-    if (line)
-        free(line);
 
     return words_array;
 }
@@ -41,6 +39,7 @@ struct Words *read_words(char *file_name) {
 void get_random_word(struct Words *words, char *in_bfr) {
     srand(time(NULL));
     strcpy(in_bfr, words->words[rand() % words->word_count]);
+    in_bfr[strcspn(in_bfr, "\r\n")] = 0;
 }
 
 
