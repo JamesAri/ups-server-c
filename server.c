@@ -15,6 +15,8 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <poll.h>
+#include <errno.h>
+#include <time.h>
 
 // ======================================================================= //
 //                              MISC UTILS                                 //
@@ -32,6 +34,16 @@ void remove_player_from_game(struct Game *game, int player_fd, int i) {
     disconnect_fd(game->pfds, i, &game->fd_count);
 }
 
+void set_socket_timeout(int fd) {
+#ifdef _WIN32
+    DWORD tv = RECV_TIMEOUT_SEC;
+#else
+    struct timeval tv;
+    tv.tv_sec = RECV_TIMEOUT_SEC;
+    tv.tv_usec = 0;
+#endif
+    setsockopt(fd, SOL_SOCKET, SO_RCVTIMEO, (const char *) &tv, sizeof tv);
+}
 
 // ======================================================================= //
 //                             RECEIVING DATA                              //
@@ -277,7 +289,6 @@ struct Game *new_game() {
 int start_round(struct Game *game, int drawing_fd, int listener, char *guess_word) {
     int send_res;
 
-
     game->in_progress = true;
     send_res = send_game_draw_start(drawing_fd, guess_word);
     broadcast_game_guess_start(game, listener, drawing_fd);
@@ -289,6 +300,8 @@ int start_round(struct Game *game, int drawing_fd, int listener, char *guess_wor
 void end_round(struct Game *game) {
     game->in_progress = false;
 
+    //TODO: broadcast round ended
+
     log_trace("round ended");
 }
 
@@ -298,14 +311,6 @@ void end_round(struct Game *game) {
 // ======================================================================= //
 
 void start() {
-#ifdef _WIN32
-    DWORD tv = RECV_TIMEOUT_SEC;
-#else
-    struct timeval tv;
-    tv.tv_sec = RECV_TIMEOUT_SEC;
-    tv.tv_usec = 0;
-#endif
-
     int listener, new_fd, sender_fd, drawing_fd = 6, recv_res, poll_res, connected_clients;
 
     struct sockaddr_storage remote_addr; // Client address
@@ -315,10 +320,11 @@ void start() {
     struct Game *game = new_game();
     struct Player *cur_player;
     struct Words *words = read_words(WORDS_FN);
+
     char guess_word[MAX_GUESS_LEN];
 
     if ((listener = get_listener_socket()) == -1) {
-        log_fatal("error getting listening socket");
+        log_fatal("error getting listening socket: %s", strerror(errno));
         exit(EXIT_FAILURE);
     }
 
@@ -326,13 +332,20 @@ void start() {
 
     add_to_pfds(&game->pfds, listener, &game->fd_count, &game->fd_size);
 
+    time_t round_end, elapsed, before = time(NULL);
     for (;;) {
         poll_res = poll(game->pfds, game->fd_count, POLL_TIMEOUT);
+
+        elapsed = time(NULL) - before;
+
+        if (game->in_progress && elapsed >= GAME_DURATION && time(NULL) >= round_end)
+            end_round(game);
+
         if (poll_res == -1) {
-            log_fatal("poll-error");
+            log_fatal("poll-error: %s", strerror(errno));
             exit(EXIT_FAILURE);
         } else if (poll_res == 0) {
-            log_error("poll-timeout");
+            log_warn("poll-timeout");
         }
 
         for (int i = 0; i < game->fd_count; i++) {
@@ -347,7 +360,7 @@ void start() {
                 if (new_fd == -1) {
                     log_error("accept");
                 } else {
-                    setsockopt(new_fd, SOL_SOCKET, SO_RCVTIMEO, (const char *) &tv, sizeof tv);
+                    set_socket_timeout(new_fd);
 
                     if (manage_logging_player(new_fd, game->players) == -1) {
                         log_warn("closing connection for socket %d", new_fd);
@@ -358,16 +371,20 @@ void start() {
                     add_to_pfds(&game->pfds, new_fd, &game->fd_count, &game->fd_size);
 
                     connected_clients = game->fd_count - 1; // -1 for listener
-
-                    if (connected_clients < MIN_PLAYERS)
+                    if (game->in_progress) {
+                        // TODO: send GAME_IN_PROGRESS + round end time
+                    } else if (connected_clients < MIN_PLAYERS) {
+                        log_trace("waiting for players to join (%d/%d)", connected_clients, MIN_PLAYERS);
                         broadcast_waiting_for_players(game, listener, connected_clients);
-                    else {
+                    } else {
                         get_random_word(words, guess_word);
-                        log_trace("generated new guess word: %s, drawing_fd: %d", guess_word, drawing_fd);
+                        log_trace("generated new guess word: %s, sending to drawing fd: %d", guess_word, drawing_fd);
                         if (start_round(game, drawing_fd, listener, guess_word) <= 0)
                             remove_player_from_game(game, drawing_fd, i);
+                        before = time(NULL);
+                        round_end = before + GAME_DURATION / 1000;
+                        log_trace("round ends at %lu", round_end);
                     }
-
 
                     log_info("poll-server: new connection from %s on socket %d (user: %s)",
                              inet_ntop(remote_addr.ss_family, get_in_addr((struct sockaddr *) &remote_addr),
@@ -380,6 +397,9 @@ void start() {
             } else {
                 sender_fd = game->pfds[i].fd;
                 connected_clients = game->fd_count - 1;
+
+                // TODO: block traffic for joined users in the middle of the game
+                //       those are clients which received GAME_IN_PROGRESS flag
 
                 if (connected_clients < MIN_PLAYERS && !game->in_progress) {
                     log_warn("socket %d isn't waiting for other clients, closing", sender_fd);

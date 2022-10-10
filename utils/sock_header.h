@@ -4,8 +4,8 @@
 //                                      // =======================================================================
 //                                      // ||        SERVER -> CLIENT          ||        CLIENT -> SERVER       ||
 //                                      // =======================================================================
-#define EMPTY 0                         // || [SOCK_HEADER]                    || [SOCK_HEADER]                 ||
-#define OK 1                            // || [SOCK_HEADER]                    || [SOCK_HEADER]                 ||
+#define EMPTY 0                         // || [SOCK_HEADER]                    || ----------------------------- ||
+#define GAME_IN_PROGRESS 1              // || [SOCK_HEADER][INT]               || ----------------------------- ||
 #define CANVAS 2                        // || [SOCK_HEADER][CANVAS]            || [SOCK_HEADER][CANVAS]         ||
 #define CHAT 3                          // || [SOCK_HEADER][INT][STRING]       || [SOCK_HEADER][INT][STRING]    ||
 #define START_AND_GUESS 4               // || [SOCK_HEADER]                    || ----------------------------- ||
@@ -16,6 +16,7 @@
 #define CORRECT_GUESS_ANNOUNCEMENT 9    // || [SOCK_HEADER][INT][STRING]       || ----------------------------- ||
 #define INVALID_USERNAME 10             // || [SOCK_HEADER]                    || ----------------------------- ||
 #define WAITING_FOR_PLAYERS 11          // || [SOCK_HEADER][INT][INT]          || ----------------------------- ||
+#define ROUND_ENDED 12                  // || [SOCK_HEADER]                    || ----------------------------- ||
 //                                      // =======================================================================
 
 struct SocketHeader {

@@ -20,7 +20,7 @@ int test_players() {
  * LOG_TRACE - detailed application flow - usually no need to log <br><br>
  * LOG_DEBUG - application flow that is worth logging for future debugging (slightly more important trace) <br><br>
  * LOG_INFO  - basic logging info - logs current state of server <br><br>
- * LOG_WARN  - server warnings - usually recv/send errors <br><br>
+ * LOG_WARN  - server warnings - usually recv/send errors/hangups <br><br>
  * LOG_ERROR - server/client errors - application keeps running, but this problem should be further investigated <br><br>
  * LOG_FATAL - server fatal error - server down <br><br>
  * </pre>
@@ -29,7 +29,7 @@ void setup_logger() {
     log_set_level(LOG_TRACE); // default setting (all -> stderr)
     FILE *fp = fopen("./server.log", "a+");
     if (fp == NULL) {
-        fprintf(stderr, "couldn't open log file\n");
+        fprintf(stderr, "couldn't open log file - logging off\n");
     } else {
         log_add_fp(fp, LOG_TRACE); // TODO: set to LOG_INFO or LOG_DEBUG
     }
