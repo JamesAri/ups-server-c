@@ -4,52 +4,48 @@
 #include <string.h>
 #include <time.h>
 
-
-struct Words *read_words(char *file_name) {
+int read_words(char *file_name) {
     FILE *fp;
     char *line = NULL;
     size_t len = 0;
     ssize_t read;
-    struct Words *words_array;
-    words_array = (struct Words *) malloc(sizeof(struct Words));
-    words_array->words = (char **) malloc(INIT_SIZE * sizeof(char *));
-    words_array->size = INIT_SIZE;
-    words_array->word_count = 0;
+    words.words = (char **) malloc(INIT_SIZE * sizeof(char *));
+    words.size = INIT_SIZE;
+    words.word_count = 0;
 
     fp = fopen(file_name, "r");
     if (fp == NULL) {
-        exit(EXIT_FAILURE);
+        return -1;
     }
 
     while ((read = getline(&line, &len, fp)) != -1) {
-        if (words_array->word_count >= words_array->size) {
-            words_array->size += INCREMENT;
-            words_array->words = (char **) realloc(words_array->words, words_array->size * sizeof(char *));
+        if (words.word_count >= words.size) {
+            words.size += INCREMENT;
+            words.words = (char **) realloc(words.words, words.size * sizeof(char *));
         }
-        words_array->words[words_array->word_count] = (char *) malloc(read * sizeof(char));
-        strcpy(words_array->words[words_array->word_count], line);
-        words_array->word_count++;
+        words.words[words.word_count] = (char *) malloc(read * sizeof(char));
+        strcpy(words.words[words.word_count], line);
+        words.word_count++;
     }
     fclose(fp);
 
-    return words_array;
+    return 0;
 }
 
 
-void get_random_word(struct Words *words, char *in_bfr) {
+void get_random_word(char *string_bfr) {
     srand(time(NULL));
-    strcpy(in_bfr, words->words[rand() % words->word_count]);
-    in_bfr[strcspn(in_bfr, "\r\n")] = 0;
+    strcpy(string_bfr, words.words[rand() % words.word_count]);
+    string_bfr[strcspn(string_bfr, "\r\n")] = 0;
 }
 
 
-void free_words(struct Words **words) {
-    for (int i = 0; i < (*words)->size; i++) {
-        free((*words)->words[i]);
+void free_words() {
+    for (int i = 0; i < words.size; i++) {
+        free(words.words[i]);
     }
-    (*words)->size = (*words)->word_count = 0;
-    free((*words));
-    *words = NULL;
+    free(words.words);
+    words.size = words.word_count = 0;
 }
 
 

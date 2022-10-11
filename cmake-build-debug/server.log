@@ -1,1 +1,55 @@
 2022-10-11 12:31:16 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:335: server listening on port 9034
+2022-10-11 16:26:55 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:393: server listening on port 9034
+2022-10-11 16:27:16 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:71: received buffer (from fd: 6): 06
+2022-10-11 16:27:16 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:71: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-11 16:27:16 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:71: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-11 16:27:16 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:438: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-11 16:27:16 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:439: poll-server: 1 connected client(s)
+2022-10-11 16:27:16 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:336: waiting for players to join (1/2), broadcasting
+2022-10-11 16:27:16 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:106: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-11 16:27:33 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:71: received buffer (from fd: 7): 06
+2022-10-11 16:27:33 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:71: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-11 16:27:33 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:71: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-11 16:27:33 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:438: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Honza)
+2022-10-11 16:27:33 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:439: poll-server: 2 connected client(s)
+2022-10-11 16:27:33 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:340: generated new guess word: engine, sending to drawing fd: 6
+2022-10-11 16:27:33 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:106: sent buffer (to fd: 6): 05:00:00:00:06:65:6E:67:69:6E:65:00:00:00:00:63:45:7D:FFFFFF91
+2022-10-11 16:27:33 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:106: sent buffer (to fd: 7): 04:00:00:00:00:63:45:7D:FFFFFF91
+2022-10-11 16:27:33 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:224: new round started
+2022-10-11 16:27:45 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:467: poll-server: socket 6 hung up (user: Kuba)
+2022-10-11 16:27:45 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:30: removing player Kuba (fd: 6) from game
+2022-10-11 16:27:46 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:467: poll-server: socket 7 hung up (user: Honza)
+2022-10-11 16:27:46 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:30: removing player Honza (fd: 7) from game
+2022-10-11 16:28:46 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:233: round ended
+2022-10-11 16:28:46 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:407: poll-timeout
+2022-10-11 16:29:46 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:407: poll-timeout
+2022-10-11 16:30:46 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:407: poll-timeout
+2022-10-11 16:48:21 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:410: server listening on port 9034
+2022-10-11 16:48:27 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:57: terminating server: SIGTERM
+2022-10-11 16:48:27 FATAL /Users/jakub.slechta/git/ups-server-c/server.c:421: poll-error: Interrupted system call
+2022-10-11 16:57:30 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:406: server listening on port 9034
+2022-10-11 16:57:36 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:56: terminating server: SIGTERM
+2022-10-11 16:57:50 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:406: server listening on port 9034
+2022-10-11 17:28:53 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:413: server listening on port 9034
+2022-10-11 17:28:57 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:93: received buffer (from fd: 6): 06
+2022-10-11 17:28:57 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:93: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-11 17:28:57 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:93: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-11 17:28:57 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:459: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-11 17:28:57 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:460: poll-server: 1 connected client(s)
+2022-10-11 17:28:57 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:356: waiting for players to join (1/2), broadcasting
+2022-10-11 17:28:57 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:128: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-11 17:29:00 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:93: received buffer (from fd: 7): 06
+2022-10-11 17:29:00 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:93: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-11 17:29:00 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:93: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-11 17:29:00 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:459: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Honza)
+2022-10-11 17:29:00 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:460: poll-server: 2 connected client(s)
+2022-10-11 17:29:00 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:360: generated new guess word: Saturn, sending to drawing fd: 6
+2022-10-11 17:29:00 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:128: sent buffer (to fd: 6): 05:00:00:00:06:53:61:74:75:72:6E:00:00:00:00:63:45:FFFFFF8B:FFFFFFF8
+2022-10-11 17:29:00 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:128: sent buffer (to fd: 7): 04:00:00:00:00:63:45:FFFFFF8B:FFFFFFF8
+2022-10-11 17:29:00 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:245: new round started
+2022-10-11 17:29:03 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:477: socket 6 trying to communicate outside the game loop, closing
+2022-10-11 17:29:03 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:31: removing player Kuba (fd: 6) from game
+2022-10-11 17:29:05 FATAL /Users/jakub.slechta/git/ups-server-c/server.c:424: poll-error: Invalid argument
+2022-10-11 17:33:00 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:413: server listening on port 9034
+2022-10-11 17:33:07 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:63: terminating server: SIGTERM (15)
+2022-10-11 17:33:28 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:413: server listening on port 9034

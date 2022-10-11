@@ -1,6 +1,7 @@
 #include "server.h"
 #include "model/player.h"
 #include "utils/log.h"
+#include "model/word_generator.h"
 
 #include <stdlib.h>
 
@@ -35,8 +36,10 @@ void setup_logger() {
     }
 }
 
+
 int main() {
     setup_logger();
+    read_words("./resources/words.txt");
     start();
     return 0;
 }

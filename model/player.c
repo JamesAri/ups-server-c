@@ -21,9 +21,9 @@ struct Player *get_player_by_fd(struct Players *players, int fd) {
     return NULL;
 }
 
-/*
- * Return NULL if players already "logged in" (online).
- * Otherwise, return the updated/added player.
+/**
+ * Return NULL if player is already "logged in" (online).
+ * Otherwise, return the updated/new player.
  */
 struct Player *update_players(struct Players *players, char *username, int fd) {
     struct PlayerList *curr_node = players->playerList;
@@ -57,6 +57,7 @@ int add_player(struct Players *players, struct Player *player) {
     struct PlayerList *new_player_node = (struct PlayerList *) malloc(sizeof(struct PlayerList));
     new_player_node->player = player;
 
+    // first player
     if (!players->count || players->playerList == NULL) {
         new_player_node->next = NULL;
     } else {
@@ -68,6 +69,7 @@ int add_player(struct Players *players, struct Player *player) {
     return 0;
 }
 
+// we might remove player after some time offline, just implemented feature, not using yet
 int remove_player(struct Players *players, int fd) {
     struct PlayerList *prev_player = players->playerList;
     struct PlayerList *curr_player = players->playerList->next;

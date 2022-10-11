@@ -18,14 +18,14 @@
 
 int recvall(int s, void *buf, int *len) {
     int total = 0;        // how many bytes we've received.
-    int bytesleft = *len; // how many bytes we have left to receive
+    int bytes_left = *len; // how many bytes we have left to receive
     int n;
 
     while (total < *len) {
-        n = (int) recv(s, buf + total, bytesleft, 0);
+        n = (int) recv(s, buf + total, bytes_left, 0);
         if (n == -1 || n == 0) { break; }
         total += n;
-        bytesleft -= n;
+        bytes_left -= n;
     }
 
     *len = total; // return number actually received here
@@ -35,14 +35,14 @@ int recvall(int s, void *buf, int *len) {
 
 int sendall(int s, void *buf, int *len) {
     int total = 0;        // how many bytes we've sent
-    int bytesleft = *len; // how many we have left to send
+    int bytes_left = *len; // how many we have left to send
     int n;
 
     while (total < *len) {
-        n = (int) send(s, buf + total, bytesleft, 0);
+        n = (int) send(s, buf + total, bytes_left, 0);
         if (n == -1 || n == 0) { break; }
         total += n;
-        bytesleft -= n;
+        bytes_left -= n;
     }
 
     *len = total; // return number actually sent
@@ -105,7 +105,7 @@ void add_to_pfds(struct pollfd *pfds[], int newfd, int *fd_count, int *fd_size) 
     if (*fd_count == *fd_size) {
         *fd_size *= 2;
 
-        *pfds = realloc(*pfds, sizeof(**pfds) * (*fd_size));
+        *pfds = realloc(*pfds, sizeof(*(*pfds)) * (*fd_size));
     }
 
     (*pfds)[*fd_count].fd = newfd;
@@ -123,8 +123,22 @@ void del_from_pfds(struct pollfd pfds[], int i, int *fd_count) {
     (*fd_count)--;
 }
 
-void disconnect_fd(struct pollfd pfds[], int i, int *fd_count) {
-    close(pfds[i].fd);
-    del_from_pfds(pfds, i, fd_count);
+void del_from_pfds_by_fd(struct pollfd pfds[], int fd, int *fd_count) {
+    for (int i = 0; i < *fd_count; i++) {
+        if (pfds[i].fd == fd) {
+            del_from_pfds(pfds, i, fd_count);
+            return;
+        }
+    }
+}
+
+void disconnect_fd(struct pollfd pfds[], int fd, int *fd_count) {
+    close(fd);
+    del_from_pfds_by_fd(pfds, fd, fd_count);
+}
+
+void free_pfds(struct pollfd **pfds) {
+    free(*pfds);
+    (*pfds) = NULL;
 }
 
