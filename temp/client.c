@@ -10,6 +10,7 @@
 #include <netdb.h>
 #include <netinet/in.h>
 #include <sys/socket.h>
+#include "../utils/debug.h"
 
 #include <arpa/inet.h>
 
@@ -32,6 +33,10 @@ int recv_buffer_int(int fd, struct Buffer *buffer) {
 
 int recv_buffer_string(int fd, struct Buffer *buffer, int str_len) {
     return recv_buffer(fd, buffer, str_len);
+}
+
+int recv_buffer_time_t(int fd, struct Buffer *buffer) {
+    return recv_buffer(fd, buffer, sizeof(time_t));
 }
 
 // get sockaddr, IPv4 or IPv6:
@@ -105,7 +110,7 @@ int main(int argc, char *argv[]) {
     int server_msg_len, cur_players_count, min_players_count;
     int int_offset = sizeof(struct SocketHeader);
     int string_offset = int_offset + sizeof(int);
-
+    time_t time_end;
     char chat_buffer[WORD_BUF_SIZE], server_response_buf[WORD_BUF_SIZE];
     int pid = fork();
     if (pid == 0) {
@@ -144,6 +149,15 @@ int main(int argc, char *argv[]) {
             int recv_flag = ((struct SocketHeader *) in_buffer->data)->flag;
 
             switch (recv_flag) {
+                case GAME_IN_PROGRESS:
+                    fprintf(stdout, "received GAME_IN_PROGRESS flag\n");
+                    recv_buffer_time_t(server_socket, in_buffer);
+                    time_end = ntohll(*(time_t *) (in_buffer->data + int_offset));
+                    fprintf(stdout, "game ends at: %s (%lu)\n", ctime(&time_end), time_end);
+                    break;
+                case CANVAS:
+                    fprintf(stdout, "received CANVAS flag\n");
+                    break;
                 case CHAT:
                     fprintf(stdout, "received CHAT flag\n");
                     recv_buffer_int(server_socket, in_buffer);
@@ -151,20 +165,30 @@ int main(int argc, char *argv[]) {
                     recv_buffer_string(server_socket, in_buffer, server_msg_len);
                     fprintf(stdout, "%s\n", (char *) (in_buffer->data + string_offset));
                     break;
-                case CANVAS:
-                    fprintf(stdout, "received CANVAS flag\n");
+                case START_AND_GUESS:
+                    fprintf(stdout, "received START_AND_GUESS flag\n");
+                    recv_buffer_time_t(server_socket, in_buffer);
+                    time_end = ntohll(*(time_t *) (in_buffer->data + int_offset));
+                    fprintf(stdout, "game ends at: %s (%lu)\n", ctime(&time_end), time_end);
+                    char temp2[1000];
+                    buf_to_hex_string(in_buffer->data, in_buffer->next, temp2);
+                    fprintf(stdout, "buffer: %s", temp2);
                     break;
-                case WRONG_GUESS:
-                    fprintf(stdout, "received WRONG_GUESS flag\n");
+                case START_AND_DRAW:
+                    fprintf(stdout, "received START_AND_DRAW flag\n");
+                    recv_buffer_int(server_socket, in_buffer);
+                    server_msg_len = ntohl(*(int *) (in_buffer->data + int_offset));
+                    recv_buffer_string(server_socket, in_buffer, server_msg_len);
+                    recv_buffer_time_t(server_socket, in_buffer);
+                    time_end = ntohll(*(time_t *) (in_buffer->data + string_offset + server_msg_len));
+                    fprintf(stdout, "draw: %s\n", (char *) (in_buffer->data + string_offset));
+                    fprintf(stdout, "game ends at: %s (%lu)\n", ctime(&time_end), time_end);
                     break;
                 case CORRECT_GUESS:
                     fprintf(stdout, "received CORRECT_GUESS flag\n");
                     break;
-                case INVALID_USERNAME:
-                    fprintf(stdout, "received INVALID_USERNAME flag\n");
-                    break;
-                case START_AND_GUESS:
-                    fprintf(stdout, "received START_AND_GUESS flag\n");
+                case WRONG_GUESS:
+                    fprintf(stdout, "received WRONG_GUESS flag\n");
                     break;
                 case CORRECT_GUESS_ANNOUNCEMENT:
                     fprintf(stdout, "received CORRECT_GUESS_ANNOUNCEMENT flag\n");
@@ -177,6 +201,9 @@ int main(int argc, char *argv[]) {
 
                     fprintf(stdout, "%s\n", (char *) (in_buffer->data + string_offset));
                     break;
+                case INVALID_USERNAME:
+                    fprintf(stdout, "received INVALID_USERNAME flag\n");
+                    break;
                 case WAITING_FOR_PLAYERS:
                     fprintf(stdout, "received WAITING_FOR_PLAYERS flag\n");
                     recv_buffer_int(server_socket, in_buffer);
@@ -186,12 +213,8 @@ int main(int argc, char *argv[]) {
                     printf("%d/%d players, waiting for %d player(s)\n",
                            cur_players_count, min_players_count, min_players_count - cur_players_count);
                     break;
-                case START_AND_DRAW:
-                    fprintf(stdout, "received START_AND_DRAW flag\n");
-                    recv_buffer_int(server_socket, in_buffer);
-                    server_msg_len = ntohl(*(int *) (in_buffer->data + int_offset));
-                    recv_buffer_string(server_socket, in_buffer, server_msg_len);
-                    fprintf(stdout, "%s\n", (char *) (in_buffer->data + string_offset));
+                case ROUND_ENDED:
+                    fprintf(stdout, "received ROUND_ENDED flag\n");
                     break;
                 default:
                     fprintf(stderr, "UNKNOWN SOCKET HEADER: received flag: %d\n", recv_flag);

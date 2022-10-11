@@ -362,6 +362,14 @@ void manage_current_round(struct Game *game, int new_fd, int drawing_fd, int lis
         *time_round_start = time(NULL);
         *time_round_end = *time_round_start + GAME_DURATION_SEC;
 
+        char s1[1000], s2[1000];
+        strftime(s1, 1000, "%c", localtime(time_round_start));
+        strftime(s2, 1000, "%c", localtime(time_round_end));
+        log_trace("round started at %s and ends at %s (%d second rounds, %d second start count)",
+                  s1, s2, GAME_DURATION_SEC, TIME_BEFORE_START_SEC);
+        log_trace("time_round_end: %lu", time_round_end);
+
+
         start_round(game, drawing_fd, listener, guess_word, *time_round_end);
     }
 }

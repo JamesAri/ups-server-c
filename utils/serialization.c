@@ -62,9 +62,9 @@ void serialize_string(char *string, struct Buffer *buffer) {
 
 void serialize_time_t(time_t time, struct Buffer *buffer) {
     time = htonll(time);
-    reserve_space(buffer, sizeof(time));
-    memcpy(((char *) buffer->data) + buffer->next, &time, sizeof(time));
-    buffer->next += sizeof(time);
+    reserve_space(buffer, sizeof(time_t));
+    memcpy(((char *) buffer->data) + buffer->next, &time, sizeof(time_t));
+    buffer->next += sizeof(time_t);
 }
 
 void unpack_int(struct Buffer *buffer, int *res) {
