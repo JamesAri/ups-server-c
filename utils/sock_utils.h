@@ -4,7 +4,6 @@
 #ifndef UPS_SERVER_C_SOCKET_UTILS_H
 #define UPS_SERVER_C_SOCKET_UTILS_H
 
-#define RECV_TIMEOUT_SEC 2
 
 int recvall(int s, void *buf, int *len);
 

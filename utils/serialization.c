@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include <sys/time.h>
 
 struct Buffer *new_buffer() {
     struct Buffer *buffer = malloc(sizeof(struct Buffer));
@@ -46,9 +47,9 @@ void serialize_sock_header(int flag, struct Buffer *buffer) {
 void serialize_int(int x, struct Buffer *buffer) {
     x = htonl(x);
 
-    reserve_space(buffer, sizeof(int));
-    memcpy(((char *) buffer->data) + buffer->next, &x, sizeof(int));
-    buffer->next += sizeof(int);
+    reserve_space(buffer, sizeof(x));
+    memcpy(((char *) buffer->data) + buffer->next, &x, sizeof(x));
+    buffer->next += sizeof(x);
 }
 
 void serialize_string(char *string, struct Buffer *buffer) {
@@ -57,6 +58,13 @@ void serialize_string(char *string, struct Buffer *buffer) {
     reserve_space(buffer, str_len);
     memcpy(((char *) buffer->data) + buffer->next, string, str_len);
     buffer->next += str_len;
+}
+
+void serialize_time_t(time_t time, struct Buffer *buffer) {
+    time = htonll(time);
+    reserve_space(buffer, sizeof(time));
+    memcpy(((char *) buffer->data) + buffer->next, &time, sizeof(time));
+    buffer->next += sizeof(time);
 }
 
 void unpack_int(struct Buffer *buffer, int *res) {

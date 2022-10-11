@@ -32,7 +32,7 @@ struct Player *update_players(struct Players *players, char *username, int fd) {
             if (curr_node->player->is_online) return NULL;
             else {
                 curr_node->player->fd = fd;
-                curr_node->player->is_online = 1;
+                curr_node->player->is_online = true;
                 return curr_node->player;
             }
         }
@@ -42,7 +42,7 @@ struct Player *update_players(struct Players *players, char *username, int fd) {
     struct Player *new_player = (struct Player *) malloc(sizeof(struct Player));
     strcpy(new_player->username, username);
     new_player->fd = fd;
-    new_player->is_online = 1;
+    new_player->is_online = true;
 
     add_player(players, new_player);
 

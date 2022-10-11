@@ -1,6 +1,8 @@
 #ifndef UPS_SERVER_C_SERIALIZATION_H
 #define UPS_SERVER_C_SERIALIZATION_H
 
+#include <sys/time.h>
+
 #define INITIAL_SIZE 10
 
 #define INT_OFFSET sizeof(struct SocketHeader)
@@ -27,6 +29,8 @@ void serialize_int(int x, struct Buffer *buffer);
 void serialize_string(char *string, struct Buffer *buffer);
 
 void serialize_his(int flag, char *string, struct Buffer *buffer);
+
+void serialize_time_t(time_t time, struct Buffer *buffer);
 
 void unpack_int(struct Buffer *buffer, int *res);
 

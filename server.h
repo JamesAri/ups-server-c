@@ -9,15 +9,16 @@
 
 #define PORT "9034"
 #define BACKLOG 5
-#define POLL_TIMEOUT 60000
+#define POLL_TIMEOUT_MS 60000
+#define SOCKOPT_TIMEOUT_SEC 2
 
 #define MAX_GUESS_LEN 256
 #define MAX_STRING_LEN 256
 #define CANVAS_BUF_SIZE 1024
 
 #define MIN_PLAYERS 2
-#define TIME_BEFORE_START 5000
-#define GAME_DURATION 60000
+#define TIME_BEFORE_START_SEC 5
+#define GAME_DURATION_SEC 60
 
 struct Game {
     struct Players *players;

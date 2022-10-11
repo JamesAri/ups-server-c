@@ -1,11 +1,14 @@
 #ifndef UPS_SERVER_C_PLAYER_H
 #define UPS_SERVER_C_PLAYER_H
 
+#include <stdbool.h>
+
 struct Player {
     int fd;
     char username[256];
     int score;
-    unsigned char is_online;
+    bool is_online;
+    bool is_drawing;
 };
 
 struct PlayerList {
