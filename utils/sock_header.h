@@ -5,7 +5,7 @@
 //                                      // ||        SERVER -> CLIENT          ||        CLIENT -> SERVER       ||
 //                                      // =======================================================================
 #define EMPTY 0                         // || [SOCK_HEADER]                    || ----------------------------- ||
-#define GAME_IN_PROGRESS 1              // || [SOCK_HEADER][INT]               || ----------------------------- ||
+#define GAME_IN_PROGRESS 1              // || [SOCK_HEADER][TIME]               || ----------------------------- ||
 #define CANVAS 2                        // || [SOCK_HEADER][CANVAS]            || [SOCK_HEADER][CANVAS]         ||
 #define CHAT 3                          // || [SOCK_HEADER][INT][STRING]       || [SOCK_HEADER][INT][STRING]    ||
 #define START_AND_GUESS 4               // || [SOCK_HEADER][TIME]              || ----------------------------- ||

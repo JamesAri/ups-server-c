@@ -111,20 +111,20 @@ int send_buffer(int dest_fd, struct Buffer *buffer) {
 
 int send_header_only(int fd, int flag) {
     struct Buffer *buffer = new_buffer();
-    int res_send;
+    int send_res;
     serialize_sock_header(flag, buffer);
-    res_send = send_buffer(fd, buffer);
+    send_res = send_buffer(fd, buffer);
     free_buffer(&buffer);
-    return res_send;
+    return send_res;
 }
 
 int send_header_with_msg(int fd, int flag, char *msg) {
     struct Buffer *buffer = new_buffer();
-    int res_send;
+    int send_res;
     serialize_his(flag, msg, buffer);
-    res_send = send_buffer(fd, buffer);
+    send_res = send_buffer(fd, buffer);
     free_buffer(&buffer);
-    return res_send;
+    return send_res;
 }
 
 int send_wrong_guess(int fd) {
@@ -141,12 +141,24 @@ int send_invalid_username(int fd) {
 
 int send_game_draw_start(int drawing_fd, char *guess_word, time_t time_round_end) {
     struct Buffer *buffer = new_buffer();
-    int res_send;
+    int send_res;
     serialize_his(START_AND_DRAW, guess_word, buffer);
     serialize_time_t(time_round_end, buffer);
-    res_send = send_buffer(drawing_fd, buffer);
+    send_res = send_buffer(drawing_fd, buffer);
     free_buffer(&buffer);
-    return res_send;
+    return send_res;
+}
+
+int send_game_in_progress(int fd, time_t time_round_end) {
+    int send_res;
+    struct Buffer *buffer = new_buffer();
+
+    serialize_sock_header(GAME_IN_PROGRESS, buffer);
+    serialize_time_t(time_round_end, buffer);
+
+    send_res = send_buffer(fd, buffer);
+    free_buffer(&buffer);
+    return send_res;
 }
 
 void broadcast_buffer(struct Game *game, int listener, int sender_fd, struct Buffer *buffer) {
@@ -388,7 +400,8 @@ void start() {
 
                     connected_clients = game->fd_count - 1; // -1 for listener
                     if (game->in_progress) {
-                        // TODO: send GAME_IN_PROGRESS + round end time
+                        send_game_in_progress(new_fd, time_round_end);
+                        log_trace("fd %d joined during a round, sending game in progress", new_fd);
                     } else if (connected_clients < MIN_PLAYERS) {
                         broadcast_waiting_for_players(game, listener, connected_clients);
                         log_trace("waiting for players to join (%d/%d)", connected_clients, MIN_PLAYERS);
