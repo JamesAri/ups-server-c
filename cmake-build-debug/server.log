@@ -739,3 +739,659 @@
 2022-10-12 11:38:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:31: removing player Honza (fd: 7) from game
 2022-10-12 11:38:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:437: timeout set to 60 second(s)
 2022-10-12 11:38:54 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:63: terminating server: SIGTERM (15)
+2022-10-12 18:20:56 FATAL /Users/jakub.slechta/git/ups-server-c/server.c:458: error getting listening socket: Undefined error: 0
+2022-10-12 22:10:55 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:497: server listening on port 9034
+2022-10-12 22:11:07 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:504: timeout set to 60 second(s)
+2022-10-12 22:11:07 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06
+2022-10-12 22:11:07 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:11:07 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:11:07 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:547: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:11:07 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:548: poll-server: 1 connected client(s)
+2022-10-12 22:12:55 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:498: server listening on port 9034
+2022-10-12 22:12:58 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:505: timeout set to 60 second(s)
+2022-10-12 22:12:58 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06
+2022-10-12 22:12:58 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:12:58 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:12:58 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:548: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:12:58 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:549: poll-server: 1 connected client(s)
+2022-10-12 22:13:06 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:498: server listening on port 9034
+2022-10-12 22:13:08 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:505: timeout set to 60 second(s)
+2022-10-12 22:13:08 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06
+2022-10-12 22:13:08 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:13:08 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:13:08 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:548: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:13:08 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:549: poll-server: 1 connected client(s)
+2022-10-12 22:13:42 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:497: server listening on port 9034
+2022-10-12 22:13:50 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:504: timeout set to 60 second(s)
+2022-10-12 22:13:50 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06
+2022-10-12 22:13:50 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:13:50 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:13:50 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:547: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:13:50 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:548: poll-server: 1 connected client(s)
+2022-10-12 22:13:50 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:450: waiting for players to join (1/2), broadcasting
+2022-10-12 22:13:50 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:205: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:13:59 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:504: timeout set to 60 second(s)
+2022-10-12 22:13:59 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06
+2022-10-12 22:13:59 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 22:13:59 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 22:19:58 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:500: server listening on port 9034
+2022-10-12 22:20:02 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:507: timeout set to 60 second(s)
+2022-10-12 22:20:02 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06
+2022-10-12 22:20:02 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:20:02 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:20:02 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:550: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:20:02 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:551: poll-server: 1 connected client(s)
+2022-10-12 22:20:02 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:454: waiting for players to join (1/2), broadcasting
+2022-10-12 22:20:02 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:205: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:20:07 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:507: timeout set to 60 second(s)
+2022-10-12 22:20:07 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06
+2022-10-12 22:20:07 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 22:20:07 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 22:21:17 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:500: server listening on port 9034
+2022-10-12 22:21:19 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:507: timeout set to 60 second(s)
+2022-10-12 22:21:19 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06
+2022-10-12 22:21:19 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:21:19 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:21:19 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:550: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:21:19 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:551: poll-server: 1 connected client(s)
+2022-10-12 22:21:19 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:454: waiting for players to join (1/2), broadcasting
+2022-10-12 22:21:19 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:205: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:21:21 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:507: timeout set to 60 second(s)
+2022-10-12 22:21:21 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06
+2022-10-12 22:21:21 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 22:21:21 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 22:22:00 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:502: server listening on port 9034
+2022-10-12 22:22:01 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:509: timeout set to 60 second(s)
+2022-10-12 22:22:01 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06
+2022-10-12 22:22:01 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:22:01 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:22:01 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:552: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:22:01 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:553: poll-server: 1 connected client(s)
+2022-10-12 22:22:01 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:454: waiting for players to join (1/2), broadcasting
+2022-10-12 22:22:01 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:205: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:22:03 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:509: timeout set to 60 second(s)
+2022-10-12 22:22:03 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06
+2022-10-12 22:22:03 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 22:22:03 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 22:22:34 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:502: server listening on port 9034
+2022-10-12 22:22:35 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:509: timeout set to 60 second(s)
+2022-10-12 22:22:35 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06
+2022-10-12 22:22:35 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:22:35 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:22:35 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:552: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:22:35 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:553: poll-server: 1 connected client(s)
+2022-10-12 22:22:35 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:454: waiting for players to join (1/2), broadcasting
+2022-10-12 22:22:35 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:205: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:22:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:509: timeout set to 60 second(s)
+2022-10-12 22:22:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06
+2022-10-12 22:22:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 22:22:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 22:23:29 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:502: server listening on port 9034
+2022-10-12 22:23:33 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:509: timeout set to 60 second(s)
+2022-10-12 22:23:33 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06
+2022-10-12 22:23:33 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:23:33 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:23:33 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:552: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:23:33 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:553: poll-server: 1 connected client(s)
+2022-10-12 22:23:33 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:454: waiting for players to join (1/2), broadcasting
+2022-10-12 22:23:33 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:205: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:23:34 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:509: timeout set to 60 second(s)
+2022-10-12 22:23:34 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06
+2022-10-12 22:23:34 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 22:23:34 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 22:24:17 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:502: server listening on port 9034
+2022-10-12 22:24:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:509: timeout set to 60 second(s)
+2022-10-12 22:24:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06
+2022-10-12 22:24:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:24:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:24:18 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:552: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:24:18 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:553: poll-server: 1 connected client(s)
+2022-10-12 22:24:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:455: waiting for players to join (1/2), broadcasting
+2022-10-12 22:24:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:205: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:24:20 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:509: timeout set to 60 second(s)
+2022-10-12 22:24:20 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06
+2022-10-12 22:24:20 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 22:24:20 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 22:25:39 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:501: server listening on port 9034
+2022-10-12 22:25:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:508: timeout set to 60 second(s)
+2022-10-12 22:25:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06
+2022-10-12 22:25:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:25:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:25:44 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:552: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:25:44 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:553: poll-server: 1 connected client(s)
+2022-10-12 22:25:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:454: waiting for players to join (1/2), broadcasting
+2022-10-12 22:25:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:205: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:25:45 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:508: timeout set to 60 second(s)
+2022-10-12 22:25:45 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06
+2022-10-12 22:25:45 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 22:25:45 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 22:25:53 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:501: server listening on port 9034
+2022-10-12 22:25:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:508: timeout set to 60 second(s)
+2022-10-12 22:25:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06
+2022-10-12 22:25:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:25:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:25:55 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:553: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:25:55 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:554: poll-server: 1 connected client(s)
+2022-10-12 22:25:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:454: waiting for players to join (1/2), broadcasting
+2022-10-12 22:25:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:205: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:25:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:508: timeout set to 60 second(s)
+2022-10-12 22:25:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06
+2022-10-12 22:25:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 22:25:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 22:26:08 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:501: server listening on port 9034
+2022-10-12 22:26:12 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:508: timeout set to 60 second(s)
+2022-10-12 22:26:12 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06
+2022-10-12 22:26:12 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:26:12 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:26:12 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:552: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:26:12 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:553: poll-server: 1 connected client(s)
+2022-10-12 22:26:12 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:454: waiting for players to join (1/2), broadcasting
+2022-10-12 22:26:12 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:205: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:26:13 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:508: timeout set to 60 second(s)
+2022-10-12 22:26:13 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06
+2022-10-12 22:26:13 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 22:26:13 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 22:26:25 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:501: server listening on port 9034
+2022-10-12 22:26:27 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:508: timeout set to 60 second(s)
+2022-10-12 22:26:27 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06
+2022-10-12 22:26:27 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:26:27 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:26:27 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:551: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:26:27 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:552: poll-server: 1 connected client(s)
+2022-10-12 22:26:27 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:454: waiting for players to join (1/2), broadcasting
+2022-10-12 22:26:27 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:205: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:26:28 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:508: timeout set to 60 second(s)
+2022-10-12 22:26:28 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06
+2022-10-12 22:26:28 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 22:26:28 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 22:27:38 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:501: server listening on port 9034
+2022-10-12 22:27:48 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:508: timeout set to 60 second(s)
+2022-10-12 22:27:48 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06
+2022-10-12 22:27:48 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:27:48 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:27:48 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:551: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:27:48 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:552: poll-server: 1 connected client(s)
+2022-10-12 22:27:48 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:454: waiting for players to join (1/2), broadcasting
+2022-10-12 22:27:48 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:205: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:27:49 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:508: timeout set to 60 second(s)
+2022-10-12 22:27:49 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06
+2022-10-12 22:27:49 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 22:27:49 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 22:28:10 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:501: server listening on port 9034
+2022-10-12 22:28:12 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:508: timeout set to 60 second(s)
+2022-10-12 22:28:12 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06
+2022-10-12 22:28:12 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:28:12 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:28:12 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:551: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:28:12 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:552: poll-server: 1 connected client(s)
+2022-10-12 22:28:12 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:454: waiting for players to join (1/2), broadcasting
+2022-10-12 22:28:12 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:205: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:28:13 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:508: timeout set to 60 second(s)
+2022-10-12 22:28:13 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06
+2022-10-12 22:28:13 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 22:28:13 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 22:28:26 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:501: server listening on port 9034
+2022-10-12 22:28:29 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:508: timeout set to 60 second(s)
+2022-10-12 22:28:29 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06
+2022-10-12 22:28:29 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:28:29 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:28:29 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:551: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:28:29 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:552: poll-server: 1 connected client(s)
+2022-10-12 22:28:29 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:454: waiting for players to join (1/2), broadcasting
+2022-10-12 22:28:29 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:205: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:28:30 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:508: timeout set to 60 second(s)
+2022-10-12 22:28:30 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06
+2022-10-12 22:28:30 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 22:28:30 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 22:29:16 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:501: server listening on port 9034
+2022-10-12 22:29:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:508: timeout set to 60 second(s)
+2022-10-12 22:29:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06
+2022-10-12 22:29:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:29:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:29:18 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:551: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:29:18 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:552: poll-server: 1 connected client(s)
+2022-10-12 22:29:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:454: waiting for players to join (1/2), broadcasting
+2022-10-12 22:29:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:205: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:29:19 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:508: timeout set to 60 second(s)
+2022-10-12 22:29:19 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06
+2022-10-12 22:29:19 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 22:29:19 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 22:31:30 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:501: server listening on port 9034
+2022-10-12 22:31:33 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:508: timeout set to 60 second(s)
+2022-10-12 22:31:33 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06
+2022-10-12 22:31:33 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:31:33 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:31:33 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:551: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:31:33 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:552: poll-server: 1 connected client(s)
+2022-10-12 22:31:33 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:454: waiting for players to join (1/2), broadcasting
+2022-10-12 22:31:33 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:205: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:31:34 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:508: timeout set to 60 second(s)
+2022-10-12 22:31:34 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06
+2022-10-12 22:31:34 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 22:31:34 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 22:34:15 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:501: server listening on port 9034
+2022-10-12 22:34:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:508: timeout set to 60 second(s)
+2022-10-12 22:34:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06
+2022-10-12 22:34:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:34:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:34:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:546: new_fd: 6, fd_count: 2, fd_size: 5
+2022-10-12 22:34:18 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:552: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:34:18 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:553: poll-server: 1 connected client(s)
+2022-10-12 22:34:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:454: waiting for players to join (1/2), broadcasting
+2022-10-12 22:34:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:205: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:34:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:508: timeout set to 60 second(s)
+2022-10-12 22:34:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06
+2022-10-12 22:34:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 22:34:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 22:34:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:546: new_fd: 7, fd_count: 3, fd_size: 5
+2022-10-12 22:35:40 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:501: server listening on port 9034
+2022-10-12 22:35:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:508: timeout set to 60 second(s)
+2022-10-12 22:35:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06
+2022-10-12 22:35:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:35:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:35:44 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:553: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:35:44 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:554: poll-server: 1 connected client(s)
+2022-10-12 22:35:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:454: waiting for players to join (1/2), broadcasting
+2022-10-12 22:35:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:205: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:35:46 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:508: timeout set to 60 second(s)
+2022-10-12 22:35:46 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06
+2022-10-12 22:35:46 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 22:35:46 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:170: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 22:45:07 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 22:45:11 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 22:45:11 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 22:45:11 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:45:11 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:45:11 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:562: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:45:11 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:563: poll-server: 1 connected client(s)
+2022-10-12 22:45:11 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:462: waiting for players to join (1/2), broadcasting
+2022-10-12 22:45:11 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:45:15 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 22:45:15 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06
+2022-10-12 22:45:15 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 22:45:15 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 22:48:49 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 22:48:53 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 22:48:53 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 22:48:53 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:48:53 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:49:33 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 22:49:39 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 22:49:39 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 22:49:39 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:49:39 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:49:39 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:564: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:49:39 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:565: poll-server: 1 connected client(s)
+2022-10-12 22:49:39 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:462: waiting for players to join (1/2), broadcasting
+2022-10-12 22:49:39 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:49:41 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 22:49:41 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06
+2022-10-12 22:49:41 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:04
+2022-10-12 22:49:41 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:49:41 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 7): 0A
+2022-10-12 22:49:41 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:347: invalid username - player already logged in
+2022-10-12 22:49:41 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:548: login error: closing connection for socket 7
+2022-10-12 22:49:47 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 22:49:47 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06
+2022-10-12 22:49:47 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 22:49:47 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 22:50:15 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 22:50:20 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 22:50:20 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 22:50:20 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:50:20 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:50:20 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:564: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:50:20 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:565: poll-server: 1 connected client(s)
+2022-10-12 22:50:20 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:462: waiting for players to join (1/2), broadcasting
+2022-10-12 22:50:20 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:50:22 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 22:50:22 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06
+2022-10-12 22:50:22 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 22:50:22 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 22:51:45 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 22:51:53 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:27: terminating server: SIGTERM (15)
+2022-10-12 22:52:17 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 22:52:20 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 22:52:20 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 22:52:20 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:52:20 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:52:20 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:566: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:52:20 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:567: poll-server: 1 connected client(s)
+2022-10-12 22:52:20 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:462: waiting for players to join (1/2), broadcasting
+2022-10-12 22:52:20 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:52:22 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 22:52:22 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06
+2022-10-12 22:52:22 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 22:52:22 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 22:52:52 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 22:52:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 22:52:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 22:52:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:52:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:52:55 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:567: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:52:55 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:568: poll-server: 1 connected client(s)
+2022-10-12 22:52:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:462: waiting for players to join (1/2), broadcasting
+2022-10-12 22:52:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:52:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 22:52:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06
+2022-10-12 22:52:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 22:52:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 22:53:16 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 22:53:17 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 22:53:17 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 22:53:17 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:53:17 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:53:17 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:567: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:53:17 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:568: poll-server: 1 connected client(s)
+2022-10-12 22:53:17 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:462: waiting for players to join (1/2), broadcasting
+2022-10-12 22:53:17 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:53:19 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 22:53:19 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06
+2022-10-12 22:53:19 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 22:53:19 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 22:53:36 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 22:53:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 22:53:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 22:53:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:53:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:53:37 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:565: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:53:37 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:566: poll-server: 1 connected client(s)
+2022-10-12 22:53:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:462: waiting for players to join (1/2), broadcasting
+2022-10-12 22:53:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:53:38 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 22:53:38 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06
+2022-10-12 22:53:38 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 22:53:38 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 22:53:54 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 22:53:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 22:53:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 22:53:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:53:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:53:56 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:565: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:53:56 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:566: poll-server: 1 connected client(s)
+2022-10-12 22:53:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:462: waiting for players to join (1/2), broadcasting
+2022-10-12 22:53:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:53:58 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 22:53:58 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06
+2022-10-12 22:53:58 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 22:53:58 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 22:54:25 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 22:54:26 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 22:54:26 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 22:54:26 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:54:26 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:54:26 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:567: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:54:26 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:568: poll-server: 1 connected client(s)
+2022-10-12 22:54:26 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:462: waiting for players to join (1/2), broadcasting
+2022-10-12 22:54:26 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:54:35 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:27: terminating server: SIGTERM (15)
+2022-10-12 22:54:37 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 22:54:38 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 22:54:38 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 22:54:38 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:54:38 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:54:38 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:567: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:54:38 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:568: poll-server: 1 connected client(s)
+2022-10-12 22:54:38 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:462: waiting for players to join (1/2), broadcasting
+2022-10-12 22:54:38 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:54:40 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 22:54:40 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06
+2022-10-12 22:54:40 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 22:54:40 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 22:54:56 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 22:54:57 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 22:54:57 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 22:54:57 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:54:57 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:54:57 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:567: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:54:57 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:568: poll-server: 1 connected client(s)
+2022-10-12 22:54:57 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:462: waiting for players to join (1/2), broadcasting
+2022-10-12 22:54:57 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:54:59 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 22:54:59 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06
+2022-10-12 22:54:59 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 22:54:59 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 22:55:16 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 22:55:17 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 22:55:17 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 22:55:17 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 22:55:17 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 22:55:17 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:567: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 22:55:17 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:568: poll-server: 1 connected client(s)
+2022-10-12 22:55:17 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:462: waiting for players to join (1/2), broadcasting
+2022-10-12 22:55:17 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 22:55:19 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 22:55:19 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06
+2022-10-12 22:55:19 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 22:55:19 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 23:05:47 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 23:05:49 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:05:49 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 23:05:49 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 23:05:49 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 23:05:49 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:567: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 23:05:49 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:568: poll-server: 1 connected client(s)
+2022-10-12 23:05:49 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:462: waiting for players to join (1/2), broadcasting
+2022-10-12 23:05:49 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 23:05:50 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:05:50 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06
+2022-10-12 23:05:50 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 23:05:50 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 23:12:16 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 23:12:21 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:12:21 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 23:12:21 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 23:12:21 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 23:12:21 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:567: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 23:12:21 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:568: poll-server: 1 connected client(s)
+2022-10-12 23:12:21 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:462: waiting for players to join (1/2), broadcasting
+2022-10-12 23:12:21 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 23:12:23 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:12:23 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06
+2022-10-12 23:12:23 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 23:12:23 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 23:13:58 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 23:14:00 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:14:00 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 23:14:00 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 23:14:00 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 23:14:00 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:567: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 23:14:00 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:568: poll-server: 1 connected client(s)
+2022-10-12 23:14:00 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:462: waiting for players to join (1/2), broadcasting
+2022-10-12 23:14:00 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 23:14:01 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:14:01 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06
+2022-10-12 23:14:01 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 23:14:01 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 23:14:34 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:510: server listening on port 9034
+2022-10-12 23:14:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:517: timeout set to 60 second(s)
+2022-10-12 23:14:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 23:14:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 23:14:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 23:14:37 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:568: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 23:14:37 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:569: poll-server: 1 connected client(s)
+2022-10-12 23:14:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:463: waiting for players to join (1/2), broadcasting
+2022-10-12 23:14:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 23:14:38 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:517: timeout set to 60 second(s)
+2022-10-12 23:14:38 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06
+2022-10-12 23:14:38 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 23:14:38 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 23:15:03 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 23:15:07 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:15:07 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 23:15:07 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 23:15:07 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 23:15:07 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:569: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 23:15:07 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:570: poll-server: 1 connected client(s)
+2022-10-12 23:15:07 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:462: waiting for players to join (1/2), broadcasting
+2022-10-12 23:15:07 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 23:15:08 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:15:08 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06
+2022-10-12 23:15:08 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 23:15:08 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 23:15:21 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 23:15:24 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:15:24 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 23:15:24 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 23:15:24 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 23:15:24 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:568: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 23:15:24 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:569: poll-server: 1 connected client(s)
+2022-10-12 23:15:24 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:462: waiting for players to join (1/2), broadcasting
+2022-10-12 23:15:24 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 23:15:26 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:15:26 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06
+2022-10-12 23:15:26 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 23:15:26 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 23:16:13 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 23:16:17 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:16:17 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 23:16:17 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 23:16:17 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 23:16:17 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:568: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 23:16:17 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:569: poll-server: 1 connected client(s)
+2022-10-12 23:16:17 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:462: waiting for players to join (1/2), broadcasting
+2022-10-12 23:16:17 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 23:16:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:16:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06
+2022-10-12 23:16:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 23:16:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 23:17:47 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 23:17:51 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:17:51 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 23:17:51 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 23:17:51 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 23:17:51 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:567: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 23:17:51 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:568: poll-server: 1 connected client(s)
+2022-10-12 23:17:51 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:462: waiting for players to join (1/2), broadcasting
+2022-10-12 23:17:51 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 23:17:52 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:17:52 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06
+2022-10-12 23:17:52 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 23:17:52 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 23:18:09 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 23:18:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:18:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 23:18:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 23:18:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 23:18:14 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:562: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 23:18:14 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:563: poll-server: 1 connected client(s)
+2022-10-12 23:18:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:462: waiting for players to join (1/2), broadcasting
+2022-10-12 23:18:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 23:18:16 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:18:16 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06
+2022-10-12 23:18:16 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 23:18:16 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 23:18:41 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 23:18:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:18:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 23:18:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 23:18:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 23:18:44 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:564: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 23:18:44 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:565: poll-server: 1 connected client(s)
+2022-10-12 23:18:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:462: waiting for players to join (1/2), broadcasting
+2022-10-12 23:18:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 23:18:46 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:18:46 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06
+2022-10-12 23:18:46 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 23:18:46 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 23:19:49 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 23:20:29 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:20:29 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 23:20:29 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 23:20:29 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 23:20:29 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:563: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 23:20:29 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:564: poll-server: 1 connected client(s)
+2022-10-12 23:20:29 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:462: waiting for players to join (1/2), broadcasting
+2022-10-12 23:20:29 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 23:20:31 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:20:31 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06
+2022-10-12 23:20:31 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 23:20:31 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 23:20:37 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 23:20:41 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:20:41 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 23:20:41 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 23:20:41 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 23:20:41 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:563: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 23:20:41 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:564: poll-server: 1 connected client(s)
+2022-10-12 23:20:41 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:462: waiting for players to join (1/2), broadcasting
+2022-10-12 23:20:41 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 23:20:42 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:20:42 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06
+2022-10-12 23:20:42 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 23:20:42 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 23:27:12 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 23:27:28 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:27:28 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:541: new connection, fd: 6
+2022-10-12 23:27:28 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 23:27:28 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 23:27:28 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 23:27:28 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:562: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 23:27:28 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:563: poll-server: 1 connected client(s)
+2022-10-12 23:27:28 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:462: waiting for players to join (1/2), broadcasting
+2022-10-12 23:27:28 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 23:27:30 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:27:30 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:541: new connection, fd: 7
+2022-10-12 23:27:30 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06
+2022-10-12 23:27:30 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 23:27:30 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 23:27:51 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 23:27:53 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:27:53 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:541: new connection, fd: 6
+2022-10-12 23:27:53 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 23:27:53 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:05
+2022-10-12 23:27:53 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 23:27:53 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:562: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-12 23:27:53 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:563: poll-server: 1 connected client(s)
+2022-10-12 23:27:53 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:462: waiting for players to join (1/2), broadcasting
+2022-10-12 23:27:53 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 23:27:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:27:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:541: new connection, fd: 7
+2022-10-12 23:27:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06
+2022-10-12 23:27:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:04
+2022-10-12 23:27:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:04:4B:75:62:61
+2022-10-12 23:28:11 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 23:28:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:28:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:541: new connection, fd: 6
+2022-10-12 23:28:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 23:28:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 23:28:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 23:28:18 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:562: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 23:28:18 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:563: poll-server: 1 connected client(s)
+2022-10-12 23:28:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:462: waiting for players to join (1/2), broadcasting
+2022-10-12 23:28:18 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 23:28:19 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:28:19 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:541: new connection, fd: 7
+2022-10-12 23:28:19 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06
+2022-10-12 23:28:19 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 23:28:19 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 23:28:29 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 23:28:32 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:28:32 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:541: new connection, fd: 6
+2022-10-12 23:28:32 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 23:28:32 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-12 23:28:32 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:04:4B:75:62:61
+2022-10-12 23:28:32 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:562: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-12 23:28:32 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:563: poll-server: 1 connected client(s)
+2022-10-12 23:28:32 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:462: waiting for players to join (1/2), broadcasting
+2022-10-12 23:28:32 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 23:28:33 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:28:33 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:541: new connection, fd: 7
+2022-10-12 23:28:33 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06
+2022-10-12 23:28:33 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-12 23:28:33 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 23:29:34 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:509: server listening on port 9034
+2022-10-12 23:29:36 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:29:36 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:541: new connection, fd: 6
+2022-10-12 23:29:36 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06
+2022-10-12 23:29:36 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:05
+2022-10-12 23:29:36 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 6): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-12 23:29:36 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:562: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-12 23:29:36 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:563: poll-server: 1 connected client(s)
+2022-10-12 23:29:36 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:462: waiting for players to join (1/2), broadcasting
+2022-10-12 23:29:36 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:213: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-12 23:29:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:516: timeout set to 60 second(s)
+2022-10-12 23:29:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:541: new connection, fd: 7
+2022-10-12 23:29:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06
+2022-10-12 23:29:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:04
+2022-10-12 23:29:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:178: received buffer (from fd: 7): 06:00:00:00:04:4B:75:62:61

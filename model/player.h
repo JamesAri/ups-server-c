@@ -8,7 +8,6 @@ struct Player {
     char username[256];
     int score;
     bool is_online;
-    bool is_drawing;
 };
 
 struct PlayerList {
@@ -17,7 +16,7 @@ struct PlayerList {
 };
 
 struct Players {
-    struct PlayerList *playerList;
+    struct PlayerList *player_list;
     int count;
 };
 
@@ -33,7 +32,6 @@ int update_players(struct Players *players, char *username, int fd);
 struct Player *get_player_by_fd(struct Players *players, int fd);
 
 void print_players(struct Players *players);
-
 
 void free_player(struct Player **player);
 

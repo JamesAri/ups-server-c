@@ -49,8 +49,51 @@ void log_game_start(time_t *start, time_t *end) {
 //                  FD - PLAYER mapping + Game State                       //
 // ======================================================================= //
 
-void get_next_drawing_fd(struct Game *game) {
-    // TODO
+int check_player_list_validity(struct PlayerList *player_list) {
+    if (player_list == NULL || player_list->player == NULL) return false;
+    else return true;
+}
+
+int get_next_drawing_fd(struct Game *game) {
+    if (game == NULL || game->players == NULL) return -1;
+
+    int iterations = 0;
+
+    if (game->drawing_player_list == NULL) {
+        if (!check_player_list_validity(game->players->player_list)) return -1;
+        game->drawing_player_list = game->players->player_list;
+        return 0;
+    } else {
+        struct PlayerList *player_list = game->drawing_player_list->next;
+        while (check_player_list_validity(player_list)) {
+            iterations++;
+            if (player_list->player->is_online) {
+                game->drawing_player_list = player_list;
+                return 0;
+            }
+            player_list = game->drawing_player_list->next;
+        }
+        // (player_list == NULL) here, we start over
+        player_list = game->players->player_list;
+        while (check_player_list_validity(player_list)) {
+            iterations++;
+            if (iterations >= game->players->count /*same player...*/) return -1;
+            if (player_list->player->is_online) {
+                game->drawing_player_list = player_list;
+                return 0;
+            }
+            player_list = game->drawing_player_list->next;
+        }
+    }
+    return -1;
+}
+
+void print_game_details(struct Game *game) {
+    fprintf(stderr, "fd_size: %d, fd_count: %d, listener: %d\n",
+            game->fd_size, game->fd_count, game->listener);
+    print_pfds(game->pfds, game->fd_size);
+    fprintf(stderr, "in_progress: %d, %s\n", game->in_progress, game->guess_word);
+    print_players(game->players);
 }
 
 struct Game *new_game() {
@@ -85,7 +128,7 @@ struct Game *new_game() {
     }
 
     game->in_progress = false;
-    game->drawing_player = NULL;
+    game->drawing_player_list = NULL;
     game->start_sec = 0;
     game->end_sec = 0;
     memset(game->guess_word, 0, sizeof(game->guess_word));
@@ -253,7 +296,7 @@ void broadcast_waiting_for_players(struct Game *game, int connected_clients) {
 }
 
 void broadcast_game_guess_start(struct Game *game) {
-    int drawing_fd = game->drawing_player->fd;
+    int drawing_fd = game->drawing_player_list->player->fd;
     struct Buffer *buffer = new_buffer();
     serialize_sock_header(START_AND_GUESS, buffer);
     serialize_time_t(game->end_sec, buffer);
@@ -367,7 +410,7 @@ int manage_client(struct Game *game, int sender_fd, struct Player *cur_player) {
 
     if ((recv_res = recv_buffer_sock_header(sender_fd, buffer)) <= 0) return recv_res;
 
-    if (game->drawing_player->fd == sender_fd)
+    if (game->drawing_player_list->player->fd == sender_fd)
         recv_res = manage_drawing_player(sender_fd, buffer);
     else
         recv_res = manage_guessing_player(sender_fd, buffer, game->guess_word, cur_player);
@@ -385,10 +428,14 @@ int manage_client(struct Game *game, int sender_fd, struct Player *cur_player) {
 // ======================================================================= //
 
 void start_round(struct Game *game) {
+    int drawing_fd;
+
     game->in_progress = true;
+
     get_next_drawing_fd(game);
 
-    int drawing_fd = game->drawing_player->fd;
+    drawing_fd = game->drawing_player_list->player->fd;
+    log_trace("currently drawing player: %s (fd: %d)", game->drawing_player_list->player->username, drawing_fd);
 
     if (send_game_draw_start(drawing_fd, game->guess_word, game->end_sec) <= 0) {
         log_info("drawing fd %d error, closing", drawing_fd);
@@ -404,20 +451,20 @@ void start_round(struct Game *game) {
 // client is trying to join waiting_for_players/new/in_progress round
 void manage_current_round(struct Game *game, int new_fd) {
     int connected_clients = game->fd_count - 1;
-    int drawing_fd = game->drawing_player->fd;
 
     if (game->in_progress) {
         log_trace("fd %d joining game in progress", new_fd);
         if (send_game_in_progress(new_fd, game->end_sec) <= 0) {
-            log_info("fd %d unable to join current round, closing", new_fd);
+            log_warn("fd %d unable to join current round, closing", new_fd);
             remove_player_from_game(game, new_fd);
         }
     } else if (connected_clients < MIN_PLAYERS) {
-        log_info("waiting for players to join (%d/%d), broadcasting", connected_clients, MIN_PLAYERS);
+        log_trace("waiting for players to join (%d/%d), broadcasting", connected_clients, MIN_PLAYERS);
         broadcast_waiting_for_players(game, connected_clients);
     } else {
+
         get_random_word(game->guess_word);
-        log_debug("generated new guess word: %s, sending to drawing fd: %d", game->guess_word, drawing_fd);
+        log_trace("generated new guess word: %s", game->guess_word);
 
         game->start_sec = time(NULL) + TIME_BEFORE_START_SEC;
         game->end_sec = game->start_sec + GAME_DURATION_SEC;
@@ -461,7 +508,7 @@ void start() {
     }
     log_info("server listening on port %s", PORT);
 
-    add_to_pfds(&game->pfds, game->listener, &game->fd_count, &game->fd_size);
+    add_to_pfds(&(game->pfds), game->listener, &(game->fd_count), &(game->fd_size), game->players);
 
     for (;;) {
         timeout_sec = (game->in_progress) ? (int) (game->end_sec - time(NULL)) : POLL_TIMEOUT_SEC;
@@ -491,6 +538,8 @@ void start() {
                 if (new_fd == -1) {
                     log_error("listener: accept error");
                 } else {
+                    log_trace("new connection, fd: %d", new_fd);
+
                     if (set_socket_timeout(new_fd, SOCKOPT_TIMEOUT_SEC) < 0) {
                         log_error("setsockopt error: couldn't set timeout for socket with fd d%", new_fd);
                         close(new_fd);
@@ -502,8 +551,9 @@ void start() {
                         close(new_fd);
                         continue;
                     }
-
-                    add_to_pfds(&game->pfds, new_fd, &game->fd_count, &game->fd_size);
+//                    print_players(game->players);
+                    add_to_pfds(&(game->pfds), new_fd, &(game->fd_count), &(game->fd_size), game->players);
+//                    print_players(game->players);
 
                     log_info("poll-server: new connection from %s on socket %d (user: %s)",
                              inet_ntop(remote_addr.ss_family, get_in_addr((struct sockaddr *) &remote_addr),

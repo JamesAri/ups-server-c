@@ -1,5 +1,6 @@
 #include "sock_utils.h"
 #include "log.h"
+#include "../model/player.h"
 
 #include <sys/socket.h>
 #include <poll.h>
@@ -122,14 +123,15 @@ int set_socket_timeout(int fd, long timeout_sec) {
 //                              POLL UTILS                                 //
 // ======================================================================= //
 
-void add_to_pfds(struct pollfd *pfds[], int newfd, int *fd_count, int *fd_size) {
+void add_to_pfds(struct pollfd *pfds[], int new_fd, int *fd_count, int *fd_size, struct Players *players) {
     if (*fd_count == *fd_size) {
         *fd_size *= 2;
 
         *pfds = realloc(*pfds, sizeof(*(*pfds)) * (*fd_size));
     }
+    print_players(players);
 
-    (*pfds)[*fd_count].fd = newfd;
+    (*pfds)[*fd_count].fd = new_fd;
     (*pfds)[*fd_count].events = POLLIN; // Check ready-to-read
 
     (*fd_count)++;
@@ -161,5 +163,12 @@ void disconnect_fd(struct pollfd pfds[], int fd, int *fd_count) {
 void free_pfds(struct pollfd **pfds) {
     free(*pfds);
     (*pfds) = NULL;
+}
+
+void print_pfds(struct pollfd *pfds, int fd_size) {
+    for (int i = 0; i < fd_size; i++) {
+        fprintf(stderr, "%d, ", pfds[i].fd);
+    }
+    fprintf(stderr, "\n");
 }
 

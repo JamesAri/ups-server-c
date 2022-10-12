@@ -6,17 +6,19 @@
 struct Players *new_players() {
     struct Players *players = (struct Players *) malloc(sizeof(struct Players));
     if (players == NULL) return NULL;
-    players->playerList = NULL;
+    players->player_list = NULL;
     players->count = 0;
     return players;
 }
 
 struct Player *get_player_by_fd(struct Players *players, int fd) {
-    struct PlayerList *curr_node = players->playerList;
+    if (players == NULL) return NULL;
+
+    struct PlayerList *curr_node = players->player_list;
+
     while (curr_node != NULL) {
-        if (curr_node->player->fd == fd) {
-            return curr_node->player;
-        }
+        if (curr_node->player == NULL) return NULL;
+        if (curr_node->player->fd == fd) return curr_node->player;
         curr_node = curr_node->next;
     }
     return NULL;
@@ -26,7 +28,9 @@ struct Player *get_player_by_fd(struct Players *players, int fd) {
  * Returns -1 on ERROR, 0 on SUCCESS, 1 if player is already "logged in" (ONLINE)
  */
 int update_players(struct Players *players, char *username, int fd) {
-    struct PlayerList *curr_node = players->playerList;
+    if (players == NULL || username == NULL) return -1;
+
+    struct PlayerList *curr_node = players->player_list;
     while (curr_node != NULL) {
         if (!strcmp(curr_node->player->username, username)) {
             if (curr_node->player->is_online) return 1;
@@ -53,9 +57,7 @@ int update_players(struct Players *players, char *username, int fd) {
 }
 
 int add_player(struct Players *players, struct Player *player) {
-    if (players == NULL || player == NULL) {
-        return -1;
-    }
+    if (players == NULL || player == NULL) return -1;
 
     struct PlayerList *new_player_node = (struct PlayerList *) malloc(sizeof(struct PlayerList));
 
@@ -64,25 +66,28 @@ int add_player(struct Players *players, struct Player *player) {
     new_player_node->player = player;
 
     // first player
-    if (!players->count || players->playerList == NULL) {
+    if (!players->count || players->player_list == NULL) {
         new_player_node->next = NULL;
     } else {
-        new_player_node->next = players->playerList;
+        new_player_node->next = players->player_list;
     }
-    players->playerList = new_player_node;
+    players->player_list = new_player_node;
     players->count++;
+
 
     return 0;
 }
 
 // we might remove players after some time offline, just implemented feature, not using yet
 int remove_player(struct Players *players, int fd) {
-    struct PlayerList *prev_player = players->playerList;
-    struct PlayerList *curr_player = players->playerList->next;
+    if (players == NULL) return -1;
 
-    if (fd == players->playerList->player->fd) {
+    struct PlayerList *prev_player = players->player_list;
+    struct PlayerList *curr_player = players->player_list->next;
+
+    if (fd == players->player_list->player->fd) {
         free_player_list(&prev_player);
-        players->playerList = curr_player;
+        players->player_list = curr_player;
         players->count--;
         return 0;
     }
@@ -101,19 +106,25 @@ int remove_player(struct Players *players, int fd) {
 }
 
 void free_player(struct Player **player) {
+    if (player == NULL || (*player) == NULL) return;
+
     free((*player));
     (*player) = NULL;
 }
 
 
 void free_player_list(struct PlayerList **player_list) {
+    if (player_list == NULL || (*player_list) == NULL) return;
+
     free_player(&(*player_list)->player);
     free((*player_list));
     (*player_list) = NULL;
 }
 
 void free_players(struct Players **players) {
-    struct PlayerList *curr_node = (*players)->playerList;
+    if (players == NULL || (*players) == NULL) return;
+
+    struct PlayerList *curr_node = (*players)->player_list;
     struct PlayerList *next_node = NULL;
     while (curr_node != NULL) {
         next_node = curr_node->next;
@@ -125,7 +136,8 @@ void free_players(struct Players **players) {
 }
 
 void print_players(struct Players *players) {
-    struct PlayerList *curr_node = players->playerList;
+    if (players == NULL) return;
+    struct PlayerList *curr_node = players->player_list;
     while (curr_node != NULL) {
         fprintf(stderr, "Player: fd=%d, username=%s\n", curr_node->player->fd, curr_node->player->username);
         curr_node = curr_node->next;

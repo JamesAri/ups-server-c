@@ -29,7 +29,7 @@ struct Game {
     int listener;
     // game
     struct Players *players;
-    struct Player *drawing_player;
+    struct PlayerList *drawing_player_list;
     bool in_progress;
     char guess_word[MAX_GUESS_LEN];
     time_t start_sec;
