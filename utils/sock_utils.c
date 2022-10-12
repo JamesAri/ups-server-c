@@ -123,13 +123,12 @@ int set_socket_timeout(int fd, long timeout_sec) {
 //                              POLL UTILS                                 //
 // ======================================================================= //
 
-void add_to_pfds(struct pollfd *pfds[], int new_fd, int *fd_count, int *fd_size, struct Players *players) {
+void add_to_pfds(struct pollfd *pfds[], int new_fd, int *fd_count, int *fd_size) {
     if (*fd_count == *fd_size) {
         *fd_size *= 2;
 
         *pfds = realloc(*pfds, sizeof(*(*pfds)) * (*fd_size));
     }
-    print_players(players);
 
     (*pfds)[*fd_count].fd = new_fd;
     (*pfds)[*fd_count].events = POLLIN; // Check ready-to-read

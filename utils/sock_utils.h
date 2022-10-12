@@ -25,7 +25,7 @@ int set_socket_timeout(int fd, long timeout_sec);
 //                              POLL UTILS                                 //
 // ======================================================================= //
 
-void add_to_pfds(struct pollfd *pfds[], int new_fd, int *fd_count, int *fd_size, struct Players *players);
+void add_to_pfds(struct pollfd *pfds[], int new_fd, int *fd_count, int *fd_size);
 
 void del_from_pfds(struct pollfd pfds[], int i, int *fd_count);
 

@@ -105,6 +105,9 @@ struct Game *new_game() {
     }
 
     // file descriptors
+    game->fd_count = 0;
+    game->fd_size = BACKLOG;
+    game->listener = -1;
     game->pfds = (struct pollfd *) malloc(sizeof(struct pollfd *) * game->fd_size);
 
     if (game->pfds == NULL) {
@@ -113,12 +116,13 @@ struct Game *new_game() {
         exit(EXIT_FAILURE);
     }
 
-    game->fd_count = 0;
-    game->fd_size = BACKLOG;
-    game->listener = -1;
-
     // game
     game->players = new_players();
+    game->in_progress = false;
+    game->drawing_player_list = NULL;
+    game->start_sec = 0;
+    game->end_sec = 0;
+    memset(game->guess_word, 0, sizeof(game->guess_word));
 
     if (game->players == NULL) {
         log_fatal("error: couldn't malloc players");
@@ -127,20 +131,13 @@ struct Game *new_game() {
         exit(EXIT_FAILURE);
     }
 
-    game->in_progress = false;
-    game->drawing_player_list = NULL;
-    game->start_sec = 0;
-    game->end_sec = 0;
-    memset(game->guess_word, 0, sizeof(game->guess_word));
-
     return game;
 }
 
-void free_game(struct Game **game) {
+void free_game(struct Game *game) {
     free_words();
-    free_players(&((*game)->players));
-    free_pfds(&((*game)->pfds));
-    (*game) = NULL;
+    free_players(&(game->players));
+    free_pfds(&(game->pfds));
 }
 
 void remove_player_from_game(struct Game *game, int player_fd) {
@@ -432,7 +429,11 @@ void start_round(struct Game *game) {
 
     game->in_progress = true;
 
-    get_next_drawing_fd(game);
+    if (get_next_drawing_fd(game)) {
+        log_fatal("internal error: there should be available players for drawing");
+        free_game(game);
+        exit(EXIT_FAILURE);
+    }
 
     drawing_fd = game->drawing_player_list->player->fd;
     log_trace("currently drawing player: %s (fd: %d)", game->drawing_player_list->player->username, drawing_fd);
@@ -462,7 +463,6 @@ void manage_current_round(struct Game *game, int new_fd) {
         log_trace("waiting for players to join (%d/%d), broadcasting", connected_clients, MIN_PLAYERS);
         broadcast_waiting_for_players(game, connected_clients);
     } else {
-
         get_random_word(game->guess_word);
         log_trace("generated new guess word: %s", game->guess_word);
 
@@ -503,12 +503,12 @@ void start() {
 
     if ((game->listener = get_listener_socket(PORT, BACKLOG)) == -1) {
         log_fatal("error getting listening socket: %s", strerror(errno));
-        free_game(&game);
+        free_game(game);
         exit(EXIT_FAILURE);
     }
     log_info("server listening on port %s", PORT);
 
-    add_to_pfds(&(game->pfds), game->listener, &(game->fd_count), &(game->fd_size), game->players);
+    add_to_pfds(&(game->pfds), game->listener, &(game->fd_count), &(game->fd_size));
 
     for (;;) {
         timeout_sec = (game->in_progress) ? (int) (game->end_sec - time(NULL)) : POLL_TIMEOUT_SEC;
@@ -520,7 +520,7 @@ void start() {
 
         if (poll_res == -1) {
             log_fatal("poll-error: %s", strerror(errno));
-            free_game(&game);
+            free_game(game);
             exit(EXIT_FAILURE);
         } else if (poll_res == 0) {
             log_trace("poll-timeout");
@@ -538,7 +538,7 @@ void start() {
                 if (new_fd == -1) {
                     log_error("listener: accept error");
                 } else {
-                    log_trace("new connection, fd: %d", new_fd);
+                    log_trace("new connection - fd: %d", new_fd);
 
                     if (set_socket_timeout(new_fd, SOCKOPT_TIMEOUT_SEC) < 0) {
                         log_error("setsockopt error: couldn't set timeout for socket with fd d%", new_fd);
@@ -551,9 +551,7 @@ void start() {
                         close(new_fd);
                         continue;
                     }
-//                    print_players(game->players);
-                    add_to_pfds(&(game->pfds), new_fd, &(game->fd_count), &(game->fd_size), game->players);
-//                    print_players(game->players);
+                    add_to_pfds(&(game->pfds), new_fd, &(game->fd_count), &(game->fd_size));
 
                     log_info("poll-server: new connection from %s on socket %d (user: %s)",
                              inet_ntop(remote_addr.ss_family, get_in_addr((struct sockaddr *) &remote_addr),
