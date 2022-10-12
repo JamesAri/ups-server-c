@@ -69,7 +69,7 @@ int add_player(struct Players *players, struct Player *player) {
     return 0;
 }
 
-// we might remove player after some time offline, just implemented feature, not using yet
+// we might remove players after some time offline, just implemented feature, not using yet
 int remove_player(struct Players *players, int fd) {
     struct PlayerList *prev_player = players->playerList;
     struct PlayerList *curr_player = players->playerList->next;

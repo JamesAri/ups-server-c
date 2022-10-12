@@ -1,9 +1,13 @@
 #include <sys/socket.h>
 #include <poll.h>
+#include <sys/time.h>
 
 #ifndef UPS_SERVER_C_SOCKET_UTILS_H
 #define UPS_SERVER_C_SOCKET_UTILS_H
 
+// ======================================================================= //
+//                            SOCKET UTILS                                 //
+// ======================================================================= //
 
 int recvall(int s, void *buf, int *len);
 
@@ -11,7 +15,14 @@ int sendall(int s, void *buf, int *len);
 
 void *get_in_addr(struct sockaddr *sa);
 
-int get_listener_socket();
+int get_listener_socket(char *port, int backlog);
+
+int set_socket_timeout(int fd, long timeout_sec);
+
+
+// ======================================================================= //
+//                              POLL UTILS                                 //
+// ======================================================================= //
 
 void add_to_pfds(struct pollfd *pfds[], int newfd, int *fd_count, int *fd_size);
 

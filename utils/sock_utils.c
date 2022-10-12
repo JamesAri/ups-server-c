@@ -1,20 +1,20 @@
 #include "sock_utils.h"
-#include "../server.h"
 #include "log.h"
 
+#include <sys/socket.h>
+#include <poll.h>
+#include <sys/time.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
 #include <netdb.h>
-#include <poll.h>
 
-#ifdef _WIN32
+//#include <netinet/in.h>
 
-#else
 
-#endif
+// ======================================================================= //
+//                            SOCKET UTILS                                 //
+// ======================================================================= //
 
 int recvall(int s, void *buf, int *len) {
     int total = 0;        // how many bytes we've received.
@@ -58,7 +58,7 @@ void *get_in_addr(struct sockaddr *sa) {
     return &(((struct sockaddr_in6 *) sa)->sin6_addr);
 }
 
-int get_listener_socket() {
+int get_listener_socket(char *port, int backlog) {
     int listener, rv, yes = 1;
 
     // hints - settings for *ai creation
@@ -71,7 +71,7 @@ int get_listener_socket() {
     hints.ai_socktype = SOCK_STREAM;
     hints.ai_flags = AI_PASSIVE; // use with NULL as first param in getaddrinfo for auto-IP detection.
 
-    if ((rv = getaddrinfo(NULL, PORT, &hints, &ai)) != 0) {
+    if ((rv = getaddrinfo(NULL, port, &hints, &ai)) != 0) {
         log_error("selecting server error: %s\n", gai_strerror(rv));
         exit(EXIT_FAILURE);
     }
@@ -96,10 +96,31 @@ int get_listener_socket() {
 
     if (p == NULL) return -1;
 
-    if (listen(listener, BACKLOG) == -1) return -1;
+    if (listen(listener, backlog) == -1) return -1;
 
     return listener;
 }
+
+int set_socket_timeout(int fd, long timeout_sec) {
+#ifdef _WIN32
+#include <winsock2.h>
+    DWORD tv = timeout_sec;
+#else
+    struct timeval tv;
+    tv.tv_sec = timeout_sec;
+    tv.tv_usec = 0;
+#endif
+    if (setsockopt(fd, SOL_SOCKET, SO_RCVTIMEO, (const char *) &tv, sizeof tv) < 0)
+        return -1;
+    if (setsockopt(fd, SOL_SOCKET, SO_SNDTIMEO, (const char *) &tv, sizeof tv) < 0)
+        return -1;
+    return 0;
+}
+
+
+// ======================================================================= //
+//                              POLL UTILS                                 //
+// ======================================================================= //
 
 void add_to_pfds(struct pollfd *pfds[], int newfd, int *fd_count, int *fd_size) {
     if (*fd_count == *fd_size) {

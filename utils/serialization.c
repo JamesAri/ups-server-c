@@ -1,11 +1,14 @@
 #include "serialization.h"
 #include "sock_header.h"
-#include "debug.h"
 
 #include <stdlib.h>
 #include <string.h>
-#include <stdio.h>
 #include <sys/time.h>
+
+
+// ======================================================================= //
+//                              BUFFER                                     //
+// ======================================================================= //
 
 struct Buffer *new_buffer() {
     struct Buffer *buffer = malloc(sizeof(struct Buffer));
@@ -35,6 +38,11 @@ void free_buffer(struct Buffer **buffer) {
     free((*buffer));
     (*buffer) = NULL;
 }
+
+
+// ======================================================================= //
+//                        SERIALIZING PROCEDURES                           //
+// ======================================================================= //
 
 void serialize_sock_header(int flag, struct Buffer *buffer) {
     struct SocketHeader *sock_header = new_sock_header(flag);
@@ -67,6 +75,17 @@ void serialize_time_t(time_t time, struct Buffer *buffer) {
     buffer->next += sizeof(time_t);
 }
 
+void serialize_his(int flag, char *string, struct Buffer *buffer) {
+    serialize_sock_header(flag, buffer);
+    serialize_int((int) strlen(string), buffer);
+    serialize_string(string, buffer);
+}
+
+
+// ======================================================================= //
+//                         UNPACKING PROCEDURES                            //
+// ======================================================================= //
+
 void unpack_int(struct Buffer *buffer, int *res) {
     *res = ntohl(*(int *) (buffer->data + INT_OFFSET));
 }
@@ -77,10 +96,4 @@ void unpack_int_var(struct Buffer *buffer, int *res, int offset) {
 
 void unpack_string(struct Buffer *buffer, char *res) {
     strcpy(res, (buffer->data + STRING_OFFSET));
-}
-
-void serialize_his(int flag, char *string, struct Buffer *buffer) {
-    serialize_sock_header(flag, buffer);
-    serialize_int((int) strlen(string), buffer);
-    serialize_string(string, buffer);
 }
