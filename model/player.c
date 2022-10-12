@@ -5,6 +5,7 @@
 
 struct Players *new_players() {
     struct Players *players = (struct Players *) malloc(sizeof(struct Players));
+    if (players == NULL) return NULL;
     players->playerList = NULL;
     players->count = 0;
     return players;
@@ -22,39 +23,44 @@ struct Player *get_player_by_fd(struct Players *players, int fd) {
 }
 
 /**
- * Return NULL if player is already "logged in" (online).
- * Otherwise, return the updated/new player.
+ * Returns -1 on ERROR, 0 on SUCCESS, 1 if player is already "logged in" (ONLINE)
  */
-struct Player *update_players(struct Players *players, char *username, int fd) {
+int update_players(struct Players *players, char *username, int fd) {
     struct PlayerList *curr_node = players->playerList;
     while (curr_node != NULL) {
         if (!strcmp(curr_node->player->username, username)) {
-            if (curr_node->player->is_online) return NULL;
+            if (curr_node->player->is_online) return 1;
             else {
                 curr_node->player->fd = fd;
                 curr_node->player->is_online = true;
-                return curr_node->player;
+                return 0;
             }
         }
         curr_node = curr_node->next;
     }
 
     struct Player *new_player = (struct Player *) malloc(sizeof(struct Player));
+
+    if (new_player == NULL) return -1;
+
     strcpy(new_player->username, username);
     new_player->fd = fd;
     new_player->is_online = true;
 
-    add_player(players, new_player);
+    if (add_player(players, new_player) < 0) return -1;
 
-    return new_player;
+    return 0;
 }
 
 int add_player(struct Players *players, struct Player *player) {
-    if (players == NULL) {
+    if (players == NULL || player == NULL) {
         return -1;
     }
 
     struct PlayerList *new_player_node = (struct PlayerList *) malloc(sizeof(struct PlayerList));
+
+    if (new_player_node == NULL) return -1;
+
     new_player_node->player = player;
 
     // first player

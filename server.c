@@ -17,7 +17,6 @@
 #include <arpa/inet.h>
 #include <poll.h>
 #include <errno.h>
-#include <sys/time.h>
 #include <signal.h>
 
 // ======================================================================= //
@@ -47,23 +46,50 @@ void log_game_start(time_t *start, time_t *end) {
 }
 
 // ======================================================================= //
-//                 FD - PLAYER mapping || Game state                       //
+//                  FD - PLAYER mapping + Game State                       //
 // ======================================================================= //
 
-void get_next_drawing_fd(struct Game *game, struct Player *player) {
-    if (player == NULL) {
-        // TODO
-    }
+void get_next_drawing_fd(struct Game *game) {
+    // TODO
 }
 
 struct Game *new_game() {
     struct Game *game = (struct Game *) malloc(sizeof(struct Game));
+
+    if (game == NULL) {
+        log_fatal("error: couldn't malloc game");
+        exit(EXIT_FAILURE);
+    }
+
+    // file descriptors
+    game->pfds = (struct pollfd *) malloc(sizeof(struct pollfd *) * game->fd_size);
+
+    if (game->pfds == NULL) {
+        log_fatal("error: couldn't malloc pfds");
+        free(game);
+        exit(EXIT_FAILURE);
+    }
+
     game->fd_count = 0;
     game->fd_size = BACKLOG;
-    game->pfds = (struct pollfd *) malloc(sizeof(struct pollfd *) * game->fd_size);
+    game->listener = -1;
+
+    // game
     game->players = new_players();
+
+    if (game->players == NULL) {
+        log_fatal("error: couldn't malloc players");
+        free_pfds(&game->pfds);
+        free(game);
+        exit(EXIT_FAILURE);
+    }
+
     game->in_progress = false;
     game->drawing_player = NULL;
+    game->start_sec = 0;
+    game->end_sec = 0;
+    memset(game->guess_word, 0, sizeof(game->guess_word));
+
     return game;
 }
 
@@ -177,6 +203,10 @@ int send_invalid_username(int fd) {
     return send_header_only(fd, INVALID_USERNAME);
 }
 
+int send_server_error(int fd) {
+    return send_header_only(fd, SERVER_ERROR);
+}
+
 int send_game_draw_start(int drawing_fd, char *guess_word, time_t time_round_end) {
     struct Buffer *buffer = new_buffer();
     int send_res;
@@ -199,12 +229,12 @@ int send_game_in_progress(int fd, time_t time_round_end) {
     return send_res;
 }
 
-void broadcast_buffer(struct Game *game, int listener, int sender_fd, struct Buffer *buffer) {
+void broadcast_buffer(struct Game *game, int sender_fd, struct Buffer *buffer) {
     int dest_fd, j;
 
     for (j = 0; j < game->fd_count; j++) {
         dest_fd = game->pfds[j].fd;
-        if (dest_fd != listener && dest_fd != sender_fd) {
+        if (dest_fd != game->listener && dest_fd != sender_fd) {
             if ((send_buffer(dest_fd, buffer)) <= 0) {
                 log_warn("broadcasting error: destination fd %d failure, closing socket", dest_fd);
                 remove_player_from_game(game, dest_fd);
@@ -213,44 +243,45 @@ void broadcast_buffer(struct Game *game, int listener, int sender_fd, struct Buf
     }
 }
 
-void broadcast_waiting_for_players(struct Game *game, int listener, int connected_clients) {
+void broadcast_waiting_for_players(struct Game *game, int connected_clients) {
     struct Buffer *buffer = new_buffer();
     serialize_sock_header(WAITING_FOR_PLAYERS, buffer);
     serialize_int(connected_clients, buffer);
     serialize_int(MIN_PLAYERS, buffer);
-    broadcast_buffer(game, listener, listener, buffer);
+    broadcast_buffer(game, -1, buffer);
     free_buffer(&buffer);
 }
 
-void broadcast_game_guess_start(struct Game *game, int listener, int drawing_fd, time_t time_round_end) {
+void broadcast_game_guess_start(struct Game *game) {
+    int drawing_fd = game->drawing_player->fd;
     struct Buffer *buffer = new_buffer();
     serialize_sock_header(START_AND_GUESS, buffer);
-    serialize_time_t(time_round_end, buffer);
-    broadcast_buffer(game, listener, drawing_fd, buffer);
+    serialize_time_t(game->end_sec, buffer);
+    broadcast_buffer(game, drawing_fd, buffer);
     free_buffer(&buffer);
 }
 
-void broadcast_round_ends(struct Game *game, int listener) {
+void broadcast_round_ends(struct Game *game) {
     struct Buffer *buffer = new_buffer();
     serialize_sock_header(GAME_ENDS, buffer);
-    broadcast_buffer(game, listener, listener, buffer);
+    broadcast_buffer(game, -1, buffer);
     free_buffer(&buffer);
 }
 
 
 // ======================================================================= //
-//               SERVER LOGIC AND CLIENT/PLAYER MANAGEMENT                 //
+//               SERVER LOGIC AND CLIENT (PLAYER) MANAGEMENT               //
 // ======================================================================= //
 
 // client is trying to login...
 int manage_logging_player(int new_fd, struct Players *players) {
     struct Buffer *buffer = new_buffer();
-    int username_len, flag, recv_res;
+    int username_len, flag, res;
 
-    if ((recv_res = recv_buffer_sock_header(new_fd, buffer)) <= 0) {
+    if ((res = recv_buffer_sock_header(new_fd, buffer)) <= 0) {
         free_buffer(&buffer);
         log_warn("received incomplete data from socket %d", new_fd);
-        return recv_res;
+        return res;
     }
 
     flag = ((struct SocketHeader *) buffer->data)->flag;
@@ -261,21 +292,24 @@ int manage_logging_player(int new_fd, struct Players *players) {
         return -1;
     }
 
-    if ((recv_res = recv_buffer_int(new_fd, buffer)) <= 0) return recv_res;
+    if ((res = recv_buffer_int(new_fd, buffer)) <= 0) return res;
 
     unpack_int(buffer, &username_len);
 
-    if ((recv_res = recv_buffer_string(new_fd, buffer, username_len)) <= 0) return recv_res;
+    if ((res = recv_buffer_string(new_fd, buffer, username_len)) <= 0) return res;
 
-    if (update_players(players, buffer->data + STRING_OFFSET, new_fd) == NULL) {
+    if ((res = update_players(players, buffer->data + STRING_OFFSET, new_fd)) == 1) {
         free_buffer(&buffer);
-        send_invalid_username(new_fd);
+        send_invalid_username(new_fd); // no need to check return value, we are closing this connection anyway
         log_warn("invalid username - player already logged in");
         return -1;
+    } else if (res == -1) {
+        send_server_error(new_fd); // no need to check return value, we are closing this connection anyway
+        log_error("failed to create or update a player with username %s", buffer->data + STRING_OFFSET);
     }
 
     free_buffer(&buffer);
-    return recv_res;
+    return res;
 }
 
 // client is trying to send drawn canvas
@@ -291,7 +325,7 @@ int manage_drawing_player(int drawing_fd, struct Buffer *buffer) {
 // client is trying to send a guess
 int manage_guessing_player(int sender_fd, struct Buffer *buffer, char *guess_word, struct Player *player) {
     int guess_str_len, recv_res;
-    char buff_client_guess[MAX_GUESS_LEN], broadcast_response_msg[MAX_STRING_LEN];
+    char buff_client_guess[MAX_GUESS_LEN + 1], broadcast_response_msg[MAX_STRING_LEN];
 
     if (((struct SocketHeader *) buffer->data)->flag != CHAT) {
         log_warn("invalid header: guessing player error");
@@ -307,7 +341,7 @@ int manage_guessing_player(int sender_fd, struct Buffer *buffer, char *guess_wor
     if ((recv_res = recv_buffer_string(sender_fd, buffer, guess_str_len)) <= 0) return recv_res;
 
     strcpy(buff_client_guess, buffer->data + STRING_OFFSET);
-    buff_client_guess[MAX_GUESS_LEN - 1] = '\0';
+    buff_client_guess[MAX_GUESS_LEN] = '\0';
 
     log_trace("client guess word: %s", buff_client_guess);
 
@@ -327,20 +361,19 @@ int manage_guessing_player(int sender_fd, struct Buffer *buffer, char *guess_wor
     else return send_wrong_guess(sender_fd);
 }
 
-int manage_client(struct Game *game, int drawing_fd, int sender_fd, int listener, struct Player *player,
-                  char *guess_word) {
+int manage_client(struct Game *game, int sender_fd, struct Player *cur_player) {
     struct Buffer *buffer = new_buffer();
     int recv_res;
 
     if ((recv_res = recv_buffer_sock_header(sender_fd, buffer)) <= 0) return recv_res;
 
-    if (drawing_fd == sender_fd)
+    if (game->drawing_player->fd == sender_fd)
         recv_res = manage_drawing_player(sender_fd, buffer);
     else
-        recv_res = manage_guessing_player(sender_fd, buffer, guess_word, player);
+        recv_res = manage_guessing_player(sender_fd, buffer, game->guess_word, cur_player);
 
     if (recv_res > 0)
-        broadcast_buffer(game, listener, sender_fd, buffer);
+        broadcast_buffer(game, sender_fd, buffer);
 
     free_buffer(&buffer);
     return recv_res;
@@ -351,55 +384,56 @@ int manage_client(struct Game *game, int drawing_fd, int sender_fd, int listener
 //                         GAME SPECIFIC UTILS                             //
 // ======================================================================= //
 
-void start_round(struct Game *game, int drawing_fd, int listener, char *guess_word,
-                 time_t time_round_end) {
-
+void start_round(struct Game *game) {
     game->in_progress = true;
+    get_next_drawing_fd(game);
 
-    if (send_game_draw_start(drawing_fd, guess_word, time_round_end) <= 0) {
+    int drawing_fd = game->drawing_player->fd;
+
+    if (send_game_draw_start(drawing_fd, game->guess_word, game->end_sec) <= 0) {
         log_info("drawing fd %d error, closing", drawing_fd);
         remove_player_from_game(game, drawing_fd);
     }
 
     // we don't care if drawing player is offline, he has time to reconnect
-    broadcast_game_guess_start(game, listener, drawing_fd, time_round_end);
+    broadcast_game_guess_start(game);
 
     log_debug("new round started");
 }
 
 // client is trying to join waiting_for_players/new/in_progress round
-void manage_current_round(struct Game *game, int new_fd, int drawing_fd, int listener,
-                          char *guess_word, time_t *time_round_start, time_t *time_round_end) {
+void manage_current_round(struct Game *game, int new_fd) {
     int connected_clients = game->fd_count - 1;
+    int drawing_fd = game->drawing_player->fd;
+
     if (game->in_progress) {
         log_trace("fd %d joining game in progress", new_fd);
-        if (send_game_in_progress(new_fd, *time_round_end) <= 0) {
+        if (send_game_in_progress(new_fd, game->end_sec) <= 0) {
             log_info("fd %d unable to join current round, closing", new_fd);
             remove_player_from_game(game, new_fd);
         }
     } else if (connected_clients < MIN_PLAYERS) {
         log_info("waiting for players to join (%d/%d), broadcasting", connected_clients, MIN_PLAYERS);
-        broadcast_waiting_for_players(game, listener, connected_clients);
+        broadcast_waiting_for_players(game, connected_clients);
     } else {
-        get_random_word(guess_word);
-        log_debug("generated new guess word: %s, sending to drawing fd: %d", guess_word, drawing_fd);
+        get_random_word(game->guess_word);
+        log_debug("generated new guess word: %s, sending to drawing fd: %d", game->guess_word, drawing_fd);
 
-        *time_round_start = time(NULL) + TIME_BEFORE_START_SEC;
-        *time_round_end = *time_round_start + GAME_DURATION_SEC;
+        game->start_sec = time(NULL) + TIME_BEFORE_START_SEC;
+        game->end_sec = game->start_sec + GAME_DURATION_SEC;
 
-        start_round(game, drawing_fd, listener, guess_word, *time_round_end);
+        start_round(game);
 
-        log_game_start(time_round_start, time_round_end);
+        log_game_start(&game->start_sec, &game->end_sec);
     }
 }
 
-void end_round(struct Game *game, int listener) {
+void end_round(struct Game *game) {
     game->in_progress = false;
 
-    broadcast_round_ends(game, listener);
+    broadcast_round_ends(game);
 
-    // TODO
-// manage_current_round(game, -1, );
+    manage_current_round(game, -1);
 
     log_debug("round ended");
 }
@@ -411,37 +445,31 @@ void end_round(struct Game *game, int listener) {
 void start() {
     setup_signal_handling();
 
-    int timeout_ms, listener, new_fd, sender_fd, drawing_fd, recv_res, poll_res;
+    int timeout_sec, new_fd, sender_fd, recv_res, poll_res;
 
     struct sockaddr_storage remote_addr; // Client address
     socklen_t addr_len;
     char remote_ip[INET6_ADDRSTRLEN];
 
-    time_t time_round_end_sec = 0, time_round_start_sec = 0;
     struct Game *game = new_game();
     struct Player *cur_player;
 
-    char guess_word[MAX_GUESS_LEN];
-
-    if ((listener = get_listener_socket(PORT, BACKLOG)) == -1) {
+    if ((game->listener = get_listener_socket(PORT, BACKLOG)) == -1) {
         log_fatal("error getting listening socket: %s", strerror(errno));
         free_game(&game);
         exit(EXIT_FAILURE);
     }
-
     log_info("server listening on port %s", PORT);
 
-    add_to_pfds(&game->pfds, listener, &game->fd_count, &game->fd_size);
-
-    drawing_fd = 6;
+    add_to_pfds(&game->pfds, game->listener, &game->fd_count, &game->fd_size);
 
     for (;;) {
-        timeout_ms = (game->in_progress) ? (int) (time_round_end_sec - time(NULL)) * 1000 : POLL_TIMEOUT_MS;
-        log_trace("timeout set to %d second(s)", timeout_ms / 1000);
-        poll_res = poll(game->pfds, game->fd_count, timeout_ms);
+        timeout_sec = (game->in_progress) ? (int) (game->end_sec - time(NULL)) : POLL_TIMEOUT_SEC;
+        poll_res = poll(game->pfds, game->fd_count, timeout_sec * 1000);
+        log_trace("timeout set to %d second(s)", timeout_sec);
 
-        if (game->in_progress && time(NULL) + SOCKOPT_TIMEOUT_SEC >= time_round_end_sec)
-            end_round(game, listener);
+        if (game->in_progress && time(NULL) + SOCKOPT_TIMEOUT_SEC >= game->end_sec)
+            end_round(game);
 
         if (poll_res == -1) {
             log_fatal("poll-error: %s", strerror(errno));
@@ -455,10 +483,10 @@ void start() {
 
             if (!(game->pfds[i].revents & POLLIN)) continue;
 
-            if (game->pfds[i].fd == listener) {
+            if (game->pfds[i].fd == game->listener) {
 
                 addr_len = sizeof remote_addr;
-                new_fd = accept(listener, (struct sockaddr *) &remote_addr, &addr_len);
+                new_fd = accept(game->listener, (struct sockaddr *) &remote_addr, &addr_len);
 
                 if (new_fd == -1) {
                     log_error("listener: accept error");
@@ -484,8 +512,7 @@ void start() {
                              get_player_by_fd(game->players, new_fd)->username);
                     log_info("poll-server: %d connected client(s)", game->fd_count - 1);
 
-                    manage_current_round(game, new_fd, drawing_fd, listener, guess_word,
-                                         &time_round_start_sec, &time_round_end_sec);
+                    manage_current_round(game, new_fd);
                 }
             } else {
                 sender_fd = game->pfds[i].fd;
@@ -498,13 +525,13 @@ void start() {
                 }
 
                 // No game in progress or client not waiting for start
-                if (!game->in_progress || time(NULL) < time_round_start_sec) {
+                if (!game->in_progress || time(NULL) < game->start_sec) {
                     log_warn("socket %d trying to communicate outside the game loop, closing", sender_fd);
                     remove_player_from_game(game, sender_fd);
                     continue;
                 }
 
-                recv_res = manage_client(game, drawing_fd, sender_fd, listener, cur_player, guess_word);
+                recv_res = manage_client(game, sender_fd, cur_player);
 
                 // Known player error
                 if (recv_res <= 0) {

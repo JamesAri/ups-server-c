@@ -17,6 +17,7 @@
 #define INVALID_USERNAME 10             // || [SOCK_HEADER]                    || ----------------------------- ||
 #define WAITING_FOR_PLAYERS 11          // || [SOCK_HEADER][INT][INT]          || ----------------------------- ||
 #define GAME_ENDS 12                    // || [SOCK_HEADER]                    || ----------------------------- ||
+#define SERVER_ERROR 13                 // || [SOCK_HEADER]                    || ----------------------------- ||
 //                                      // =======================================================================
 
 struct SocketHeader {

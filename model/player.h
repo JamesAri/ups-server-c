@@ -28,7 +28,7 @@ int add_player(struct Players *players, struct Player *player);
 
 int remove_player(struct Players *players, int fd);
 
-struct Player *update_players(struct Players *players, char *username, int fd);
+int update_players(struct Players *players, char *username, int fd);
 
 struct Player *get_player_by_fd(struct Players *players, int fd);
 
