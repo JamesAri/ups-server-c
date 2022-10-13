@@ -19,7 +19,7 @@
 
 // game settings
 #define MIN_PLAYERS 2
-#define GAME_DURATION_SEC 60
+#define TIME_BEFORE_START_SEC 5
 
 struct Game {
     // file descriptors

@@ -41,8 +41,8 @@ void log_game_start(time_t *start, time_t *end) {
     memset(s2, 0, sizeof(s2));
     strftime(s1, sizeof(s1), "%c", localtime(start));
     strftime(s2, sizeof(s2), "%c", localtime(end));
-    log_trace("round started at %s and ends at %s (%d sec rounds)",
-              s1, s2, GAME_DURATION_SEC);
+    log_trace("round starts at %s and ends at %s (%d sec rounds, %d sec counter)",
+              s1, s2, GAME_DURATION_SEC, TIME_BEFORE_START_SEC);
 }
 
 // ======================================================================= //
@@ -145,9 +145,11 @@ void remove_player_from_game(struct Game *game, int player_fd) {
 
     player = get_player_by_fd(game->players, player_fd);
     if (player != NULL) { // if player exits, set to offline
-        log_trace("removing player %s (fd: %d) from game", player->username, player_fd);
+        log_debug("removing player %s (fd: %d) from game", player->username, player_fd);
         player->is_online = false;
         player->fd = -1;
+    } else {
+        log_warn("removing player not found (fd: %d), just closing connection", player_fd);
     }
 
     disconnect_fd(game->pfds, player_fd, &game->fd_count);
@@ -169,6 +171,8 @@ int recv_buffer(int fd, struct Buffer *buffer, int size) {
     memset(hex_buf_str, 0, sizeof(hex_buf_str));
     buf_to_hex_string(buffer->data, buffer->next, hex_buf_str);
     if (recv_res <= 0) {
+        if (recv_res == 0)
+            log_trace("socket (fd: %d) hung up, received bugger: %s", fd, hex_buf_str);
         if (recv_res < 0)
             log_warn("error(%d): received buffer (from fd: %d): %s", recv_res, fd, hex_buf_str, recv_res);
     } else
@@ -205,7 +209,7 @@ int send_buffer(int dest_fd, struct Buffer *buffer) {
     buf_to_hex_string(buffer->data, buffer->next, hex_buf_str);
     if (send_res <= 0) {
         if (send_res < 0)
-            log_info("error(%d): sent buffer (to fd: %d): %s", send_res, dest_fd, hex_buf_str);
+            log_warn("error(%d): couldn't send buffer to fd: %d, buffer: %s", send_res, dest_fd, hex_buf_str);
     } else {
         log_trace("sent buffer (to fd: %d): %s", dest_fd, hex_buf_str);
     }
@@ -436,10 +440,10 @@ void start_round(struct Game *game) {
     }
 
     drawing_fd = game->drawing_player_list->player->fd;
-    log_trace("currently drawing player: %s (fd: %d)", game->drawing_player_list->player->username, drawing_fd);
+    log_debug("currently drawing player: %s (fd: %d)", game->drawing_player_list->player->username, drawing_fd);
 
     if (send_game_draw_start(drawing_fd, game->guess_word, game->end_sec) <= 0) {
-        log_info("drawing fd %d error, closing", drawing_fd);
+        log_warn("drawing fd %d error, closing", drawing_fd);
         remove_player_from_game(game, drawing_fd);
     }
 
@@ -538,7 +542,7 @@ void start() {
                 if (new_fd == -1) {
                     log_error("listener: accept error");
                 } else {
-                    log_trace("new connection - fd: %d", new_fd);
+                    log_debug("new connection - fd: %d", new_fd);
 
                     if (set_socket_timeout(new_fd, SOCKOPT_TIMEOUT_SEC) < 0) {
                         log_error("setsockopt error: couldn't set timeout for socket with fd d%", new_fd);
@@ -553,12 +557,12 @@ void start() {
                     }
                     add_to_pfds(&(game->pfds), new_fd, &(game->fd_count), &(game->fd_size));
 
-                    log_info("poll-server: new connection from %s on socket %d (user: %s)",
-                             inet_ntop(remote_addr.ss_family, get_in_addr((struct sockaddr *) &remote_addr),
-                                       remote_ip, sizeof(remote_ip)),
-                             new_fd,
-                             get_player_by_fd(game->players, new_fd)->username);
-                    log_info("poll-server: %d connected client(s)", game->fd_count - 1);
+                    log_debug("poll-server: new connection from %s on socket %d (user: %s)",
+                              inet_ntop(remote_addr.ss_family, get_in_addr((struct sockaddr *) &remote_addr),
+                                        remote_ip, sizeof(remote_ip)),
+                              new_fd,
+                              get_player_by_fd(game->players, new_fd)->username);
+                    log_debug("poll-server: %d connected client(s)", game->fd_count - 1);
 
                     manage_current_round(game, new_fd);
                 }
@@ -584,8 +588,8 @@ void start() {
                 // Known player error
                 if (recv_res <= 0) {
                     if (recv_res == 0)
-                        log_info("poll-server: socket %d hung up (user: %s)", sender_fd,
-                                 cur_player->username);
+                        log_trace("poll-server: socket %d hung up (user: %s)", sender_fd,
+                                  cur_player->username);
                     else
                         log_warn("recv error (%d): socket: %d, user: %s, closing", recv_res, sender_fd,
                                  cur_player->username);

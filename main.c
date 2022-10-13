@@ -19,7 +19,8 @@ int test_players() {
 /**
  * <pre>
  * LOG_TRACE - detailed application flow - usually no need to log <br><br>
- * LOG_DEBUG - application flow that is worth logging for future debugging (slightly more important trace) <br><br>
+ * LOG_DEBUG - application flow that is worth logging for future debugging<br>
+ *             (helpful to people more than just developers (IT, sysadmins, etc.))<br><br>
  * LOG_INFO  - basic logging info - logs current state of server <br><br>
  * LOG_WARN  - server warnings - usually recv/send errors/hangups <br><br>
  * LOG_ERROR - server/client errors - application keeps running, but this problem should be further investigated <br><br>

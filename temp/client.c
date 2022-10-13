@@ -11,6 +11,7 @@
 #include <netinet/in.h>
 #include <sys/socket.h>
 #include "../utils/debug.h"
+#include "../definitions.h"
 
 #include <arpa/inet.h>
 
@@ -153,7 +154,7 @@ int main(int argc, char *argv[]) {
                     fprintf(stdout, "received GAME_IN_PROGRESS flag\n");
                     recv_buffer_time_t(server_socket, in_buffer);
                     time_end = ntohll(*(time_t *) (in_buffer->data + int_offset));
-                    fprintf(stdout, "game ends in %lu\n", time_end - time(NULL));
+                    fprintf(stdout, "game ends in %lu seconds\n", time_end - time(NULL));
                     break;
                 case CANVAS:
                     fprintf(stdout, "received CANVAS flag\n");
@@ -169,7 +170,8 @@ int main(int argc, char *argv[]) {
                     fprintf(stdout, "received START_AND_GUESS flag\n");
                     recv_buffer_time_t(server_socket, in_buffer);
                     time_end = ntohll(*(time_t *) (in_buffer->data + int_offset));
-                    fprintf(stdout, "game ends in %lu\n", time_end - time(NULL));
+                    fprintf(stdout, "game starts in %lu seconds\n", time_end - time(NULL) - GAME_DURATION_SEC);
+                    fprintf(stdout, "game ends in %lu seconds\n", time_end - time(NULL));
                     char temp2[1000];
                     buf_to_hex_string(in_buffer->data, in_buffer->next, temp2);
                     fprintf(stdout, "buffer: %s", temp2);
@@ -182,7 +184,8 @@ int main(int argc, char *argv[]) {
                     recv_buffer_time_t(server_socket, in_buffer);
                     time_end = ntohll(*(time_t *) (in_buffer->data + string_offset + server_msg_len));
                     fprintf(stdout, "draw: %s\n", (char *) (in_buffer->data + string_offset));
-                    fprintf(stdout, "game ends in %lu\n", time_end - time(NULL));
+                    fprintf(stdout, "game starts in %lu seconds\n", time_end - time(NULL) - GAME_DURATION_SEC);
+                    fprintf(stdout, "game ends in %lu seconds\n", time_end - time(NULL));
                     break;
                 case CORRECT_GUESS:
                     fprintf(stdout, "received CORRECT_GUESS flag\n");

@@ -9,6 +9,7 @@
 
 #define PORT "9034"
 
-#define TIME_BEFORE_START_SEC 5
+#define GAME_DURATION_SEC 60
+
 
 #endif //UPS_SERVER_C_DEFINITIONS_H
