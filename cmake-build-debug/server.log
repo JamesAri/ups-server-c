@@ -35,3 +35,552 @@
 2022-10-13 13:17:19 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:592: poll-server: socket 8 hung up (user: Pepa)
 2022-10-13 13:17:19 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:148: removing player Pepa (fd: 8) from game
 2022-10-13 13:17:22 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:27: terminating server: SIGTERM (15)
+2022-10-13 17:28:15 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:513: server listening on port 9034
+2022-10-13 17:28:33 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:520: timeout set to 60 second(s)
+2022-10-13 17:28:33 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:545: new connection - fd: 6
+2022-10-13 17:28:35 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:177: error(-1): received buffer (from fd: 6): 00
+2022-10-13 17:28:35 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:327: received incomplete data from socket 6
+2022-10-13 17:28:35 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:554: login error: closing connection for socket 6
+2022-10-13 17:29:35 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:520: timeout set to 60 second(s)
+2022-10-13 17:29:35 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:530: poll-timeout
+2022-10-13 17:29:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:520: timeout set to 60 second(s)
+2022-10-13 17:29:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:545: new connection - fd: 6
+2022-10-13 17:29:57 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:177: error(-1): received buffer (from fd: 6): 00
+2022-10-13 17:29:57 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:327: received incomplete data from socket 6
+2022-10-13 17:29:57 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:554: login error: closing connection for socket 6
+2022-10-13 17:30:57 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:520: timeout set to 60 second(s)
+2022-10-13 17:30:57 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:530: poll-timeout
+2022-10-13 17:31:42 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:520: timeout set to 60 second(s)
+2022-10-13 17:31:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:545: new connection - fd: 6
+2022-10-13 17:31:44 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:177: error(-1): received buffer (from fd: 6): 00
+2022-10-13 17:31:44 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:327: received incomplete data from socket 6
+2022-10-13 17:31:44 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:554: login error: closing connection for socket 6
+2022-10-13 17:32:19 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:520: timeout set to 60 second(s)
+2022-10-13 17:32:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:545: new connection - fd: 6
+2022-10-13 17:32:19 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:175: socket (fd: 6) hung up, received bugger: 00
+2022-10-13 17:32:19 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:327: received incomplete data from socket 6
+2022-10-13 17:37:16 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:513: server listening on port 9034
+2022-10-13 17:37:22 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:520: timeout set to 60 second(s)
+2022-10-13 17:37:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:545: new connection (fd: 6)
+2022-10-13 17:37:22 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:175: socket (fd: 6) hung up, received buffer: 00
+2022-10-13 17:37:22 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:327: received incomplete data from socket 6
+2022-10-13 17:37:22 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:554: login error: closing connection for socket 6
+2022-10-13 17:37:34 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:520: timeout set to 60 second(s)
+2022-10-13 17:37:34 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:545: new connection (fd: 6)
+2022-10-13 17:37:34 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:175: socket (fd: 6) hung up, received buffer: 00
+2022-10-13 17:37:34 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:327: received incomplete data from socket 6
+2022-10-13 17:37:34 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:554: login error: closing connection for socket 6
+2022-10-13 17:38:19 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:520: timeout set to 60 second(s)
+2022-10-13 17:38:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:545: new connection (fd: 6)
+2022-10-13 17:38:19 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:175: socket (fd: 6) hung up, received buffer: 00
+2022-10-13 17:38:19 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:327: received incomplete data from socket 6
+2022-10-13 17:38:19 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:554: login error: closing connection for socket 6
+2022-10-13 17:38:27 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:520: timeout set to 60 second(s)
+2022-10-13 17:38:27 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:545: new connection (fd: 6)
+2022-10-13 17:38:27 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06
+2022-10-13 17:38:29 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:177: error(-1): received buffer (from fd: 6): 06:73:73:00:00
+2022-10-13 17:38:29 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:554: login error: closing connection for socket 6
+2022-10-13 17:39:29 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:520: timeout set to 60 second(s)
+2022-10-13 17:39:29 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:530: poll-timeout
+2022-10-13 17:40:29 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:520: timeout set to 60 second(s)
+2022-10-13 17:40:29 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:530: poll-timeout
+2022-10-13 17:41:29 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:520: timeout set to 60 second(s)
+2022-10-13 17:41:29 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:530: poll-timeout
+2022-10-13 17:41:33 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:520: timeout set to 60 second(s)
+2022-10-13 17:41:33 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:545: new connection (fd: 6)
+2022-10-13 17:41:35 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:177: error(-1): received buffer (from fd: 6): 00
+2022-10-13 17:41:35 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:327: received incomplete data from socket 6
+2022-10-13 17:41:35 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:554: login error: closing connection for socket 6
+2022-10-13 17:42:12 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:520: timeout set to 60 second(s)
+2022-10-13 17:42:12 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:545: new connection (fd: 6)
+2022-10-13 17:42:14 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:177: error(-1): received buffer (from fd: 6): 00
+2022-10-13 17:42:14 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:327: received incomplete data from socket 6
+2022-10-13 17:42:14 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:554: login error: closing connection for socket 6
+2022-10-13 17:42:29 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:520: timeout set to 60 second(s)
+2022-10-13 17:42:29 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:545: new connection (fd: 6)
+2022-10-13 17:42:31 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:177: error(-1): received buffer (from fd: 6): 00
+2022-10-13 17:42:31 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:327: received incomplete data from socket 6
+2022-10-13 17:42:31 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:554: login error: closing connection for socket 6
+2022-10-13 17:42:57 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:520: timeout set to 60 second(s)
+2022-10-13 17:42:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:545: new connection (fd: 6)
+2022-10-13 17:42:57 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:175: socket (fd: 6) hung up, received buffer: 00
+2022-10-13 17:42:57 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:327: received incomplete data from socket 6
+2022-10-13 17:42:57 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:554: login error: closing connection for socket 6
+2022-10-13 17:43:09 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:520: timeout set to 60 second(s)
+2022-10-13 17:43:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:545: new connection (fd: 6)
+2022-10-13 17:43:09 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 00
+2022-10-13 17:43:09 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:335: invalid register-username header (received flag: 0x00)
+2022-10-13 17:43:09 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:554: login error: closing connection for socket 6
+2022-10-13 17:43:32 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:520: timeout set to 60 second(s)
+2022-10-13 17:43:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:545: new connection (fd: 6)
+2022-10-13 17:43:32 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06
+2022-10-13 17:43:32 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:78:61:78:61
+2022-10-13 17:47:37 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:518: server listening on port 9034
+2022-10-13 17:47:52 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:525: timeout set to 60 second(s)
+2022-10-13 17:47:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:550: new connection (fd: 6)
+2022-10-13 17:47:52 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06
+2022-10-13 17:47:52 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:6B:75:62:61
+2022-10-13 17:47:52 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:559: login error: closing connection for socket 6
+2022-10-13 17:48:52 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:525: timeout set to 60 second(s)
+2022-10-13 17:48:52 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:535: poll-timeout
+2022-10-13 17:48:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:525: timeout set to 60 second(s)
+2022-10-13 17:48:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:550: new connection (fd: 6)
+2022-10-13 17:48:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:175: socket (fd: 6) hung up, received buffer: 00
+2022-10-13 17:48:56 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:327: received incomplete data from socket 6
+2022-10-13 17:48:56 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:559: login error: closing connection for socket 6
+2022-10-13 17:49:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:525: timeout set to 60 second(s)
+2022-10-13 17:49:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:535: poll-timeout
+2022-10-13 17:50:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:525: timeout set to 60 second(s)
+2022-10-13 17:50:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:535: poll-timeout
+2022-10-13 17:51:09 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:525: timeout set to 60 second(s)
+2022-10-13 17:51:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:550: new connection (fd: 6)
+2022-10-13 17:51:09 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06
+2022-10-13 17:51:09 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-13 17:51:09 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:00:00:00:04:6B:75:62:61
+2022-10-13 17:51:09 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:559: login error: closing connection for socket 6
+2022-10-13 17:52:09 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:525: timeout set to 60 second(s)
+2022-10-13 17:52:09 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:535: poll-timeout
+2022-10-13 17:52:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:525: timeout set to 60 second(s)
+2022-10-13 17:52:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:550: new connection (fd: 6)
+2022-10-13 17:52:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06
+2022-10-13 17:52:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-13 17:52:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:00:00:00:04:6B:75:62:61
+2022-10-13 17:52:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 0A
+2022-10-13 17:52:14 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:353: invalid username - player already logged in
+2022-10-13 17:52:14 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:559: login error: closing connection for socket 6
+2022-10-13 17:52:48 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:27: terminating server: SIGTERM (15)
+2022-10-13 17:53:24 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:519: server listening on port 9034
+2022-10-13 17:53:27 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:526: timeout set to 60 second(s)
+2022-10-13 17:53:27 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:551: new connection (fd: 6)
+2022-10-13 17:53:27 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06
+2022-10-13 17:53:27 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-13 17:53:27 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:00:00:00:04:6B:75:62:61
+2022-10-13 17:53:27 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:560: login error: closing connection for socket 6
+2022-10-13 17:53:31 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:526: timeout set to 60 second(s)
+2022-10-13 17:53:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:551: new connection (fd: 6)
+2022-10-13 17:53:31 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06
+2022-10-13 17:53:31 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-13 17:53:31 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:00:00:00:04:6B:75:62:61
+2022-10-13 17:53:31 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 0A
+2022-10-13 17:53:31 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:354: invalid username - player already logged in
+2022-10-13 17:53:31 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:560: login error: closing connection for socket 6
+2022-10-13 17:54:31 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:526: timeout set to 60 second(s)
+2022-10-13 17:54:31 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:536: poll-timeout
+2022-10-13 17:55:20 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:27: terminating server: SIGTERM (15)
+2022-10-13 17:55:21 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:520: server listening on port 9034
+2022-10-13 17:55:24 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 60 second(s)
+2022-10-13 17:55:24 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:552: new connection (fd: 6)
+2022-10-13 17:55:24 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06
+2022-10-13 17:55:24 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-13 17:55:24 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:00:00:00:04:6B:75:62:61
+2022-10-13 17:55:24 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:572: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: kuba)
+2022-10-13 17:55:24 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:573: poll-server: 1 connected client(s)
+2022-10-13 17:55:24 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:474: waiting for players to join (1/2), broadcasting
+2022-10-13 17:55:24 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-13 17:55:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 60 second(s)
+2022-10-13 17:55:37 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:589: socket 6 trying to communicate outside the game loop, closing
+2022-10-13 17:55:37 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:148: removing player kuba (fd: 6) from game
+2022-10-13 17:55:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 60 second(s)
+2022-10-13 17:55:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:552: new connection (fd: 6)
+2022-10-13 17:55:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06
+2022-10-13 17:55:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:00:00:00:05
+2022-10-13 17:55:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:00:00:00:05:68:6F:6E:7A:61
+2022-10-13 17:55:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:572: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: honza)
+2022-10-13 17:55:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:573: poll-server: 1 connected client(s)
+2022-10-13 17:55:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:474: waiting for players to join (1/2), broadcasting
+2022-10-13 17:55:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-13 17:55:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 60 second(s)
+2022-10-13 17:55:55 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:589: socket 6 trying to communicate outside the game loop, closing
+2022-10-13 17:55:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:148: removing player honza (fd: 6) from game
+2022-10-13 17:56:31 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 60 second(s)
+2022-10-13 17:56:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:552: new connection (fd: 6)
+2022-10-13 17:56:31 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06
+2022-10-13 17:56:31 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-13 17:56:31 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:00:00:00:04:6B:75:62:61
+2022-10-13 17:56:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:572: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: kuba)
+2022-10-13 17:56:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:573: poll-server: 1 connected client(s)
+2022-10-13 17:56:31 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:474: waiting for players to join (1/2), broadcasting
+2022-10-13 17:56:31 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-13 17:56:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 60 second(s)
+2022-10-13 17:56:44 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:552: new connection (fd: 7)
+2022-10-13 17:56:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 06
+2022-10-13 17:56:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 06:00:00:00:04
+2022-10-13 17:56:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 06:00:00:00:04:6B:75:62:61
+2022-10-13 17:56:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 0A
+2022-10-13 17:56:44 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:354: invalid username - player already logged in
+2022-10-13 17:56:44 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:561: login error: closing connection for socket 7
+2022-10-13 17:56:46 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 60 second(s)
+2022-10-13 17:56:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:552: new connection (fd: 7)
+2022-10-13 17:56:46 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 06
+2022-10-13 17:56:46 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-13 17:56:46 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 06:00:00:00:05:6B:75:62:61:32
+2022-10-13 17:56:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:572: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: kuba2)
+2022-10-13 17:56:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:573: poll-server: 2 connected client(s)
+2022-10-13 17:56:46 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:478: generated new guess word: filter
+2022-10-13 17:56:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:450: currently drawing player: kuba2 (fd: 7)
+2022-10-13 17:56:46 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 05:00:00:00:06:66:69:6C:74:65:72:00:00:00:00:63:48:35:7F
+2022-10-13 17:56:46 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 04:00:00:00:00:63:48:35:7F
+2022-10-13 17:56:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:460: new round started
+2022-10-13 17:56:46 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:45: round starts at Thu Oct 13 17:56:51 2022 and ends at Thu Oct 13 17:57:51 2022 (60 sec rounds, 5 sec counter)
+2022-10-13 17:56:46 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 65 second(s)
+2022-10-13 17:56:46 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:589: socket 6 trying to communicate outside the game loop, closing
+2022-10-13 17:56:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:148: removing player kuba (fd: 6) from game
+2022-10-13 17:56:59 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 65 second(s)
+2022-10-13 17:56:59 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:175: socket (fd: 7) hung up, received buffer: 00
+2022-10-13 17:56:59 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:600: poll-server: socket 7 hung up (user: kuba2)
+2022-10-13 17:56:59 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:148: removing player kuba2 (fd: 7) from game
+2022-10-13 17:57:05 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:27: terminating server: SIGTERM (15)
+2022-10-13 19:49:03 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:520: server listening on port 9034
+2022-10-13 19:49:09 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 60 second(s)
+2022-10-13 19:49:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:552: new connection (fd: 6)
+2022-10-13 19:49:09 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06
+2022-10-13 19:49:09 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:00:00:00:04
+2022-10-13 19:49:09 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:00:00:00:04:6B:75:62:61
+2022-10-13 19:49:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:572: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: kuba)
+2022-10-13 19:49:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:573: poll-server: 1 connected client(s)
+2022-10-13 19:49:09 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:474: waiting for players to join (1/2), broadcasting
+2022-10-13 19:49:09 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-13 19:49:25 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 60 second(s)
+2022-10-13 19:49:25 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:552: new connection (fd: 7)
+2022-10-13 19:49:25 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 06
+2022-10-13 19:49:25 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-13 19:49:25 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-13 19:49:25 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:572: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Honza)
+2022-10-13 19:49:25 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:573: poll-server: 2 connected client(s)
+2022-10-13 19:49:25 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:478: generated new guess word: NASCAR
+2022-10-13 19:49:25 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:450: currently drawing player: Honza (fd: 7)
+2022-10-13 19:49:25 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 05:00:00:00:06:4E:41:53:43:41:52:00:00:00:00:63:48:4F:E6
+2022-10-13 19:49:25 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 04:00:00:00:00:63:48:4F:E6
+2022-10-13 19:49:25 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:460: new round started
+2022-10-13 19:49:25 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:45: round starts at Thu Oct 13 19:49:30 2022 and ends at Thu Oct 13 19:50:30 2022 (60 sec rounds, 5 sec counter)
+2022-10-13 19:49:25 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 65 second(s)
+2022-10-13 19:49:25 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:589: socket 6 trying to communicate outside the game loop, closing
+2022-10-13 19:49:25 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:148: removing player kuba (fd: 6) from game
+2022-10-13 19:50:30 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 65 second(s)
+2022-10-13 19:50:30 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 0C
+2022-10-13 19:50:30 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:474: waiting for players to join (1/2), broadcasting
+2022-10-13 19:50:30 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 0B:00:00:00:01:00:00:00:02
+2022-10-13 19:50:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:496: round ended
+2022-10-13 19:50:30 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:537: poll-timeout
+2022-10-13 19:51:30 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 60 second(s)
+2022-10-13 19:51:30 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:537: poll-timeout
+2022-10-13 19:52:30 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 60 second(s)
+2022-10-13 19:52:30 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:537: poll-timeout
+2022-10-13 19:53:30 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 60 second(s)
+2022-10-13 19:53:30 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:537: poll-timeout
+2022-10-13 19:54:30 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 60 second(s)
+2022-10-13 19:54:30 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:537: poll-timeout
+2022-10-13 19:54:41 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 60 second(s)
+2022-10-13 19:54:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:552: new connection (fd: 6)
+2022-10-13 19:54:41 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06
+2022-10-13 19:54:41 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:00:00:00:02
+2022-10-13 19:54:41 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:00:00:00:02:6B:6B
+2022-10-13 19:54:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:572: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: kk)
+2022-10-13 19:54:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:573: poll-server: 2 connected client(s)
+2022-10-13 19:54:41 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:478: generated new guess word: cringe
+2022-10-13 19:56:55 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:27: terminating server: SIGTERM (15)
+2022-10-13 19:59:57 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:520: server listening on port 9034
+2022-10-13 20:00:04 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 60 second(s)
+2022-10-13 20:00:04 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:552: new connection (fd: 6)
+2022-10-13 20:00:04 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06
+2022-10-13 20:00:04 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:00:00:00:02
+2022-10-13 20:00:04 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:00:00:00:02:6B:6B
+2022-10-13 20:00:04 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:572: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: kk)
+2022-10-13 20:00:04 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:573: poll-server: 1 connected client(s)
+2022-10-13 20:00:04 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:474: waiting for players to join (1/2), broadcasting
+2022-10-13 20:00:04 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-13 20:00:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 60 second(s)
+2022-10-13 20:00:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:552: new connection (fd: 7)
+2022-10-13 20:00:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 06
+2022-10-13 20:00:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-13 20:00:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-13 20:00:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:572: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Honza)
+2022-10-13 20:00:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:573: poll-server: 2 connected client(s)
+2022-10-13 20:00:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:478: generated new guess word: orchid
+2022-10-13 20:00:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:450: currently drawing player: Honza (fd: 7)
+2022-10-13 20:00:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 05:00:00:00:06:6F:72:63:68:69:64:00:00:00:00:63:48:52:6F
+2022-10-13 20:00:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 04:00:00:00:00:63:48:52:6F
+2022-10-13 20:00:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:460: new round started
+2022-10-13 20:00:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:45: round starts at Thu Oct 13 20:00:19 2022 and ends at Thu Oct 13 20:01:19 2022 (60 sec rounds, 5 sec counter)
+2022-10-13 20:00:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 65 second(s)
+2022-10-13 20:00:14 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:589: socket 6 trying to communicate outside the game loop, closing
+2022-10-13 20:00:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:148: removing player kk (fd: 6) from game
+2022-10-13 20:01:10 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:27: terminating server: SIGTERM (15)
+2022-10-13 20:03:40 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:520: server listening on port 9034
+2022-10-13 20:03:42 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 60 second(s)
+2022-10-13 20:03:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:552: new connection (fd: 6)
+2022-10-13 20:03:42 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06
+2022-10-13 20:03:42 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:00:00:00:05
+2022-10-13 20:03:42 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-13 20:03:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:572: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-13 20:03:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:573: poll-server: 1 connected client(s)
+2022-10-13 20:03:42 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:474: waiting for players to join (1/2), broadcasting
+2022-10-13 20:03:42 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-13 20:03:50 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 60 second(s)
+2022-10-13 20:03:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:552: new connection (fd: 7)
+2022-10-13 20:03:50 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 06
+2022-10-13 20:03:50 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 06:00:00:00:04
+2022-10-13 20:03:50 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 06:00:00:00:04:6B:75:62:61
+2022-10-13 20:03:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:572: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: kuba)
+2022-10-13 20:03:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:573: poll-server: 2 connected client(s)
+2022-10-13 20:03:50 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:478: generated new guess word: bridge
+2022-10-13 20:03:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:450: currently drawing player: kuba (fd: 7)
+2022-10-13 20:03:50 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 05:00:00:00:06:62:72:69:64:67:65:00:00:00:00:63:48:53:47
+2022-10-13 20:03:50 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 04:00:00:00:00:63:48:53:47
+2022-10-13 20:03:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:460: new round started
+2022-10-13 20:03:50 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:45: round starts at Thu Oct 13 20:03:55 2022 and ends at Thu Oct 13 20:04:55 2022 (60 sec rounds, 5 sec counter)
+2022-10-13 20:04:35 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 65 second(s)
+2022-10-13 20:04:35 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:175: socket (fd: 7) hung up, received buffer: 00
+2022-10-13 20:04:35 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:600: poll-server: socket 7 hung up (user: kuba)
+2022-10-13 20:04:35 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:148: removing player kuba (fd: 7) from game
+2022-10-13 20:04:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 20 second(s)
+2022-10-13 20:04:44 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:552: new connection (fd: 7)
+2022-10-13 20:04:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 06
+2022-10-13 20:04:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 06:00:00:00:04
+2022-10-13 20:04:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 06:00:00:00:04:6B:75:62:61
+2022-10-13 20:04:44 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:572: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: kuba)
+2022-10-13 20:04:44 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:573: poll-server: 2 connected client(s)
+2022-10-13 20:04:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:468: fd 7 joining game in progress
+2022-10-13 20:04:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 01:00:00:00:00:63:48:53:47
+2022-10-13 20:04:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 11 second(s)
+2022-10-13 20:04:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 0C
+2022-10-13 20:04:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 0C
+2022-10-13 20:04:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:478: generated new guess word: canyon
+2022-10-13 20:04:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:450: currently drawing player: Honza (fd: 6)
+2022-10-13 20:04:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 05:00:00:00:06:63:61:6E:79:6F:6E:00:00:00:00:63:48:53:88
+2022-10-13 20:04:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 04:00:00:00:00:63:48:53:88
+2022-10-13 20:04:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:460: new round started
+2022-10-13 20:04:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:45: round starts at Thu Oct 13 20:05:00 2022 and ends at Thu Oct 13 20:06:00 2022 (60 sec rounds, 5 sec counter)
+2022-10-13 20:04:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:496: round ended
+2022-10-13 20:04:55 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:537: poll-timeout
+2022-10-13 20:06:00 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 65 second(s)
+2022-10-13 20:06:00 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 0C
+2022-10-13 20:06:00 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 0C
+2022-10-13 20:06:00 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:478: generated new guess word: cocoon
+2022-10-13 20:06:00 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:450: currently drawing player: kuba (fd: 7)
+2022-10-13 20:06:00 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 05:00:00:00:06:63:6F:63:6F:6F:6E:00:00:00:00:63:48:53:C9
+2022-10-13 20:06:00 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 04:00:00:00:00:63:48:53:C9
+2022-10-13 20:06:00 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:460: new round started
+2022-10-13 20:06:00 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:45: round starts at Thu Oct 13 20:06:05 2022 and ends at Thu Oct 13 20:07:05 2022 (60 sec rounds, 5 sec counter)
+2022-10-13 20:06:00 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:496: round ended
+2022-10-13 20:06:00 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:537: poll-timeout
+2022-10-13 20:06:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 65 second(s)
+2022-10-13 20:06:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 03
+2022-10-13 20:06:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 03:00:00:00:06
+2022-10-13 20:06:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 03:00:00:00:06:63:61:63:6F:6F:6E
+2022-10-13 20:06:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:397: client guess word: cacoon
+2022-10-13 20:06:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 08
+2022-10-13 20:06:14 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 03:00:00:00:0D:48:6F:6E:7A:61:3A:20:63:61:63:6F:6F:6E
+2022-10-13 20:06:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 51 second(s)
+2022-10-13 20:06:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 03
+2022-10-13 20:06:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 03:00:00:00:06
+2022-10-13 20:06:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 03:00:00:00:06:63:61:63:6F:6F:6E
+2022-10-13 20:06:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:397: client guess word: cacoon
+2022-10-13 20:06:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 08
+2022-10-13 20:06:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 03:00:00:00:0D:48:6F:6E:7A:61:3A:20:63:61:63:6F:6F:6E
+2022-10-13 20:07:05 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 9 second(s)
+2022-10-13 20:07:05 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 0C
+2022-10-13 20:07:05 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 0C
+2022-10-13 20:07:05 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:478: generated new guess word: cringe
+2022-10-13 20:07:05 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:450: currently drawing player: Honza (fd: 6)
+2022-10-13 20:07:05 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 05:00:00:00:06:63:72:69:6E:67:65:00:00:00:00:63:48:54:0A
+2022-10-13 20:07:05 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 04:00:00:00:00:63:48:54:0A
+2022-10-13 20:07:05 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:460: new round started
+2022-10-13 20:07:05 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:45: round starts at Thu Oct 13 20:07:10 2022 and ends at Thu Oct 13 20:08:10 2022 (60 sec rounds, 5 sec counter)
+2022-10-13 20:07:05 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:496: round ended
+2022-10-13 20:07:05 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:537: poll-timeout
+2022-10-13 20:07:09 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 65 second(s)
+2022-10-13 20:07:09 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:589: socket 6 trying to communicate outside the game loop, closing
+2022-10-13 20:07:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:148: removing player Honza (fd: 6) from game
+2022-10-13 20:07:15 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 61 second(s)
+2022-10-13 20:07:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:552: new connection (fd: 6)
+2022-10-13 20:07:15 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06
+2022-10-13 20:07:15 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:00:00:00:05
+2022-10-13 20:07:15 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-13 20:07:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:572: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-13 20:07:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:573: poll-server: 2 connected client(s)
+2022-10-13 20:07:15 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:468: fd 6 joining game in progress
+2022-10-13 20:07:15 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 01:00:00:00:00:63:48:54:0A
+2022-10-13 20:08:10 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 55 second(s)
+2022-10-13 20:08:10 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 0C
+2022-10-13 20:08:10 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 0C
+2022-10-13 20:08:10 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:478: generated new guess word: driver
+2022-10-13 20:08:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:450: currently drawing player: kuba (fd: 7)
+2022-10-13 20:08:10 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 05:00:00:00:06:64:72:69:76:65:72:00:00:00:00:63:48:54:4B
+2022-10-13 20:08:10 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 04:00:00:00:00:63:48:54:4B
+2022-10-13 20:08:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:460: new round started
+2022-10-13 20:08:10 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:45: round starts at Thu Oct 13 20:08:15 2022 and ends at Thu Oct 13 20:09:15 2022 (60 sec rounds, 5 sec counter)
+2022-10-13 20:08:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:496: round ended
+2022-10-13 20:08:10 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:537: poll-timeout
+2022-10-13 20:09:15 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 65 second(s)
+2022-10-13 20:09:15 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 0C
+2022-10-13 20:09:15 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 0C
+2022-10-13 20:09:15 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:478: generated new guess word: folder
+2022-10-13 20:09:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:450: currently drawing player: Honza (fd: 6)
+2022-10-13 20:09:15 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 05:00:00:00:06:66:6F:6C:64:65:72:00:00:00:00:63:48:54:8C
+2022-10-13 20:09:15 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 04:00:00:00:00:63:48:54:8C
+2022-10-13 20:09:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:460: new round started
+2022-10-13 20:09:15 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:45: round starts at Thu Oct 13 20:09:20 2022 and ends at Thu Oct 13 20:10:20 2022 (60 sec rounds, 5 sec counter)
+2022-10-13 20:09:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:496: round ended
+2022-10-13 20:09:15 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:537: poll-timeout
+2022-10-13 20:09:25 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 65 second(s)
+2022-10-13 20:09:25 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 03
+2022-10-13 20:09:25 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 03:00:00:00:06
+2022-10-13 20:09:25 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 03:00:00:00:06:66:6F:6C:64:65:72
+2022-10-13 20:09:25 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:397: client guess word: folder
+2022-10-13 20:09:25 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 07
+2022-10-13 20:09:25 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 09:00:00:00:1B:50:6C:61:79:65:72:20:6B:75:62:61:20:67:6F:74:20:74:68:65:20:61:6E:73:77:65:72:21
+2022-10-13 20:09:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 55 second(s)
+2022-10-13 20:09:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:175: socket (fd: 6) hung up, received buffer: 00
+2022-10-13 20:09:56 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:600: poll-server: socket 6 hung up (user: Honza)
+2022-10-13 20:09:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:148: removing player Honza (fd: 6) from game
+2022-10-13 20:10:20 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 24 second(s)
+2022-10-13 20:10:20 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 0C
+2022-10-13 20:10:20 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:474: waiting for players to join (1/2), broadcasting
+2022-10-13 20:10:20 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 0B:00:00:00:01:00:00:00:02
+2022-10-13 20:10:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:496: round ended
+2022-10-13 20:10:20 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:537: poll-timeout
+2022-10-13 20:10:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 60 second(s)
+2022-10-13 20:10:44 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:589: socket 7 trying to communicate outside the game loop, closing
+2022-10-13 20:10:44 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:148: removing player kuba (fd: 7) from game
+2022-10-13 20:11:04 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:27: terminating server: SIGTERM (15)
+2022-10-13 20:15:09 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:520: server listening on port 9034
+2022-10-13 20:15:17 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:528: timeout set to 60 second(s), (game in progress: false)
+2022-10-13 20:15:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:553: new connection (fd: 6)
+2022-10-13 20:15:17 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06
+2022-10-13 20:15:17 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:00:00:00:0A
+2022-10-13 20:15:17 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:00:00:00:0A:70:65:70:61:20:7A:64:65:70:61
+2022-10-13 20:15:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:573: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: pepa zdepa)
+2022-10-13 20:15:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:574: poll-server: 1 connected client(s)
+2022-10-13 20:15:17 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:474: waiting for players to join (1/2), broadcasting
+2022-10-13 20:15:17 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-13 20:15:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:528: timeout set to 60 second(s), (game in progress: false)
+2022-10-13 20:15:37 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:553: new connection (fd: 7)
+2022-10-13 20:15:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 06
+2022-10-13 20:15:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-13 20:15:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-13 20:15:37 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:573: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Honza)
+2022-10-13 20:15:37 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:574: poll-server: 2 connected client(s)
+2022-10-13 20:15:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:478: generated new guess word: ladder
+2022-10-13 20:15:37 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:450: currently drawing player: Honza (fd: 7)
+2022-10-13 20:15:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 05:00:00:00:06:6C:61:64:64:65:72:00:00:00:00:63:48:56:0A
+2022-10-13 20:15:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 04:00:00:00:00:63:48:56:0A
+2022-10-13 20:15:37 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:460: new round started
+2022-10-13 20:15:37 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:45: round starts at Thu Oct 13 20:15:42 2022 and ends at Thu Oct 13 20:16:42 2022 (60 sec rounds, 5 sec counter)
+2022-10-13 20:16:15 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:528: timeout set to 65 second(s), (game in progress: true)
+2022-10-13 20:16:15 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 03
+2022-10-13 20:16:15 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 03:00:00:00:01
+2022-10-13 20:16:15 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 03:00:00:00:01:2E
+2022-10-13 20:16:15 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:397: client guess word: .
+2022-10-13 20:16:15 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 08
+2022-10-13 20:16:15 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 03:00:00:00:0D:70:65:70:61:20:7A:64:65:70:61:3A:20:2E
+2022-10-13 20:16:42 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:528: timeout set to 27 second(s), (game in progress: true)
+2022-10-13 20:16:42 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 0C
+2022-10-13 20:16:42 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 0C
+2022-10-13 20:16:42 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:478: generated new guess word: minute
+2022-10-13 20:16:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:450: currently drawing player: pepa zdepa (fd: 6)
+2022-10-13 20:16:42 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 05:00:00:00:06:6D:69:6E:75:74:65:00:00:00:00:63:48:56:4B
+2022-10-13 20:16:42 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 04:00:00:00:00:63:48:56:4B
+2022-10-13 20:16:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:460: new round started
+2022-10-13 20:16:42 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:45: round starts at Thu Oct 13 20:16:47 2022 and ends at Thu Oct 13 20:17:47 2022 (60 sec rounds, 5 sec counter)
+2022-10-13 20:16:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:496: round ended
+2022-10-13 20:16:42 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:538: poll-timeout
+2022-10-13 20:17:06 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:528: timeout set to 65 second(s), (game in progress: true)
+2022-10-13 20:17:06 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 03
+2022-10-13 20:17:06 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 03:00:00:00:06
+2022-10-13 20:17:06 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 03:00:00:00:06:6D:69:6E:75:74:65
+2022-10-13 20:17:06 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:397: client guess word: minute
+2022-10-13 20:17:06 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 07
+2022-10-13 20:17:06 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 09:00:00:00:1C:50:6C:61:79:65:72:20:48:6F:6E:7A:61:20:67:6F:74:20:74:68:65:20:61:6E:73:77:65:72:21
+2022-10-13 20:17:23 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:528: timeout set to 41 second(s), (game in progress: true)
+2022-10-13 20:17:23 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 03
+2022-10-13 20:17:23 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 03:00:00:00:01
+2022-10-13 20:17:23 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 03:00:00:00:01:2E
+2022-10-13 20:17:23 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:397: client guess word: .
+2022-10-13 20:17:23 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 08
+2022-10-13 20:17:23 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 03:00:00:00:08:48:6F:6E:7A:61:3A:20:2E
+2022-10-13 20:17:47 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:528: timeout set to 24 second(s), (game in progress: true)
+2022-10-13 20:17:47 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 0C
+2022-10-13 20:17:47 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 0C
+2022-10-13 20:17:47 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:478: generated new guess word: nugget
+2022-10-13 20:17:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:450: currently drawing player: Honza (fd: 7)
+2022-10-13 20:17:47 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 05:00:00:00:06:6E:75:67:67:65:74:00:00:00:00:63:48:56:8C
+2022-10-13 20:17:47 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 04:00:00:00:00:63:48:56:8C
+2022-10-13 20:17:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:460: new round started
+2022-10-13 20:17:47 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:45: round starts at Thu Oct 13 20:17:52 2022 and ends at Thu Oct 13 20:18:52 2022 (60 sec rounds, 5 sec counter)
+2022-10-13 20:17:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:496: round ended
+2022-10-13 20:17:47 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:538: poll-timeout
+2022-10-13 20:18:17 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:27: terminating server: SIGTERM (15)
+2022-10-13 20:18:19 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:520: server listening on port 9034
+2022-10-13 20:18:19 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 60 second(s), (game in progress: false)
+2022-10-13 20:18:35 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:554: new connection (fd: 6)
+2022-10-13 20:18:35 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06
+2022-10-13 20:18:35 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:00:00:00:05
+2022-10-13 20:18:35 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 06:00:00:00:05:6D:65:65:65:68
+2022-10-13 20:18:35 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:574: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: meeeh)
+2022-10-13 20:18:35 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:575: poll-server: 1 connected client(s)
+2022-10-13 20:18:35 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:474: waiting for players to join (1/2), broadcasting
+2022-10-13 20:18:35 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 0B:00:00:00:01:00:00:00:02
+2022-10-13 20:18:35 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 60 second(s), (game in progress: false)
+2022-10-13 20:18:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:554: new connection (fd: 7)
+2022-10-13 20:18:39 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 06
+2022-10-13 20:18:39 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 06:00:00:00:05
+2022-10-13 20:18:39 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 7): 06:00:00:00:05:48:6F:6E:7A:61
+2022-10-13 20:18:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:574: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Honza)
+2022-10-13 20:18:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:575: poll-server: 2 connected client(s)
+2022-10-13 20:18:39 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:478: generated new guess word: parrot
+2022-10-13 20:18:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:450: currently drawing player: Honza (fd: 7)
+2022-10-13 20:18:39 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 05:00:00:00:06:70:61:72:72:6F:74:00:00:00:00:63:48:56:C0
+2022-10-13 20:18:39 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 04:00:00:00:00:63:48:56:C0
+2022-10-13 20:18:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:460: new round started
+2022-10-13 20:18:39 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:45: round starts at Thu Oct 13 20:18:44 2022 and ends at Thu Oct 13 20:19:44 2022 (60 sec rounds, 5 sec counter)
+2022-10-13 20:18:39 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 65 second(s), (game in progress: true)
+2022-10-13 20:18:49 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 03
+2022-10-13 20:18:49 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 03:00:00:00:09
+2022-10-13 20:18:49 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 03:00:00:00:09:6E:65:76:69:6D:20:6E:6F:6F
+2022-10-13 20:18:49 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:397: client guess word: nevim noo
+2022-10-13 20:18:49 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 08
+2022-10-13 20:18:49 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 03:00:00:00:10:6D:65:65:65:68:3A:20:6E:65:76:69:6D:20:6E:6F:6F
+2022-10-13 20:18:49 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 55 second(s), (game in progress: true)
+2022-10-13 20:19:02 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 03
+2022-10-13 20:19:02 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 03:00:00:00:07
+2022-10-13 20:19:02 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 03:00:00:00:07:70:61:72:72:6F:74:3F
+2022-10-13 20:19:02 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:397: client guess word: parrot?
+2022-10-13 20:19:02 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 08
+2022-10-13 20:19:02 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 03:00:00:00:0E:6D:65:65:65:68:3A:20:70:61:72:72:6F:74:3F
+2022-10-13 20:19:02 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 42 second(s), (game in progress: true)
+2022-10-13 20:19:08 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 03
+2022-10-13 20:19:08 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 03:00:00:00:00
+2022-10-13 20:19:08 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 03:00:00:00:00
+2022-10-13 20:19:08 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:397: client guess word: 
+2022-10-13 20:19:08 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 08
+2022-10-13 20:19:08 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 03:00:00:00:07:6D:65:65:65:68:3A:20
+2022-10-13 20:19:08 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 36 second(s), (game in progress: true)
+2022-10-13 20:19:08 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 03
+2022-10-13 20:19:08 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 03:00:00:00:06
+2022-10-13 20:19:08 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 03:00:00:00:06:70:61:72:72:6F:72
+2022-10-13 20:19:08 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:397: client guess word: parror
+2022-10-13 20:19:08 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 08
+2022-10-13 20:19:08 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 03:00:00:00:0D:6D:65:65:65:68:3A:20:70:61:72:72:6F:72
+2022-10-13 20:19:08 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 36 second(s), (game in progress: true)
+2022-10-13 20:19:09 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 03
+2022-10-13 20:19:09 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 03:00:00:00:06
+2022-10-13 20:19:09 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:179: received buffer (from fd: 6): 03:00:00:00:06:70:61:72:72:6F:74
+2022-10-13 20:19:09 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:397: client guess word: parrot
+2022-10-13 20:19:09 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 6): 07
+2022-10-13 20:19:09 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 09:00:00:00:1C:50:6C:61:79:65:72:20:6D:65:65:65:68:20:67:6F:74:20:74:68:65:20:61:6E:73:77:65:72:21
+2022-10-13 20:19:09 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 35 second(s), (game in progress: true)
+2022-10-13 20:19:17 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:175: socket (fd: 6) hung up, received buffer: 00
+2022-10-13 20:19:17 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:602: poll-server: socket 6 hung up (user: meeeh)
+2022-10-13 20:19:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:148: removing player meeeh (fd: 6) from game
+2022-10-13 20:19:17 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 27 second(s), (game in progress: true)
+2022-10-13 20:19:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 0C
+2022-10-13 20:19:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:474: waiting for players to join (1/2), broadcasting
+2022-10-13 20:19:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:214: sent buffer (to fd: 7): 0B:00:00:00:01:00:00:00:02
+2022-10-13 20:19:44 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:496: round ended
+2022-10-13 20:19:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:539: poll-timeout
+2022-10-13 20:19:44 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 60 second(s), (game in progress: false)
+2022-10-13 20:20:33 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:591: socket 7 trying to communicate outside the game loop, closing
+2022-10-13 20:20:33 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:148: removing player Honza (fd: 7) from game
+2022-10-13 20:20:33 TRACE /Users/jakub.slechta/git/ups-server-c/server.c:527: timeout set to 60 second(s), (game in progress: false)
+2022-10-13 20:20:39 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:27: terminating server: SIGTERM (15)

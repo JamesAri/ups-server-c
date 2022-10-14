@@ -11,5 +11,7 @@
 
 #define GAME_DURATION_SEC 60
 
+#define MAX_USERNAME_LEN 20
+
 
 #endif //UPS_SERVER_C_DEFINITIONS_H

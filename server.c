@@ -172,7 +172,7 @@ int recv_buffer(int fd, struct Buffer *buffer, int size) {
     buf_to_hex_string(buffer->data, buffer->next, hex_buf_str);
     if (recv_res <= 0) {
         if (recv_res == 0)
-            log_trace("socket (fd: %d) hung up, received bugger: %s", fd, hex_buf_str);
+            log_trace("socket (fd: %d) hung up, received buffer: %s", fd, hex_buf_str);
         if (recv_res < 0)
             log_warn("error(%d): received buffer (from fd: %d): %s", recv_res, fd, hex_buf_str, recv_res);
     } else
@@ -320,7 +320,7 @@ void broadcast_round_ends(struct Game *game) {
 // client is trying to login...
 int manage_logging_player(int new_fd, struct Players *players) {
     struct Buffer *buffer = new_buffer();
-    int username_len, flag, res;
+    int username_len, flag, res, res_update;
 
     if ((res = recv_buffer_sock_header(new_fd, buffer)) <= 0) {
         free_buffer(&buffer);
@@ -340,16 +340,23 @@ int manage_logging_player(int new_fd, struct Players *players) {
 
     unpack_int(buffer, &username_len);
 
+    if (username_len > MAX_USERNAME_LEN) {
+        free_buffer(&buffer);
+        log_warn("username too long (fd: %d)", new_fd);
+        return -1;
+    }
+
     if ((res = recv_buffer_string(new_fd, buffer, username_len)) <= 0) return res;
 
-    if ((res = update_players(players, buffer->data + STRING_OFFSET, new_fd)) == 1) {
+    if ((res_update = update_players(players, buffer->data + STRING_OFFSET, new_fd)) == 1) {
         free_buffer(&buffer);
         send_invalid_username(new_fd); // no need to check return value, we are closing this connection anyway
         log_warn("invalid username - player already logged in");
         return -1;
-    } else if (res == -1) {
+    } else if (res_update == -1) {
         send_server_error(new_fd); // no need to check return value, we are closing this connection anyway
         log_error("failed to create or update a player with username %s", buffer->data + STRING_OFFSET);
+        return -1;
     }
 
     free_buffer(&buffer);
@@ -516,8 +523,10 @@ void start() {
 
     for (;;) {
         timeout_sec = (game->in_progress) ? (int) (game->end_sec - time(NULL)) : POLL_TIMEOUT_SEC;
+        log_trace("timeout set to %d second(s), (game in progress: %s)", timeout_sec,
+                  game->in_progress ? "true" : "false");
         poll_res = poll(game->pfds, game->fd_count, timeout_sec * 1000);
-        log_trace("timeout set to %d second(s)", timeout_sec);
+
 
         if (game->in_progress && time(NULL) + SOCKOPT_TIMEOUT_SEC >= game->end_sec)
             end_round(game);
@@ -542,7 +551,7 @@ void start() {
                 if (new_fd == -1) {
                     log_error("listener: accept error");
                 } else {
-                    log_debug("new connection - fd: %d", new_fd);
+                    log_debug("new connection (fd: %d)", new_fd);
 
                     if (set_socket_timeout(new_fd, SOCKOPT_TIMEOUT_SEC) < 0) {
                         log_error("setsockopt error: couldn't set timeout for socket with fd d%", new_fd);
@@ -550,11 +559,12 @@ void start() {
                         continue;
                     }
 
-                    if (manage_logging_player(new_fd, game->players) == -1) {
+                    if (manage_logging_player(new_fd, game->players) <= 0) {
                         log_warn("login error: closing connection for socket %d", new_fd);
                         close(new_fd);
                         continue;
                     }
+
                     add_to_pfds(&(game->pfds), new_fd, &(game->fd_count), &(game->fd_size));
 
                     log_debug("poll-server: new connection from %s on socket %d (user: %s)",
