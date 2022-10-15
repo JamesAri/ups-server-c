@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/time.h>
+#include <stdio.h>
 
 
 // ======================================================================= //
@@ -21,9 +22,15 @@ struct Buffer *new_buffer() {
 }
 
 void reserve_space(struct Buffer *buffer, int bytes) {
-    if ((buffer->next + bytes) > buffer->size) {
-        buffer->data = realloc(buffer->data, buffer->size * 2);
-        buffer->size *= 2;
+    int new_size, min_size = buffer->next + bytes;
+    if (min_size > buffer->size) {
+        new_size = (min_size > buffer->size * 2) ? min_size : buffer->size * 2;
+        buffer->data = realloc(buffer->data, new_size);
+        if (buffer->data == NULL) {
+            fprintf(stderr, "realloc error - reserving space for buffer");
+            exit(1);
+        }
+        buffer->size = new_size;
         memset(buffer->data + buffer->next, 0, buffer->size - buffer->next);
     }
 }

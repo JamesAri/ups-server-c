@@ -163,9 +163,10 @@ void remove_player_from_game(struct Game *game, int player_fd) {
 int recv_buffer(int fd, struct Buffer *buffer, int size) {
     int recv_res, temp = size;
     reserve_space(buffer, size);
+    log_fatal("fd: %d, buffersize: %d, size: %d", fd, buffer->size, size);
+
     recv_res = recvall(fd, buffer->data + buffer->next, &temp);
     buffer->next += size;
-
     // logging
     char hex_buf_str[HEX_STRING_MAX_SIZE];
     memset(hex_buf_str, 0, sizeof(hex_buf_str));
@@ -275,6 +276,11 @@ int send_game_in_progress(int fd, time_t time_round_end) {
 
 void broadcast_buffer(struct Game *game, int sender_fd, struct Buffer *buffer) {
     int dest_fd, j;
+
+    char hex_buf_str[HEX_STRING_MAX_SIZE];
+    memset(hex_buf_str, 0, sizeof(hex_buf_str));
+    buf_to_hex_string(buffer->data, buffer->next, hex_buf_str);
+    log_trace("broadcasting buffer (sender: %d): %s", sender_fd, hex_buf_str);
 
     for (j = 0; j < game->fd_count; j++) {
         dest_fd = game->pfds[j].fd;
@@ -425,6 +431,9 @@ int manage_client(struct Game *game, int sender_fd, struct Player *cur_player) {
 
     if (recv_res > 0)
         broadcast_buffer(game, sender_fd, buffer);
+    else {
+        log_warn("failed to broadcast (sender_fd is %d)", sender_fd);
+    }
 
     free_buffer(&buffer);
     return recv_res;
