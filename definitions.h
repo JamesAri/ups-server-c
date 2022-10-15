@@ -13,5 +13,8 @@
 
 #define MAX_USERNAME_LEN 20
 
+#define ROWS 100
+#define COLS 100
+#define CANVAS_BUF_SIZE (ROWS * COLS)
 
 #endif //UPS_SERVER_C_DEFINITIONS_H

@@ -77,3 +77,8 @@
 171	271	1665684908917982569	ups_server_c	c7ccb1abcccf3889
 1	122	1665685097907354296	CMakeFiles/ups_server_c.dir/server.c.o	be4b6a8e59f6f22a
 122	202	1665685097986823018	ups_server_c	c7ccb1abcccf3889
+1	1220	1665857870780119171	CMakeFiles/ups_server_c.dir/server.c.o	be4b6a8e59f6f22a
+1220	1382	1665857870943851623	ups_server_c	c7ccb1abcccf3889
+3	183	1665863323832393822	CMakeFiles/ups_server_c.dir/main.c.o	d76f4d71119475c1
+4	225	1665863323874909578	CMakeFiles/ups_server_c.dir/server.c.o	be4b6a8e59f6f22a
+225	309	1665863323960885781	ups_server_c	c7ccb1abcccf3889

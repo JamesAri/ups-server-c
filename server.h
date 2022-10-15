@@ -15,7 +15,6 @@
 // buffer sizes
 #define MAX_GUESS_LEN 256
 #define MAX_STRING_LEN 256
-#define CANVAS_BUF_SIZE 1024
 
 // game settings
 #define MIN_PLAYERS 2

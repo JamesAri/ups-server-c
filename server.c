@@ -588,7 +588,7 @@ void start() {
 
                 // No game in progress or client not waiting for start
                 if (!game->in_progress || time(NULL) < game->start_sec) {
-                    log_warn("socket %d trying to communicate outside the game loop, closing", sender_fd);
+                    log_debug("socket %d trying to communicate outside the game loop, closing", sender_fd);
                     remove_player_from_game(game, sender_fd);
                     continue;
                 }
