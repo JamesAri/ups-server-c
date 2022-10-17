@@ -163,7 +163,6 @@ void remove_player_from_game(struct Game *game, int player_fd) {
 int recv_buffer(int fd, struct Buffer *buffer, int size) {
     int recv_res, temp = size;
     reserve_space(buffer, size);
-    log_fatal("fd: %d, buffersize: %d, size: %d", fd, buffer->size, size);
 
     recv_res = recvall(fd, buffer->data + buffer->next, &temp);
     buffer->next += size;
