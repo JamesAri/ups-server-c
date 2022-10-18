@@ -371,7 +371,7 @@ int manage_logging_player(int new_fd, struct Players *players) {
 // client is trying to send drawn canvas
 int manage_drawing_player(int drawing_fd, struct Buffer *buffer) {
     if (((struct SocketHeader *) buffer->data)->flag != CANVAS) {
-        log_warn("invalid header: drawing player error (drawing_fd: %d)", drawing_fd);
+        log_warn("received invalid header, drawing_fd: %d", drawing_fd);
         return -1;
     }
 
@@ -609,7 +609,7 @@ void start() {
                         log_trace("poll-server: socket %d hung up (user: %s)", sender_fd,
                                   cur_player->username);
                     else
-                        log_warn("recv error (%d): socket: %d, user: %s, closing", recv_res, sender_fd,
+                        log_warn("recv err (%d): socket: %d, user: %s, closing", recv_res, sender_fd,
                                  cur_player->username);
                     remove_player_from_game(game, sender_fd);
                 }

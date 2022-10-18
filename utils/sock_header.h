@@ -10,7 +10,7 @@
 #define CHAT 3                          // || [SOCK_HEADER][INT][STRING]       || [SOCK_HEADER][INT][STRING]    ||
 #define START_AND_GUESS 4               // || [SOCK_HEADER][TIME]              || ----------------------------- ||
 #define START_AND_DRAW 5                // || [SOCK_HEADER][INT][STRING][TIME] || ----------------------------- ||
-#define INPUT_USERNAME 6                // || [SOCK_HEADER]                    || [SOCK_HEADER][INT][STRING]    ||
+#define INPUT_USERNAME 6                // || -------------------------------- || [SOCK_HEADER][INT][STRING]    ||
 #define CORRECT_GUESS 7                 // || [SOCK_HEADER]                    || ----------------------------- ||
 #define WRONG_GUESS 8                   // || [SOCK_HEADER]                    || ----------------------------- ||
 #define CORRECT_GUESS_ANNOUNCEMENT 9    // || [SOCK_HEADER][INT][STRING]       || ----------------------------- ||
