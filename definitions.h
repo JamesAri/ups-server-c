@@ -12,10 +12,12 @@
 
 #define GAME_DURATION_SEC 60
 
+#define MAX_MSG_LEN 27
 #define MAX_USERNAME_LEN 20
 
 #define ROWS 100
 #define COLS 100
-#define CANVAS_BUF_SIZE ((ROWS * COLS) / 8 + (ROWS * COLS) % 8)
+#define CANVAS_SIZE (ROWS * COLS)
+#define SERIALIZED_CANVAS_BUF_SIZE ((ROWS * COLS) / 8 + (ROWS * COLS) % 8)
 
 #endif //UPS_SERVER_C_DEFINITIONS_H

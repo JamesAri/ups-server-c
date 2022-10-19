@@ -1,6 +1,7 @@
 #ifndef UPS_SERVER_C_SERIALIZATION_H
 #define UPS_SERVER_C_SERIALIZATION_H
 
+#include "../model/canvas.h"
 #include <sys/time.h>
 
 #define INITIAL_SIZE 10
@@ -31,6 +32,8 @@ void serialize_string(char *string, struct Buffer *buffer);
 void serialize_his(int flag, char *string, struct Buffer *buffer);
 
 void serialize_time_t(time_t time, struct Buffer *buffer);
+
+void serialize_canvas(struct Canvas *canvas, struct Buffer *buffer);
 
 void unpack_int(struct Buffer *buffer, int *res);
 

@@ -1,9 +1,6 @@
 #ifndef UPS_SERVER_C_SERVER_H
 #define UPS_SERVER_C_SERVER_H
 
-#include "utils/sock_header.h"
-
-#include <poll.h>
 #include <stdbool.h>
 #include <sys/time.h>
 
@@ -13,9 +10,8 @@
 #define SOCKOPT_TIMEOUT_SEC 2
 
 // buffer sizes
-#define MAX_GUESS_LEN 256
-#define MAX_STRING_LEN 256
-
+#define MAX_GUESS_LEN 256 // TODO use MAX_MSG_LEN
+#define MAX_LOG_MSG_LEN 512
 // game settings
 #define MIN_PLAYERS 2
 #define TIME_BEFORE_START_SEC 5
@@ -29,6 +25,7 @@ struct Game {
     // game
     struct Players *players;
     struct PlayerList *drawing_player_list;
+    struct Canvas *canvas;
     bool in_progress;
     char guess_word[MAX_GUESS_LEN];
     time_t start_sec;

@@ -4,7 +4,6 @@
 #define INIT_SIZE 100
 #define INCREMENT 10
 
-
 static struct Words {
     int size;
     int word_count;

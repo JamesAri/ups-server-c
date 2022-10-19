@@ -28,11 +28,11 @@ void reserve_space(struct Buffer *buffer, int bytes) {
         buffer->data = realloc(buffer->data, new_size);
         if (buffer->data == NULL) {
             fprintf(stderr, "realloc error - reserving space for buffer");
-            exit(1);
+            exit(1); // TODO
         }
         buffer->size = new_size;
-        memset(buffer->data + buffer->next, 0, buffer->size - buffer->next);
     }
+    memset(buffer->data + buffer->next, 0, buffer->size - buffer->next); // let's make it clean ^^
 }
 
 void clear_buffer(struct Buffer *buffer) {
@@ -82,6 +82,12 @@ void serialize_time_t(time_t time, struct Buffer *buffer) {
     buffer->next += sizeof(time_t);
 }
 
+void serialize_canvas(struct Canvas *canvas, struct Buffer *buffer) {
+    reserve_space(buffer, CANVAS_BYTES_TO_SEND);
+    memcpy(((char *) buffer->data) + buffer->next, canvas->bitarray_grid, CANVAS_BYTES_TO_SEND);
+    buffer->next += CANVAS_BYTES_TO_SEND;
+}
+
 void serialize_his(int flag, char *string, struct Buffer *buffer) {
     serialize_sock_header(flag, buffer);
     serialize_int((int) strlen(string), buffer);
@@ -93,14 +99,17 @@ void serialize_his(int flag, char *string, struct Buffer *buffer) {
 //                         UNPACKING PROCEDURES                            //
 // ======================================================================= //
 
+// [SOCK_HEADER][unpacking INT]
 void unpack_int(struct Buffer *buffer, int *res) {
     *res = ntohl(*(int *) (buffer->data + INT_OFFSET));
 }
 
+// [---offset---][unpacking INT]
 void unpack_int_var(struct Buffer *buffer, int *res, int offset) {
     *res = ntohl(*(int *) (buffer->data + offset));
 }
 
+// [SOCK_HEADER][INT][unpacking STRING]
 void unpack_string(struct Buffer *buffer, char *res) {
     strcpy(res, (buffer->data + STRING_OFFSET));
 }

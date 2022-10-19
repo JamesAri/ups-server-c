@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <ctype.h>
 
 int read_words(char *file_name) {
     FILE *fp;
@@ -37,6 +38,7 @@ void get_random_word(char *string_bfr) {
     srand(time(NULL));
     strcpy(string_bfr, words.words[rand() % words.word_count]);
     string_bfr[strcspn(string_bfr, "\r\n")] = 0;
+    for (; *string_bfr; ++string_bfr) *string_bfr = (char) tolower(*string_bfr);
 }
 
 

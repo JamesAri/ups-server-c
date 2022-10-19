@@ -1,10 +1,10 @@
+#ifndef UPS_SERVER_C_SOCKET_UTILS_H
+#define UPS_SERVER_C_SOCKET_UTILS_H
+
 #include <sys/socket.h>
 #include <poll.h>
 #include <sys/time.h>
 #include "../model/player.h"
-
-#ifndef UPS_SERVER_C_SOCKET_UTILS_H
-#define UPS_SERVER_C_SOCKET_UTILS_H
 
 // ======================================================================= //
 //                            SOCKET UTILS                                 //
