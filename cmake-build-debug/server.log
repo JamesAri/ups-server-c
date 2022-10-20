@@ -453,3 +453,713 @@
 2022-10-20 16:56:05 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:644: poll-server: socket 6 hung up (user: Honza)
 2022-10-20 16:56:05 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
 2022-10-20 16:56:10 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:28: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-20 17:06:33 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:567: server liste☊i☊g on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-20 17:06:48 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:601: new connection (fd: 6)
+2022-10-20 17:06:48 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:621: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 17:06:48 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:622: poll-server: 1 connected client(s)
+2022-10-20 17:06:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:601: new connection (fd: 7)
+2022-10-20 17:06:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:621: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 17:06:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:622: poll-server: 2 connected client(s)
+2022-10-20 17:06:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:497: currently drawing player: Kuba (fd: 7)
+2022-10-20 17:06:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:507: new round started
+2022-10-20 17:07:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 17:07:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:649: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 17:07:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 17:07:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 17:07:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:649: poll-server: socket 6 hung up (user: Honza)
+2022-10-20 17:07:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 17:07:24 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:28: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-20 17:09:20 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:566: server liste☊i☊g on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-20 17:09:25 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:600: new connection (fd: 6)
+2022-10-20 17:09:25 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:620: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 17:09:25 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:621: poll-server: 1 connected client(s)
+2022-10-20 17:09:28 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:600: new connection (fd: 7)
+2022-10-20 17:09:28 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:620: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 17:09:28 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:621: poll-server: 2 connected client(s)
+2022-10-20 17:09:28 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:496: currently drawing player: Kuba (fd: 7)
+2022-10-20 17:09:28 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:506: new round started
+2022-10-20 17:10:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 17:10:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:648: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 17:10:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 17:10:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 17:10:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:648: poll-server: socket 6 hung up (user: Honza)
+2022-10-20 17:10:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 17:10:33 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:542: round ended
+2022-10-20 17:10:36 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:28: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-20 17:13:48 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:566: server liste☊i☊g on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-20 17:13:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:600: new connection (fd: 6)
+2022-10-20 17:13:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:620: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 17:13:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:621: poll-server: 1 connected client(s)
+2022-10-20 17:13:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:600: new connection (fd: 7)
+2022-10-20 17:13:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:620: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 17:13:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:621: poll-server: 2 connected client(s)
+2022-10-20 17:13:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:496: currently drawing player: Kuba (fd: 7)
+2022-10-20 17:13:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:506: new round started
+2022-10-20 17:14:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 17:14:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:648: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 17:14:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 17:14:24 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 17:14:24 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:648: poll-server: socket 6 hung up (user: Honza)
+2022-10-20 17:14:24 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 17:15:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:542: round ended
+2022-10-20 17:17:25 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:28: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-20 17:21:09 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:567: server liste☊i☊g on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-20 17:21:14 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:567: server liste☊i☊g on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-20 17:21:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:601: new connection (fd: 6)
+2022-10-20 17:21:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:621: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 17:21:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:622: poll-server: 1 connected client(s)
+2022-10-20 17:21:23 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:601: new connection (fd: 7)
+2022-10-20 17:21:23 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:621: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 17:21:23 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:622: poll-server: 2 connected client(s)
+2022-10-20 17:21:23 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:497: currently drawing player: Kuba (fd: 7)
+2022-10-20 17:21:23 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:507: new round started
+2022-10-20 17:21:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 17:21:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:649: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 17:21:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 17:21:59 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 17:21:59 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:649: poll-server: socket 6 hung up (user: Honza)
+2022-10-20 17:21:59 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 17:22:28 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:543: round ended
+2022-10-20 17:23:35 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:28: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-20 17:23:37 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:566: server liste☊i☊g on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-20 17:23:42 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:28: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-20 17:27:40 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:566: server liste☊i☊g on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-20 17:27:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:600: new connection (fd: 6)
+2022-10-20 17:27:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:620: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-20 17:27:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:621: poll-server: 1 connected client(s)
+2022-10-20 17:27:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:600: new connection (fd: 7)
+2022-10-20 17:27:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:620: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Honza)
+2022-10-20 17:27:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:621: poll-server: 2 connected client(s)
+2022-10-20 17:27:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:496: currently drawing player: Honza (fd: 7)
+2022-10-20 17:27:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:506: new round started
+2022-10-20 17:28:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 17:28:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:648: poll-server: socket 7 hung up (user: Honza)
+2022-10-20 17:28:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 7) from game
+2022-10-20 17:28:05 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 17:28:05 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:648: poll-server: socket 6 hung up (user: Kuba)
+2022-10-20 17:28:05 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 6) from game
+2022-10-20 17:28:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:542: round ended
+2022-10-20 17:29:27 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:28: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-20 17:29:29 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:566: server liste☊i☊g on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-20 17:29:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:600: new connection (fd: 6)
+2022-10-20 17:29:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:620: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 17:29:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:621: poll-server: 1 connected client(s)
+2022-10-20 17:29:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:600: new connection (fd: 7)
+2022-10-20 17:29:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:620: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 17:29:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:621: poll-server: 2 connected client(s)
+2022-10-20 17:29:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:496: currently drawing player: Kuba (fd: 7)
+2022-10-20 17:29:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:506: new round started
+2022-10-20 17:29:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 17:29:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:648: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 17:29:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 17:29:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 17:29:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:648: poll-server: socket 6 hung up (user: Honza)
+2022-10-20 17:29:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 17:30:07 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:600: new connection (fd: 6)
+2022-10-20 17:30:07 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:620: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-20 17:30:07 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:621: poll-server: 1 connected client(s)
+2022-10-20 17:30:29 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 17:30:29 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:648: poll-server: socket 6 hung up (user: Kuba)
+2022-10-20 17:30:29 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 6) from game
+2022-10-20 17:30:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:600: new connection (fd: 6)
+2022-10-20 17:30:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:620: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-20 17:30:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:621: poll-server: 1 connected client(s)
+2022-10-20 17:30:44 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:542: round ended
+2022-10-20 17:30:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:637: socket 6 trying to communicate outside the game loop, closing
+2022-10-20 17:30:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 6) from game
+2022-10-20 17:30:54 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:28: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-20 17:35:34 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:566: server liste☊i☊g on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-20 17:35:38 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:600: new connection (fd: 6)
+2022-10-20 17:35:38 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:620: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 17:35:38 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:621: poll-server: 1 connected client(s)
+2022-10-20 17:35:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:600: new connection (fd: 7)
+2022-10-20 17:35:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:620: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 17:35:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:621: poll-server: 2 connected client(s)
+2022-10-20 17:35:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:496: currently drawing player: Kuba (fd: 7)
+2022-10-20 17:35:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:506: new round started
+2022-10-20 17:35:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 17:35:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:648: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 17:35:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 17:35:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:600: new connection (fd: 7)
+2022-10-20 17:35:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:620: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 17:35:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:621: poll-server: 2 connected client(s)
+2022-10-20 17:35:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 17:35:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:648: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 17:35:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 17:36:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 17:36:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:648: poll-server: socket 6 hung up (user: Honza)
+2022-10-20 17:36:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 17:36:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:542: round ended
+2022-10-20 17:37:00 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:600: new connection (fd: 6)
+2022-10-20 17:37:00 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:620: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-20 17:37:00 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:621: poll-server: 1 connected client(s)
+2022-10-20 17:37:02 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:600: new connection (fd: 7)
+2022-10-20 17:37:02 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:620: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Honza)
+2022-10-20 17:37:02 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:621: poll-server: 2 connected client(s)
+2022-10-20 17:37:02 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:496: currently drawing player: Honza (fd: 7)
+2022-10-20 17:37:02 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:506: new round started
+2022-10-20 17:37:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 17:37:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:648: poll-server: socket 7 hung up (user: Honza)
+2022-10-20 17:37:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 7) from game
+2022-10-20 17:37:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:600: new connection (fd: 7)
+2022-10-20 17:37:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:620: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Honza)
+2022-10-20 17:37:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:621: poll-server: 2 connected client(s)
+2022-10-20 17:37:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 17:37:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:648: poll-server: socket 7 hung up (user: Honza)
+2022-10-20 17:37:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 7) from game
+2022-10-20 17:37:38 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:600: new connection (fd: 7)
+2022-10-20 17:37:38 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:620: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Honza)
+2022-10-20 17:37:38 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:621: poll-server: 2 connected client(s)
+2022-10-20 17:37:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 17:37:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:648: poll-server: socket 7 hung up (user: Honza)
+2022-10-20 17:37:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 7) from game
+2022-10-20 17:37:43 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:600: new connection (fd: 7)
+2022-10-20 17:37:43 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:620: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Honza)
+2022-10-20 17:37:43 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:621: poll-server: 2 connected client(s)
+2022-10-20 17:37:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 17:37:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:648: poll-server: socket 7 hung up (user: Honza)
+2022-10-20 17:37:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 7) from game
+2022-10-20 17:37:53 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:600: new connection (fd: 7)
+2022-10-20 17:37:53 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:620: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Honza)
+2022-10-20 17:37:53 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:621: poll-server: 2 connected client(s)
+2022-10-20 17:37:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 17:37:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:648: poll-server: socket 7 hung up (user: Honza)
+2022-10-20 17:37:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 7) from game
+2022-10-20 17:38:07 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:542: round ended
+2022-10-20 17:39:35 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:28: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-20 17:57:41 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:568: server liste☊i☊g on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-20 17:57:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:602: new connection (fd: 6)
+2022-10-20 17:57:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:622: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 17:57:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:623: poll-server: 1 connected client(s)
+2022-10-20 17:57:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:602: new connection (fd: 7)
+2022-10-20 17:57:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:622: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 17:57:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:623: poll-server: 2 connected client(s)
+2022-10-20 17:57:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:496: currently drawing player: Kuba (fd: 7)
+2022-10-20 17:57:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:506: new round started
+2022-10-20 17:58:26 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 17:58:26 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:650: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 17:58:26 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 17:58:29 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:602: new connection (fd: 7)
+2022-10-20 17:58:29 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:622: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 17:58:29 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:623: poll-server: 2 connected client(s)
+2022-10-20 17:58:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 17:58:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:650: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 17:58:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 17:58:34 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 17:58:34 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:650: poll-server: socket 6 hung up (user: Honza)
+2022-10-20 17:58:34 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 17:58:36 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:28: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-20 18:10:20 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:568: server liste☊i☊g on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-20 18:10:28 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:602: new connection (fd: 6)
+2022-10-20 18:10:28 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:622: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 18:10:28 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:623: poll-server: 1 connected client(s)
+2022-10-20 18:10:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:602: new connection (fd: 7)
+2022-10-20 18:10:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:622: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 18:10:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:623: poll-server: 2 connected client(s)
+2022-10-20 18:10:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:496: currently drawing player: Kuba (fd: 7)
+2022-10-20 18:10:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:506: new round started
+2022-10-20 18:10:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 18:10:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:650: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 18:10:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 18:10:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:602: new connection (fd: 7)
+2022-10-20 18:10:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:622: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 18:10:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:623: poll-server: 2 connected client(s)
+2022-10-20 18:10:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 18:10:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:650: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 18:10:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 18:10:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:602: new connection (fd: 7)
+2022-10-20 18:10:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:622: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 18:10:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:623: poll-server: 2 connected client(s)
+2022-10-20 18:11:02 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 18:11:02 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:650: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 18:11:02 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 18:11:04 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:602: new connection (fd: 7)
+2022-10-20 18:11:04 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:622: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 18:11:04 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:623: poll-server: 2 connected client(s)
+2022-10-20 18:11:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 18:11:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:650: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 18:11:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 18:11:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:602: new connection (fd: 7)
+2022-10-20 18:11:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:622: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 18:11:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:623: poll-server: 2 connected client(s)
+2022-10-20 18:11:18 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 18:11:18 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:650: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 18:11:18 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 18:11:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:602: new connection (fd: 7)
+2022-10-20 18:11:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:622: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 18:11:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:623: poll-server: 2 connected client(s)
+2022-10-20 18:11:23 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 18:11:23 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:650: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 18:11:23 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 18:11:27 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 18:11:27 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:650: poll-server: socket 6 hung up (user: Honza)
+2022-10-20 18:11:27 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 18:11:30 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:28: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-20 18:13:13 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:568: server liste☊i☊g on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-20 18:13:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:602: new connection (fd: 6)
+2022-10-20 18:13:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:622: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 18:13:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:623: poll-server: 1 connected client(s)
+2022-10-20 18:13:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:602: new connection (fd: 7)
+2022-10-20 18:13:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:622: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 18:13:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:623: poll-server: 2 connected client(s)
+2022-10-20 18:13:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:496: currently drawing player: Kuba (fd: 7)
+2022-10-20 18:13:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:506: new round started
+2022-10-20 18:13:34 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 18:13:34 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:650: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 18:13:34 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 18:13:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:602: new connection (fd: 7)
+2022-10-20 18:13:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:622: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 18:13:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:623: poll-server: 2 connected client(s)
+2022-10-20 18:13:40 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 18:13:40 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:650: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 18:13:40 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 18:13:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:602: new connection (fd: 7)
+2022-10-20 18:13:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:622: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 18:13:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:623: poll-server: 2 connected client(s)
+2022-10-20 18:13:53 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 18:13:53 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:650: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 18:13:53 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 18:14:05 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 18:14:05 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:650: poll-server: socket 6 hung up (user: Honza)
+2022-10-20 18:14:05 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 18:14:07 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:28: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-20 18:51:14 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:564: server liste☊i☊g on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-20 18:51:18 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 18:51:18 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 18:51:18 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 18:51:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 7)
+2022-10-20 18:51:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 18:51:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 2 connected client(s)
+2022-10-20 18:51:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:492: currently drawing player: Kuba (fd: 7)
+2022-10-20 18:51:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:502: new round started
+2022-10-20 18:51:35 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 18:51:35 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 18:51:35 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 18:51:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 7)
+2022-10-20 18:51:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 18:51:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 2 connected client(s)
+2022-10-20 18:51:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 18:51:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 18:51:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 18:51:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 18:51:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 6 hung up (user: Honza)
+2022-10-20 18:51:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 18:51:54 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:28: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-20 18:51:57 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:564: server liste☊i☊g on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-20 18:54:07 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 18:54:07 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 18:54:07 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 18:54:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 7)
+2022-10-20 18:54:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 18:54:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 2 connected client(s)
+2022-10-20 18:54:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:492: currently drawing player: Kuba (fd: 7)
+2022-10-20 18:54:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:502: new round started
+2022-10-20 18:54:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 18:54:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 18:54:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 18:54:25 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 18:54:25 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 6 hung up (user: Honza)
+2022-10-20 18:54:25 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 18:54:31 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:28: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-20 18:58:22 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:564: server liste☊i☊g on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-20 18:58:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 18:58:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 18:58:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 18:58:33 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 7)
+2022-10-20 18:58:33 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 18:58:33 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 2 connected client(s)
+2022-10-20 18:58:33 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:492: currently drawing player: Kuba (fd: 7)
+2022-10-20 18:58:33 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:502: new round started
+2022-10-20 18:58:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 18:58:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 18:58:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 18:58:49 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:28: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-20 19:48:55 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:564: server liste☊i☊g on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-20 19:49:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 19:49:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 19:49:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 19:49:04 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 7)
+2022-10-20 19:49:04 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 19:49:04 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 2 connected client(s)
+2022-10-20 19:49:04 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:492: currently drawing player: Kuba (fd: 7)
+2022-10-20 19:49:04 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:502: new round started
+2022-10-20 19:50:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:492: currently drawing player: Honza (fd: 6)
+2022-10-20 19:50:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:502: new round started
+2022-10-20 19:50:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:540: round ended
+2022-10-20 19:50:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 19:50:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 19:50:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 19:50:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 19:50:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 6 hung up (user: Honza)
+2022-10-20 19:50:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 19:50:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 19:50:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 19:50:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 19:50:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 7)
+2022-10-20 19:50:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 19:50:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 2 connected client(s)
+2022-10-20 19:51:00 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 19:51:00 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 19:51:00 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 19:51:03 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 19:51:03 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 6 hung up (user: Honza)
+2022-10-20 19:51:03 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 19:51:06 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:28: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-20 19:51:08 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:564: server liste☊i☊g on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-20 19:52:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 19:52:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 19:52:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 19:52:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 7)
+2022-10-20 19:52:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 19:52:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 2 connected client(s)
+2022-10-20 19:52:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:492: currently drawing player: Kuba (fd: 7)
+2022-10-20 19:52:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:502: new round started
+2022-10-20 19:52:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 19:52:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 19:52:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 19:53:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 19:53:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 6 hung up (user: Honza)
+2022-10-20 19:53:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 19:53:20 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:28: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-20 19:53:20 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:564: server liste☊i☊g on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-20 19:53:24 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 19:53:24 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 19:53:24 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 19:53:27 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 7)
+2022-10-20 19:53:27 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 19:53:27 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 2 connected client(s)
+2022-10-20 19:53:27 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:492: currently drawing player: Kuba (fd: 7)
+2022-10-20 19:53:27 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:502: new round started
+2022-10-20 19:53:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 19:53:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 19:53:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 19:53:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 19:53:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 6 hung up (user: Honza)
+2022-10-20 19:53:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 19:54:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:540: round ended
+2022-10-20 19:56:28 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 19:56:28 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 19:56:28 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 19:56:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 7)
+2022-10-20 19:56:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 19:56:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 2 connected client(s)
+2022-10-20 19:56:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:492: currently drawing player: Honza (fd: 6)
+2022-10-20 19:56:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:502: new round started
+2022-10-20 19:56:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 19:56:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 6 hung up (user: Honza)
+2022-10-20 19:56:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 19:56:53 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 19:56:53 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 19:56:53 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 2 connected client(s)
+2022-10-20 19:57:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:492: currently drawing player: Kuba (fd: 7)
+2022-10-20 19:57:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:502: new round started
+2022-10-20 19:57:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:540: round ended
+2022-10-20 19:58:12 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 19:58:12 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 19:58:12 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 19:58:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 19:58:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 6 hung up (user: Honza)
+2022-10-20 19:58:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 19:58:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:540: round ended
+2022-10-20 19:58:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 19:58:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 19:58:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 19:58:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 7)
+2022-10-20 19:58:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 19:58:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 2 connected client(s)
+2022-10-20 19:58:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:492: currently drawing player: Honza (fd: 6)
+2022-10-20 19:58:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:502: new round started
+2022-10-20 19:59:04 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 19:59:04 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 19:59:04 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 19:59:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 19:59:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 6 hung up (user: Honza)
+2022-10-20 19:59:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 19:59:35 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:28: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-20 19:59:35 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:564: server liste☊i☊g on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-20 19:59:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 19:59:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 19:59:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 19:59:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 7)
+2022-10-20 19:59:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 19:59:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 2 connected client(s)
+2022-10-20 19:59:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:492: currently drawing player: Kuba (fd: 7)
+2022-10-20 19:59:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:502: new round started
+2022-10-20 19:59:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 19:59:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 6 hung up (user: Honza)
+2022-10-20 19:59:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 19:59:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 19:59:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 19:59:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 19:59:59 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:28: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-20 20:00:01 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:564: server liste☊i☊g on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-20 20:00:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 20:00:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 20:00:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 20:00:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 7)
+2022-10-20 20:00:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 20:00:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 2 connected client(s)
+2022-10-20 20:00:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:492: currently drawing player: Kuba (fd: 7)
+2022-10-20 20:00:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:502: new round started
+2022-10-20 20:00:26 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 20:00:26 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 20:00:26 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 20:00:29 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 20:00:29 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 6 hung up (user: Honza)
+2022-10-20 20:00:29 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 20:01:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:540: round ended
+2022-10-20 20:11:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 20:11:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 20:11:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 20:11:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 7)
+2022-10-20 20:11:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 20:11:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 2 connected client(s)
+2022-10-20 20:11:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:492: currently drawing player: Honza (fd: 6)
+2022-10-20 20:11:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:502: new round started
+2022-10-20 20:11:53 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:635: socket 7 trying to communicate outside the game loop, closing
+2022-10-20 20:11:53 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 20:12:23 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 20:12:23 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 6 hung up (user: Honza)
+2022-10-20 20:12:23 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 20:12:27 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:28: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-20 20:12:28 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:564: server liste☊i☊g on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-20 20:12:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 20:12:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-20 20:12:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 20:12:34 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 7)
+2022-10-20 20:12:34 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Honza)
+2022-10-20 20:12:34 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 2 connected client(s)
+2022-10-20 20:12:34 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:492: currently drawing player: Honza (fd: 7)
+2022-10-20 20:12:34 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:502: new round started
+2022-10-20 20:12:43 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 20:12:43 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 7 hung up (user: Honza)
+2022-10-20 20:12:43 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 7) from game
+2022-10-20 20:13:33 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:28: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-20 20:13:34 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:564: server liste☊i☊g on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-20 20:13:37 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 20:13:37 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 20:13:37 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 20:13:40 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 7)
+2022-10-20 20:13:40 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 20:13:40 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 2 connected client(s)
+2022-10-20 20:13:40 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:492: currently drawing player: Kuba (fd: 7)
+2022-10-20 20:13:40 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:502: new round started
+2022-10-20 20:13:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 20:13:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 20:13:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 20:14:45 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:540: round ended
+2022-10-20 20:14:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:635: socket 6 trying to communicate outside the game loop, closing
+2022-10-20 20:14:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 20:15:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 20:15:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 20:15:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 20:15:44 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:635: socket 6 trying to communicate outside the game loop, closing
+2022-10-20 20:15:44 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 20:16:46 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:28: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-20 20:16:46 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:564: server liste☊i☊g on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-20 20:16:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 20:16:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 20:16:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 20:16:53 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:635: socket 6 trying to communicate outside the game loop, closing
+2022-10-20 20:16:53 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 20:19:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 20:19:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 20:19:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 20:19:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 7)
+2022-10-20 20:19:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 20:19:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 2 connected client(s)
+2022-10-20 20:19:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:492: currently drawing player: Kuba (fd: 7)
+2022-10-20 20:19:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:502: new round started
+2022-10-20 20:20:05 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 20:20:05 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 20:20:05 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 20:20:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 20:20:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 6 hung up (user: Honza)
+2022-10-20 20:20:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 20:20:34 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:28: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-20 20:20:35 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:564: server liste☊i☊g on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-20 20:20:38 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 20:20:38 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 20:20:38 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 20:20:44 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:635: socket 6 trying to communicate outside the game loop, closing
+2022-10-20 20:20:44 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 20:22:27 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 20:22:27 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 20:22:27 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 20:22:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 7)
+2022-10-20 20:22:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 20:22:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 2 connected client(s)
+2022-10-20 20:22:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:492: currently drawing player: Kuba (fd: 7)
+2022-10-20 20:22:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:502: new round started
+2022-10-20 20:22:37 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 20:22:37 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 20:22:37 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 20:23:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 20:23:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 6 hung up (user: Honza)
+2022-10-20 20:23:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 20:23:12 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:28: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-20 20:23:13 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:564: server liste☊i☊g on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-20 20:23:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 20:23:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 20:23:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 20:23:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 7)
+2022-10-20 20:23:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 20:23:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 2 connected client(s)
+2022-10-20 20:23:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:492: currently drawing player: Kuba (fd: 7)
+2022-10-20 20:23:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:502: new round started
+2022-10-20 20:23:27 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 20:23:27 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 20:23:27 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 20:24:24 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:540: round ended
+2022-10-20 20:26:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:635: socket 6 trying to communicate outside the game loop, closing
+2022-10-20 20:26:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 20:26:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 20:26:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 20:26:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 20:26:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 7)
+2022-10-20 20:26:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 20:26:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 2 connected client(s)
+2022-10-20 20:26:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:492: currently drawing player: Honza (fd: 6)
+2022-10-20 20:26:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:502: new round started
+2022-10-20 20:27:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 20:27:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 20:27:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 20:28:03 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:540: round ended
+2022-10-20 20:28:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:635: socket 6 trying to communicate outside the game loop, closing
+2022-10-20 20:28:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 20:28:26 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:28: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-20 20:28:26 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:564: server liste☊i☊g on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-20 20:28:29 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 20:28:29 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Honza)
+2022-10-20 20:28:29 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 20:28:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 7)
+2022-10-20 20:28:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 20:28:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 2 connected client(s)
+2022-10-20 20:28:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:492: currently drawing player: Kuba (fd: 7)
+2022-10-20 20:28:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:502: new round started
+2022-10-20 20:28:38 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 20:28:38 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 20:28:38 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 20:29:37 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:540: round ended
+2022-10-20 20:31:26 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 7)
+2022-10-20 20:31:26 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 20:31:26 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 2 connected client(s)
+2022-10-20 20:31:26 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:492: currently drawing player: Honza (fd: 6)
+2022-10-20 20:31:26 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:502: new round started
+2022-10-20 20:31:48 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 20:31:48 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 20:31:48 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 20:31:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 7)
+2022-10-20 20:31:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Kuba)
+2022-10-20 20:31:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 2 connected client(s)
+2022-10-20 20:32:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 20:32:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 7 hung up (user: Kuba)
+2022-10-20 20:32:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 7) from game
+2022-10-20 20:32:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 20:32:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 6 hung up (user: Honza)
+2022-10-20 20:32:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 6) from game
+2022-10-20 20:32:24 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:28: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-20 20:51:11 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:564: server liste☊i☊g on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-20 20:51:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 20:51:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-20 20:51:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 20:51:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 7)
+2022-10-20 20:51:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Honza)
+2022-10-20 20:51:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 2 connected client(s)
+2022-10-20 20:51:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:492: currently drawing player: Honza (fd: 7)
+2022-10-20 20:51:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:502: new round started
+2022-10-20 20:51:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 20:51:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 6 hung up (user: Kuba)
+2022-10-20 20:51:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 6) from game
+2022-10-20 20:51:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 20:51:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 7 hung up (user: Honza)
+2022-10-20 20:51:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 7) from game
+2022-10-20 20:51:34 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:28: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-20 21:46:10 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:564: server liste☊i☊g on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-20 21:46:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 21:46:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-20 21:46:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 21:46:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:635: socket 6 trying to communicate outside the game loop, closing
+2022-10-20 21:46:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 6) from game
+2022-10-20 21:47:29 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 21:47:29 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-20 21:47:29 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 21:47:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:635: socket 6 trying to communicate outside the game loop, closing
+2022-10-20 21:47:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 6) from game
+2022-10-20 21:47:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 21:47:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-20 21:47:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 21:47:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:635: socket 6 trying to communicate outside the game loop, closing
+2022-10-20 21:47:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 6) from game
+2022-10-20 21:48:07 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 21:48:07 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-20 21:48:07 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 21:48:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:635: socket 6 trying to communicate outside the game loop, closing
+2022-10-20 21:48:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 6) from game
+2022-10-20 21:48:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 21:48:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-20 21:48:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 21:48:33 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 7)
+2022-10-20 21:48:33 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Honza)
+2022-10-20 21:48:33 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 2 connected client(s)
+2022-10-20 21:48:33 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:492: currently drawing player: Honza (fd: 7)
+2022-10-20 21:48:33 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:502: new round started
+2022-10-20 21:49:35 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 21:49:35 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 6 hung up (user: Kuba)
+2022-10-20 21:49:35 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 6) from game
+2022-10-20 22:01:27 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:564: server liste☊i☊g on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-20 22:01:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 22:01:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-20 22:01:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 22:01:33 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 7)
+2022-10-20 22:01:33 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Honza)
+2022-10-20 22:01:33 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 2 connected client(s)
+2022-10-20 22:01:33 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:492: currently drawing player: Honza (fd: 7)
+2022-10-20 22:01:33 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:502: new round started
+2022-10-20 22:01:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 22:01:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 6 hung up (user: Kuba)
+2022-10-20 22:01:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 6) from game
+2022-10-20 22:01:59 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 22:01:59 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 7 hung up (user: Honza)
+2022-10-20 22:01:59 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 7) from game
+2022-10-20 22:02:38 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:540: round ended
+2022-10-20 22:04:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 22:04:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-20 22:04:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 22:04:33 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 7)
+2022-10-20 22:04:33 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Honza)
+2022-10-20 22:04:33 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 2 connected client(s)
+2022-10-20 22:04:33 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:492: currently drawing player: Kuba (fd: 6)
+2022-10-20 22:04:33 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:502: new round started
+2022-10-20 22:05:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 8)
+2022-10-20 22:05:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 8 (user: Honza2)
+2022-10-20 22:05:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 3 connected client(s)
+2022-10-20 22:05:38 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:492: currently drawing player: Honza2 (fd: 8)
+2022-10-20 22:05:38 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:502: new round started
+2022-10-20 22:05:38 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:540: round ended
+2022-10-20 22:05:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 22:05:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 7 hung up (user: Honza)
+2022-10-20 22:05:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 7) from game
+2022-10-20 22:05:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 22:05:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 6 hung up (user: Kuba)
+2022-10-20 22:05:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 6) from game
+2022-10-20 22:05:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 8) hung up, received buffer: 00
+2022-10-20 22:05:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 8 hung up (user: Honza2)
+2022-10-20 22:05:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza2 (fd: 8) from game
+2022-10-20 22:06:43 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:540: round ended
+2022-10-20 22:07:34 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 6)
+2022-10-20 22:07:34 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba)
+2022-10-20 22:07:34 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 1 connected client(s)
+2022-10-20 22:07:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:598: new connection (fd: 7)
+2022-10-20 22:07:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:618: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Honza)
+2022-10-20 22:07:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:619: poll-server: 2 connected client(s)
+2022-10-20 22:07:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:492: currently drawing player: Honza (fd: 7)
+2022-10-20 22:07:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:502: new round started
+2022-10-20 22:08:33 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 7) hung up, received buffer: 00
+2022-10-20 22:08:33 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 7 hung up (user: Honza)
+2022-10-20 22:08:33 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Honza (fd: 7) from game
+2022-10-20 22:08:34 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:179: socket (fd: 6) hung up, received buffer: 00
+2022-10-20 22:08:34 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:646: poll-server: socket 6 hung up (user: Kuba)
+2022-10-20 22:08:34 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 6) from game
+2022-10-20 22:08:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:540: round ended
+2022-10-20 22:09:15 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:28: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻

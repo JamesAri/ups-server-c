@@ -533,6 +533,8 @@ void end_round(struct Game *game) {
 
     broadcast_round_ends(game);
 
+    memset(game->canvas->bitarray_grid, 0, sizeof(game->canvas->bitarray_grid));
+
     manage_current_round(game, -1);
 
     log_debug("round ended");
