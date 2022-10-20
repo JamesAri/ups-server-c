@@ -21,18 +21,19 @@ struct Buffer *new_buffer() {
     return buffer;
 }
 
-void reserve_space(struct Buffer *buffer, int bytes) {
+int reserve_space(struct Buffer *buffer, int bytes) {
     int new_size, min_size = buffer->next + bytes;
     if (min_size > buffer->size) {
         new_size = (min_size > buffer->size * 2) ? min_size : buffer->size * 2;
         buffer->data = realloc(buffer->data, new_size);
         if (buffer->data == NULL) {
-            fprintf(stderr, "realloc error - reserving space for buffer");
-            exit(1); // TODO
+            fprintf(stderr, "realloc err - reserving space for buffer");
+            return -1;
         }
         buffer->size = new_size;
     }
     memset(buffer->data + buffer->next, 0, buffer->size - buffer->next); // let's make it clean ^^
+    return 0;
 }
 
 void clear_buffer(struct Buffer *buffer) {

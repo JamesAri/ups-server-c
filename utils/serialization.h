@@ -17,7 +17,7 @@ struct Buffer {
 
 struct Buffer *new_buffer();
 
-void reserve_space(struct Buffer *buffer, int bytes);
+int reserve_space(struct Buffer *buffer, int bytes);
 
 void clear_buffer(struct Buffer *buffer);
 

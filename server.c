@@ -272,6 +272,12 @@ int send_game_in_progress(int fd, struct Game *game) {
     serialize_sock_header(GAME_IN_PROGRESS, buffer);
     if (game->drawing_player_list->player->fd == fd) second_flag = START_AND_DRAW; // todo: send what to draw
     serialize_sock_header(second_flag, buffer);
+
+    if (second_flag == START_AND_DRAW) {
+        serialize_int((int) strlen(game->guess_word), buffer);
+        serialize_string(game->guess_word, buffer);
+    }
+
     serialize_time_t(game->end_sec, buffer);
     serialize_canvas(game->canvas, buffer);
 
