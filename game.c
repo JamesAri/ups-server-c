@@ -2,9 +2,9 @@
 //         FD (SERVER) - PLAYER (CLIENT) Mapping + Game State               //
 // ======================================================================= **/
 
+#include "model/player.h"
 #include "game.h"
 #include "utils/log.h"
-#include "utils/sock_utils.h"
 #include "model/canvas.h"
 #include "model/word_generator.h"
 

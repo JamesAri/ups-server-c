@@ -28,12 +28,12 @@ int test_players() {
  * </pre>
  */
 void setup_logger() {
-    log_set_level(LOG_DEBUG); // default setting (all -> stderr)
+    log_set_level(LOG_TRACE); // default setting (all -> stderr)
     FILE *fp = fopen("./server.log", "a+");
     if (fp == NULL) {
         fprintf(stderr, "couldn't open log file - logging off\n");
     } else {
-        log_add_fp(fp, LOG_DEBUG); // TODO: set to LOG_INFO or LOG_DEBUG
+        log_add_fp(fp, LOG_TRACE); // TODO: set to LOG_INFO or LOG_DEBUG
     }
 }
 

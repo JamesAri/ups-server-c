@@ -3,8 +3,6 @@
 
 #include <sys/socket.h>
 #include <poll.h>
-#include <sys/time.h>
-#include "../model/player.h"
 
 // ======================================================================= //
 //                            SOCKET UTILS                                 //

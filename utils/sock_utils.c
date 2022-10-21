@@ -1,18 +1,12 @@
-#include "sock_utils.h"
 #include "log.h"
-#include "../model/player.h"
-#include "../lobby.h"
 
-#include <sys/socket.h>
 #include <poll.h>
-#include <sys/time.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 #include <netdb.h>
 #include <errno.h>
 
-//#include <netinet/in.h>
 
 
 // ======================================================================= //
@@ -137,7 +131,7 @@ void add_to_pfds(struct pollfd *pfds[], int new_fd, int *fd_count, int *fd_size)
 
 void del_from_pfds(struct pollfd pfds[], int i, int *fd_count) {
     pfds[i] = pfds[*fd_count - 1];
-    pfds[*fd_count - 1].fd = 0;
+    pfds[*fd_count - 1].fd = -1;
     pfds[*fd_count - 1].events = 0;
     pfds[*fd_count - 1].revents = 0;
 
@@ -152,7 +146,6 @@ void del_from_pfds_by_fd(struct pollfd pfds[], int fd, int *fd_count) {
         }
     }
 }
-
 
 void free_pfds(struct pollfd **pfds) {
     free(*pfds);

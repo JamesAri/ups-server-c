@@ -4,8 +4,8 @@
 #include <stdbool.h>
 #include <sys/time.h>
 
+
 // server settings
-#define LOBBY_GAMES 3
 #define BACKLOG 5
 #define POLL_TIMEOUT_SEC 60
 #define SOCKOPT_TIMEOUT_SEC 2

@@ -3,12 +3,13 @@
 
 #include "model/player.h"
 #include "game.h"
+#include "poll.h"
 
-#define PFD_INIT_SIZE 5
-#define LOBBY_SIZE 3
+#define PFDS_INIT_SIZE 5
+#define LOBBY_CAPACITY 3
 
 struct Lobby {
-    struct Game *games[LOBBY_SIZE];
+    struct Game *games[LOBBY_CAPACITY];
     struct Players *all_players;
     struct pollfd *pfds;
     int fd_size;
