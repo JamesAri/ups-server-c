@@ -1,6 +1,7 @@
 #include "sock_utils.h"
 #include "log.h"
 #include "../model/player.h"
+#include "../lobby.h"
 
 #include <sys/socket.h>
 #include <poll.h>
@@ -9,6 +10,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <netdb.h>
+#include <errno.h>
 
 //#include <netinet/in.h>
 
@@ -62,9 +64,6 @@ void *get_in_addr(struct sockaddr *sa) {
 int get_listener_socket(char *port, int backlog) {
     int listener, rv, yes = 1;
 
-    // hints - settings for *ai creation
-    // *ai - list of available addrinfo structures
-    // *p - temp addrinfo to loop over with
     struct addrinfo hints, *ai, *p;
 
     memset(&hints, 0, sizeof hints);
@@ -86,10 +85,10 @@ int get_listener_socket(char *port, int backlog) {
         setsockopt(listener, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int));
 
         if (bind(listener, p->ai_addr, p->ai_addrlen) < 0) {
+            log_fatal("bind (fd %d, port %s): %s", listener, port, strerror(errno));
             close(listener);
             continue;
         }
-
         break;
     }
 
@@ -154,10 +153,6 @@ void del_from_pfds_by_fd(struct pollfd pfds[], int fd, int *fd_count) {
     }
 }
 
-void disconnect_fd(struct pollfd pfds[], int fd, int *fd_count) {
-    close(fd);
-    del_from_pfds_by_fd(pfds, fd, fd_count);
-}
 
 void free_pfds(struct pollfd **pfds) {
     free(*pfds);

@@ -12,8 +12,9 @@
 
 #define GAME_DURATION_SEC 60
 
-#define MAX_MSG_LEN 27
 #define MAX_USERNAME_LEN 20
+
+#define MAX_GUESS_LEN 256 // TODO use MAX_MSG_LEN
 
 #define ROWS 100
 #define COLS 100

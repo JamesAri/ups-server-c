@@ -1163,3 +1163,138 @@
 2022-10-20 22:08:34 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:152: removing player Kuba (fd: 6) from game
 2022-10-20 22:08:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:540: round ended
 2022-10-20 22:09:15 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:28: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-21 11:58:42 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:456: server listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-21 11:58:46 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:30: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-21 16:03:40 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:491: server (5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-21 16:03:40 FATAL /Users/jakub.slechta/git/ups-server-c/server.c:493: -- -1 --
+2022-10-21 16:03:55 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:50: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-21 16:06:18 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:83: [A] 5
+2022-10-21 16:06:18 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:87: [B] 5
+2022-10-21 16:06:18 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:491: server (5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-21 16:06:18 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:83: [A] 6
+2022-10-21 16:06:18 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:87: [B] 6
+2022-10-21 16:06:18 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:83: [A] 6
+2022-10-21 16:06:18 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:87: [B] 6
+2022-10-21 16:06:18 FATAL /Users/jakub.slechta/git/ups-server-c/server.c:493: -- -1 --
+2022-10-21 16:06:51 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:50: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-21 16:06:52 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:83: [A] 5
+2022-10-21 16:06:52 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:87: [B] 5
+2022-10-21 16:06:52 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:92: [C] 5
+2022-10-21 16:06:52 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:99: [D] 5
+2022-10-21 16:06:52 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:491: server (5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-21 16:06:52 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:83: [A] 6
+2022-10-21 16:06:52 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:87: [B] 6
+2022-10-21 16:06:52 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:92: [C] 6
+2022-10-21 16:06:52 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:83: [A] 6
+2022-10-21 16:06:52 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:87: [B] 6
+2022-10-21 16:06:52 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:92: [C] 6
+2022-10-21 16:06:52 FATAL /Users/jakub.slechta/git/ups-server-c/server.c:493: -- -1 --
+2022-10-21 16:08:48 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:50: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-21 16:18:07 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:88: [A] 5
+2022-10-21 16:18:07 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:95: [B] 5
+2022-10-21 16:18:07 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:491: server (5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-21 16:18:07 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:88: [A] 6
+2022-10-21 16:18:07 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:88: [A] 6
+2022-10-21 16:18:07 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:95: [B] 6
+2022-10-21 16:18:07 FATAL /Users/jakub.slechta/git/ups-server-c/server.c:493: -- 6 --
+2022-10-21 16:18:29 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:50: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-21 16:20:15 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:88: [A] 5
+2022-10-21 16:20:15 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:96: [B] 5
+2022-10-21 16:20:15 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:491: server (5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-21 16:20:15 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:88: [A] 6
+2022-10-21 16:20:15 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:88: [A] 6
+2022-10-21 16:20:15 FATAL /Users/jakub.slechta/git/ups-server-c/server.c:493: -- -1 --
+2022-10-21 16:20:17 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:88: [A] 5
+2022-10-21 16:20:17 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:96: [B] 5
+2022-10-21 16:20:17 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:491: server (5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-21 16:20:17 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:88: [A] 6
+2022-10-21 16:20:17 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:88: [A] 6
+2022-10-21 16:20:17 FATAL /Users/jakub.slechta/git/ups-server-c/server.c:493: -- -1 --
+2022-10-21 16:20:56 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:50: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-21 16:20:57 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:88: [A] 5
+2022-10-21 16:20:57 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:96: [B] 5
+2022-10-21 16:20:57 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:491: server (5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-21 16:20:57 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:88: [A] 6
+2022-10-21 16:20:57 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:88: [A] 6
+2022-10-21 16:20:57 FATAL /Users/jakub.slechta/git/ups-server-c/server.c:493: -- -1 --
+2022-10-21 16:21:37 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:50: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-21 16:21:38 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:89: [A] 5
+2022-10-21 16:21:38 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:97: [B] 5
+2022-10-21 16:21:38 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:491: server (5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-21 16:21:38 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:89: [A] 6
+2022-10-21 16:21:38 FATAL /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:92: poll-err: Address already in use
+2022-10-21 16:21:38 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:89: [A] 6
+2022-10-21 16:21:38 FATAL /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:92: poll-err: Address already in use
+2022-10-21 16:21:38 FATAL /Users/jakub.slechta/git/ups-server-c/server.c:493: -- -1 --
+2022-10-21 16:21:51 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:50: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-21 16:21:51 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:89: [A] 5
+2022-10-21 16:21:51 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:97: [B] 5
+2022-10-21 16:21:51 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:491: server (5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-21 16:21:51 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:89: [A] 6
+2022-10-21 16:21:51 FATAL /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:92: bind: Address already in use
+2022-10-21 16:21:51 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:89: [A] 6
+2022-10-21 16:21:51 FATAL /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:92: bind: Address already in use
+2022-10-21 16:21:51 FATAL /Users/jakub.slechta/git/ups-server-c/server.c:493: -- -1 --
+2022-10-21 16:22:09 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:50: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-21 16:22:10 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:89: [A] 5
+2022-10-21 16:22:10 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:97: [B] 5
+2022-10-21 16:22:10 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:491: server (5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-21 16:22:10 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:89: [A] 6
+2022-10-21 16:22:10 FATAL /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:92: bind (fd 6): Address already in use
+2022-10-21 16:22:10 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:89: [A] 6
+2022-10-21 16:22:10 FATAL /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:92: bind (fd 6): Address already in use
+2022-10-21 16:22:10 FATAL /Users/jakub.slechta/git/ups-server-c/server.c:493: -- -1 --
+2022-10-21 16:22:25 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:50: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-21 16:22:25 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:89: [A] 5
+2022-10-21 16:22:25 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:97: [B] 5
+2022-10-21 16:22:25 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:491: server (5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-21 16:22:25 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:89: [A] 6
+2022-10-21 16:22:25 FATAL /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:92: bind (fd 6, port ): 9034
+2022-10-21 16:22:25 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:89: [A] 6
+2022-10-21 16:22:25 FATAL /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:92: bind (fd 6, port ): 9034
+2022-10-21 16:22:25 FATAL /Users/jakub.slechta/git/ups-server-c/server.c:493: -- -1 --
+2022-10-21 16:22:34 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:50: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-21 16:22:35 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:89: [A] 5
+2022-10-21 16:22:35 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:97: [B] 5
+2022-10-21 16:22:35 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:491: server (5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-21 16:22:35 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:89: [A] 6
+2022-10-21 16:22:35 FATAL /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:92: bind (fd 6, port 200104693): Address already in use
+2022-10-21 16:22:35 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:89: [A] 6
+2022-10-21 16:22:35 FATAL /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:92: bind (fd 6, port 200104693): Address already in use
+2022-10-21 16:22:35 FATAL /Users/jakub.slechta/git/ups-server-c/server.c:493: -- -1 --
+2022-10-21 16:22:46 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:50: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-21 16:22:47 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:89: [A] 5
+2022-10-21 16:22:47 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:97: [B] 5
+2022-10-21 16:22:47 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:491: server (5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-21 16:22:47 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:89: [A] 6
+2022-10-21 16:22:47 FATAL /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:92: bind (fd 6, port 9034): Address already in use
+2022-10-21 16:22:47 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:89: [A] 6
+2022-10-21 16:22:47 FATAL /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:92: bind (fd 6, port 9034): Address already in use
+2022-10-21 16:22:47 FATAL /Users/jakub.slechta/git/ups-server-c/server.c:493: -- -1 --
+2022-10-21 16:22:59 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:50: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-21 16:35:31 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:91: [A] 5
+2022-10-21 16:35:31 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:99: [B] 5
+2022-10-21 16:35:31 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:91: [A] 6
+2022-10-21 16:35:31 FATAL /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:94: bind (fd 6, port 9034): Address already in use
+2022-10-21 16:35:31 FATAL /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:104: listening sockets: 1
+2022-10-21 16:35:31 FATAL /Users/jakub.slechta/git/ups-server-c/server.c:487: err getting listening socket: Address already in use
+2022-10-21 16:36:06 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:91: [A] 5
+2022-10-21 16:36:06 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:99: [B] 5
+2022-10-21 16:36:06 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:91: [A] 6
+2022-10-21 16:36:06 FATAL /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:94: bind (fd 6, port 9034): Address already in use
+2022-10-21 16:36:06 FATAL /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:106: listening sockets: 1
+2022-10-21 16:36:06 FATAL /Users/jakub.slechta/git/ups-server-c/server.c:487: err getting listening socket: Address already in use
+2022-10-21 16:37:08 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:91: [A] 5
+2022-10-21 16:37:08 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:99: [B] 5
+2022-10-21 16:37:08 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:91: [A] 6
+2022-10-21 16:37:08 FATAL /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:94: bind (fd 6, port 9034): Address already in use
+2022-10-21 16:37:08 FATAL /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:106: listening sockets: 1
+2022-10-21 16:37:08 FATAL /Users/jakub.slechta/git/ups-server-c/server.c:487: err getting listening socket: Address already in use
+2022-10-21 16:42:03 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:92: [A] 5
+2022-10-21 16:42:03 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:98: [B] 5
+2022-10-21 16:42:03 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:92: [A] 6
+2022-10-21 16:42:03 FATAL /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:94: bind (fd 6, port 9034): Address already in use
+2022-10-21 16:42:03 FATAL /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:105: listening sockets: 1
+2022-10-21 16:42:03 FATAL /Users/jakub.slechta/git/ups-server-c/server.c:487: err getting listening socket: Address already in use
+2022-10-21 19:23:19 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:524: server (5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-21 19:23:26 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:73: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻

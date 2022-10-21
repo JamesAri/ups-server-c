@@ -1,5 +1,5 @@
 #include "serialization.h"
-#include "sock_header.h"
+#include "../shared/sock_header.h"
 
 #include <stdlib.h>
 #include <string.h>
@@ -27,11 +27,12 @@ int reserve_space(struct Buffer *buffer, int bytes) {
         new_size = (min_size > buffer->size * 2) ? min_size : buffer->size * 2;
         buffer->data = realloc(buffer->data, new_size);
         if (buffer->data == NULL) {
-            fprintf(stderr, "realloc err - reserving space for buffer");
+            fprintf(stderr, "reallocate err - reserving space for buffer");
             return -1;
         }
         buffer->size = new_size;
     }
+    // todo
     memset(buffer->data + buffer->next, 0, buffer->size - buffer->next); // let's make it clean ^^
     return 0;
 }
@@ -108,9 +109,4 @@ void unpack_int(struct Buffer *buffer, int *res) {
 // [---offset---][unpacking INT]
 void unpack_int_var(struct Buffer *buffer, int *res, int offset) {
     *res = ntohl(*(int *) (buffer->data + offset));
-}
-
-// [SOCK_HEADER][INT][unpacking STRING]
-void unpack_string(struct Buffer *buffer, char *res) {
-    strcpy(res, (buffer->data + STRING_OFFSET));
 }

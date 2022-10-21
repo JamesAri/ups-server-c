@@ -1,6 +1,6 @@
 #include "client.h"
 #include "../utils/serialization.h"
-#include "../utils/sock_header.h"
+#include "../shared/sock_header.h"
 #include "../utils/sock_utils.h"
 
 #include <stdlib.h>
@@ -11,7 +11,7 @@
 #include <netinet/in.h>
 #include <sys/socket.h>
 #include "../utils/debug.h"
-#include "../definitions.h"
+#include "../shared/definitions.h"
 
 #include <arpa/inet.h>
 

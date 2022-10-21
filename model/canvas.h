@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-#include "../definitions.h"
+#include "../shared/definitions.h"
 
 #define BITARRAY_SIZE(x) (x/8+(!!(x%8)))
 #define CANVAS_BYTES_TO_SEND BITARRAY_SIZE(CANVAS_SIZE)

@@ -3,58 +3,6 @@
 #include <stdio.h>
 #include "player.h"
 
-struct Players *new_players() {
-    struct Players *players = (struct Players *) malloc(sizeof(struct Players));
-    if (players == NULL) return NULL;
-    players->player_list = NULL;
-    players->count = 0;
-    return players;
-}
-
-struct Player *get_player_by_fd(struct Players *players, int fd) {
-    if (players == NULL) return NULL;
-
-    struct PlayerList *curr_node = players->player_list;
-
-    while (curr_node != NULL) {
-        if (curr_node->player == NULL) return NULL;
-        if (curr_node->player->fd == fd) return curr_node->player;
-        curr_node = curr_node->next;
-    }
-    return NULL;
-}
-
-/**
- * Returns -1 on ERROR, 0 on SUCCESS, 1 if player is already "logged in" (ONLINE)
- */
-int update_players(struct Players *players, char *username, int fd) {
-    if (players == NULL || username == NULL) return -1;
-
-    struct PlayerList *curr_node = players->player_list;
-    while (curr_node != NULL) {
-        if (!strcmp(curr_node->player->username, username)) {
-            if (curr_node->player->is_online) return 1;
-            else {
-                curr_node->player->fd = fd;
-                curr_node->player->is_online = true;
-                return 0;
-            }
-        }
-        curr_node = curr_node->next;
-    }
-
-    struct Player *new_player = (struct Player *) malloc(sizeof(struct Player));
-
-    if (new_player == NULL) return -1;
-
-    strcpy(new_player->username, username);
-    new_player->fd = fd;
-    new_player->is_online = true;
-
-    if (add_player(players, new_player) < 0) return -1;
-
-    return 0;
-}
 
 int add_player(struct Players *players, struct Player *player) {
     if (players == NULL || player == NULL) return -1;
@@ -76,6 +24,39 @@ int add_player(struct Players *players, struct Player *player) {
 
 
     return 0;
+}
+
+/**
+ * Returns  -1 on ERROR, 0 on SUCCESS, 1 if player is already "logged in" (ONLINE),
+ *          2 if player reconnected.
+ */
+int update_players(struct Players *players, char *username, int fd) {
+    if (players == NULL || username == NULL) return PLAYER_CREATION_ERROR;
+
+    struct PlayerList *curr_node = players->player_list;
+    while (curr_node != NULL) {
+        if (!strcmp(curr_node->player->username, username)) {
+            if (curr_node->player->is_online) return PLAYER_ALREADY_ONLINE;
+            else {
+                curr_node->player->fd = fd;
+                curr_node->player->is_online = true;
+                return PLAYER_RECONNECTED;
+            }
+        }
+        curr_node = curr_node->next;
+    }
+
+    struct Player *new_player = (struct Player *) malloc(sizeof(struct Player));
+
+    if (new_player == NULL) return PLAYER_CREATION_ERROR;
+
+    strcpy(new_player->username, username);
+    new_player->fd = fd;
+    new_player->is_online = true;
+
+    if (add_player(players, new_player) < 0) return PLAYER_CREATION_ERROR;
+
+    return PLAYER_CREATED;
 }
 
 // we might remove players after some time offline, just implemented feature, not using yet
@@ -105,13 +86,52 @@ int remove_player(struct Players *players, int fd) {
     return -1;
 }
 
+struct Player *get_player_by_fd(struct Players *players, int fd) {
+    if (players == NULL) return NULL;
+
+    struct PlayerList *curr_node = players->player_list;
+
+    while (curr_node != NULL) {
+        if (curr_node->player == NULL) return NULL;
+        if (curr_node->player->fd == fd) return curr_node->player;
+        curr_node = curr_node->next;
+    }
+    return NULL;
+}
+
+void print_players(struct Players *players) {
+    if (players == NULL) return;
+    struct PlayerList *curr_node = players->player_list;
+    while (curr_node != NULL) {
+        fprintf(stderr, "Player: fd=%d, username=%s\n", curr_node->player->fd, curr_node->player->username);
+        curr_node = curr_node->next;
+    }
+}
+
+bool check_player_list_validity(struct PlayerList *player_list) {
+    if (player_list == NULL || player_list->player == NULL) return false;
+    else return true;
+}
+
+
+// ======================================================================= //
+//                         ALLOCATION & FREEING                            //
+// ======================================================================= //
+
+struct Players *new_players() {
+    struct Players *players = (struct Players *) malloc(sizeof(struct Players));
+    if (players == NULL) return NULL;
+    players->player_list = NULL;
+    players->count = 0;
+    return players;
+}
+
 void free_player(struct Player **player) {
     if (player == NULL || (*player) == NULL) return;
 
     free((*player));
     (*player) = NULL;
 }
-
 
 void free_player_list(struct PlayerList **player_list) {
     if (player_list == NULL || (*player_list) == NULL) return;
@@ -135,12 +155,4 @@ void free_players(struct Players **players) {
     (*players) = NULL;
 }
 
-void print_players(struct Players *players) {
-    if (players == NULL) return;
-    struct PlayerList *curr_node = players->player_list;
-    while (curr_node != NULL) {
-        fprintf(stderr, "Player: fd=%d, username=%s\n", curr_node->player->fd, curr_node->player->username);
-        curr_node = curr_node->next;
-    }
-}
 
