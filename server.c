@@ -130,6 +130,7 @@ int send_buffer(int dest_fd, struct Buffer *buffer) {
     return send_res;
 }
 
+
 int send_header_only(int fd, int flag) {
     struct Buffer *buffer = new_buffer();
     int send_res;
@@ -137,6 +138,10 @@ int send_header_only(int fd, int flag) {
     send_res = send_buffer(fd, buffer);
     free_buffer(&buffer);
     return send_res;
+}
+
+int send_ok(int fd) {
+    return send_header_only(fd, OK);
 }
 
 int send_header_with_msg(int fd, int flag, char *msg) {
@@ -266,7 +271,7 @@ int manage_logging_player(int new_fd) {
 
     flag = ((struct SocketHeader *) buffer->data)->flag;
 
-    if (flag != INPUT_USERNAME) {
+    if (flag != LOGIN) {
         free_buffer(&buffer);
         log_warn("invalid register-username header (received flag: 0x%02X)", flag);
         return -1;
@@ -301,6 +306,7 @@ int manage_logging_player(int new_fd) {
             return -1;
         case PLAYER_RECONNECTED:
             log_debug("player %s reconnected", username);
+            send_ok(new_fd);
             // TODO check game capacity
             break;
         case PLAYER_CREATED:
@@ -312,6 +318,7 @@ int manage_logging_player(int new_fd) {
                     game->cur_capacity++;
                     if (add_player(game->players, player) < 0) return -1;
                     log_debug("created new player %s", username);
+                    send_ok(new_fd);
                     return res;
                 }
             }
@@ -356,6 +363,7 @@ int manage_drawing_player(struct Player *player, struct Buffer *buffer) {
     return recv_res;
 }
 
+// todo dont allow chat if player correct guessed
 // client is trying to send a guess
 int manage_guessing_player(struct Player *player, struct Buffer *buffer) {
     int guess_str_len, recv_res, sender_fd = player->fd;
@@ -582,15 +590,6 @@ void start() {
                 }
             } else {
                 sender_fd = lobby.pfds[i].fd;
-                if (lobby.pfds[i].revents == POLLIN)
-                    fprintf(stderr, "A");
-                if (lobby.pfds[i].events == POLLIN)
-                    fprintf(stderr, "B");
-                if (lobby.pfds[i].revents & POLLIN)
-                    fprintf(stderr, "C");
-                if (lobby.pfds[i].events & POLLIN)
-                    fprintf(stderr, "D");
-                print_pfds(lobby.pfds, lobby.fd_count);
 
                 // Unknown player
                 if ((cur_player = get_player_by_fd(lobby.all_players, sender_fd)) == NULL) {

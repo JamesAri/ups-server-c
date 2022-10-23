@@ -9,7 +9,7 @@ void initialize_lobby(int listener) {
 
     lobby.fd_count = 0;
     lobby.fd_size = PFDS_INIT_SIZE;
-    lobby.pfds = (struct pollfd *) malloc(sizeof(struct pollfd *) * lobby.fd_size);
+    lobby.pfds = (struct pollfd *) calloc(lobby.fd_size, sizeof(struct pollfd *));
     if (lobby.pfds == NULL) {
         log_fatal("err: couldn't malloc pfds");
         exit(EXIT_FAILURE);

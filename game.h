@@ -10,7 +10,7 @@
 #include <stdbool.h>
 #include <arpa/inet.h>
 
-#define GAME_CAPACITY 3
+#define GAME_CAPACITY 2
 
 struct Game {
     int listener;
