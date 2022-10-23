@@ -7,7 +7,7 @@
 int add_player(struct Players *players, struct Player *player) {
     if (players == NULL || player == NULL) return -1;
 
-    struct PlayerList *new_player_node = (struct PlayerList *) malloc(sizeof(struct PlayerList));
+    struct PlayerList *new_player_node = (struct PlayerList *) calloc(1, sizeof(struct PlayerList));
 
     if (new_player_node == NULL) return -1;
 
@@ -21,7 +21,6 @@ int add_player(struct Players *players, struct Player *player) {
     }
     players->player_list = new_player_node;
     players->count++;
-
 
     return 0;
 }

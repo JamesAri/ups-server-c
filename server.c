@@ -214,12 +214,14 @@ void broadcast_buffer(struct Game *game, int sender_fd, struct Buffer *buffer) {
 
     struct PlayerList *pl = game->players->player_list;
     while (pl != NULL) {
-        if (!pl->player->is_online) continue;
-        dest_fd = pl->player->fd;
-        if (dest_fd != game->listener && dest_fd != sender_fd) {
-            if ((send_buffer(dest_fd, buffer)) <= 0) {
-                log_warn("broadcasting err: destination fd %d failure, removing player", dest_fd);
-                remove_player_from_server(pl->player);
+        log_trace("%s", pl->player->username);
+        if (pl->player->is_online) {
+            dest_fd = pl->player->fd;
+            if (dest_fd != game->listener && dest_fd != sender_fd) {
+                if ((send_buffer(dest_fd, buffer)) <= 0) {
+                    log_warn("broadcasting err: destination fd %d failure, removing player", dest_fd);
+                    remove_player_from_server(pl->player);
+                }
             }
         }
         pl = pl->next;
@@ -495,7 +497,7 @@ void end_round(struct Game *game) {
 void start() {
     setup_signal_handling();
 
-    int listener, timeout_sec = POLL_TIMEOUT_SEC, timeout_sec_new, new_fd, sender_fd, recv_res, poll_res;
+    int listener, timeout_sec, timeout_sec_new, new_fd, sender_fd, recv_res, poll_res;
 
     struct sockaddr_storage remote_addr; // Client address
     socklen_t addr_len;
@@ -515,7 +517,7 @@ void start() {
     add_to_lobby_pfds(listener);
 
     for (;;) {
-
+        timeout_sec = POLL_TIMEOUT_SEC;
         for (int i = 0; i < LOBBY_CAPACITY; i++) {
             game = lobby.games[i];
             timeout_sec_new = (game->in_progress) ? (int) (game->end_sec - time(NULL)) : POLL_TIMEOUT_SEC;

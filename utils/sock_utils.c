@@ -14,6 +14,7 @@
 // ======================================================================= //
 
 int recvall(int s, void *buf, int *len) {
+    log_trace("receiving bytes from fd %d (in progress)", s);
     int total = 0;        // how many bytes we've received.
     int bytes_left = *len; // how many bytes we have left to receive
     int n;
@@ -26,11 +27,12 @@ int recvall(int s, void *buf, int *len) {
     }
 
     *len = total; // return number actually received here
-
+    log_trace("receiving bytes from fd %d (finished), success: %s", s, bytes_left ? "false" : "true");
     return n;
 }
 
 int sendall(int s, void *buf, int *len) {
+    log_trace("sending bytes to fd %d (in progress)", s);
     int total = 0;        // how many bytes we've sent
     int bytes_left = *len; // how many we have left to send
     int n;
@@ -43,7 +45,7 @@ int sendall(int s, void *buf, int *len) {
     }
 
     *len = total; // return number actually sent
-
+    log_trace("sending bytes to fd %d (finished), success: %s", s, bytes_left ? "false" : "true");
     return n;
 }
 

@@ -5,7 +5,7 @@ void toggle_bit(char *bitarray, int index) {
 }
 
 struct Canvas *new_canvas() {
-    struct Canvas *canvas = (struct Canvas *) malloc(sizeof(struct Canvas));
+    struct Canvas *canvas = (struct Canvas *) calloc(1, sizeof(struct Canvas));
     return canvas;
 }
 

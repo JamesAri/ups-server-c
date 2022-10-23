@@ -6,7 +6,7 @@
 #include <stdlib.h>
 
 int test_players() {
-    struct Players *players = malloc(sizeof(struct Players));
+    struct Players *players = calloc(1, sizeof(struct Players));
     update_players(players, "James", 0);
     update_players(players, "Jake", 1);
     update_players(players, "Annie", 1); // this will pass
