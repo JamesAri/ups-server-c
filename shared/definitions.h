@@ -12,7 +12,7 @@
 
 #define GAME_DURATION_SEC 60
 
-#define MAX_USERNAME_LEN 15
+#define MAX_USERNAME_LEN 14
 #define MAX_GUESS_LEN 15
 
 #define ROWS 100

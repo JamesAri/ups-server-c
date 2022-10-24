@@ -26,7 +26,7 @@ int recv_buffer(int fd, struct Buffer *buffer, int size) {
         if (recv_res == 0)
             log_trace("socket (fd: %d) hung up, received bytes: %s", fd, hex_buf_str);
         if (recv_res < 0)
-            log_warn("err(%d): received buffer (from fd: %d): %s", recv_res, fd, hex_buf_str, recv_res);
+            log_warn("err (%d): received buffer (from fd: %d): %s", recv_res, fd, hex_buf_str, recv_res);
     } else
         log_trace("received bytes (from fd: %d): %s", fd, hex_buf_str);
 

@@ -12,6 +12,9 @@ int test_players() {
     update_players(players, "Annie", 1); // this will pass
     update_players(players, "James", 2); // wont be added
     print_players(players);
+    fprintf(stderr, "\n\n");
+    remove_player(players, "Jake");
+    print_players(players);
     free_players(&players);
     return 0;
 }

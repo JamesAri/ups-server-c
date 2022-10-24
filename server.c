@@ -84,7 +84,7 @@ int manage_logging_player(int new_fd) {
     struct Game *game;
     struct Buffer *buffer = new_buffer();
     int username_len, flag, res, res_update;
-    char username[MAX_USERNAME_LEN];
+    char username[STD_STRING_BFR_LEN];
 
     if ((res = recv_buffer_sock_header(new_fd, buffer)) <= 0) {
         free_buffer(&buffer);
@@ -129,8 +129,34 @@ int manage_logging_player(int new_fd) {
             return -1;
         case PLAYER_RECONNECTED:
             log_debug("player %s reconnected", username);
-            send_ok(new_fd);
-            // TODO check game capacity
+            player = get_player_by_fd(lobby.all_players, new_fd);
+            if (player->game == NULL
+                || player->game->cur_capacity >= GAME_CAPACITY
+                || !player->game->in_progress) {
+                // TODO allow client to ask for reassignment instead of auto-reassignment when game empty (not in progress)
+
+                if (player->game != NULL) { // first attempt
+                    remove_player(player->game->players, username);
+                    player->game = NULL;
+                }
+                // TODO make this a function
+                for (int i = 0; i < LOBBY_CAPACITY; i++) {
+                    game = lobby.games[i];
+                    if (game->cur_capacity < GAME_CAPACITY) {
+                        player->game = game;
+                        game->cur_capacity++;
+                        if (add_player(game->players, player) < 0) return -1;
+                        log_debug("reassigned player %s to another game", username);
+                        // player had to be reassigned, because someone else joined and game is full
+                        // or the game was empty
+                        send_ok(new_fd);
+                        return res;
+                    }
+                }
+                log_warn("lobby is full, player %s has to wait", player->username);
+                return -1;
+            }
+            send_ok(new_fd); // may join without complications
             break;
         case PLAYER_CREATED:
             player = get_player_by_fd(lobby.all_players, new_fd);
@@ -186,7 +212,7 @@ int manage_drawing_player(struct Player *player, struct Buffer *buffer) {
     return recv_res;
 }
 
-// TODO: dont allow chat if player sent correct guess
+// TODO: dont allow chat if player sent correct guess (they might reconnect and guess again atm)
 // client is trying to send a GUESS
 int manage_guessing_player(struct Player *player, struct Buffer *buffer) {
     int guess_str_len, recv_res, sender_fd = player->fd;
@@ -289,7 +315,7 @@ void start_round(struct Game *game) {
 // WAITING FOR PLAYERS / ROUND STARTING
 void validate_round(struct Game *game) {
     int connected_players = get_active_players(game);
-    // TODO check if any other games are waiting
+    // TODO check if any other games are waiting - reassign players so they can play asap
     if (connected_players < MIN_PLAYERS) {
         log_trace("waiting for players to join (%d/%d), broadcasting", connected_players, MIN_PLAYERS);
         broadcast_waiting_for_players(game, connected_players);

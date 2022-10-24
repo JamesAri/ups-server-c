@@ -1,8 +1,13 @@
+#include "player.h"
+
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#include "player.h"
 
+bool check_player_list_validity(struct PlayerList *player_list) {
+    if (player_list == NULL || player_list->player == NULL) return false;
+    else return true;
+}
 
 int add_player(struct Players *players, struct Player *player) {
     if (players == NULL || player == NULL) return -1;
@@ -58,25 +63,27 @@ int update_players(struct Players *players, char *username, int fd) {
     return PLAYER_CREATED;
 }
 
-// we might remove players after some time offline, just implemented feature, not using yet
-int remove_player(struct Players *players, int fd) {
-    if (players == NULL) return -1;
+/**
+ * Removes player and free's only PlayerList structure, i.e. shallow free
+ */
+int remove_player(struct Players *players, const char *username) {
+    if (players == NULL || !check_player_list_validity(players->player_list)) return -1;
 
     struct PlayerList *prev_player = players->player_list;
     struct PlayerList *curr_player = players->player_list->next;
 
-    if (fd == players->player_list->player->fd) {
-        free_player_list(&prev_player);
+    if (!strcmp(username, players->player_list->player->username)) {
         players->player_list = curr_player;
         players->count--;
+        free_player_list_shallow(&prev_player);
         return 0;
     }
 
     while (curr_player != NULL) {
-        if (fd == curr_player->player->fd) {
+        if (!strcmp(username, curr_player->player->username)) {
             prev_player->next = curr_player->next;
-            free_player_list(&curr_player);
             players->count--;
+            free_player_list_shallow(&curr_player);
             return 0;
         }
         prev_player = curr_player;
@@ -107,10 +114,6 @@ void print_players(struct Players *players) {
     }
 }
 
-bool check_player_list_validity(struct PlayerList *player_list) {
-    if (player_list == NULL || player_list->player == NULL) return false;
-    else return true;
-}
 
 
 // ======================================================================= //
@@ -136,6 +139,13 @@ void free_player_list(struct PlayerList **player_list) {
     if (player_list == NULL || (*player_list) == NULL) return;
 
     free_player(&(*player_list)->player);
+    free((*player_list));
+    (*player_list) = NULL;
+}
+
+void free_player_list_shallow(struct PlayerList **player_list) {
+    if (player_list == NULL || (*player_list) == NULL) return;
+
     free((*player_list));
     (*player_list) = NULL;
 }

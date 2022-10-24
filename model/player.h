@@ -40,7 +40,7 @@ int add_player(struct Players *players, struct Player *player);
 int update_players(struct Players *players, char *username, int fd);
 
 // REMOVE
-int remove_player(struct Players *players, int fd);
+int remove_player(struct Players *players, const char *username);
 
 // GET
 struct Player *get_player_by_fd(struct Players *players, int fd);
@@ -60,6 +60,8 @@ struct Players *new_players();
 void free_player(struct Player **player);
 
 void free_player_list(struct PlayerList **player_list);
+
+void free_player_list_shallow(struct PlayerList **player_list);
 
 void free_players(struct Players **players);
 

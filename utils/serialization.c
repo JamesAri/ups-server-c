@@ -113,7 +113,7 @@ int reserve_space(struct Buffer *buffer, int bytes) {
         }
         buffer->size = new_size;
     }
-    // TODO one buffer per server instance?
+    // TODO check if it's safe to remove memset - performance
     memset(buffer->data + buffer->next, 0, buffer->size - buffer->next); // let's make it clean ^^
     return 0;
 }
