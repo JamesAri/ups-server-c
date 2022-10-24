@@ -10,6 +10,7 @@
 #define SOCKOPT_TIMEOUT_SEC 2
 
 // buffer sizes
+#define STD_STRING_BFR_LEN 256
 #define MAX_LOG_MSG_LEN 512
 
 // game settings

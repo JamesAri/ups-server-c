@@ -27,33 +27,33 @@ int get_next_drawing_fd(struct Game *game) {
 
     int iterations = 0;
 
-    struct PlayerList *player_list;
+    struct PlayerList *pl;
 
     if (game->drawing_player_list == NULL) {
-        player_list = game->players->player_list;
-        if (player_list == NULL) return -1;
+        pl = game->players->player_list;
+        if (pl == NULL) return -1;
     } else {
-        player_list = game->drawing_player_list->next;
+        pl = game->drawing_player_list->next;
     }
 
-    while (check_player_list_validity(player_list)) {
+    while (check_player_list_validity(pl)) {
         iterations++;
-        if (player_list->player->is_online) {
-            game->drawing_player_list = player_list;
+        if (pl->player->is_online) {
+            game->drawing_player_list = pl;
             return 0;
         }
-        player_list = game->drawing_player_list->next;
+        pl = pl->next;
     }
     // player_list is NULL here (end of the list), we start over
-    player_list = game->players->player_list;
-    while (check_player_list_validity(player_list)) {
+    pl = game->players->player_list;
+    while (check_player_list_validity(pl)) {
         iterations++;
         if (iterations >= game->players->count /*same player...*/) return -1;
-        if (player_list->player->is_online) {
-            game->drawing_player_list = player_list;
+        if (pl->player->is_online) {
+            game->drawing_player_list = pl;
             return 0;
         }
-        player_list = game->drawing_player_list->next;
+        pl = pl->next;
     }
 
     return -1;

@@ -12,15 +12,13 @@
 
 #define GAME_DURATION_SEC 60
 
-#define MAX_USERNAME_LEN 20
-
-#define MAX_GUESS_LEN 256 // TODO use MAX_MSG_LEN
+#define MAX_USERNAME_LEN 15
+#define MAX_GUESS_LEN 15
 
 #define ROWS 100
 #define COLS 100
 #define CANVAS_SIZE (ROWS * COLS)
 
-// TODO
-//#define BITARRAY_SIZE(x) (x/8+(!!(x%8)))
+#define BITARRAY_SIZE(x) (x/8+(!!(x%8)))
 
 #endif //UPS_SERVER_C_DEFINITIONS_H

@@ -186,12 +186,12 @@ int manage_drawing_player(struct Player *player, struct Buffer *buffer) {
     return recv_res;
 }
 
-// todo: dont allow chat if player correct guessed
+// TODO: dont allow chat if player sent correct guess
 // client is trying to send a GUESS
 int manage_guessing_player(struct Player *player, struct Buffer *buffer) {
     int guess_str_len, recv_res, sender_fd = player->fd;
     char *guess_word = player->game->guess_word;
-    char buff_client_guess[MAX_GUESS_LEN + 1], broadcast_response_msg[MAX_GUESS_LEN]; // TODO use MAX_MSG_LEN
+    char buff_client_guess[STD_STRING_BFR_LEN + 1], broadcast_response_msg[STD_STRING_BFR_LEN];
 
     if (((struct SocketHeader *) buffer->data)->flag != CHAT) {
         log_warn("invalid header: guessing player err");
@@ -204,6 +204,12 @@ int manage_guessing_player(struct Player *player, struct Buffer *buffer) {
     if ((recv_res = recv_buffer_int(sender_fd, buffer)) <= 0) return recv_res;
 
     guess_str_len = ntohl(*(int *) (buffer->data + INT_OFFSET));
+
+    if (guess_str_len > MAX_GUESS_LEN) {
+        log_warn("received large string buffer with user guess (fd: %d, %s)", player->fd, player->username);
+        return -1;
+    }
+
     if ((recv_res = recv_buffer_string(sender_fd, buffer, guess_str_len)) <= 0) return recv_res;
 
     strcpy(buff_client_guess, buffer->data + STRING_OFFSET);
@@ -283,7 +289,7 @@ void start_round(struct Game *game) {
 // WAITING FOR PLAYERS / ROUND STARTING
 void validate_round(struct Game *game) {
     int connected_players = get_active_players(game);
-
+    // TODO check if any other games are waiting
     if (connected_players < MIN_PLAYERS) {
         log_trace("waiting for players to join (%d/%d), broadcasting", connected_players, MIN_PLAYERS);
         broadcast_waiting_for_players(game, connected_players);
