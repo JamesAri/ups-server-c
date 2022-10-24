@@ -118,6 +118,12 @@ build CMakeFiles/ups_server_c.dir/lobby.c.o: C_COMPILER__ups_server_c_Debug /Use
   OBJECT_DIR = CMakeFiles/ups_server_c.dir
   OBJECT_FILE_DIR = CMakeFiles/ups_server_c.dir
 
+build CMakeFiles/ups_server_c.dir/utils/stream_handlers.c.o: C_COMPILER__ups_server_c_Debug /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c || cmake_object_order_depends_target_ups_server_c
+  DEP_FILE = CMakeFiles/ups_server_c.dir/utils/stream_handlers.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu99
+  OBJECT_DIR = CMakeFiles/ups_server_c.dir
+  OBJECT_FILE_DIR = CMakeFiles/ups_server_c.dir/utils
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ups_server_c
@@ -126,7 +132,7 @@ build CMakeFiles/ups_server_c.dir/lobby.c.o: C_COMPILER__ups_server_c_Debug /Use
 #############################################
 # Link the executable ups_server_c
 
-build ups_server_c: C_EXECUTABLE_LINKER__ups_server_c_Debug CMakeFiles/ups_server_c.dir/main.c.o CMakeFiles/ups_server_c.dir/model/word_generator.c.o CMakeFiles/ups_server_c.dir/server.c.o CMakeFiles/ups_server_c.dir/model/player.c.o CMakeFiles/ups_server_c.dir/shared/sock_header.c.o CMakeFiles/ups_server_c.dir/utils/sock_utils.c.o CMakeFiles/ups_server_c.dir/utils/debug.c.o CMakeFiles/ups_server_c.dir/utils/serialization.c.o CMakeFiles/ups_server_c.dir/utils/log.c.o CMakeFiles/ups_server_c.dir/model/canvas.c.o CMakeFiles/ups_server_c.dir/game.c.o CMakeFiles/ups_server_c.dir/lobby.c.o
+build ups_server_c: C_EXECUTABLE_LINKER__ups_server_c_Debug CMakeFiles/ups_server_c.dir/main.c.o CMakeFiles/ups_server_c.dir/model/word_generator.c.o CMakeFiles/ups_server_c.dir/server.c.o CMakeFiles/ups_server_c.dir/model/player.c.o CMakeFiles/ups_server_c.dir/shared/sock_header.c.o CMakeFiles/ups_server_c.dir/utils/sock_utils.c.o CMakeFiles/ups_server_c.dir/utils/debug.c.o CMakeFiles/ups_server_c.dir/utils/serialization.c.o CMakeFiles/ups_server_c.dir/utils/log.c.o CMakeFiles/ups_server_c.dir/model/canvas.c.o CMakeFiles/ups_server_c.dir/game.c.o CMakeFiles/ups_server_c.dir/lobby.c.o CMakeFiles/ups_server_c.dir/utils/stream_handlers.c.o
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/ups_server_c.dir
   POST_BUILD = :

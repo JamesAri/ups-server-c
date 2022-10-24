@@ -1,10 +1,6 @@
 #ifndef UPS_SERVER_C_LOBBY_H
 #define UPS_SERVER_C_LOBBY_H
 
-#include "model/player.h"
-#include "game.h"
-#include "poll.h"
-
 #define PFDS_INIT_SIZE 5
 #define LOBBY_CAPACITY 3
 

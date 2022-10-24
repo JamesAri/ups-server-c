@@ -1,9 +1,6 @@
 #ifndef UPS_SERVER_C_CANVAS_H
 #define UPS_SERVER_C_CANVAS_H
 
-#include <stdlib.h>
-#include <math.h>
-
 #include "../shared/definitions.h"
 
 #define BITARRAY_SIZE(x) (x/8+(!!(x%8)))
@@ -12,8 +9,6 @@
 struct Canvas {
     char bitarray_grid[BITARRAY_SIZE(CANVAS_SIZE)];
 };
-
-char get_bit(const char *bitarray, int index);
 
 void toggle_bit(char *bitarray, int index);
 

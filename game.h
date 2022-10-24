@@ -7,7 +7,6 @@
 
 #include "shared/definitions.h"
 
-#include <stdbool.h>
 #include <arpa/inet.h>
 
 #define GAME_CAPACITY 2

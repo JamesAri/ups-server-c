@@ -9,6 +9,7 @@
 #include "model/word_generator.h"
 
 #include <string.h>
+#include <stdlib.h>
 
 int get_active_players(struct Game *game) {
     struct PlayerList *pl = game->players->player_list;
@@ -26,32 +27,35 @@ int get_next_drawing_fd(struct Game *game) {
 
     int iterations = 0;
 
+    struct PlayerList *player_list;
+
     if (game->drawing_player_list == NULL) {
-        if (!check_player_list_validity(game->players->player_list)) return -1;
-        game->drawing_player_list = game->players->player_list;
-        return 0;
-    } else {
-        struct PlayerList *player_list = game->drawing_player_list->next;
-        while (check_player_list_validity(player_list)) {
-            iterations++;
-            if (player_list->player->is_online) {
-                game->drawing_player_list = player_list;
-                return 0;
-            }
-            player_list = game->drawing_player_list->next;
-        }
-        // player_list is NULL here, we start over
         player_list = game->players->player_list;
-        while (check_player_list_validity(player_list)) {
-            iterations++;
-            if (iterations >= game->players->count /*same player...*/) return -1;
-            if (player_list->player->is_online) {
-                game->drawing_player_list = player_list;
-                return 0;
-            }
-            player_list = game->drawing_player_list->next;
-        }
+        if (player_list == NULL) return -1;
+    } else {
+        player_list = game->drawing_player_list->next;
     }
+
+    while (check_player_list_validity(player_list)) {
+        iterations++;
+        if (player_list->player->is_online) {
+            game->drawing_player_list = player_list;
+            return 0;
+        }
+        player_list = game->drawing_player_list->next;
+    }
+    // player_list is NULL here (end of the list), we start over
+    player_list = game->players->player_list;
+    while (check_player_list_validity(player_list)) {
+        iterations++;
+        if (iterations >= game->players->count /*same player...*/) return -1;
+        if (player_list->player->is_online) {
+            game->drawing_player_list = player_list;
+            return 0;
+        }
+        player_list = game->drawing_player_list->next;
+    }
+
     return -1;
 }
 

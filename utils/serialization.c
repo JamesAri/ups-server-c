@@ -3,55 +3,18 @@
 
 #include <stdlib.h>
 #include <string.h>
-#include <sys/time.h>
 #include <stdio.h>
-
-
-// ======================================================================= //
-//                              BUFFER                                     //
-// ======================================================================= //
-
-struct Buffer *new_buffer() {
-    struct Buffer *buffer = malloc(sizeof(struct Buffer));
-
-    buffer->data = calloc(INITIAL_SIZE, sizeof(char));
-    buffer->size = INITIAL_SIZE * sizeof(char);
-    buffer->next = 0;
-
-    return buffer;
-}
-
-int reserve_space(struct Buffer *buffer, int bytes) {
-    int new_size, min_size = buffer->next + bytes;
-    if (min_size > buffer->size) {
-        new_size = (min_size > buffer->size * 2) ? min_size : buffer->size * 2;
-        buffer->data = realloc(buffer->data, new_size);
-        if (buffer->data == NULL) {
-            fprintf(stderr, "reallocate err - reserving space for buffer");
-            return -1;
-        }
-        buffer->size = new_size;
-    }
-    // todo
-    memset(buffer->data + buffer->next, 0, buffer->size - buffer->next); // let's make it clean ^^
-    return 0;
-}
-
-void clear_buffer(struct Buffer *buffer) {
-    memset(buffer->data, 0, buffer->size);
-    buffer->next = 0;
-}
-
-void free_buffer(struct Buffer **buffer) {
-    free((*buffer)->data);
-    free((*buffer));
-    (*buffer) = NULL;
-}
 
 
 // ======================================================================= //
 //                        SERIALIZING PROCEDURES                           //
 // ======================================================================= //
+
+void serialize_byte(unsigned char byte, struct Buffer *buffer) {
+    reserve_space(buffer, sizeof(unsigned char));
+    memcpy(((char *) buffer->data) + buffer->next, &byte, sizeof(unsigned char));
+    buffer->next += sizeof(unsigned char);
+}
 
 void serialize_sock_header(int flag, struct Buffer *buffer) {
     struct SocketHeader *sock_header = new_sock_header(flag);
@@ -96,6 +59,19 @@ void serialize_his(int flag, char *string, struct Buffer *buffer) {
     serialize_string(string, buffer);
 }
 
+void serialize_player(struct Player *player, struct Buffer *buffer) {
+    serialize_int((int) strlen(player->username), buffer);
+    serialize_string(player->username, buffer);
+    serialize_byte((unsigned char) player->is_online, buffer); // should use bit in the feature
+}
+
+void serialize_players(struct Players *players, struct Buffer *buffer) {
+    struct PlayerList *pl = players->player_list;
+    while (pl != NULL && pl->player != NULL) {
+        serialize_player(pl->player, buffer);
+        pl = pl->next;
+    }
+}
 
 // ======================================================================= //
 //                         UNPACKING PROCEDURES                            //
@@ -109,4 +85,46 @@ void unpack_int(struct Buffer *buffer, int *res) {
 // [---offset---][unpacking INT]
 void unpack_int_var(struct Buffer *buffer, int *res, int offset) {
     *res = ntohl(*(int *) (buffer->data + offset));
+}
+
+
+// ======================================================================= //
+//                              BUFFER                                     //
+// ======================================================================= //
+
+struct Buffer *new_buffer() {
+    struct Buffer *buffer = malloc(sizeof(struct Buffer));
+
+    buffer->data = calloc(INITIAL_SIZE, sizeof(char));
+    buffer->size = INITIAL_SIZE * sizeof(char);
+    buffer->next = 0;
+
+    return buffer;
+}
+
+int reserve_space(struct Buffer *buffer, int bytes) {
+    int new_size, min_size = buffer->next + bytes;
+    if (min_size > buffer->size) {
+        new_size = (min_size > buffer->size * 2) ? min_size : buffer->size * 2;
+        buffer->data = realloc(buffer->data, new_size);
+        if (buffer->data == NULL) {
+            fprintf(stderr, "reallocate err - reserving space for buffer");
+            return -1;
+        }
+        buffer->size = new_size;
+    }
+    // todo
+    memset(buffer->data + buffer->next, 0, buffer->size - buffer->next); // let's make it clean ^^
+    return 0;
+}
+
+void clear_buffer(struct Buffer *buffer) {
+    memset(buffer->data, 0, buffer->size);
+    buffer->next = 0;
+}
+
+void free_buffer(struct Buffer **buffer) {
+    free((*buffer)->data);
+    free((*buffer));
+    (*buffer) = NULL;
 }

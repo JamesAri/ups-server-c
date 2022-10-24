@@ -1,8 +1,7 @@
 #ifndef UPS_SERVER_C_SERVER_H
 #define UPS_SERVER_C_SERVER_H
 
-#include <stdbool.h>
-#include <sys/time.h>
+#include "model/player.h"
 
 
 // server settings
@@ -19,5 +18,7 @@
 
 
 void start();
+
+void remove_player_from_server(struct Player *player);
 
 #endif //UPS_SERVER_C_SERVER_H

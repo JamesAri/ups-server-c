@@ -3,15 +3,17 @@
 #include "model/word_generator.h"
 #include "shared/sock_header.h"
 #include "utils/sock_utils.h"
-#include "utils/serialization.h"
-#include "utils/debug.h"
 #include "utils/log.h"
+#include "utils/stream_handlers.h"
+#include "game.h"
 
+#include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 #include <signal.h>
 #include <errno.h>
-#include <search.h>
+#include <poll.h>
+
 
 // ======================================================================= //
 //                                MISC                                     //
@@ -40,7 +42,10 @@ void remove_player_from_server(struct Player *player) {
     player->game->cur_capacity--;
     player->is_online = false;
     player->fd = -1;
+
+    broadcast_player_list_change(player->game, player);
 }
+
 
 // ======================================================================= //
 //                            LOGGING UTILS                                //
@@ -68,196 +73,12 @@ void log_game_start(time_t *start, time_t *end) {
               s1, s2, GAME_DURATION_SEC, TIME_BEFORE_START_SEC);
 }
 
-// ======================================================================= //
-//                             RECEIVING DATA                              //
-// ======================================================================= //
-
-int recv_buffer(int fd, struct Buffer *buffer, int size) {
-    int recv_res, temp = size;
-    reserve_space(buffer, size);
-
-    recv_res = recvall(fd, buffer->data + buffer->next, &temp);
-    buffer->next += size;
-    // logging
-    char hex_buf_str[HEX_STRING_MAX_SIZE];
-    memset(hex_buf_str, 0, sizeof(hex_buf_str));
-    buf_to_hex_string(buffer->data, buffer->next, hex_buf_str);
-    if (recv_res <= 0) {
-        if (recv_res == 0)
-            log_trace("socket (fd: %d) hung up, received bytes: %s", fd, hex_buf_str);
-        if (recv_res < 0)
-            log_warn("err(%d): received buffer (from fd: %d): %s", recv_res, fd, hex_buf_str, recv_res);
-    } else
-        log_trace("received bytes (from fd: %d): %s", fd, hex_buf_str);
-
-    return recv_res;
-}
-
-int recv_buffer_sock_header(int fd, struct Buffer *buffer) {
-    return recv_buffer(fd, buffer, sizeof(struct SocketHeader));
-}
-
-int recv_buffer_int(int fd, struct Buffer *buffer) {
-    return recv_buffer(fd, buffer, sizeof(int));
-}
-
-int recv_buffer_string(int fd, struct Buffer *buffer, int str_len) {
-    return recv_buffer(fd, buffer, str_len);
-}
-
-
-// ======================================================================= //
-//                             SENDING DATA                                //
-// ======================================================================= //
-
-/* SEND CORE */
-int send_buffer(int dest_fd, struct Buffer *buffer) {
-    int temp = buffer->next, send_res;
-
-    send_res = sendall(dest_fd, buffer->data, &temp);
-
-    // logging
-    char hex_buf_str[HEX_STRING_MAX_SIZE];
-    memset(hex_buf_str, 0, sizeof(hex_buf_str));
-    buf_to_hex_string(buffer->data, buffer->next, hex_buf_str);
-    if (send_res <= 0) {
-        if (send_res < 0)
-            log_warn("err(%d): couldn't send buffer to fd: %d, buffer: %s", send_res, dest_fd, hex_buf_str);
-    } else {
-        log_trace("sent buffer (to fd: %d): %s", dest_fd, hex_buf_str);
-    }
-
-    return send_res;
-}
-
-
-int send_header_only(int fd, int flag) {
-    struct Buffer *buffer = new_buffer();
-    int send_res;
-    serialize_sock_header(flag, buffer);
-    send_res = send_buffer(fd, buffer);
-    free_buffer(&buffer);
-    return send_res;
-}
-
-int send_ok(int fd) {
-    return send_header_only(fd, OK);
-}
-
-int send_header_with_msg(int fd, int flag, char *msg) {
-    struct Buffer *buffer = new_buffer();
-    int send_res;
-    serialize_his(flag, msg, buffer);
-    send_res = send_buffer(fd, buffer);
-    free_buffer(&buffer);
-    return send_res;
-}
-
-int send_wrong_guess(int fd) {
-    return send_header_only(fd, WRONG_GUESS);
-}
-
-int send_correct_guess(int fd) {
-    return send_header_only(fd, CORRECT_GUESS);
-}
-
-int send_invalid_username(int fd) {
-    return send_header_only(fd, INVALID_USERNAME);
-}
-
-int send_server_error(int fd) {
-    return send_header_only(fd, SERVER_ERROR);
-}
-
-int send_game_draw_start(int drawing_fd, char *guess_word, time_t time_round_end) {
-    struct Buffer *buffer = new_buffer();
-    int send_res;
-    serialize_his(START_AND_DRAW, guess_word, buffer);
-    serialize_time_t(time_round_end, buffer);
-    send_res = send_buffer(drawing_fd, buffer);
-    free_buffer(&buffer);
-    return send_res;
-}
-
-int send_game_in_progress(struct Player *player) {
-    int connecting_fd = player->fd, send_res, second_flag = START_AND_GUESS;
-    struct Game *game = player->game;
-    struct Buffer *buffer = new_buffer();
-
-    serialize_sock_header(GAME_IN_PROGRESS, buffer);
-
-    if (game->drawing_player_list->player->fd == connecting_fd) second_flag = START_AND_DRAW;
-
-    serialize_sock_header(second_flag, buffer);
-
-    if (second_flag == START_AND_DRAW) {
-        serialize_int((int) strlen(game->guess_word), buffer);
-        serialize_string(game->guess_word, buffer);
-    }
-
-    serialize_time_t(game->end_sec, buffer);
-    serialize_canvas(game->canvas, buffer);
-
-    send_res = send_buffer(connecting_fd, buffer);
-    free_buffer(&buffer);
-    return send_res;
-}
-
-/* BROADCAST CORE */
-void broadcast_buffer(struct Game *game, int sender_fd, struct Buffer *buffer) {
-    int dest_fd;
-
-    char hex_buf_str[HEX_STRING_MAX_SIZE];
-    memset(hex_buf_str, 0, sizeof(hex_buf_str));
-    buf_to_hex_string(buffer->data, buffer->next, hex_buf_str);
-    log_trace("broadcasting buffer (sender: %d): %s", sender_fd, hex_buf_str);
-
-    struct PlayerList *pl = game->players->player_list;
-    while (pl != NULL) {
-        log_trace("%s", pl->player->username);
-        if (pl->player->is_online) {
-            dest_fd = pl->player->fd;
-            if (dest_fd != game->listener && dest_fd != sender_fd) {
-                if ((send_buffer(dest_fd, buffer)) <= 0) {
-                    log_warn("broadcasting err: destination fd %d failure, removing player", dest_fd);
-                    remove_player_from_server(pl->player);
-                }
-            }
-        }
-        pl = pl->next;
-    }
-}
-
-void broadcast_waiting_for_players(struct Game *game, int connected_clients) {
-    struct Buffer *buffer = new_buffer();
-    serialize_sock_header(WAITING_FOR_PLAYERS, buffer);
-    serialize_int(connected_clients, buffer);
-    serialize_int(MIN_PLAYERS, buffer);
-    broadcast_buffer(game, game->listener, buffer);
-    free_buffer(&buffer);
-}
-
-void broadcast_game_guess_start(struct Game *game, int drawing_fd) {
-    struct Buffer *buffer = new_buffer();
-    serialize_sock_header(START_AND_GUESS, buffer);
-    serialize_time_t(game->end_sec, buffer);
-    broadcast_buffer(game, drawing_fd, buffer);
-    free_buffer(&buffer);
-}
-
-void broadcast_round_ends(struct Game *game) {
-    struct Buffer *buffer = new_buffer();
-    serialize_sock_header(GAME_ENDS, buffer);
-    broadcast_buffer(game, -1, buffer);
-    free_buffer(&buffer);
-}
-
 
 // ======================================================================= //
 //               SERVER LOGIC AND CLIENT (PLAYER) MANAGEMENT               //
 // ======================================================================= //
 
-// client is trying to log in
+// client is trying to LOG IN
 int manage_logging_player(int new_fd) {
     struct Player *player;
     struct Game *game;
@@ -332,7 +153,7 @@ int manage_logging_player(int new_fd) {
     return res;
 }
 
-// client is trying to send canvas changes
+// client is trying to send CANVAS changes
 int manage_drawing_player(struct Player *player, struct Buffer *buffer) {
     int drawing_fd = player->fd;
     int recv_res, number_of_diffs, temp;
@@ -365,8 +186,8 @@ int manage_drawing_player(struct Player *player, struct Buffer *buffer) {
     return recv_res;
 }
 
-// todo dont allow chat if player correct guessed
-// client is trying to send a guess
+// todo: dont allow chat if player correct guessed
+// client is trying to send a GUESS
 int manage_guessing_player(struct Player *player, struct Buffer *buffer) {
     int guess_str_len, recv_res, sender_fd = player->fd;
     char *guess_word = player->game->guess_word;
@@ -406,7 +227,7 @@ int manage_guessing_player(struct Player *player, struct Buffer *buffer) {
     else return send_wrong_guess(sender_fd);
 }
 
-int manage_player(struct Player *player) {
+int manage_player_action(struct Player *player) {
     struct Game *game = player->game;
     struct Buffer *buffer = new_buffer();
     int recv_res, sender_fd = player->fd;
@@ -458,7 +279,8 @@ void start_round(struct Game *game) {
     log_debug("new round started");
 }
 
-// client is trying to join waiting_for_players/start/in_progress round
+// Client is trying to join game in one of these game states:
+// WAITING FOR PLAYERS / ROUND STARTING
 void validate_round(struct Game *game) {
     int connected_players = get_active_players(game);
 
@@ -489,6 +311,7 @@ void end_round(struct Game *game) {
 
     log_debug("round ended");
 }
+
 
 // ======================================================================= //
 //                              MAIN LOOP                                  //
@@ -580,10 +403,20 @@ void start() {
                               new_fd, cur_player->username);
                     log_debug("poll-server: %d connected client(s)", lobby.fd_count - 1); // -1 for listener
 
+
+                    if (send_player_list(cur_player->fd, cur_player->game) <= 0) {
+                        log_warn("unable to send player list to fd %d (%s)", cur_player->fd, cur_player->username);
+                        remove_player_from_server(cur_player);
+                        continue;
+                    }
+
+                    broadcast_player_list_change(cur_player->game, cur_player);
+
                     if (cur_player->game->in_progress) {
                         log_trace("fd %d joining game in progress", cur_player->fd);
                         if (send_game_in_progress(cur_player) <= 0) {
-                            log_warn("fd %d unable to join current round, closing", cur_player->fd);
+                            log_warn("fd %d (%s) unable to join current round, closing", cur_player->fd,
+                                     cur_player->username);
                             remove_player_from_server(cur_player);
                         }
                     } else {
@@ -608,7 +441,7 @@ void start() {
                     continue;
                 }
 
-                recv_res = manage_player(cur_player);
+                recv_res = manage_player_action(cur_player);
 
                 // Known player error
                 if (recv_res <= 0) {

@@ -1,4 +1,5 @@
 #include "canvas.h"
+#include "stdlib.h"
 
 void toggle_bit(char *bitarray, int index) {
     bitarray[index / 8] ^= 1 << (7 - index % 8);

@@ -2,6 +2,8 @@
 #define UPS_SERVER_C_SERIALIZATION_H
 
 #include "../model/canvas.h"
+#include "../model/player.h"
+
 #include <sys/time.h>
 
 #define INITIAL_SIZE 10
@@ -17,11 +19,7 @@ struct Buffer {
 
 struct Buffer *new_buffer();
 
-int reserve_space(struct Buffer *buffer, int bytes);
-
-void clear_buffer(struct Buffer *buffer);
-
-void free_buffer(struct Buffer **buffer);
+void serialize_byte(unsigned char byte, struct Buffer *buffer);
 
 void serialize_sock_header(int flag, struct Buffer *buffer);
 
@@ -35,10 +33,18 @@ void serialize_time_t(time_t time, struct Buffer *buffer);
 
 void serialize_canvas(struct Canvas *canvas, struct Buffer *buffer);
 
+void serialize_player(struct Player *player, struct Buffer *buffer);
+
+void serialize_players(struct Players *players, struct Buffer *buffer);
+
 void unpack_int(struct Buffer *buffer, int *res);
 
 void unpack_int_var(struct Buffer *buffer, int *res, int offset);
 
-void unpack_string(struct Buffer *buffer, char *res);
+int reserve_space(struct Buffer *buffer, int bytes);
+
+void clear_buffer(struct Buffer *buffer);
+
+void free_buffer(struct Buffer **buffer);
 
 #endif //UPS_SERVER_C_SERIALIZATION_H

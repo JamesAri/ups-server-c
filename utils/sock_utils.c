@@ -8,7 +8,6 @@
 #include <errno.h>
 
 
-
 // ======================================================================= //
 //                            SOCKET UTILS                                 //
 // ======================================================================= //
@@ -154,8 +153,9 @@ void free_pfds(struct pollfd **pfds) {
     (*pfds) = NULL;
 }
 
-void print_pfds(struct pollfd *pfds, int fd_size) {
-    for (int i = 0; i < fd_size; i++) {
+// debug
+void print_pfds(struct pollfd *pfds, int fd_count) {
+    for (int i = 0; i < fd_count; i++) {
         fprintf(stderr, "%d, ", pfds[i].fd);
     }
     fprintf(stderr, "\n");

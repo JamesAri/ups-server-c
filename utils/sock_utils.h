@@ -1,8 +1,8 @@
 #ifndef UPS_SERVER_C_SOCKET_UTILS_H
 #define UPS_SERVER_C_SOCKET_UTILS_H
 
-#include <sys/socket.h>
 #include <poll.h>
+#include <sys/socket.h>
 
 // ======================================================================= //
 //                            SOCKET UTILS                                 //
@@ -31,6 +31,6 @@ void del_from_pfds_by_fd(struct pollfd pfds[], int fd, int *fd_count);
 
 void free_pfds(struct pollfd **pfds);
 
-void print_pfds(struct pollfd *pfds, int fd_size);
+void print_pfds(struct pollfd *pfds, int fd_count);
 
 #endif //UPS_SERVER_C_SOCKET_UTILS_H

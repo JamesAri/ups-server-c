@@ -1,7 +1,10 @@
-#include <stdlib.h>
 #include "lobby.h"
 #include "utils/log.h"
 #include "utils/sock_utils.h"
+#include "model/player.h"
+#include "game.h"
+
+#include <stdlib.h>
 
 
 void initialize_lobby(int listener) {
@@ -16,7 +19,14 @@ void initialize_lobby(int listener) {
     }
 
     for (int i = 0; i < LOBBY_CAPACITY; i++) {
-        lobby.games[i] = new_game(listener);
+        if ((lobby.games[i] = new_game(listener)) == NULL) {
+            for (i--; i >= 0; i--) {
+                free_game(lobby.games[i]);
+            }
+            free_pfds(&lobby.pfds);
+            log_fatal("err: couldn't malloc games");
+            exit(EXIT_FAILURE);
+        }
     }
 }
 
