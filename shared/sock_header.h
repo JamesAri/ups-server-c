@@ -21,6 +21,7 @@
 #define SERVER_ERROR 14                 // || [SOCK_HEADER]                         || ----------------------------- ||
 #define PLAYER_LIST 15                  // || [S_H][INT]array([INT][STR][ON/OFF])   || ----------------------------- ||
 #define PLAYER_LIST_CHANGE 16           // || [SOCK_HEADER][INT][STR][ON/OFF]       || ----------------------------- ||
+#define SERVER_FULL 17                  // || [SOCK_HEADER]                         || ----------------------------- ||
 //                                      // ============================================================================
 
 struct SocketHeader {

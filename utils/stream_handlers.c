@@ -83,6 +83,10 @@ int send_ok(int fd) {
     return send_header_only(fd, OK);
 }
 
+int send_server_full(int fd) {
+    return send_header_only(fd, SERVER_FULL);
+}
+
 int send_header_with_msg(int fd, int flag, char *msg) {
     struct Buffer *buffer = new_buffer();
     int send_res;

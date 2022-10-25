@@ -46,6 +46,30 @@ void remove_player_from_server(struct Player *player) {
     broadcast_player_list_change(player->game, player);
 }
 
+int reassign_player(struct Player *player) {
+    struct Game *game;
+
+    if (player->game != NULL) { // first attempt
+        remove_player(player->game->players, player->username);
+        player->game = NULL;
+    }
+
+    for (int i = 0; i < LOBBY_CAPACITY; i++) {
+        game = lobby.games[i];
+        if (game->cur_capacity < GAME_CAPACITY) {
+            player->game = game;
+            game->cur_capacity++;
+            if (add_player(game->players, player) < 0) return -1;
+            log_debug("reassigned player %s to another game", player->username);
+            // player had to be reassigned, because someone else joined and game is full
+            // or the game was empty
+            return 0;
+        }
+    }
+    log_warn("lobby is full, player %s has to wait", player->username);
+    return -1;
+}
+
 
 // ======================================================================= //
 //                            LOGGING UTILS                                //
@@ -130,49 +154,26 @@ int manage_logging_player(int new_fd) {
         case PLAYER_RECONNECTED:
             log_debug("player %s reconnected", username);
             player = get_player_by_fd(lobby.all_players, new_fd);
-            if (player->game == NULL
-                || player->game->cur_capacity >= GAME_CAPACITY
-                || !player->game->in_progress) {
-                // TODO allow client to ask for reassignment instead of auto-reassignment when game empty (not in progress)
-
-                if (player->game != NULL) { // first attempt
-                    remove_player(player->game->players, username);
-                    player->game = NULL;
+            if (player->game == NULL                            // no game assigned
+                || player->game->cur_capacity >= GAME_CAPACITY  // game is full
+                || !player->game->in_progress) {                // player would be waiting for other players to join
+                // TODO allow client to ask for reassignment instead of auto-reassignment
+                //      when game empty/not in progress
+                if (reassign_player(player) < 0) {
+                    send_server_full(new_fd);
+                    return -1;
                 }
-                // TODO make this a function
-                for (int i = 0; i < LOBBY_CAPACITY; i++) {
-                    game = lobby.games[i];
-                    if (game->cur_capacity < GAME_CAPACITY) {
-                        player->game = game;
-                        game->cur_capacity++;
-                        if (add_player(game->players, player) < 0) return -1;
-                        log_debug("reassigned player %s to another game", username);
-                        // player had to be reassigned, because someone else joined and game is full
-                        // or the game was empty
-                        send_ok(new_fd);
-                        return res;
-                    }
-                }
-                log_warn("lobby is full, player %s has to wait", player->username);
-                return -1;
             }
             send_ok(new_fd); // may join without complications
             break;
         case PLAYER_CREATED:
             player = get_player_by_fd(lobby.all_players, new_fd);
-            for (int i = 0; i < LOBBY_CAPACITY; i++) {
-                game = lobby.games[i];
-                if (game->cur_capacity < GAME_CAPACITY) {
-                    player->game = game;
-                    game->cur_capacity++;
-                    if (add_player(game->players, player) < 0) return -1;
-                    log_debug("created new player %s", username);
-                    send_ok(new_fd);
-                    return res;
-                }
+            if (reassign_player(player) < 0) {
+                send_server_full(new_fd);
+                return -1;
             }
-            log_warn("lobby is full, player %s has to wait", player->username);
-            return -1;
+            send_ok(new_fd);
+            break;
         default:
             return -1;
     }

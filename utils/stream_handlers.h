@@ -28,6 +28,8 @@ int send_header_only(int fd, int flag);
 
 int send_ok(int fd);
 
+int send_server_full(int fd);
+
 int send_header_with_msg(int fd, int flag, char *msg);
 
 int send_wrong_guess(int fd);
