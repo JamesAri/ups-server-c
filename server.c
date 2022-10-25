@@ -38,31 +38,38 @@ void remove_player_from_server(struct Player *player) {
         return;
     }
     log_debug("removing player %s (fd: %d) from game", player->username, player->fd);
+
     disconnect_fd(player->fd);
-    player->game->cur_capacity--;
+
     player->is_online = false;
     player->fd = -1;
 
-    broadcast_player_list_change(player->game, player);
+    if (player->game != NULL) {
+        player->game->cur_capacity--;
+        broadcast_player_list_change(player->game, player);
+    }
+
 }
 
 int reassign_player(struct Player *player) {
     struct Game *game;
 
-    if (player->game != NULL) { // first attempt
+    // player had to be reassigned, because someone else joined and game is full
+    // or the game was empty
+    if (player->game != NULL) {
         remove_player(player->game->players, player->username);
         player->game = NULL;
+        log_debug("reassigning player %s to another game", player->username);
     }
 
+    // player has currently no game
     for (int i = 0; i < LOBBY_CAPACITY; i++) {
         game = lobby.games[i];
         if (game->cur_capacity < GAME_CAPACITY) {
             player->game = game;
             game->cur_capacity++;
             if (add_player(game->players, player) < 0) return -1;
-            log_debug("reassigned player %s to another game", player->username);
-            // player had to be reassigned, because someone else joined and game is full
-            // or the game was empty
+            log_debug("reassigned player %s to a new game", player->username);
             return 0;
         }
     }
@@ -105,7 +112,6 @@ void log_game_start(time_t *start, time_t *end) {
 // client is trying to LOG IN
 int manage_logging_player(int new_fd) {
     struct Player *player;
-    struct Game *game;
     struct Buffer *buffer = new_buffer();
     int username_len, flag, res, res_update;
     char username[STD_STRING_BFR_LEN];
@@ -161,6 +167,8 @@ int manage_logging_player(int new_fd) {
                 //      when game empty/not in progress
                 if (reassign_player(player) < 0) {
                     send_server_full(new_fd);
+//                    remove_player_from_server(player);
+                    player->is_online = false;
                     return -1;
                 }
             }
@@ -170,6 +178,8 @@ int manage_logging_player(int new_fd) {
             player = get_player_by_fd(lobby.all_players, new_fd);
             if (reassign_player(player) < 0) {
                 send_server_full(new_fd);
+//                remove_player_from_server(player);
+                player->is_online = false;
                 return -1;
             }
             send_ok(new_fd);
@@ -177,7 +187,7 @@ int manage_logging_player(int new_fd) {
         default:
             return -1;
     }
-    return res;
+    return 2;
 }
 
 // client is trying to send CANVAS changes
@@ -353,7 +363,7 @@ void end_round(struct Game *game) {
 void start() {
     setup_signal_handling();
 
-    int listener, timeout_sec, timeout_sec_new, new_fd, sender_fd, recv_res, poll_res;
+    int listener, timeout_sec, timeout_sec_new, new_fd, sender_fd, recv_res, poll_res, login_res;
 
     struct sockaddr_storage remote_addr; // Client address
     socklen_t addr_len;
@@ -416,9 +426,11 @@ void start() {
                         continue;
                     }
 
-                    if (manage_logging_player(new_fd) <= 0) {
+                    if ((login_res = manage_logging_player(new_fd)) <= 0) {
                         log_warn("login err: closing connection for socket %d", new_fd);
                         close(new_fd);
+                        continue;
+                    } else if (login_res == 1) { // server full, client waiting
                         continue;
                     }
 
@@ -435,7 +447,6 @@ void start() {
                                         remote_ip, sizeof(remote_ip)),
                               new_fd, cur_player->username);
                     log_debug("poll-server: %d connected client(s)", lobby.fd_count - 1); // -1 for listener
-
 
                     if (send_player_list(cur_player->fd, cur_player->game) <= 0) {
                         log_warn("unable to send player list to fd %d (%s)", cur_player->fd, cur_player->username);

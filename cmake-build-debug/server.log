@@ -283,3 +283,381 @@
 2022-10-25 00:47:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:479: poll-server: socket 6 hung up (user: Pepa3)
 2022-10-25 00:47:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa3 (fd: 6) from game
 2022-10-25 00:47:52 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:55: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-25 18:42:15 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:369: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 18:42:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:411: poll-server: new connection (fd: 6), processing...
+2022-10-25 18:42:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:63: reassigned player Pepa to another game
+2022-10-25 18:42:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa) was successful
+2022-10-25 18:42:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: 1 connected client(s)
+2022-10-25 18:42:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:411: poll-server: new connection (fd: 7), processing...
+2022-10-25 18:42:41 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:148: invalid username, player Pepa already logged in
+2022-10-25 18:42:41 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:420: login err: closing connection for socket 7
+2022-10-25 18:43:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:411: poll-server: new connection (fd: 7), processing...
+2022-10-25 18:43:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:63: reassigned player Pepa1 to another game
+2022-10-25 18:43:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Pepa1) was successful
+2022-10-25 18:43:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: 2 connected client(s)
+2022-10-25 18:43:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:302: next drawing player is Pepa1 (fd: 7)
+2022-10-25 18:43:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:312: new round started
+2022-10-25 18:43:48 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:411: poll-server: new connection (fd: 8), processing...
+2022-10-25 18:43:48 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:69: lobby is full, player Pepa3 has to wait
+2022-10-25 18:43:48 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:420: login err: closing connection for socket 8
+2022-10-25 18:44:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:482: poll-server: socket 7 hung up (user: Pepa1)
+2022-10-25 18:44:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa1 (fd: 7) from game
+2022-10-25 18:44:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:482: poll-server: socket 6 hung up (user: Pepa)
+2022-10-25 18:44:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa (fd: 6) from game
+2022-10-25 18:44:44 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:345: round ended
+2022-10-25 18:48:37 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:79: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-25 18:48:51 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:369: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 18:48:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:411: poll-server: new connection (fd: 6), processing...
+2022-10-25 18:50:52 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:369: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 18:50:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:411: poll-server: new connection (fd: 6), processing...
+2022-10-25 18:50:56 FATAL /Users/jakub.slechta/git/ups-server-c/server.c:419: 1
+2022-10-25 18:51:32 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:369: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 18:51:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:411: poll-server: new connection (fd: 6), processing...
+2022-10-25 18:54:50 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:373: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 18:54:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:415: poll-server: new connection (fd: 6), processing...
+2022-10-25 18:56:06 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:371: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 18:56:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:413: poll-server: new connection (fd: 6), processing...
+2022-10-25 18:56:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:63: reassigned player Pepa to another game
+2022-10-25 18:56:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:438: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa) was successful
+2022-10-25 18:56:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:439: poll-server: 1 connected client(s)
+2022-10-25 18:56:12 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:473: socket 6 (Pepa) trying to communicate outside the game loop, closing
+2022-10-25 18:56:12 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa (fd: 6) from game
+2022-10-25 18:56:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:413: poll-server: new connection (fd: 6), processing...
+2022-10-25 18:56:57 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:369: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 18:57:02 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:411: poll-server: new connection (fd: 6), processing...
+2022-10-25 18:57:02 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:64: reassigned player Pepa to another game
+2022-10-25 18:57:02 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa) was successful
+2022-10-25 18:57:02 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: 1 connected client(s)
+2022-10-25 18:57:04 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:471: socket 6 (Pepa) trying to communicate outside the game loop, closing
+2022-10-25 18:57:04 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa (fd: 6) from game
+2022-10-25 18:57:06 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:411: poll-server: new connection (fd: 6), processing...
+2022-10-25 18:57:06 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:64: reassigned player Pepa1 to another game
+2022-10-25 18:57:06 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa1) was successful
+2022-10-25 18:57:06 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: 1 connected client(s)
+2022-10-25 18:57:08 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:471: socket 6 (Pepa1) trying to communicate outside the game loop, closing
+2022-10-25 18:57:08 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa1 (fd: 6) from game
+2022-10-25 18:57:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:411: poll-server: new connection (fd: 6), processing...
+2022-10-25 18:57:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:155: player Pepa reconnected
+2022-10-25 18:57:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:64: reassigned player Pepa to another game
+2022-10-25 18:57:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa) was successful
+2022-10-25 18:57:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: 1 connected client(s)
+2022-10-25 18:57:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:471: socket 6 (Pepa) trying to communicate outside the game loop, closing
+2022-10-25 18:57:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa (fd: 6) from game
+2022-10-25 18:57:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:411: poll-server: new connection (fd: 6), processing...
+2022-10-25 18:58:42 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:369: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 18:58:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:411: poll-server: new connection (fd: 6), processing...
+2022-10-25 18:58:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:64: reassigned player Pepa2 to another game
+2022-10-25 18:58:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa2) was successful
+2022-10-25 18:58:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: 1 connected client(s)
+2022-10-25 18:58:48 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:471: socket 6 (Pepa2) trying to communicate outside the game loop, closing
+2022-10-25 18:58:48 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa2 (fd: 6) from game
+2022-10-25 18:58:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:411: poll-server: new connection (fd: 6), processing...
+2022-10-25 18:58:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:64: reassigned player Pepa to another game
+2022-10-25 18:58:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa) was successful
+2022-10-25 18:58:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: 1 connected client(s)
+2022-10-25 18:58:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:471: socket 6 (Pepa) trying to communicate outside the game loop, closing
+2022-10-25 18:58:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa (fd: 6) from game
+2022-10-25 18:58:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:411: poll-server: new connection (fd: 6), processing...
+2022-10-25 18:58:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:64: reassigned player Pepa32 to another game
+2022-10-25 18:58:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa32) was successful
+2022-10-25 18:58:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: 1 connected client(s)
+2022-10-25 18:58:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:471: socket 6 (Pepa32) trying to communicate outside the game loop, closing
+2022-10-25 18:58:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa32 (fd: 6) from game
+2022-10-25 18:58:59 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:80: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-25 18:59:01 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:369: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 18:59:05 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:411: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:00:02 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:368: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 19:00:05 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:410: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:00:58 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:368: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 19:01:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:410: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:01:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:63: reassigned player Pepa1 to another game
+2022-10-25 19:01:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:435: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa1) was successful
+2022-10-25 19:01:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: 1 connected client(s)
+2022-10-25 19:01:02 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:470: socket 6 (Pepa1) trying to communicate outside the game loop, closing
+2022-10-25 19:01:02 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa1 (fd: 6) from game
+2022-10-25 19:01:06 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:410: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:01:36 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:368: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 19:01:40 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:410: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:02:38 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:373: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 19:02:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:415: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:02:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:68: reassigned player Pepa1 to another game
+2022-10-25 19:02:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:440: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa1) was successful
+2022-10-25 19:02:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:441: poll-server: 1 connected client(s)
+2022-10-25 19:02:43 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:475: socket 6 (Pepa1) trying to communicate outside the game loop, closing
+2022-10-25 19:02:43 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa1 (fd: 6) from game
+2022-10-25 19:02:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:415: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:02:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:68: reassigned player Pepa222 to another game
+2022-10-25 19:02:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:440: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa222) was successful
+2022-10-25 19:02:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:441: poll-server: 1 connected client(s)
+2022-10-25 19:02:48 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:475: socket 6 (Pepa222) trying to communicate outside the game loop, closing
+2022-10-25 19:02:48 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa222 (fd: 6) from game
+2022-10-25 19:02:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:415: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:02:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:68: reassigned player Pepa321 to another game
+2022-10-25 19:02:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:440: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa321) was successful
+2022-10-25 19:02:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:441: poll-server: 1 connected client(s)
+2022-10-25 19:02:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:475: socket 6 (Pepa321) trying to communicate outside the game loop, closing
+2022-10-25 19:02:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa321 (fd: 6) from game
+2022-10-25 19:02:54 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:84: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-25 19:02:55 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:373: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 19:03:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:415: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:03:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:68: reassigned player Pepa321 to another game
+2022-10-25 19:03:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:440: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa321) was successful
+2022-10-25 19:03:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:441: poll-server: 1 connected client(s)
+2022-10-25 19:03:02 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:475: socket 6 (Pepa321) trying to communicate outside the game loop, closing
+2022-10-25 19:03:02 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa321 (fd: 6) from game
+2022-10-25 19:03:05 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:415: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:03:32 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:368: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 19:03:35 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:410: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:03:35 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:63: reassigned player Pepa1 to another game
+2022-10-25 19:03:35 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:435: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa1) was successful
+2022-10-25 19:03:35 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: 1 connected client(s)
+2022-10-25 19:03:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:470: socket 6 (Pepa1) trying to communicate outside the game loop, closing
+2022-10-25 19:03:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa1 (fd: 6) from game
+2022-10-25 19:03:38 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:410: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:03:38 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:154: player Pepa1 reconnected
+2022-10-25 19:03:38 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:63: reassigned player Pepa1 to another game
+2022-10-25 19:03:38 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:435: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa1) was successful
+2022-10-25 19:03:38 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: 1 connected client(s)
+2022-10-25 19:03:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:470: socket 6 (Pepa1) trying to communicate outside the game loop, closing
+2022-10-25 19:03:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa1 (fd: 6) from game
+2022-10-25 19:03:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:410: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:03:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:154: player Pepa1 reconnected
+2022-10-25 19:03:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:63: reassigned player Pepa1 to another game
+2022-10-25 19:03:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:435: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa1) was successful
+2022-10-25 19:03:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: 1 connected client(s)
+2022-10-25 19:03:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:470: socket 6 (Pepa1) trying to communicate outside the game loop, closing
+2022-10-25 19:03:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa1 (fd: 6) from game
+2022-10-25 19:03:43 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:410: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:03:43 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:154: player Pepa1 reconnected
+2022-10-25 19:03:43 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:63: reassigned player Pepa1 to another game
+2022-10-25 19:03:43 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:435: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa1) was successful
+2022-10-25 19:03:43 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: 1 connected client(s)
+2022-10-25 19:03:44 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:470: socket 6 (Pepa1) trying to communicate outside the game loop, closing
+2022-10-25 19:03:44 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa1 (fd: 6) from game
+2022-10-25 19:03:48 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:410: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:03:48 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:63: reassigned player Pepa2 to another game
+2022-10-25 19:03:48 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:435: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa2) was successful
+2022-10-25 19:03:48 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: 1 connected client(s)
+2022-10-25 19:03:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:470: socket 6 (Pepa2) trying to communicate outside the game loop, closing
+2022-10-25 19:03:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa2 (fd: 6) from game
+2022-10-25 19:03:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:410: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:03:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:63: reassigned player Pepa3 to another game
+2022-10-25 19:03:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:435: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa3) was successful
+2022-10-25 19:03:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: 1 connected client(s)
+2022-10-25 19:03:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:470: socket 6 (Pepa3) trying to communicate outside the game loop, closing
+2022-10-25 19:03:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa3 (fd: 6) from game
+2022-10-25 19:03:54 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:79: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-25 19:03:55 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:368: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 19:03:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:410: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:04:40 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:371: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 19:04:43 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:413: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:05:37 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:370: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 19:05:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:412: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:05:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:65: reassigned player Pepa1 to another game
+2022-10-25 19:05:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa1) was successful
+2022-10-25 19:05:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:438: poll-server: 1 connected client(s)
+2022-10-25 19:05:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:472: socket 6 (Pepa1) trying to communicate outside the game loop, closing
+2022-10-25 19:05:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa1 (fd: 6) from game
+2022-10-25 19:05:44 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:81: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-25 19:05:45 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:370: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 19:05:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:412: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:07:55 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:374: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 19:07:59 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:416: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:07:59 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:69: reassigned player Pepa to another game
+2022-10-25 19:07:59 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:441: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa) was successful
+2022-10-25 19:07:59 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:442: poll-server: 1 connected client(s)
+2022-10-25 19:08:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:476: socket 6 (Pepa) trying to communicate outside the game loop, closing
+2022-10-25 19:08:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa (fd: 6) from game
+2022-10-25 19:08:04 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:85: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-25 19:08:04 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:374: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 19:08:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:416: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:08:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:69: reassigned player Pepa to another game
+2022-10-25 19:08:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:441: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa) was successful
+2022-10-25 19:08:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:442: poll-server: 1 connected client(s)
+2022-10-25 19:08:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:476: socket 6 (Pepa) trying to communicate outside the game loop, closing
+2022-10-25 19:08:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa (fd: 6) from game
+2022-10-25 19:08:16 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:85: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-25 19:08:17 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:374: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 19:08:24 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:416: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:08:24 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:69: reassigned player Pepa to another game
+2022-10-25 19:08:24 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:441: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa) was successful
+2022-10-25 19:08:24 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:442: poll-server: 1 connected client(s)
+2022-10-25 19:08:26 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:476: socket 6 (Pepa) trying to communicate outside the game loop, closing
+2022-10-25 19:08:26 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa (fd: 6) from game
+2022-10-25 19:08:29 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:85: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-25 19:08:29 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:374: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 19:08:35 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:416: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:08:35 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:69: reassigned player Pepa1 to another game
+2022-10-25 19:08:35 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:441: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa1) was successful
+2022-10-25 19:08:35 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:442: poll-server: 1 connected client(s)
+2022-10-25 19:08:37 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:476: socket 6 (Pepa1) trying to communicate outside the game loop, closing
+2022-10-25 19:08:37 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa1 (fd: 6) from game
+2022-10-25 19:09:28 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:85: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-25 19:13:50 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:375: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 19:13:53 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:417: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:15:38 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:375: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 19:15:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:417: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:15:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:70: reassigned player Pepa1 to a new game
+2022-10-25 19:15:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:442: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa1) was successful
+2022-10-25 19:15:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:443: poll-server: 1 connected client(s)
+2022-10-25 19:15:43 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:477: socket 6 (Pepa1) trying to communicate outside the game loop, closing
+2022-10-25 19:15:43 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa1 (fd: 6) from game
+2022-10-25 19:15:45 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:86: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-25 19:15:47 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:375: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 19:15:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:417: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:15:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:70: reassigned player Pepa1 to a new game
+2022-10-25 19:15:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:442: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa1) was successful
+2022-10-25 19:15:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:443: poll-server: 1 connected client(s)
+2022-10-25 19:15:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:477: socket 6 (Pepa1) trying to communicate outside the game loop, closing
+2022-10-25 19:15:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa1 (fd: 6) from game
+2022-10-25 19:15:53 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:86: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-25 19:15:54 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:375: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 19:15:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:417: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:15:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:70: reassigned player Pepa1 to a new game
+2022-10-25 19:15:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:442: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa1) was successful
+2022-10-25 19:15:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:443: poll-server: 1 connected client(s)
+2022-10-25 19:16:00 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:477: socket 6 (Pepa1) trying to communicate outside the game loop, closing
+2022-10-25 19:16:00 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa1 (fd: 6) from game
+2022-10-25 19:16:02 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:86: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-25 19:16:03 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:375: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 19:16:08 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:417: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:16:08 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:70: reassigned player Pepa1 to a new game
+2022-10-25 19:16:08 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:442: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa1) was successful
+2022-10-25 19:16:08 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:443: poll-server: 1 connected client(s)
+2022-10-25 19:16:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:477: socket 6 (Pepa1) trying to communicate outside the game loop, closing
+2022-10-25 19:16:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa1 (fd: 6) from game
+2022-10-25 19:17:32 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:86: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-25 19:17:33 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:370: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 19:17:38 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:412: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:17:38 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:67: reassigned player Pepa1 to a new game
+2022-10-25 19:17:38 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa1) was successful
+2022-10-25 19:17:38 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:438: poll-server: 1 connected client(s)
+2022-10-25 19:17:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:412: poll-server: new connection (fd: 7), processing...
+2022-10-25 19:17:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:67: reassigned player Pepa2 to a new game
+2022-10-25 19:17:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Pepa2) was successful
+2022-10-25 19:17:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:438: poll-server: 2 connected client(s)
+2022-10-25 19:17:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:303: next drawing player is Pepa2 (fd: 7)
+2022-10-25 19:17:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:313: new round started
+2022-10-25 19:17:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:412: poll-server: new connection (fd: 8), processing...
+2022-10-25 19:17:55 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:71: lobby is full, player Pepa3 has to wait
+2022-10-25 19:17:55 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:421: login err: closing connection for socket 8
+2022-10-25 19:18:20 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:81: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-25 19:21:10 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:370: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 19:21:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:412: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:21:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:67: reassigned player Pepa1 to a new game
+2022-10-25 19:21:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa1) was successful
+2022-10-25 19:21:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:438: poll-server: 1 connected client(s)
+2022-10-25 19:21:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:412: poll-server: new connection (fd: 7), processing...
+2022-10-25 19:21:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:67: reassigned player Pepa2 to a new game
+2022-10-25 19:21:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Pepa2) was successful
+2022-10-25 19:21:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:438: poll-server: 2 connected client(s)
+2022-10-25 19:21:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:303: next drawing player is Pepa2 (fd: 7)
+2022-10-25 19:21:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:313: new round started
+2022-10-25 19:21:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:412: poll-server: new connection (fd: 8), processing...
+2022-10-25 19:21:22 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:71: lobby is full, player Pepa3 has to wait
+2022-10-25 19:21:22 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:421: login err: closing connection for socket 8
+2022-10-25 19:21:27 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:412: poll-server: new connection (fd: 8), processing...
+2022-10-25 19:21:27 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:149: invalid username, player Pepa3 already logged in
+2022-10-25 19:21:27 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:421: login err: closing connection for socket 8
+2022-10-25 19:21:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:482: poll-server: socket 7 hung up (user: Pepa2)
+2022-10-25 19:21:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa2 (fd: 7) from game
+2022-10-25 19:21:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:482: poll-server: socket 6 hung up (user: Pepa1)
+2022-10-25 19:21:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa1 (fd: 6) from game
+2022-10-25 19:21:45 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:81: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-25 19:30:53 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:372: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 19:30:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:414: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:30:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:67: reassigned player Pepa1 to a new game
+2022-10-25 19:30:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:441: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa1) was successful
+2022-10-25 19:30:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:442: poll-server: 1 connected client(s)
+2022-10-25 19:31:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:414: poll-server: new connection (fd: 7), processing...
+2022-10-25 19:31:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:67: reassigned player Pepa2 to a new game
+2022-10-25 19:31:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:441: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Pepa2) was successful
+2022-10-25 19:31:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:442: poll-server: 2 connected client(s)
+2022-10-25 19:31:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:305: next drawing player is Pepa2 (fd: 7)
+2022-10-25 19:31:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:315: new round started
+2022-10-25 19:31:06 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:414: poll-server: new connection (fd: 8), processing...
+2022-10-25 19:31:06 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:71: lobby is full, player Pepa3 has to wait
+2022-10-25 19:31:06 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa3 (fd: 8) from game
+2022-10-25 19:32:14 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:373: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 19:32:18 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:415: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:32:18 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:68: reassigned player Pepa1 to a new game
+2022-10-25 19:32:18 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:442: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa1) was successful
+2022-10-25 19:32:18 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:443: poll-server: 1 connected client(s)
+2022-10-25 19:32:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:415: poll-server: new connection (fd: 7), processing...
+2022-10-25 19:32:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:68: reassigned player Pepa2 to a new game
+2022-10-25 19:32:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:442: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Pepa2) was successful
+2022-10-25 19:32:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:443: poll-server: 2 connected client(s)
+2022-10-25 19:32:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:306: next drawing player is Pepa2 (fd: 7)
+2022-10-25 19:32:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:316: new round started
+2022-10-25 19:32:24 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:415: poll-server: new connection (fd: 8), processing...
+2022-10-25 19:32:24 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:72: lobby is full, player Pepa3 has to wait
+2022-10-25 19:32:24 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa3 (fd: 8) from game
+2022-10-25 19:34:51 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:379: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 19:34:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:421: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:34:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:72: reassigned player Pepa3 to a new game
+2022-10-25 19:34:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:448: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa3) was successful
+2022-10-25 19:34:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:449: poll-server: 1 connected client(s)
+2022-10-25 19:34:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:421: poll-server: new connection (fd: 7), processing...
+2022-10-25 19:34:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:72: reassigned player Pepa2 to a new game
+2022-10-25 19:34:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:448: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Pepa2) was successful
+2022-10-25 19:34:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:449: poll-server: 2 connected client(s)
+2022-10-25 19:34:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:312: next drawing player is Pepa2 (fd: 7)
+2022-10-25 19:34:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:322: new round started
+2022-10-25 19:35:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:421: poll-server: new connection (fd: 8), processing...
+2022-10-25 19:35:01 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:76: lobby is full, player Pepa has to wait
+2022-10-25 19:35:01 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:430: login err: closing connection for socket 8
+2022-10-25 19:35:06 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:421: poll-server: new connection (fd: 8), processing...
+2022-10-25 19:35:06 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:161: player Pepa reconnected
+2022-10-25 19:35:06 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:76: lobby is full, player Pepa has to wait
+2022-10-25 19:35:06 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:430: login err: closing connection for socket 8
+2022-10-25 19:35:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:421: poll-server: new connection (fd: 8), processing...
+2022-10-25 19:35:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:161: player Pepa reconnected
+2022-10-25 19:35:11 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:76: lobby is full, player Pepa has to wait
+2022-10-25 19:35:11 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:430: login err: closing connection for socket 8
+2022-10-25 19:35:12 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:493: poll-server: socket 6 hung up (user: Pepa3)
+2022-10-25 19:35:12 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa3 (fd: 6) from game
+2022-10-25 19:35:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:421: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:35:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:161: player Pepa reconnected
+2022-10-25 19:35:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:72: reassigned player Pepa to a new game
+2022-10-25 19:35:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:448: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa) was successful
+2022-10-25 19:35:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:449: poll-server: 2 connected client(s)
+2022-10-25 19:35:26 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:493: poll-server: socket 6 hung up (user: Pepa)
+2022-10-25 19:35:26 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa (fd: 6) from game
+2022-10-25 19:35:28 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:493: poll-server: socket 7 hung up (user: Pepa2)
+2022-10-25 19:35:28 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa2 (fd: 7) from game
+2022-10-25 19:36:03 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:355: round ended
+2022-10-25 19:36:08 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:86: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-10-25 19:36:08 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:379: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-10-25 19:36:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:421: poll-server: new connection (fd: 6), processing...
+2022-10-25 19:36:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:72: reassigned player Pepa to a new game
+2022-10-25 19:36:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:448: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Pepa) was successful
+2022-10-25 19:36:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:449: poll-server: 1 connected client(s)
+2022-10-25 19:36:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:421: poll-server: new connection (fd: 7), processing...
+2022-10-25 19:36:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:72: reassigned player Pepa2 to a new game
+2022-10-25 19:36:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:448: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Pepa2) was successful
+2022-10-25 19:36:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:449: poll-server: 2 connected client(s)
+2022-10-25 19:36:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:312: next drawing player is Pepa2 (fd: 7)
+2022-10-25 19:36:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:322: new round started
+2022-10-25 19:36:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:421: poll-server: new connection (fd: 8), processing...
+2022-10-25 19:36:21 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:76: lobby is full, player Pepa3 has to wait
+2022-10-25 19:36:21 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:430: login err: closing connection for socket 8
+2022-10-25 19:36:26 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:421: poll-server: new connection (fd: 8), processing...
+2022-10-25 19:36:26 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:161: player Pepa3 reconnected
+2022-10-25 19:36:26 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:76: lobby is full, player Pepa3 has to wait
+2022-10-25 19:36:26 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:430: login err: closing connection for socket 8
+2022-10-25 19:36:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:421: poll-server: new connection (fd: 8), processing...
+2022-10-25 19:36:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:161: player Pepa3 reconnected
+2022-10-25 19:36:31 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:76: lobby is full, player Pepa3 has to wait
+2022-10-25 19:36:31 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:430: login err: closing connection for socket 8
+2022-10-25 19:36:33 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:493: poll-server: socket 7 hung up (user: Pepa2)
+2022-10-25 19:36:33 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa2 (fd: 7) from game
+2022-10-25 19:36:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:421: poll-server: new connection (fd: 7), processing...
+2022-10-25 19:36:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:161: player Pepa3 reconnected
+2022-10-25 19:36:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:72: reassigned player Pepa3 to a new game
+2022-10-25 19:36:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:448: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Pepa3) was successful
+2022-10-25 19:36:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:449: poll-server: 2 connected client(s)
+2022-10-25 19:36:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:493: poll-server: socket 7 hung up (user: Pepa3)
+2022-10-25 19:36:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa3 (fd: 7) from game
+2022-10-25 19:36:43 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:493: poll-server: socket 6 hung up (user: Pepa)
+2022-10-25 19:36:43 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Pepa (fd: 6) from game
+2022-10-25 19:36:50 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:86: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻

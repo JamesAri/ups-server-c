@@ -6,7 +6,7 @@
 
 bool check_player_list_validity(struct PlayerList *player_list) {
     if (player_list == NULL || player_list->player == NULL) return false;
-    else return true;
+    return true;
 }
 
 int add_player(struct Players *players, struct Player *player) {
@@ -57,6 +57,7 @@ int update_players(struct Players *players, char *username, int fd) {
     strcpy(new_player->username, username);
     new_player->fd = fd;
     new_player->is_online = true;
+    new_player->game = NULL;
 
     if (add_player(players, new_player) < 0) return PLAYER_CREATION_ERROR;
 
