@@ -40,8 +40,11 @@ void setup_logger() {
     }
 }
 
+// argv = [<application_path>, port, ip_address, lobby_size, game_size]
 
-int main() {
+int main(int argc, char *argv[]) {
+    fprintf(stderr, "%s\n", argv[0]);
+
     setup_logger();
     read_words("./resources/words.txt");
     start();

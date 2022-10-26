@@ -74,6 +74,8 @@ int reassign_player(struct Player *player) {
         }
     }
     log_warn("lobby is full, player %s has to wait", player->username);
+    send_server_full(player->fd);
+    player->is_online = false;
     return -1;
 }
 
@@ -109,6 +111,8 @@ void log_game_start(time_t *start, time_t *end) {
 //               SERVER LOGIC AND CLIENT (PLAYER) MANAGEMENT               //
 // ======================================================================= //
 
+// TODO allow client to ask for reassignment instead of auto-reassignment
+//      when game empty/not in progress/full
 // client is trying to LOG IN
 int manage_logging_player(int new_fd) {
     struct Player *player;
@@ -163,31 +167,19 @@ int manage_logging_player(int new_fd) {
             if (player->game == NULL                            // no game assigned
                 || player->game->cur_capacity >= GAME_CAPACITY  // game is full
                 || !player->game->in_progress) {                // player would be waiting for other players to join
-                // TODO allow client to ask for reassignment instead of auto-reassignment
-                //      when game empty/not in progress
-                if (reassign_player(player) < 0) {
-                    send_server_full(new_fd);
-//                    remove_player_from_server(player);
-                    player->is_online = false;
-                    return -1;
-                }
+                if (reassign_player(player) < 0) return -1;
             }
-            send_ok(new_fd); // may join without complications
+            send_ok(new_fd);
             break;
         case PLAYER_CREATED:
             player = get_player_by_fd(lobby.all_players, new_fd);
-            if (reassign_player(player) < 0) {
-                send_server_full(new_fd);
-//                remove_player_from_server(player);
-                player->is_online = false;
-                return -1;
-            }
+            if (reassign_player(player) < 0) return -1;
             send_ok(new_fd);
             break;
         default:
             return -1;
     }
-    return 2;
+    return res;
 }
 
 // client is trying to send CANVAS changes
@@ -363,7 +355,7 @@ void end_round(struct Game *game) {
 void start() {
     setup_signal_handling();
 
-    int listener, timeout_sec, timeout_sec_new, new_fd, sender_fd, recv_res, poll_res, login_res;
+    int listener, timeout_sec, timeout_sec_new, new_fd, sender_fd, recv_res, poll_res;
 
     struct sockaddr_storage remote_addr; // Client address
     socklen_t addr_len;
@@ -426,11 +418,9 @@ void start() {
                         continue;
                     }
 
-                    if ((login_res = manage_logging_player(new_fd)) <= 0) {
+                    if (manage_logging_player(new_fd) <= 0) {
                         log_warn("login err: closing connection for socket %d", new_fd);
                         close(new_fd);
-                        continue;
-                    } else if (login_res == 1) { // server full, client waiting
                         continue;
                     }
 
