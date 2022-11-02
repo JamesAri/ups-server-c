@@ -9,7 +9,7 @@
 
 #include <arpa/inet.h>
 
-#define GAME_CAPACITY 2
+#define GAME_CAPACITY 3
 
 struct Game {
     int listener;
