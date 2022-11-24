@@ -13,6 +13,7 @@
 #include <signal.h>
 #include <errno.h>
 #include <poll.h>
+#include <ctype.h>
 
 
 // ======================================================================= //
@@ -138,6 +139,8 @@ int manage_logging_player(int new_fd) {
 
     unpack_int(buffer, &username_len);
 
+
+    // VALIDATING LENGTH
     if (username_len > MAX_USERNAME_LEN) {
         free_buffer(&buffer);
         log_warn("username too long (fd: %d)", new_fd);
@@ -149,6 +152,16 @@ int manage_logging_player(int new_fd) {
     strcpy(username, buffer->data + STRING_OFFSET);
 
     free_buffer(&buffer);
+
+    // VALIDATING CHARACTERS
+    for (int i = 0; i < strlen(username); i++) {
+        if (isalpha(username[i]) || isdigit(username[i]) || username[i] == '_')
+            continue;
+        else {
+            log_warn("invalid characters in username: %s", username);
+            return -1;
+        }
+    }
 
     res_update = update_players(lobby.all_players, username, new_fd);
 

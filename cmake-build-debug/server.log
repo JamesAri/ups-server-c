@@ -742,3 +742,75 @@
 2022-10-27 12:35:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player honza1 (fd: 7) from game
 2022-10-27 12:35:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:347: round ended
 2022-10-27 12:37:24 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:88: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-11-02 09:50:29 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:371: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-11-02 09:50:43 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:413: poll-server: new connection (fd: 6), processing...
+2022-11-02 09:50:43 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:72: reassigned player Hrac1 to a new game
+2022-11-02 09:50:43 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:438: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Hrac1) was successful
+2022-11-02 09:50:43 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:439: poll-server: 1 connected client(s)
+2022-11-02 09:50:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:413: poll-server: new connection (fd: 7), processing...
+2022-11-02 09:50:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:72: reassigned player Hrac2 to a new game
+2022-11-02 09:50:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:438: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Hrac2) was successful
+2022-11-02 09:50:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:439: poll-server: 2 connected client(s)
+2022-11-02 09:50:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:304: next drawing player is Hrac2 (fd: 7)
+2022-11-02 09:50:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:314: new round started
+2022-11-02 09:51:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:483: poll-server: socket 6 hung up (user: Hrac1)
+2022-11-02 09:51:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Hrac1 (fd: 6) from game
+2022-11-02 09:51:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:483: poll-server: socket 7 hung up (user: Hrac2)
+2022-11-02 09:51:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Hrac2 (fd: 7) from game
+2022-11-02 09:51:24 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:88: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-11-02 11:00:38 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:371: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-11-02 11:00:43 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:413: poll-server: new connection (fd: 6), processing...
+2022-11-02 11:00:43 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:72: reassigned player Hrac1 to a new game
+2022-11-02 11:00:43 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:438: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Hrac1) was successful
+2022-11-02 11:00:43 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:439: poll-server: 1 connected client(s)
+2022-11-02 11:00:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:413: poll-server: new connection (fd: 7), processing...
+2022-11-02 11:00:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:72: reassigned player Hrac2 to a new game
+2022-11-02 11:00:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:438: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Hrac2) was successful
+2022-11-02 11:00:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:439: poll-server: 2 connected client(s)
+2022-11-02 11:00:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:304: next drawing player is Hrac2 (fd: 7)
+2022-11-02 11:00:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:314: new round started
+2022-11-02 11:01:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:483: poll-server: socket 7 hung up (user: Hrac2)
+2022-11-02 11:01:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Hrac2 (fd: 7) from game
+2022-11-02 11:04:08 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:347: round ended
+2022-11-02 11:06:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:473: socket 6 (Hrac1) trying to communicate outside the game loop, closing
+2022-11-02 11:06:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Hrac1 (fd: 6) from game
+2022-11-02 11:06:23 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:88: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-11-03 12:41:20 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:384: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-11-03 12:41:28 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:426: poll-server: new connection (fd: 6), processing...
+2022-11-03 12:41:28 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:73: reassigned player Hrac1 to a new game
+2022-11-03 12:41:28 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:451: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Hrac1) was successful
+2022-11-03 12:41:28 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:452: poll-server: 1 connected client(s)
+2022-11-03 12:42:07 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:426: poll-server: new connection (fd: 7), processing...
+2022-11-03 12:42:07 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:161: invalid characters in username: Hrac2.
+2022-11-03 12:42:07 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:435: login err: closing connection for socket 7
+2022-11-03 12:43:25 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:426: poll-server: new connection (fd: 7), processing...
+2022-11-03 12:43:25 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:161: invalid characters in username: Hrac2.
+2022-11-03 12:43:25 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:435: login err: closing connection for socket 7
+2022-11-03 12:46:25 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:426: poll-server: new connection (fd: 7), processing...
+2022-11-03 12:46:25 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:161: invalid characters in username: Hrac2.
+2022-11-03 12:46:25 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:435: login err: closing connection for socket 7
+2022-11-03 12:47:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:486: socket 6 (Hrac1) trying to communicate outside the game loop, closing
+2022-11-03 12:47:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:41: removing player Hrac1 (fd: 6) from game
+2022-11-03 12:47:26 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:89: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-11-03 12:48:02 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:384: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-11-03 12:48:04 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:426: poll-server: new connection (fd: 6), processing...
+2022-11-03 12:48:04 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:73: reassigned player Hrac1 to a new game
+2022-11-03 12:48:04 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:451: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Hrac1) was successful
+2022-11-03 12:48:04 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:452: poll-server: 1 connected client(s)
+2022-11-03 12:48:04 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:486: socket 6 (Hrac1) trying to communicate outside the game loop, closing
+2022-11-03 12:48:04 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:41: removing player Hrac1 (fd: 6) from game
+2022-11-03 12:51:06 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:426: poll-server: new connection (fd: 6), processing...
+2022-11-03 12:51:06 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:161: invalid characters in username: Hrac2.
+2022-11-03 12:51:06 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:435: login err: closing connection for socket 6
+2022-11-03 12:51:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:426: poll-server: new connection (fd: 6), processing...
+2022-11-03 12:51:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:178: player Hrac1 reconnected
+2022-11-03 12:51:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:63: reassigning player Hrac1 to another game
+2022-11-03 12:51:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:73: reassigned player Hrac1 to a new game
+2022-11-03 12:51:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:451: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Hrac1) was successful
+2022-11-03 12:51:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:452: poll-server: 1 connected client(s)
+2022-11-03 12:51:35 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:426: poll-server: new connection (fd: 7), processing...
+2022-11-03 12:51:35 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:161: invalid characters in username: Hrac2.
+2022-11-03 12:51:35 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:435: login err: closing connection for socket 7
+2022-11-03 12:52:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:486: socket 6 (Hrac1) trying to communicate outside the game loop, closing
+2022-11-03 12:52:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:41: removing player Hrac1 (fd: 6) from game
+2022-11-03 12:53:09 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:89: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
