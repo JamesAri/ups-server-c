@@ -85,7 +85,7 @@ struct Game *new_game(int listener) {
     game->canvas = new_canvas();
     if (game->canvas == NULL) {
         log_fatal("err: couldn't malloc canvas");
-        free_players(&game->players);
+        free_players_shallow(&(game->players));
         free(game);
         exit(EXIT_FAILURE);
     }
@@ -95,7 +95,7 @@ struct Game *new_game(int listener) {
 
 void free_game(struct Game *game) {
     free_words();
-    free_players(&(game->players));
+    free_players_shallow(&(game->players));
     free_canvas(&(game->canvas));
 }
 

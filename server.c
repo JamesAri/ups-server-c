@@ -1,5 +1,4 @@
 #include "server.h"
-#include "lobby.h"
 #include "model/word_generator.h"
 #include "shared/sock_header.h"
 #include "utils/sock_utils.h"
@@ -337,7 +336,7 @@ void validate_round(struct Game *game) {
         broadcast_waiting_for_players(game, connected_players);
     } else {
         get_random_word(game->guess_word);
-        log_trace("generated new guess word: %s", game->guess_word);
+        log_trace("generated new guess word: %s", game->guess_word); // segfault todo
 
         game->start_sec = time(NULL) + TIME_BEFORE_START_SEC;
         game->end_sec = game->start_sec + GAME_DURATION_SEC;
@@ -350,6 +349,8 @@ void validate_round(struct Game *game) {
 
 void end_round(struct Game *game) {
     game->in_progress = false;
+
+//    remove_offline_player_lists(game);
 
     broadcast_round_ends(game);
 
@@ -388,10 +389,10 @@ void start() {
     add_to_lobby_pfds(listener);
 
     for (;;) {
-        timeout_sec = POLL_TIMEOUT_SEC;
+        timeout_sec = GAME_DURATION_SEC;
         for (int i = 0; i < LOBBY_CAPACITY; i++) {
             game = lobby.games[i];
-            timeout_sec_new = (game->in_progress) ? (int) (game->end_sec - time(NULL)) : POLL_TIMEOUT_SEC;
+            timeout_sec_new = (game->in_progress) ? (int) (game->end_sec - time(NULL)) : GAME_DURATION_SEC;
             timeout_sec = (timeout_sec_new < timeout_sec) ? timeout_sec_new : timeout_sec;
         }
 
@@ -449,6 +450,7 @@ void start() {
                               inet_ntop(remote_addr.ss_family, get_in_addr((struct sockaddr *) &remote_addr),
                                         remote_ip, sizeof(remote_ip)),
                               new_fd, cur_player->username);
+
                     log_debug("poll-server: %d connected client(s)", lobby.fd_count - 1); // -1 for listener
 
                     if (send_player_list(cur_player->fd, cur_player->game) <= 0) {

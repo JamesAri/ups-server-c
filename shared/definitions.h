@@ -10,7 +10,7 @@
 
 #define PORT "9034"
 
-#define GAME_DURATION_SEC 60
+#define GAME_DURATION_SEC 20
 
 #define MAX_USERNAME_LEN 14
 #define MAX_GUESS_LEN 15

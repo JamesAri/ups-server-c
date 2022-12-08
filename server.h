@@ -2,11 +2,11 @@
 #define UPS_SERVER_C_SERVER_H
 
 #include "model/player.h"
+#include "lobby.h"
 
 
 // server settings
-#define BACKLOG 5
-#define POLL_TIMEOUT_SEC 60
+#define BACKLOG (LOBBY_CAPACITY * GAME_CAPACITY)
 #define SOCKOPT_TIMEOUT_SEC 2
 
 // buffer sizes

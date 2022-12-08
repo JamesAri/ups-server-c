@@ -65,30 +65,27 @@ int update_players(struct Players *players, char *username, int fd) {
 }
 
 /**
- * Removes player and free's only PlayerList structure, i.e. shallow free
+ * Removes player and frees only PlayerList structure, i.e. shallow free
  */
 int remove_player(struct Players *players, const char *username) {
     if (players == NULL || !check_player_list_validity(players->player_list)) return -1;
 
-    struct PlayerList *prev_player = players->player_list;
-    struct PlayerList *curr_player = players->player_list->next;
-
     if (!strcmp(username, players->player_list->player->username)) {
-        players->player_list = curr_player;
+        players->player_list = players->player_list->next;
         players->count--;
-        free_player_list_shallow(&prev_player);
         return 0;
     }
 
-    while (curr_player != NULL) {
-        if (!strcmp(username, curr_player->player->username)) {
-            prev_player->next = curr_player->next;
+    struct PlayerList *l_node = players->player_list;
+    struct PlayerList *r_node = players->player_list->next;
+    while (r_node != NULL) {
+        if (!strcmp(username, r_node->player->username)) {
+            l_node->next = r_node->next;
             players->count--;
-            free_player_list_shallow(&curr_player);
             return 0;
         }
-        prev_player = curr_player;
-        curr_player = curr_player->next;
+        l_node = r_node;
+        r_node = r_node->next;
     }
     return -1;
 }
@@ -115,6 +112,50 @@ void print_players(struct Players *players) {
     }
 }
 
+
+void remove_offline_player_lists(struct Game *game) {
+    struct Players *players = game->players;
+    if (players == NULL || !check_player_list_validity(players->player_list)) return;
+
+    struct PlayerList *l_node = players->player_list;
+    struct PlayerList *r_node = players->player_list->next;
+
+    int drawing_fd = game->drawing_player_list->player->fd;
+
+    while (l_node != NULL) { // first node is online or NULL (empty game)
+        r_node = l_node->next;
+        if (!l_node->player->is_online) {
+            players->player_list = r_node;
+            players->count--;
+            if (l_node->player->fd == drawing_fd) {
+                game->drawing_player_list = NULL;
+            }
+            free_player_list_shallow(&l_node);
+        } else {
+            break;
+        }
+        l_node = r_node;
+    }
+    if (players->player_list == NULL) return;
+
+    l_node = players->player_list;
+    r_node = players->player_list->next;
+
+    while (r_node) {
+        if (!r_node->player->is_online) {
+            l_node->next = r_node->next;
+            players->count--;
+            if (r_node->player->fd == drawing_fd) {
+                game->drawing_player_list = NULL;
+            }
+            free_player_list_shallow(&r_node);
+            r_node = l_node->next;
+        } else {
+            l_node = r_node;
+            r_node = r_node->next;
+        }
+    }
+}
 
 // ======================================================================= //
 //                         ALLOCATION & FREEING                            //
@@ -158,6 +199,20 @@ void free_players(struct Players **players) {
     while (curr_node != NULL) {
         next_node = curr_node->next;
         free_player_list(&curr_node);
+        curr_node = next_node;
+    }
+    free((*players));
+    (*players) = NULL;
+}
+
+void free_players_shallow(struct Players **players) {
+    if (players == NULL || (*players) == NULL) return;
+
+    struct PlayerList *curr_node = (*players)->player_list;
+    struct PlayerList *next_node = NULL;
+    while (curr_node != NULL) {
+        next_node = curr_node->next;
+        free_player_list_shallow(&curr_node);
         curr_node = next_node;
     }
     free((*players));

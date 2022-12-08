@@ -2,6 +2,7 @@
 #define UPS_SERVER_C_PLAYER_H
 
 #include <stdbool.h>
+#include "../game.h"
 
 #define PLAYER_CREATION_ERROR (-1)
 #define PLAYER_CREATED 0
@@ -63,6 +64,10 @@ void free_player_list(struct PlayerList **player_list);
 
 void free_player_list_shallow(struct PlayerList **player_list);
 
+void remove_offline_player_lists(struct Game *game);
+
 void free_players(struct Players **players);
+
+void free_players_shallow(struct Players **players);
 
 #endif //UPS_SERVER_C_PLAYER_H

@@ -2,7 +2,7 @@
 #define UPS_SERVER_C_LOBBY_H
 
 #define PFDS_INIT_SIZE 5
-#define LOBBY_CAPACITY 1
+#define LOBBY_CAPACITY 2
 
 struct Lobby {
     struct Game *games[LOBBY_CAPACITY];

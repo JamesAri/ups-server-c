@@ -5,19 +5,10 @@
 
 #include <stdlib.h>
 
-int test_players() {
-    struct Players *players = calloc(1, sizeof(struct Players));
-    update_players(players, "James", 0);
-    update_players(players, "Jake", 1);
-    update_players(players, "Annie", 1); // this will pass
-    update_players(players, "James", 2); // wont be added
-    print_players(players);
-    fprintf(stderr, "\n\n");
-    remove_player(players, "Jake");
-    print_players(players);
-    free_players(&players);
-    return 0;
-}
+#include <stdio.h>
+#include <execinfo.h>
+#include <signal.h>
+#include <unistd.h>
 
 /**
  * <pre>
@@ -42,7 +33,21 @@ void setup_logger() {
 
 // argv = [<application_path>, port, ip_address, lobby_size, game_size]
 
+void handler(int sig) {
+    void *array[10];
+    size_t size;
+
+    // get void*'s for all entries on the stack
+    size = backtrace(array, 10);
+
+    // print out all the frames to stderr
+    fprintf(stderr, "Error: signal %d:\n", sig);
+    backtrace_symbols_fd(array, (int) size, STDERR_FILENO);
+    exit(1);
+}
+
 int main(int argc, char *argv[]) {
+    signal(SIGSEGV, handler);
     fprintf(stderr, "%s\n", argv[0]);
 
     setup_logger();

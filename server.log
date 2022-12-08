@@ -1,1 +1,28 @@
 2022-10-26 14:46:34 INFO  server.c:371: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-08 17:54:41 INFO  server.c:384: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-08 17:55:07 DEBUG server.c:426: poll-server: new connection (fd: 6), processing...
+2022-12-08 17:55:07 DEBUG server.c:73: reassigned player Kuba to a new game
+2022-12-08 17:55:07 DEBUG server.c:451: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba) was successful
+2022-12-08 17:55:07 DEBUG server.c:452: poll-server: 1 connected client(s)
+2022-12-08 17:55:14 DEBUG server.c:426: poll-server: new connection (fd: 7), processing...
+2022-12-08 17:55:14 DEBUG server.c:73: reassigned player Honza to a new game
+2022-12-08 17:55:14 DEBUG server.c:451: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Honza) was successful
+2022-12-08 17:55:14 DEBUG server.c:452: poll-server: 2 connected client(s)
+2022-12-08 18:00:03 INFO  server.c:384: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-08 18:00:11 DEBUG server.c:426: poll-server: new connection (fd: 6), processing...
+2022-12-08 18:00:11 DEBUG server.c:73: reassigned player Kuba to a new game
+2022-12-08 18:00:11 DEBUG server.c:451: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba) was successful
+2022-12-08 18:00:11 DEBUG server.c:452: poll-server: 1 connected client(s)
+2022-12-08 18:00:14 DEBUG server.c:426: poll-server: new connection (fd: 7), processing...
+2022-12-08 18:00:14 DEBUG server.c:73: reassigned player Honza to a new game
+2022-12-08 18:00:14 DEBUG server.c:451: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Honza) was successful
+2022-12-08 18:00:14 DEBUG server.c:452: poll-server: 2 connected client(s)
+2022-12-08 18:03:27 INFO  server.c:384: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-08 18:03:31 DEBUG server.c:426: poll-server: new connection (fd: 6), processing...
+2022-12-08 18:03:31 DEBUG server.c:73: reassigned player Kuba to a new game
+2022-12-08 18:03:31 DEBUG server.c:451: poll-server: new connection from ::ffff:127.0.0.1 on socket 6 (user: Kuba) was successful
+2022-12-08 18:03:31 DEBUG server.c:452: poll-server: 1 connected client(s)
+2022-12-08 18:03:34 DEBUG server.c:426: poll-server: new connection (fd: 7), processing...
+2022-12-08 18:03:34 DEBUG server.c:73: reassigned player Honza to a new game
+2022-12-08 18:03:34 DEBUG server.c:451: poll-server: new connection from ::ffff:127.0.0.1 on socket 7 (user: Honza) was successful
+2022-12-08 18:03:34 DEBUG server.c:452: poll-server: 2 connected client(s)
