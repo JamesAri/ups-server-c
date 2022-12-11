@@ -2785,3 +2785,38 @@
 2022-12-09 00:51:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:498: poll-server: socket 8 hung up (user: Kuba3)
 2022-12-09 00:51:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player Kuba3 (fd: 8) from game
 2022-12-09 00:51:35 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:88: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 11:49:52 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:385: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 11:50:00 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:88: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 11:50:35 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:385: server (fd 6) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 11:50:38 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:88: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 11:55:32 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:385: server (fd 6) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 11:55:38 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:88: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 11:57:00 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:385: server (fd 6) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 11:57:04 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:88: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 11:58:00 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:385: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 11:58:35 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:88: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 11:58:51 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:385: server (fd 4) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 11:59:02 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:88: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 11:59:06 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:385: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 11:59:10 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:88: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 12:10:19 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: Server IPv6 address:  [��e]:9034
+
+2022-12-11 12:10:19 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:385: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 12:10:40 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:88: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 12:10:40 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: Server IPv6 address:  [::]:9034
+
+2022-12-11 12:10:40 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:385: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 12:11:31 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:88: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 12:14:31 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 5) listening on IPv6 [::]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 12:14:31 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:385: server (fd 5) listening on port 9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 12:16:06 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:88: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 12:16:07 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 5) using IPv6 listening on [::]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 12:16:21 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:88: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 12:40:09 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 6) using IPv6 listening on [::1]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 12:40:15 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:88: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 12:56:09 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 6) using IPv6 listening on [::1]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 12:56:14 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:88: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 12:57:09 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 6) using IPv6 listening on [::1]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 12:57:23 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:88: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 13:01:54 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 6) using IPv6 listening on [::1]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 13:02:07 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻

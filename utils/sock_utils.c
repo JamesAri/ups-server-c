@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <netdb.h>
 #include <errno.h>
+#include <arpa/inet.h>
 
 
 // ======================================================================= //
@@ -56,7 +57,32 @@ void *get_in_addr(struct sockaddr *sa) {
     return &(((struct sockaddr_in6 *) sa)->sin6_addr);
 }
 
-int get_listener_socket(char *port, int backlog) {
+
+void log_listening_info(struct addrinfo *p, int listener) {
+    void *addr;
+    char *ipver, ipstr[INET6_ADDRSTRLEN];
+    unsigned short int port;
+
+    // get the pointer to the address itself,
+    // different fields in IPv4 and IPv6:
+    if (p->ai_family == AF_INET) { // IPv4
+        struct sockaddr_in *ipv4 = (struct sockaddr_in *) p->ai_addr;
+        addr = &(ipv4->sin_addr);
+        ipver = "IPv4";
+        port = ntohs(ipv4->sin_port);
+    } else { // IPv6
+        struct sockaddr_in6 *ipv6 = (struct sockaddr_in6 *) p->ai_addr;
+        addr = &(ipv6->sin6_addr);
+        ipver = "IPv6";
+        port = ntohs(ipv6->sin6_port);
+    }
+
+    // convert the IP to a string and log it:
+    inet_ntop(p->ai_family, addr, ipstr, sizeof ipstr);
+    log_info("server (fd %d) using %s listening on [%s]:%u ( ˘ ɜ˘) ♬♪♫", listener, ipver, ipstr, port);
+}
+
+int get_listener_socket(char *addr, char *port, int backlog) {
     int listener, rv, yes = 1;
 
     struct addrinfo hints, *ai, *p;
@@ -66,7 +92,7 @@ int get_listener_socket(char *port, int backlog) {
     hints.ai_socktype = SOCK_STREAM;
     hints.ai_flags = AI_PASSIVE; // use with NULL as first param in getaddrinfo for auto-IP detection.
 
-    if ((rv = getaddrinfo(NULL, port, &hints, &ai)) != 0) {
+    if ((rv = getaddrinfo(addr, port, &hints, &ai)) != 0) {
         log_error("selecting server error: %s\n", gai_strerror(rv));
         exit(EXIT_FAILURE);
     }
@@ -87,11 +113,19 @@ int get_listener_socket(char *port, int backlog) {
         break;
     }
 
+    if (p == NULL) {
+        freeaddrinfo(ai);
+        return -1;
+    }
+
+    if (listen(listener, backlog) == -1) {
+        freeaddrinfo(ai);
+        return -1;
+    }
+
+    log_listening_info(p, listener);
+
     freeaddrinfo(ai);
-
-    if (p == NULL) return -1;
-
-    if (listen(listener, backlog) == -1) return -1;
 
     return listener;
 }

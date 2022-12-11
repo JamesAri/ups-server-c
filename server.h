@@ -6,7 +6,6 @@
 
 
 // server settings
-#define BACKLOG (LOBBY_CAPACITY * GAME_CAPACITY)
 #define SOCKOPT_TIMEOUT_SEC 2
 
 // buffer sizes
@@ -18,7 +17,7 @@
 #define TIME_BEFORE_START_SEC 5
 
 
-void start();
+void start(char *addr, char *port, int lobby_size, int game_size);
 
 void remove_player_from_server(struct Player *player);
 

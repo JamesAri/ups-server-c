@@ -9,8 +9,6 @@
 
 #include <arpa/inet.h>
 
-#define GAME_CAPACITY 3
-
 struct Game {
     int listener;
     int cur_capacity;

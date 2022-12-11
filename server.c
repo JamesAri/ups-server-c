@@ -51,11 +51,10 @@ void remove_player_from_server(struct Player *player) {
 
 }
 
-int reassign_player(struct Player *player) {
+int reassign_player(struct Player *player, int lobby_capacity, int game_capacity) {
     struct Game *game;
 
-    // player had to be reassigned, because someone else joined and game is full
-    // or the game was empty
+    // player had to be reassigned, because the game is now full or empty
     if (player->game != NULL) {
         remove_player(player->game->players, player->username);
         player->game = NULL;
@@ -63,9 +62,9 @@ int reassign_player(struct Player *player) {
     }
 
     // player has currently no game
-    for (int i = 0; i < LOBBY_CAPACITY; i++) {
+    for (int i = 0; i < lobby_capacity; i++) {
         game = lobby.games[i];
-        if (game->cur_capacity < GAME_CAPACITY) {
+        if (game->cur_capacity < game_capacity) {
             player->game = game;
             game->cur_capacity++;
             if (add_player(game->players, player) < 0) return -1;
@@ -114,7 +113,7 @@ void log_game_start(time_t *start, time_t *end) {
 // TODO allow client to ask for reassignment instead of auto-reassignment
 //      when game empty/not in progress/full
 // client is trying to LOG IN
-int manage_logging_player(int new_fd) {
+int manage_logging_player(int new_fd, int lobby_capacity, int game_capacity) {
     struct Player *player;
     struct Buffer *buffer = new_buffer();
     int username_len, flag, res, res_update;
@@ -177,15 +176,15 @@ int manage_logging_player(int new_fd) {
             log_debug("player %s reconnected", username);
             player = get_player_by_fd(lobby.all_players, new_fd);
             if (player->game == NULL                            // no game assigned
-                || player->game->cur_capacity >= GAME_CAPACITY  // game is full
+                || player->game->cur_capacity >= game_capacity  // game is full
                 || !player->game->in_progress) {                // player would be waiting for other players to join
-                if (reassign_player(player) < 0) return -1;
+                if (reassign_player(player, lobby_capacity, game_capacity) < 0) return -1;
             }
             send_ok(new_fd);
             break;
         case PLAYER_CREATED:
             player = get_player_by_fd(lobby.all_players, new_fd);
-            if (reassign_player(player) < 0) return -1;
+            if (reassign_player(player, lobby_capacity, game_capacity) < 0) return -1;
             send_ok(new_fd);
             break;
         default:
@@ -366,7 +365,7 @@ void end_round(struct Game *game) {
 //                              MAIN LOOP                                  //
 // ======================================================================= //
 
-void start() {
+void start(char *addr, char *port, int lobby_size, int game_size) {
     setup_signal_handling();
 
     int listener, timeout_sec, timeout_sec_new, new_fd, sender_fd, recv_res, poll_res;
@@ -378,19 +377,18 @@ void start() {
     struct Player *cur_player;
     struct Game *game;
 
-    if ((listener = get_listener_socket(PORT, BACKLOG)) == -1) {
+    if ((listener = get_listener_socket(addr, port, lobby_size * game_size)) == -1) {
         log_fatal("err getting listening socket: %s", strerror(errno));
         exit(EXIT_FAILURE);
     }
-    log_info("server (fd %d) listening on port %s ( ˘ ɜ˘) ♬♪♫", listener, PORT);
 
-    initialize_lobby(listener);
+    initialize_lobby(listener, lobby_size);
 
     add_to_lobby_pfds(listener);
 
     for (;;) {
         timeout_sec = GAME_DURATION_SEC;
-        for (int i = 0; i < LOBBY_CAPACITY; i++) {
+        for (int i = 0; i < lobby_size; i++) {
             game = lobby.games[i];
             timeout_sec_new = (game->in_progress) ? (int) (game->end_sec - time(NULL)) : GAME_DURATION_SEC;
             timeout_sec = (timeout_sec_new < timeout_sec) ? timeout_sec_new : timeout_sec;
@@ -407,7 +405,7 @@ void start() {
             log_trace("poll-timeout");
         }
 
-        for (int i = 0; i < LOBBY_CAPACITY; i++) {
+        for (int i = 0; i < lobby_size; i++) {
             if (lobby.games[i]->in_progress && time(NULL) + SOCKOPT_TIMEOUT_SEC >= lobby.games[i]->end_sec)
                 end_round(lobby.games[i]);
         }
@@ -432,7 +430,7 @@ void start() {
                         continue;
                     }
 
-                    if (manage_logging_player(new_fd) <= 0) {
+                    if (manage_logging_player(new_fd, lobby_size, game_size) <= 0) {
                         log_warn("login err: closing connection for socket %d", new_fd);
                         close(new_fd);
                         continue;

@@ -14,7 +14,7 @@ int sendall(int s, void *buf, int *len);
 
 void *get_in_addr(struct sockaddr *sa);
 
-int get_listener_socket(char *port, int backlog);
+int get_listener_socket(char *addr, char *port, int backlog);
 
 int set_socket_timeout(int fd, long timeout_sec);
 

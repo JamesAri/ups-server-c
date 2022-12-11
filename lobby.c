@@ -7,7 +7,9 @@
 #include <stdlib.h>
 
 
-void initialize_lobby(int listener) {
+void initialize_lobby(int listener, int capacity) {
+    lobby.capacity = capacity;
+    lobby.games = calloc(capacity, sizeof(struct Game *));
     lobby.all_players = new_players();
 
     lobby.fd_count = 0;
@@ -18,7 +20,7 @@ void initialize_lobby(int listener) {
         exit(EXIT_FAILURE);
     }
 
-    for (int i = 0; i < LOBBY_CAPACITY; i++) {
+    for (int i = 0; i < capacity; i++) {
         if ((lobby.games[i] = new_game(listener)) == NULL) {
             for (i--; i >= 0; i--) {
                 free_game(lobby.games[i]);
@@ -33,6 +35,7 @@ void initialize_lobby(int listener) {
 void free_lobby() {
     free_pfds(&(lobby.pfds));
     free_players(&(lobby.all_players));
-    for (int i = 0; i < LOBBY_CAPACITY; i++)
+    for (int i = 0; i < lobby.capacity; i++)
         free_game(lobby.games[i]);
+    free(lobby.games);
 }

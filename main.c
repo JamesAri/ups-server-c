@@ -1,14 +1,16 @@
 #include "server.h"
-#include "model/player.h"
 #include "utils/log.h"
 #include "model/word_generator.h"
 
 #include <stdlib.h>
-
 #include <stdio.h>
 #include <execinfo.h>
 #include <signal.h>
 #include <unistd.h>
+
+// usage: <executable> hostname port lobby_size game_size
+#define ARGUMENT_COUNT 5
+#define WORDS_RESOURCES "./resources/words.txt"
 
 /**
  * <pre>
@@ -31,8 +33,6 @@ void setup_logger() {
     }
 }
 
-// argv = [<application_path>, port, ip_address, lobby_size, game_size]
-
 void handler(int sig) {
     void *array[10];
     size_t size;
@@ -46,12 +46,39 @@ void handler(int sig) {
     exit(1);
 }
 
-int main(int argc, char *argv[]) {
+void setup_signals() {
     signal(SIGSEGV, handler);
-    fprintf(stderr, "%s\n", argv[0]);
+}
 
+
+int handle_arguments(int argc, char *argv[], int *lobby_size, int *game_size) {
+    if (argc != ARGUMENT_COUNT) {
+        fprintf(stderr, "usage: <executable> hostname port lobby_size game_size\n");
+        return EXIT_FAILURE;
+    }
+
+    *lobby_size = (int) strtol(argv[3], (char **) NULL, 10);
+    *game_size = (int) strtol(argv[4], (char **) NULL, 10);
+
+    if (lobby_size <= 0)
+        fprintf(stderr, "invalid lobby size\n");
+    else if (game_size <= 0)
+        fprintf(stderr, "invalid game size\n");
+
+    log_info("lobby size set to %d, game size set to %d", *lobby_size, *game_size);
+    return EXIT_SUCCESS;
+}
+
+int main(int argc, char *argv[]) {
+    char *addr = argv[1], *port = argv[2];
+    int lobby_size, game_size;
+
+    if (handle_arguments(argc, argv, &lobby_size, &game_size) != EXIT_SUCCESS)
+        return EXIT_FAILURE;
+
+    setup_signals();
     setup_logger();
-    read_words("./resources/words.txt");
-    start();
+    read_words(WORDS_RESOURCES);
+    start(addr, port, lobby_size, game_size);
     return 0;
 }

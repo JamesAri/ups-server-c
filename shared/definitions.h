@@ -3,12 +3,10 @@
  * Both server and client share definitions defined in this header file.
  *
  * Future application can use settings (json-xml like) file or describe
- * some these definitions in a protocol.
+ * some of these definitions in a protocol.
  */
 #ifndef UPS_SERVER_C_DEFINITIONS_H
 #define UPS_SERVER_C_DEFINITIONS_H
-
-#define PORT "9034"
 
 #define GAME_DURATION_SEC 20
 
