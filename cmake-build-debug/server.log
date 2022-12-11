@@ -2820,3 +2820,16 @@
 2022-12-11 12:57:23 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:88: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
 2022-12-11 13:01:54 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 6) using IPv6 listening on [::1]:9034 ( ˘ ɜ˘) ♬♪♫
 2022-12-11 13:02:07 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 13:17:46 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 6) using IPv6 listening on [::1]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 13:19:23 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 13:19:35 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 4) using IPv4 listening on [127.0.0.1]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 13:19:43 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:425: poll-server: new connection (fd: 5), processing...
+2022-12-11 13:19:43 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:159: invalid characters in username: dev-game-only
+2022-12-11 13:19:43 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:434: login err: closing connection for socket 5
+2022-12-11 13:20:22 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 13:20:38 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 4) using IPv4 listening on [127.0.0.1]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 13:20:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:425: poll-server: new connection (fd: 5), processing...
+2022-12-11 13:20:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 13:20:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:450: poll-server: new connection from 127.0.0.1 on socket 5 (user: dev-game-only) was successful
+2022-12-11 13:20:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:452: poll-server: 1 connected client(s)
+2022-12-11 13:20:59 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻

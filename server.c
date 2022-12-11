@@ -153,7 +153,7 @@ int manage_logging_player(int new_fd, int lobby_capacity, int game_capacity) {
 
     // VALIDATING CHARACTERS
     for (int i = 0; i < strlen(username); i++) {
-        if (isalpha(username[i]) || isdigit(username[i]) || username[i] == '_')
+        if (isalpha(username[i]) || isdigit(username[i]) || username[i] == '_' || username[i] == '-')
             continue;
         else {
             log_warn("invalid characters in username: %s", username);
