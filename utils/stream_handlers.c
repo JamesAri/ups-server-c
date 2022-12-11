@@ -3,7 +3,6 @@
 #include "debug.h"
 #include "string.h"
 #include "log.h"
-#include "../game.h"
 #include "../server.h"
 #include "../shared/sock_header.h"
 
@@ -22,6 +21,7 @@ int recv_buffer(int fd, struct Buffer *buffer, int size) {
     char hex_buf_str[HEX_STRING_MAX_SIZE];
     memset(hex_buf_str, 0, sizeof(hex_buf_str));
     buf_to_hex_string(buffer->data, buffer->next, hex_buf_str);
+
     if (recv_res <= 0) {
         if (recv_res == 0)
             log_trace("socket (fd: %d) hung up, received bytes: %s", fd, hex_buf_str);
@@ -220,4 +220,36 @@ void broadcast_player_list_change(struct Game *game, struct Player *player) {
     serialize_player(player, buffer);
     broadcast_buffer(game, player->fd, buffer);
     free_buffer(&buffer);
+}
+
+void broadcast_heartbeat(struct Game *game) {
+    struct Buffer *broadcast_bfr = new_buffer();
+    struct Buffer *response_bfr = new_buffer();
+
+    serialize_sock_header(HEART_BEAT, broadcast_bfr);
+
+    int dest_fd, received_header;
+
+    struct PlayerList *pl = game->players->player_list;
+    while (pl != NULL) {
+        response_bfr->next = 0;
+        if (pl->player->is_online) {
+            dest_fd = pl->player->fd;
+            if (dest_fd != game->listener) {
+                if ((send_buffer(dest_fd, broadcast_bfr)) <= 0) {
+                    log_warn("heartbeat err: fd %d receive failure, removing player", dest_fd);
+                    remove_player_from_server(pl->player);
+                } else if (recv_buffer_sock_header(dest_fd, response_bfr) <= 0) {
+                    log_warn("heartbeat err: fd %d response failure, removing player", dest_fd);
+                    remove_player_from_server(pl->player);
+                } else if ((received_header = ((struct SocketHeader *) response_bfr->data)->flag) != HEART_BEAT) {
+                    log_warn("heartbeat err: fd %d invalid header {%c}, removing player", dest_fd, received_header);
+                    remove_player_from_server(pl->player);
+                }
+            }
+        }
+        pl = pl->next;
+    }
+    free_buffer(&broadcast_bfr);
+    free_buffer(&response_bfr);
 }

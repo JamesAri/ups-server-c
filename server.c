@@ -351,6 +351,8 @@ void end_round(struct Game *game) {
 
 //    remove_offline_player_lists(game);
 
+    broadcast_heartbeat(game);
+
     broadcast_round_ends(game);
 
     memset(game->canvas->bitarray_grid, 0, sizeof(game->canvas->bitarray_grid));
@@ -369,7 +371,7 @@ void start(char *addr, char *port, int lobby_size, int game_size) {
     setup_signal_handling();
 
     int listener, timeout_sec, timeout_sec_new, new_fd, sender_fd, recv_res, poll_res;
-
+    long time_now, time_last_heartbeat = 0;
     struct sockaddr_storage remote_addr; // Client address
     socklen_t addr_len;
     char remote_ip[INET6_ADDRSTRLEN];
@@ -387,10 +389,11 @@ void start(char *addr, char *port, int lobby_size, int game_size) {
     add_to_lobby_pfds(listener);
 
     for (;;) {
+        time_now = time(NULL);
         timeout_sec = GAME_DURATION_SEC;
         for (int i = 0; i < lobby_size; i++) {
             game = lobby.games[i];
-            timeout_sec_new = (game->in_progress) ? (int) (game->end_sec - time(NULL)) : GAME_DURATION_SEC;
+            timeout_sec_new = (game->in_progress) ? (int) (game->end_sec - time_now) : GAME_DURATION_SEC;
             timeout_sec = (timeout_sec_new < timeout_sec) ? timeout_sec_new : timeout_sec;
         }
 

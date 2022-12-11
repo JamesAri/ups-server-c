@@ -57,6 +57,8 @@ void broadcast_round_ends(struct Game *game);
 
 void broadcast_player_list(struct Game *game, int sender_fd);
 
+void broadcast_heartbeat(struct Game *game);
+
 void broadcast_player_list_change(struct Game *game, struct Player *player);
 
 #endif //UPS_SERVER_C_STREAM_HANDLERS_H

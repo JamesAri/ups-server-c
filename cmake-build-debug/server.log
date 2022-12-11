@@ -2833,3 +2833,916 @@
 2022-12-11 13:20:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:450: poll-server: new connection from 127.0.0.1 on socket 5 (user: dev-game-only) was successful
 2022-12-11 13:20:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:452: poll-server: 1 connected client(s)
 2022-12-11 13:20:59 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 13:30:22 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 6) using IPv6 listening on [::1]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 13:31:26 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 13:31:38 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 6) using IPv6 listening on [::1]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 13:32:05 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 13:32:25 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 13:33:21 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 14:04:23 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 14:11:36 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 14:11:43 FATAL /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:109: bind (fd 4, port 9034): Can't assign requested address
+2022-12-11 14:11:43 FATAL /Users/jakub.slechta/git/ups-server-c/server.c:381: err getting listening socket: Can't assign requested address
+2022-12-11 14:11:56 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 14:14:48 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 14:15:06 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 6) using IPv6 listening on [::1]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 15:18:24 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 15:43:48 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 6) using IPv6 listening on [::1]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 15:46:18 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 15:46:43 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 15:46:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:425: poll-server: new connection (fd: 5), processing...
+2022-12-11 15:46:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player prdik to a new game
+2022-12-11 15:46:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:450: poll-server: new connection from 192.168.1.113 on socket 5 (user: prdik) was successful
+2022-12-11 15:46:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:452: poll-server: 1 connected client(s)
+2022-12-11 15:48:35 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 15:50:22 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 15:51:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:425: poll-server: new connection (fd: 5), processing...
+2022-12-11 15:51:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 15:51:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:450: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 15:51:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:452: poll-server: 1 connected client(s)
+2022-12-11 15:51:27 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:425: poll-server: new connection (fd: 6), processing...
+2022-12-11 15:51:27 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player prdik to a new game
+2022-12-11 15:51:27 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:450: poll-server: new connection from 192.168.1.113 on socket 6 (user: prdik) was successful
+2022-12-11 15:51:27 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:452: poll-server: 2 connected client(s)
+2022-12-11 15:51:27 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:315: next drawing player is prdik (fd: 6)
+2022-12-11 15:51:27 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:325: new round started
+2022-12-11 15:52:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:315: next drawing player is dev-game-only (fd: 5)
+2022-12-11 15:52:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:325: new round started
+2022-12-11 15:52:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:360: round ended
+2022-12-11 15:52:48 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:237: invalid header: guessing player err
+2022-12-11 15:52:48 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:291: couldn't broadcast, because sender_fd 6 is invalid
+2022-12-11 15:52:48 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:499: recv err (-1): socket: 6, user: prdik, closing
+2022-12-11 15:52:48 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player prdik (fd: 6) from game
+2022-12-11 15:52:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:425: poll-server: new connection (fd: 6), processing...
+2022-12-11 15:52:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player prdik reconnected
+2022-12-11 15:52:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:450: poll-server: new connection from 192.168.1.113 on socket 6 (user: prdik) was successful
+2022-12-11 15:52:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:452: poll-server: 2 connected client(s)
+2022-12-11 15:53:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:496: poll-server: socket 6 hung up (user: prdik)
+2022-12-11 15:53:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player prdik (fd: 6) from game
+2022-12-11 15:53:37 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:360: round ended
+2022-12-11 15:55:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:425: poll-server: new connection (fd: 6), processing...
+2022-12-11 15:55:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player prdik reconnected
+2022-12-11 15:55:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player prdik to another game
+2022-12-11 15:55:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player prdik to a new game
+2022-12-11 15:55:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:450: poll-server: new connection from 192.168.1.113 on socket 6 (user: prdik) was successful
+2022-12-11 15:55:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:452: poll-server: 2 connected client(s)
+2022-12-11 15:55:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:315: next drawing player is prdik (fd: 6)
+2022-12-11 15:55:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:325: new round started
+2022-12-11 15:55:45 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:496: poll-server: socket 6 hung up (user: prdik)
+2022-12-11 15:55:45 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player prdik (fd: 6) from game
+2022-12-11 15:55:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:425: poll-server: new connection (fd: 6), processing...
+2022-12-11 15:55:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player prdik reconnected
+2022-12-11 15:55:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:450: poll-server: new connection from 192.168.1.113 on socket 6 (user: prdik) was successful
+2022-12-11 15:55:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:452: poll-server: 2 connected client(s)
+2022-12-11 15:55:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:496: poll-server: socket 6 hung up (user: prdik)
+2022-12-11 15:55:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player prdik (fd: 6) from game
+2022-12-11 15:56:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:496: poll-server: socket 5 hung up (user: dev-game-only)
+2022-12-11 15:56:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 15:56:35 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:360: round ended
+2022-12-11 16:00:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:425: poll-server: new connection (fd: 5), processing...
+2022-12-11 16:00:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 16:00:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 16:00:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 16:00:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:450: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 16:00:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:452: poll-server: 1 connected client(s)
+2022-12-11 16:00:54 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 16:01:10 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 16:01:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:425: poll-server: new connection (fd: 5), processing...
+2022-12-11 16:01:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 16:01:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:450: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 16:01:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:452: poll-server: 1 connected client(s)
+2022-12-11 16:01:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:425: poll-server: new connection (fd: 6), processing...
+2022-12-11 16:01:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player prdik to a new game
+2022-12-11 16:01:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:450: poll-server: new connection from 192.168.1.113 on socket 6 (user: prdik) was successful
+2022-12-11 16:01:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:452: poll-server: 2 connected client(s)
+2022-12-11 16:01:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:315: next drawing player is prdik (fd: 6)
+2022-12-11 16:01:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:325: new round started
+2022-12-11 16:01:30 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 16:01:36 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 16:01:37 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:425: poll-server: new connection (fd: 5), processing...
+2022-12-11 16:01:37 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player prdik to a new game
+2022-12-11 16:01:37 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:450: poll-server: new connection from 192.168.1.113 on socket 5 (user: prdik) was successful
+2022-12-11 16:01:37 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:452: poll-server: 1 connected client(s)
+2022-12-11 16:01:37 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:425: poll-server: new connection (fd: 6), processing...
+2022-12-11 16:01:37 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 16:01:37 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:450: poll-server: new connection from 192.168.1.91 on socket 6 (user: dev-game-only) was successful
+2022-12-11 16:01:37 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:452: poll-server: 2 connected client(s)
+2022-12-11 16:01:37 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:315: next drawing player is dev-game-only (fd: 6)
+2022-12-11 16:01:37 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:325: new round started
+2022-12-11 16:01:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:496: poll-server: socket 5 hung up (user: prdik)
+2022-12-11 16:01:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player prdik (fd: 5) from game
+2022-12-11 16:02:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:360: round ended
+2022-12-11 16:12:06 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:425: poll-server: new connection (fd: 5), processing...
+2022-12-11 16:12:06 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player prdik reconnected
+2022-12-11 16:12:06 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player prdik to another game
+2022-12-11 16:12:06 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player prdik to a new game
+2022-12-11 16:12:06 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:450: poll-server: new connection from 192.168.1.113 on socket 5 (user: prdik) was successful
+2022-12-11 16:12:06 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:452: poll-server: 2 connected client(s)
+2022-12-11 16:12:06 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:315: next drawing player is prdik (fd: 5)
+2022-12-11 16:12:06 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:325: new round started
+2022-12-11 16:12:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:496: poll-server: socket 6 hung up (user: dev-game-only)
+2022-12-11 16:12:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 6) from game
+2022-12-11 16:12:25 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:425: poll-server: new connection (fd: 6), processing...
+2022-12-11 16:12:25 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 16:12:25 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:450: poll-server: new connection from 192.168.1.91 on socket 6 (user: dev-game-only) was successful
+2022-12-11 16:12:25 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:452: poll-server: 2 connected client(s)
+2022-12-11 16:12:35 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 16:13:22 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 16:13:38 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 16:57:43 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 16:58:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:433: poll-server: new connection (fd: 5), processing...
+2022-12-11 16:58:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 16:58:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:458: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 16:58:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:460: poll-server: 1 connected client(s)
+2022-12-11 17:00:29 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 17:02:54 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 17:03:06 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 17:05:02 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 17:05:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:434: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:05:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:05:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:459: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:05:09 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: 1 connected client(s)
+2022-12-11 17:05:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:495: socket 5 (dev-game-only) trying to communicate outside the game loop, closing
+2022-12-11 17:05:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 17:05:33 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 17:06:04 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 17:06:08 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:434: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:06:08 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:06:08 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:459: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:06:08 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: 1 connected client(s)
+2022-12-11 17:06:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:434: poll-server: new connection (fd: 6), processing...
+2022-12-11 17:06:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player prdik to a new game
+2022-12-11 17:06:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:459: poll-server: new connection from 192.168.1.113 on socket 6 (user: prdik) was successful
+2022-12-11 17:06:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: 2 connected client(s)
+2022-12-11 17:06:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:315: next drawing player is prdik (fd: 6)
+2022-12-11 17:06:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:325: new round started
+2022-12-11 17:08:05 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:315: next drawing player is dev-game-only (fd: 5)
+2022-12-11 17:08:05 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:325: new round started
+2022-12-11 17:08:05 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:360: round ended
+2022-12-11 17:08:28 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:505: poll-server: socket 5 hung up (user: dev-game-only)
+2022-12-11 17:08:28 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 17:08:34 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:29: err (-1): received buffer (from fd: 6): 00
+2022-12-11 17:08:34 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:508: recv err (-1): socket: 6, user: prdik, closing
+2022-12-11 17:08:34 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player prdik (fd: 6) from game
+2022-12-11 17:09:01 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 17:09:02 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 17:09:07 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:435: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:09:07 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:09:07 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:460: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:09:07 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:462: poll-server: 1 connected client(s)
+2022-12-11 17:09:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:435: poll-server: new connection (fd: 6), processing...
+2022-12-11 17:09:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player prdik to a new game
+2022-12-11 17:09:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:460: poll-server: new connection from 192.168.1.113 on socket 6 (user: prdik) was successful
+2022-12-11 17:09:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:462: poll-server: 2 connected client(s)
+2022-12-11 17:09:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:315: next drawing player is prdik (fd: 6)
+2022-12-11 17:09:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:325: new round started
+2022-12-11 17:10:33 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 17:13:09 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 17:13:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:13:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:13:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:13:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 17:13:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 6), processing...
+2022-12-11 17:13:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player prdik to a new game
+2022-12-11 17:13:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.113 on socket 6 (user: prdik) was successful
+2022-12-11 17:13:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 2 connected client(s)
+2022-12-11 17:13:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:315: next drawing player is prdik (fd: 6)
+2022-12-11 17:13:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:325: new round started
+2022-12-11 17:14:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:507: poll-server: socket 6 hung up (user: prdik)
+2022-12-11 17:14:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player prdik (fd: 6) from game
+2022-12-11 17:14:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:507: poll-server: socket 5 hung up (user: dev-game-only)
+2022-12-11 17:14:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 17:14:25 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:360: round ended
+2022-12-11 17:16:26 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 17:32:01 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 17:32:06 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:32:06 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:32:06 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:32:06 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 17:32:06 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:242: broadcasting err: fd 5 heartbeat response failure, removing player
+2022-12-11 17:32:06 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 17:32:08 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:32:08 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 17:32:08 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 17:32:08 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:32:08 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:32:08 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 17:32:08 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:242: broadcasting err: fd 5 heartbeat response failure, removing player
+2022-12-11 17:32:08 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 17:32:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:32:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 17:32:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 17:32:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:32:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:32:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 17:32:10 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:242: broadcasting err: fd 5 heartbeat response failure, removing player
+2022-12-11 17:32:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 17:32:12 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:32:12 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 17:32:12 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 17:32:12 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:32:12 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:32:12 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 17:32:12 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:242: broadcasting err: fd 5 heartbeat response failure, removing player
+2022-12-11 17:32:12 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 17:32:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:32:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 17:32:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 17:32:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:32:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:32:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 17:32:14 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:242: broadcasting err: fd 5 heartbeat response failure, removing player
+2022-12-11 17:32:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 17:32:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:32:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 17:32:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 17:32:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:32:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:32:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 17:32:16 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:29: err (-1): received buffer (from fd: 5): 00
+2022-12-11 17:32:16 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:242: broadcasting err: fd 5 heartbeat response failure, removing player
+2022-12-11 17:32:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 17:34:49 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 17:35:14 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:82: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 17:35:18 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:35:18 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:35:18 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:35:18 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 17:35:18 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:242: heartbeat err: fd 5 response failure, removing player
+2022-12-11 17:35:18 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 17:35:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:35:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 17:35:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 17:35:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:35:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:35:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 17:35:20 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:242: heartbeat err: fd 5 response failure, removing player
+2022-12-11 17:35:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 17:35:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:35:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 17:35:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 17:35:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:35:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:35:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 17:35:22 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:29: err (-1): received buffer (from fd: 5): 00
+2022-12-11 17:35:22 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:242: heartbeat err: fd 5 response failure, removing player
+2022-12-11 17:35:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 17:37:34 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 17:38:47 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:85: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 17:38:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:38:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:38:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:38:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 17:38:50 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:242: heartbeat err: fd 5 response failure, removing player
+2022-12-11 17:38:50 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 17:38:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:38:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 17:38:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 17:38:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:38:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:38:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 17:38:52 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:242: heartbeat err: fd 5 response failure, removing player
+2022-12-11 17:38:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 17:38:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:38:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 17:38:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 17:38:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:38:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:38:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 17:38:54 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:242: heartbeat err: fd 5 response failure, removing player
+2022-12-11 17:38:54 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 17:38:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:38:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 17:38:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 17:38:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:38:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:38:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 17:38:56 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:242: heartbeat err: fd 5 response failure, removing player
+2022-12-11 17:38:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 17:38:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:38:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 17:38:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 17:38:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:38:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:38:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 17:38:58 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:242: heartbeat err: fd 5 response failure, removing player
+2022-12-11 17:38:58 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 17:39:04 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 17:40:37 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:84: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 17:40:40 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:40:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:40:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:40:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 17:40:57 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:242: heartbeat err: fd 5 response failure, removing player
+2022-12-11 17:40:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 17:40:59 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:42:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 17:42:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 17:42:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:42:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:42:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 17:48:06 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:84: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 17:48:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:48:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:48:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:48:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 17:48:10 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:244: heartbeat err: fd 5 response failure, removing player
+2022-12-11 17:48:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 17:48:12 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:48:12 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 17:48:12 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 17:48:12 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:48:12 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:48:12 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 17:48:12 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:244: heartbeat err: fd 5 response failure, removing player
+2022-12-11 17:48:12 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 17:48:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:48:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 17:48:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 17:48:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:48:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:48:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 17:48:14 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:244: heartbeat err: fd 5 response failure, removing player
+2022-12-11 17:48:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 17:48:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:48:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 17:48:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 17:48:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:48:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:48:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 17:48:16 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:30: err (-1): received buffer (from fd: 5): 00
+2022-12-11 17:48:16 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:244: heartbeat err: fd 5 response failure, removing player
+2022-12-11 17:48:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 17:49:04 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 17:49:08 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:84: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 17:49:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:49:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:49:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:49:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 17:49:11 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:244: heartbeat err: fd 5 response failure, removing player
+2022-12-11 17:49:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 17:49:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:49:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 17:49:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 17:49:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:49:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:49:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 17:49:13 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:244: heartbeat err: fd 5 response failure, removing player
+2022-12-11 17:49:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 17:49:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:49:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 17:49:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 17:49:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:49:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:49:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 17:49:15 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:244: heartbeat err: fd 5 response failure, removing player
+2022-12-11 17:49:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 17:49:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:49:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 17:49:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 17:49:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:49:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:49:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 17:49:17 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:244: heartbeat err: fd 5 response failure, removing player
+2022-12-11 17:49:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 17:49:50 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:84: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 17:49:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:49:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:49:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:49:56 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 17:51:08 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:244: heartbeat err: fd 5 response failure, removing player
+2022-12-11 17:51:08 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 17:51:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:51:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 17:51:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 17:51:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:51:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:51:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 17:57:17 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:84: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 17:57:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 17:57:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 17:57:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 17:57:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 18:00:37 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:84: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 18:00:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 18:00:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 18:00:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 18:00:41 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 18:01:41 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:84: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 18:01:44 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 18:01:44 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 18:01:44 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 18:01:44 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 18:01:44 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:245: heartbeat err: fd 5 response failure, removing player
+2022-12-11 18:01:44 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 18:01:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 18:01:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 18:01:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 18:01:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 18:01:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 18:01:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 18:01:46 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:245: heartbeat err: fd 5 response failure, removing player
+2022-12-11 18:01:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 18:01:48 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 18:01:48 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 18:01:48 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 18:01:48 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 18:01:48 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 18:01:48 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 18:01:49 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:245: heartbeat err: fd 5 response failure, removing player
+2022-12-11 18:01:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 18:01:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 18:01:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 18:01:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 18:01:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 18:01:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 18:01:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 18:01:51 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:245: heartbeat err: fd 5 response failure, removing player
+2022-12-11 18:01:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 18:01:53 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 18:01:53 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 18:01:53 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 18:01:53 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 18:01:53 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 18:01:53 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 18:01:53 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:30: err (-1): received buffer (from fd: 5): 00
+2022-12-11 18:01:53 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:245: heartbeat err: fd 5 response failure, removing player
+2022-12-11 18:01:53 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 18:03:02 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 18:03:06 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:84: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 18:03:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 18:03:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 18:03:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 18:03:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 18:03:11 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:247: heartbeat err: fd 5 invalid header, removing player
+2022-12-11 18:03:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 18:03:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 18:03:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 18:03:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 18:03:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 18:03:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 18:03:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 18:03:13 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:247: heartbeat err: fd 5 invalid header, removing player
+2022-12-11 18:03:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 18:03:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 18:03:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 18:03:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 18:03:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 18:03:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 18:03:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 18:03:15 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:30: err (-1): received buffer (from fd: 5): 00
+2022-12-11 18:03:15 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:244: heartbeat err: fd 5 response failure, removing player
+2022-12-11 18:03:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 18:05:25 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 18:08:15 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:84: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 18:08:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 18:08:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 18:08:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 18:08:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 18:08:19 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:248: heartbeat err: fd 5 invalid header {96}, removing player
+2022-12-11 18:08:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 18:08:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 18:08:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 18:08:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 18:08:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 18:08:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 18:08:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 18:08:21 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:248: heartbeat err: fd 5 invalid header {96}, removing player
+2022-12-11 18:08:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 18:08:23 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 18:08:23 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 18:08:23 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 18:08:23 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 18:08:23 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 18:08:23 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 18:08:23 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:30: err (-1): received buffer (from fd: 5): 00
+2022-12-11 18:08:23 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:244: heartbeat err: fd 5 response failure, removing player
+2022-12-11 18:08:23 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 18:08:23 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:248: heartbeat err: fd 5 invalid header {64}, removing player
+2022-12-11 18:08:23 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: -1) from game
+2022-12-11 18:08:23 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:28: trying to disconnect negative fd
+2022-12-11 18:10:08 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 18:11:54 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:84: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 18:11:59 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 18:11:59 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 18:11:59 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 18:11:59 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 18:11:59 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:247: heartbeat err: fd 5 invalid header {�}, removing player
+2022-12-11 18:11:59 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 18:12:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 18:12:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 18:12:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 18:12:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 18:12:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 18:12:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 18:12:01 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:247: heartbeat err: fd 5 invalid header {�}, removing player
+2022-12-11 18:12:01 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 18:12:46 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 18:14:15 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:84: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 18:14:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 18:14:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 18:14:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 18:14:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 18:14:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:497: socket 5 (dev-game-only) trying to communicate outside the game loop, closing
+2022-12-11 18:14:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 18:14:34 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 18:52:00 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:84: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 18:52:04 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 18:52:04 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 18:52:04 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 18:52:04 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 18:52:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:497: socket 5 (dev-game-only) trying to communicate outside the game loop, closing
+2022-12-11 18:52:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 18:52:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 18:52:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 18:52:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 18:52:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 18:52:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 18:52:15 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 1 connected client(s)
+2022-12-11 18:52:18 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 6), processing...
+2022-12-11 18:52:18 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player prdik to a new game
+2022-12-11 18:52:18 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.113 on socket 6 (user: prdik) was successful
+2022-12-11 18:52:18 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 2 connected client(s)
+2022-12-11 18:52:18 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:315: next drawing player is prdik (fd: 6)
+2022-12-11 18:52:18 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:325: new round started
+2022-12-11 18:52:51 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:30: err (-1): received buffer (from fd: 6): 00
+2022-12-11 18:52:51 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:244: heartbeat err: fd 6 response failure, removing player
+2022-12-11 18:52:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player prdik (fd: 6) from game
+2022-12-11 18:53:18 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 6), processing...
+2022-12-11 18:53:18 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player prdik reconnected
+2022-12-11 18:53:18 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.113 on socket 6 (user: prdik) was successful
+2022-12-11 18:53:18 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 2 connected client(s)
+2022-12-11 18:53:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:315: next drawing player is dev-game-only (fd: 5)
+2022-12-11 18:53:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:325: new round started
+2022-12-11 18:53:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:360: round ended
+2022-12-11 18:53:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:497: socket 6 (prdik) trying to communicate outside the game loop, closing
+2022-12-11 18:53:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player prdik (fd: 6) from game
+2022-12-11 18:53:23 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 6), processing...
+2022-12-11 18:53:23 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player prdik reconnected
+2022-12-11 18:53:23 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.113 on socket 6 (user: prdik) was successful
+2022-12-11 18:53:23 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 2 connected client(s)
+2022-12-11 18:53:42 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:237: invalid header: guessing player err
+2022-12-11 18:53:42 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:291: couldn't broadcast, because sender_fd 6 is invalid
+2022-12-11 18:53:42 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:510: recv err (-1): socket: 6, user: prdik, closing
+2022-12-11 18:53:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player prdik (fd: 6) from game
+2022-12-11 18:53:44 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 6), processing...
+2022-12-11 18:53:44 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player prdik reconnected
+2022-12-11 18:53:44 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.113 on socket 6 (user: prdik) was successful
+2022-12-11 18:53:44 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 2 connected client(s)
+2022-12-11 18:53:46 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:237: invalid header: guessing player err
+2022-12-11 18:53:46 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:291: couldn't broadcast, because sender_fd 6 is invalid
+2022-12-11 18:53:46 WARN  /Users/jakub.slechta/git/ups-server-c/server.c:510: recv err (-1): socket: 6, user: prdik, closing
+2022-12-11 18:53:46 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player prdik (fd: 6) from game
+2022-12-11 18:53:48 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 6), processing...
+2022-12-11 18:53:48 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player prdik reconnected
+2022-12-11 18:53:48 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.113 on socket 6 (user: prdik) was successful
+2022-12-11 18:53:48 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 2 connected client(s)
+2022-12-11 18:53:51 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:30: err (-1): received buffer (from fd: 6): 00
+2022-12-11 18:53:51 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:244: heartbeat err: fd 6 response failure, removing player
+2022-12-11 18:53:51 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player prdik (fd: 6) from game
+2022-12-11 18:53:53 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 6), processing...
+2022-12-11 18:53:53 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player prdik reconnected
+2022-12-11 18:53:53 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.113 on socket 6 (user: prdik) was successful
+2022-12-11 18:53:53 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 2 connected client(s)
+2022-12-11 18:53:53 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:247: heartbeat err: fd 5 invalid header {}, removing player
+2022-12-11 18:53:53 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 18:53:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:436: poll-server: new connection (fd: 5), processing...
+2022-12-11 18:53:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 18:53:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:461: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 18:53:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:463: poll-server: 2 connected client(s)
+2022-12-11 18:54:04 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:507: poll-server: socket 6 hung up (user: prdik)
+2022-12-11 18:54:04 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player prdik (fd: 6) from game
+2022-12-11 18:54:26 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:360: round ended
+2022-12-11 18:54:26 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:30: err (-1): received buffer (from fd: 5): 00
+2022-12-11 18:54:26 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:244: heartbeat err: fd 5 response failure, removing player
+2022-12-11 18:54:26 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 18:54:57 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 18:57:21 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:84: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 18:57:21 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781446 > 0
+2022-12-11 18:57:29 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: new connection (fd: 5), processing...
+2022-12-11 18:57:29 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 18:57:29 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:462: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 18:57:29 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:464: poll-server: 1 connected client(s)
+2022-12-11 18:57:29 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781454 > 1670781441
+2022-12-11 18:57:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:498: socket 5 (dev-game-only) trying to communicate outside the game loop, closing
+2022-12-11 18:57:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 18:57:36 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781461 > 1670781449
+2022-12-11 18:57:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: new connection (fd: 5), processing...
+2022-12-11 18:57:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 18:57:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 18:57:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 18:57:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:462: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 18:57:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:464: poll-server: 1 connected client(s)
+2022-12-11 18:57:55 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781480 > 1670781456
+2022-12-11 18:58:25 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: new connection (fd: 6), processing...
+2022-12-11 18:58:25 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player prdik to a new game
+2022-12-11 18:58:25 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:462: poll-server: new connection from 192.168.1.113 on socket 6 (user: prdik) was successful
+2022-12-11 18:58:25 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:464: poll-server: 2 connected client(s)
+2022-12-11 18:58:25 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:315: next drawing player is prdik (fd: 6)
+2022-12-11 18:58:25 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:325: new round started
+2022-12-11 18:58:25 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781510 > 1670781475
+2022-12-11 18:58:40 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781525 > 1670781505
+2022-12-11 18:58:41 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781526 > 1670781520
+2022-12-11 18:58:41 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781526 > 1670781521
+2022-12-11 18:59:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:315: next drawing player is dev-game-only (fd: 5)
+2022-12-11 18:59:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:325: new round started
+2022-12-11 18:59:31 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:360: round ended
+2022-12-11 18:59:31 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781576 > 1670781521
+2022-12-11 18:59:45 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781590 > 1670781571
+2022-12-11 18:59:47 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:30: err (-1): received buffer (from fd: 6): 00
+2022-12-11 18:59:47 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:244: heartbeat err: fd 6 response failure, removing player
+2022-12-11 18:59:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player prdik (fd: 6) from game
+2022-12-11 18:59:47 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:247: heartbeat err: fd 5 invalid header {}, removing player
+2022-12-11 18:59:47 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 18:59:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: new connection (fd: 5), processing...
+2022-12-11 18:59:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 18:59:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:462: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 18:59:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:464: poll-server: 1 connected client(s)
+2022-12-11 18:59:49 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781594 > 1670781585
+2022-12-11 19:00:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: new connection (fd: 6), processing...
+2022-12-11 19:00:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player prdik reconnected
+2022-12-11 19:00:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:462: poll-server: new connection from 192.168.1.113 on socket 6 (user: prdik) was successful
+2022-12-11 19:00:20 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:464: poll-server: 2 connected client(s)
+2022-12-11 19:00:20 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781625 > 1670781589
+2022-12-11 19:00:24 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781629 > 1670781620
+2022-12-11 19:00:24 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781629 > 1670781624
+2022-12-11 19:00:24 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781629 > 1670781624
+2022-12-11 19:00:25 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781630 > 1670781624
+2022-12-11 19:00:25 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781630 > 1670781625
+2022-12-11 19:00:25 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:247: heartbeat err: fd 5 invalid header {}, removing player
+2022-12-11 19:00:25 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 19:00:27 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: new connection (fd: 5), processing...
+2022-12-11 19:00:27 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 19:00:27 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:462: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 19:00:27 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:464: poll-server: 2 connected client(s)
+2022-12-11 19:00:27 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781632 > 1670781625
+2022-12-11 19:00:27 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781632 > 1670781627
+2022-12-11 19:00:27 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781632 > 1670781627
+2022-12-11 19:00:27 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781632 > 1670781627
+2022-12-11 19:00:27 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:247: heartbeat err: fd 5 invalid header {}, removing player
+2022-12-11 19:00:27 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 19:00:29 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: new connection (fd: 5), processing...
+2022-12-11 19:00:29 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 19:00:29 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:462: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 19:00:29 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:464: poll-server: 2 connected client(s)
+2022-12-11 19:00:29 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781634 > 1670781627
+2022-12-11 19:00:30 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781635 > 1670781629
+2022-12-11 19:00:30 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781635 > 1670781630
+2022-12-11 19:00:30 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:247: heartbeat err: fd 5 invalid header {}, removing player
+2022-12-11 19:00:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 19:00:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: new connection (fd: 5), processing...
+2022-12-11 19:00:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 19:00:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:462: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 19:00:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:464: poll-server: 2 connected client(s)
+2022-12-11 19:00:32 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781637 > 1670781630
+2022-12-11 19:00:32 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781637 > 1670781632
+2022-12-11 19:00:32 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781637 > 1670781632
+2022-12-11 19:00:32 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:247: heartbeat err: fd 5 invalid header {}, removing player
+2022-12-11 19:00:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 19:00:34 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:360: round ended
+2022-12-11 19:00:34 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: new connection (fd: 5), processing...
+2022-12-11 19:00:34 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 19:00:34 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 19:00:34 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 19:00:34 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:462: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 19:00:34 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:464: poll-server: 2 connected client(s)
+2022-12-11 19:00:34 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:315: next drawing player is dev-game-only (fd: 5)
+2022-12-11 19:00:34 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:325: new round started
+2022-12-11 19:00:34 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781639 > 1670781632
+2022-12-11 19:00:39 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781644 > 1670781634
+2022-12-11 19:00:40 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781645 > 1670781639
+2022-12-11 19:00:40 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781645 > 1670781640
+2022-12-11 19:00:40 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781645 > 1670781640
+2022-12-11 19:00:40 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781645 > 1670781640
+2022-12-11 19:00:40 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:247: heartbeat err: fd 5 invalid header {}, removing player
+2022-12-11 19:00:40 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 19:00:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: new connection (fd: 5), processing...
+2022-12-11 19:00:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 19:00:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:462: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 19:00:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:464: poll-server: 2 connected client(s)
+2022-12-11 19:00:42 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781647 > 1670781640
+2022-12-11 19:01:08 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781673 > 1670781642
+2022-12-11 19:01:08 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781673 > 1670781668
+2022-12-11 19:01:08 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781673 > 1670781668
+2022-12-11 19:01:08 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781673 > 1670781668
+2022-12-11 19:01:08 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781673 > 1670781668
+2022-12-11 19:01:08 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:247: heartbeat err: fd 5 invalid header {}, removing player
+2022-12-11 19:01:08 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 19:01:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: new connection (fd: 5), processing...
+2022-12-11 19:01:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 19:01:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:462: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 19:01:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:464: poll-server: 2 connected client(s)
+2022-12-11 19:01:11 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781676 > 1670781668
+2022-12-11 19:01:11 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781676 > 1670781671
+2022-12-11 19:01:11 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781676 > 1670781671
+2022-12-11 19:01:11 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781676 > 1670781671
+2022-12-11 19:01:11 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781676 > 1670781671
+2022-12-11 19:01:11 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:247: heartbeat err: fd 5 invalid header {}, removing player
+2022-12-11 19:01:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 19:01:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: new connection (fd: 5), processing...
+2022-12-11 19:01:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 19:01:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:462: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 19:01:13 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:464: poll-server: 2 connected client(s)
+2022-12-11 19:01:13 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781678 > 1670781671
+2022-12-11 19:01:21 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781686 > 1670781673
+2022-12-11 19:01:21 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781686 > 1670781681
+2022-12-11 19:01:21 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:247: heartbeat err: fd 5 invalid header {}, removing player
+2022-12-11 19:01:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 19:01:23 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: new connection (fd: 5), processing...
+2022-12-11 19:01:23 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 19:01:23 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:462: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 19:01:23 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:464: poll-server: 2 connected client(s)
+2022-12-11 19:01:23 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781688 > 1670781681
+2022-12-11 19:01:24 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781689 > 1670781683
+2022-12-11 19:01:24 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:247: heartbeat err: fd 5 invalid header {}, removing player
+2022-12-11 19:01:24 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 19:01:26 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: new connection (fd: 5), processing...
+2022-12-11 19:01:26 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 19:01:26 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:462: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 19:01:26 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:464: poll-server: 2 connected client(s)
+2022-12-11 19:01:26 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781691 > 1670781684
+2022-12-11 19:01:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:315: next drawing player is prdik (fd: 6)
+2022-12-11 19:01:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:325: new round started
+2022-12-11 19:01:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:360: round ended
+2022-12-11 19:01:39 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781704 > 1670781686
+2022-12-11 19:02:00 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781725 > 1670781699
+2022-12-11 19:02:00 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781725 > 1670781720
+2022-12-11 19:02:00 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:247: heartbeat err: fd 6 invalid header {}, removing player
+2022-12-11 19:02:00 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player prdik (fd: 6) from game
+2022-12-11 19:02:02 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: new connection (fd: 6), processing...
+2022-12-11 19:02:02 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player prdik reconnected
+2022-12-11 19:02:02 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:462: poll-server: new connection from 192.168.1.113 on socket 6 (user: prdik) was successful
+2022-12-11 19:02:02 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:464: poll-server: 2 connected client(s)
+2022-12-11 19:02:02 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781727 > 1670781720
+2022-12-11 19:02:05 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781730 > 1670781722
+2022-12-11 19:02:05 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781730 > 1670781725
+2022-12-11 19:02:05 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781730 > 1670781725
+2022-12-11 19:02:05 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781730 > 1670781725
+2022-12-11 19:02:05 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781730 > 1670781725
+2022-12-11 19:02:05 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781730 > 1670781725
+2022-12-11 19:02:05 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781730 > 1670781725
+2022-12-11 19:02:05 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781730 > 1670781725
+2022-12-11 19:02:05 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781730 > 1670781725
+2022-12-11 19:02:05 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:247: heartbeat err: fd 6 invalid header {}, removing player
+2022-12-11 19:02:05 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player prdik (fd: 6) from game
+2022-12-11 19:02:07 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: new connection (fd: 6), processing...
+2022-12-11 19:02:07 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player prdik reconnected
+2022-12-11 19:02:07 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:462: poll-server: new connection from 192.168.1.113 on socket 6 (user: prdik) was successful
+2022-12-11 19:02:07 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:464: poll-server: 2 connected client(s)
+2022-12-11 19:02:07 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781732 > 1670781725
+2022-12-11 19:02:07 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781732 > 1670781727
+2022-12-11 19:02:07 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781732 > 1670781727
+2022-12-11 19:02:07 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781732 > 1670781727
+2022-12-11 19:02:07 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781732 > 1670781727
+2022-12-11 19:02:07 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781732 > 1670781727
+2022-12-11 19:02:08 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781733 > 1670781727
+2022-12-11 19:02:08 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781733 > 1670781728
+2022-12-11 19:02:08 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781733 > 1670781728
+2022-12-11 19:02:08 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781733 > 1670781728
+2022-12-11 19:02:08 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781733 > 1670781728
+2022-12-11 19:02:08 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781733 > 1670781728
+2022-12-11 19:02:08 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781733 > 1670781728
+2022-12-11 19:02:08 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781733 > 1670781728
+2022-12-11 19:02:10 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781735 > 1670781728
+2022-12-11 19:02:10 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:247: heartbeat err: fd 6 invalid header {}, removing player
+2022-12-11 19:02:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player prdik (fd: 6) from game
+2022-12-11 19:02:12 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:437: poll-server: new connection (fd: 6), processing...
+2022-12-11 19:02:12 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player prdik reconnected
+2022-12-11 19:02:12 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:462: poll-server: new connection from 192.168.1.113 on socket 6 (user: prdik) was successful
+2022-12-11 19:02:12 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:464: poll-server: 2 connected client(s)
+2022-12-11 19:02:12 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781737 > 1670781730
+2022-12-11 19:02:12 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781737 > 1670781732
+2022-12-11 19:02:12 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781737 > 1670781732
+2022-12-11 19:02:12 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781737 > 1670781732
+2022-12-11 19:02:12 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781737 > 1670781732
+2022-12-11 19:02:12 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781737 > 1670781732
+2022-12-11 19:02:13 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781738 > 1670781732
+2022-12-11 19:02:13 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781738 > 1670781733
+2022-12-11 19:02:13 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781738 > 1670781733
+2022-12-11 19:02:13 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781738 > 1670781733
+2022-12-11 19:02:13 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781738 > 1670781733
+2022-12-11 19:02:13 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781738 > 1670781733
+2022-12-11 19:02:13 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781738 > 1670781733
+2022-12-11 19:02:13 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781738 > 1670781733
+2022-12-11 19:02:28 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:508: poll-server: socket 6 hung up (user: prdik)
+2022-12-11 19:02:28 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player prdik (fd: 6) from game
+2022-12-11 19:02:28 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781753 > 1670781733
+2022-12-11 19:02:35 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:508: poll-server: socket 5 hung up (user: dev-game-only)
+2022-12-11 19:02:35 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 19:02:35 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781760 > 1670781748
+2022-12-11 19:02:44 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:360: round ended
+2022-12-11 19:02:44 ERROR /Users/jakub.slechta/git/ups-server-c/server.c:400: 1670781769 > 1670781755
+2022-12-11 19:03:01 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 19:04:44 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:84: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 19:04:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:428: poll-server: new connection (fd: 5), processing...
+2022-12-11 19:04:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 19:04:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:453: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 19:04:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:455: poll-server: 1 connected client(s)
+2022-12-11 19:04:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:428: poll-server: new connection (fd: 6), processing...
+2022-12-11 19:04:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player prdik to a new game
+2022-12-11 19:04:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:453: poll-server: new connection from 192.168.1.113 on socket 6 (user: prdik) was successful
+2022-12-11 19:04:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:455: poll-server: 2 connected client(s)
+2022-12-11 19:04:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:315: next drawing player is prdik (fd: 6)
+2022-12-11 19:04:52 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:325: new round started
+2022-12-11 19:05:55 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:247: heartbeat err: fd 6 invalid header {}, removing player
+2022-12-11 19:05:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player prdik (fd: 6) from game
+2022-12-11 19:05:55 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:362: round ended
+2022-12-11 19:05:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:428: poll-server: new connection (fd: 6), processing...
+2022-12-11 19:05:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player prdik reconnected
+2022-12-11 19:05:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player prdik to another game
+2022-12-11 19:05:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player prdik to a new game
+2022-12-11 19:05:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:453: poll-server: new connection from 192.168.1.113 on socket 6 (user: prdik) was successful
+2022-12-11 19:05:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:455: poll-server: 2 connected client(s)
+2022-12-11 19:05:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:315: next drawing player is dev-game-only (fd: 5)
+2022-12-11 19:05:57 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:325: new round started
+2022-12-11 19:06:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:499: poll-server: socket 5 hung up (user: dev-game-only)
+2022-12-11 19:06:32 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 19:06:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:428: poll-server: new connection (fd: 5), processing...
+2022-12-11 19:06:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 19:06:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:453: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 19:06:36 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:455: poll-server: 2 connected client(s)
+2022-12-11 19:07:00 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:247: heartbeat err: fd 5 invalid header {}, removing player
+2022-12-11 19:07:00 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 19:07:00 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:362: round ended
+2022-12-11 19:07:02 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:428: poll-server: new connection (fd: 5), processing...
+2022-12-11 19:07:02 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player dev-game-only reconnected
+2022-12-11 19:07:02 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player dev-game-only to another game
+2022-12-11 19:07:02 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 19:07:02 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:453: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 19:07:02 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:455: poll-server: 2 connected client(s)
+2022-12-11 19:07:02 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:315: next drawing player is dev-game-only (fd: 5)
+2022-12-11 19:07:02 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:325: new round started
+2022-12-11 19:07:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:499: poll-server: socket 5 hung up (user: dev-game-only)
+2022-12-11 19:07:16 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 19:07:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:499: poll-server: socket 6 hung up (user: prdik)
+2022-12-11 19:07:22 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player prdik (fd: 6) from game
+2022-12-11 19:08:07 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:362: round ended
+2022-12-11 19:10:01 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 19:13:10 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:84: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 19:13:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:428: poll-server: new connection (fd: 5), processing...
+2022-12-11 19:13:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 19:13:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:453: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 19:13:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:455: poll-server: 1 connected client(s)
+2022-12-11 19:13:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:428: poll-server: new connection (fd: 6), processing...
+2022-12-11 19:13:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player prdik to a new game
+2022-12-11 19:13:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:453: poll-server: new connection from 192.168.1.113 on socket 6 (user: prdik) was successful
+2022-12-11 19:13:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:455: poll-server: 2 connected client(s)
+2022-12-11 19:13:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:315: next drawing player is prdik (fd: 6)
+2022-12-11 19:13:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:325: new round started
+2022-12-11 19:14:19 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:246: heartbeat err: fd 6 invalid header {}, removing player
+2022-12-11 19:14:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player prdik (fd: 6) from game
+2022-12-11 19:14:19 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:362: round ended
+2022-12-11 19:14:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:428: poll-server: new connection (fd: 6), processing...
+2022-12-11 19:14:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player prdik reconnected
+2022-12-11 19:14:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player prdik to another game
+2022-12-11 19:14:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player prdik to a new game
+2022-12-11 19:14:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:453: poll-server: new connection from 192.168.1.113 on socket 6 (user: prdik) was successful
+2022-12-11 19:14:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:455: poll-server: 2 connected client(s)
+2022-12-11 19:14:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:315: next drawing player is dev-game-only (fd: 5)
+2022-12-11 19:14:21 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:325: new round started
+2022-12-11 19:15:26 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:315: next drawing player is prdik (fd: 6)
+2022-12-11 19:15:26 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:325: new round started
+2022-12-11 19:15:26 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:362: round ended
+2022-12-11 19:16:28 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:246: heartbeat err: fd 6 invalid header {}, removing player
+2022-12-11 19:16:28 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player prdik (fd: 6) from game
+2022-12-11 19:16:28 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:362: round ended
+2022-12-11 19:16:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:428: poll-server: new connection (fd: 6), processing...
+2022-12-11 19:16:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player prdik reconnected
+2022-12-11 19:16:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player prdik to another game
+2022-12-11 19:16:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player prdik to a new game
+2022-12-11 19:16:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:453: poll-server: new connection from 192.168.1.113 on socket 6 (user: prdik) was successful
+2022-12-11 19:16:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:455: poll-server: 2 connected client(s)
+2022-12-11 19:16:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:315: next drawing player is dev-game-only (fd: 5)
+2022-12-11 19:16:30 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:325: new round started
+2022-12-11 19:16:53 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:499: poll-server: socket 6 hung up (user: prdik)
+2022-12-11 19:16:53 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player prdik (fd: 6) from game
+2022-12-11 19:16:59 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:499: poll-server: socket 5 hung up (user: dev-game-only)
+2022-12-11 19:16:59 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 19:17:02 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-11 19:20:05 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:84: server (fd 4) using IPv4 listening on [192.168.1.91]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-11 19:20:08 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:428: poll-server: new connection (fd: 5), processing...
+2022-12-11 19:20:08 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-11 19:20:08 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:453: poll-server: new connection from 192.168.1.91 on socket 5 (user: dev-game-only) was successful
+2022-12-11 19:20:08 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:455: poll-server: 1 connected client(s)
+2022-12-11 19:20:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:428: poll-server: new connection (fd: 6), processing...
+2022-12-11 19:20:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player prdik to a new game
+2022-12-11 19:20:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:453: poll-server: new connection from 192.168.1.113 on socket 6 (user: prdik) was successful
+2022-12-11 19:20:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:455: poll-server: 2 connected client(s)
+2022-12-11 19:20:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:315: next drawing player is prdik (fd: 6)
+2022-12-11 19:20:10 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:325: new round started
+2022-12-11 19:21:14 WARN  /Users/jakub.slechta/git/ups-server-c/utils/stream_handlers.c:246: heartbeat err: fd 6 invalid header {}, removing player
+2022-12-11 19:21:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player prdik (fd: 6) from game
+2022-12-11 19:21:14 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:362: round ended
+2022-12-11 19:21:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:428: poll-server: new connection (fd: 6), processing...
+2022-12-11 19:21:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:176: player prdik reconnected
+2022-12-11 19:21:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:61: reassigning player prdik to another game
+2022-12-11 19:21:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player prdik to a new game
+2022-12-11 19:21:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:453: poll-server: new connection from 192.168.1.113 on socket 6 (user: prdik) was successful
+2022-12-11 19:21:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:455: poll-server: 2 connected client(s)
+2022-12-11 19:21:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:315: next drawing player is dev-game-only (fd: 5)
+2022-12-11 19:21:17 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:325: new round started
+2022-12-11 19:21:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:499: poll-server: socket 5 hung up (user: dev-game-only)
+2022-12-11 19:21:39 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 5) from game
+2022-12-11 19:21:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:499: poll-server: socket 6 hung up (user: prdik)
+2022-12-11 19:21:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player prdik (fd: 6) from game
+2022-12-11 19:21:45 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻

@@ -21,7 +21,9 @@ int recvall(int s, void *buf, int *len) {
 
     while (total < *len) {
         n = (int) recv(s, buf + total, bytes_left, 0);
-        if (n == -1 || n == 0) { break; }
+        if (n == -1 || n == 0) {
+            break;
+        }
         total += n;
         bytes_left -= n;
     }
