@@ -7,7 +7,6 @@
 
 // server settings
 #define SOCKOPT_TIMEOUT_SEC 3
-#define HEARTBEAT_TICK_SEC 5
 
 // buffer sizes
 #define STD_STRING_BFR_LEN 256

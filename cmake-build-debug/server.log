@@ -3746,3 +3746,5 @@
 2022-12-11 19:21:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:499: poll-server: socket 6 hung up (user: prdik)
 2022-12-11 19:21:42 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player prdik (fd: 6) from game
 2022-12-11 19:21:45 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-14 11:21:40 FATAL /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:111: bind (fd 4, port 9034): Can't assign requested address
+2022-12-14 11:21:40 FATAL /Users/jakub.slechta/git/ups-server-c/server.c:383: err getting listening socket: Can't assign requested address
