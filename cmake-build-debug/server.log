@@ -3748,3 +3748,28 @@
 2022-12-11 19:21:45 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
 2022-12-14 11:21:40 FATAL /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:111: bind (fd 4, port 9034): Can't assign requested address
 2022-12-14 11:21:40 FATAL /Users/jakub.slechta/git/ups-server-c/server.c:383: err getting listening socket: Can't assign requested address
+2022-12-19 10:08:22 FATAL /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:111: bind (fd 4, port 9034): Can't assign requested address
+2022-12-19 10:08:22 FATAL /Users/jakub.slechta/git/ups-server-c/server.c:383: err getting listening socket: Can't assign requested address
+2022-12-19 10:09:03 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:84: server (fd 6) using IPv6 listening on [::1]:10123 ( ˘ ɜ˘) ♬♪♫
+2022-12-19 10:10:18 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-19 10:10:28 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:84: server (fd 6) using IPv6 listening on [::1]:10123 ( ˘ ɜ˘) ♬♪♫
+2022-12-19 10:12:24 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-19 10:12:37 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:84: server (fd 6) using IPv6 listening on [::1]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-19 10:13:11 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻
+2022-12-19 10:14:15 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:84: server (fd 6) using IPv6 listening on [::1]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-19 10:15:39 INFO  /Users/jakub.slechta/git/ups-server-c/utils/sock_utils.c:84: server (fd 4) using IPv4 listening on [127.0.0.1]:9034 ( ˘ ɜ˘) ♬♪♫
+2022-12-19 10:15:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:428: poll-server: new connection (fd: 5), processing...
+2022-12-19 10:15:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player KubaMac to a new game
+2022-12-19 10:15:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:453: poll-server: new connection from 127.0.0.1 on socket 5 (user: KubaMac) was successful
+2022-12-19 10:15:49 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:455: poll-server: 1 connected client(s)
+2022-12-19 10:16:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:428: poll-server: new connection (fd: 6), processing...
+2022-12-19 10:16:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:71: reassigned player dev-game-only to a new game
+2022-12-19 10:16:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:453: poll-server: new connection from 127.0.0.1 on socket 6 (user: dev-game-only) was successful
+2022-12-19 10:16:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:455: poll-server: 2 connected client(s)
+2022-12-19 10:16:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:315: next drawing player is dev-game-only (fd: 6)
+2022-12-19 10:16:11 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:325: new round started
+2022-12-19 10:16:23 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:499: poll-server: socket 6 hung up (user: dev-game-only)
+2022-12-19 10:16:23 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player dev-game-only (fd: 6) from game
+2022-12-19 10:16:26 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:499: poll-server: socket 5 hung up (user: KubaMac)
+2022-12-19 10:16:26 DEBUG /Users/jakub.slechta/git/ups-server-c/server.c:40: removing player KubaMac (fd: 5) from game
+2022-12-19 10:16:32 INFO  /Users/jakub.slechta/git/ups-server-c/server.c:87: terminating server: SIGTERM (15) (┛ಠ_ಠ)┛彡┻━┻

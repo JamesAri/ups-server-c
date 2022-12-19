@@ -327,14 +327,14 @@ void start_round(struct Game *game) {
 
 // Client is trying to join game in one of these game states:
 // WAITING FOR PLAYERS / ROUND STARTING
-void validate_round(struct Game *game) {
+void validate_round(struct Game *game, struct Words *words) {
     int connected_players = get_active_players(game);
     // TODO check if any other games are waiting - reassign players so they can play asap
     if (connected_players < MIN_PLAYERS) {
         log_trace("waiting for players to join (%d/%d), broadcasting", connected_players, MIN_PLAYERS);
         broadcast_waiting_for_players(game, connected_players);
     } else {
-        get_random_word(game->guess_word);
+        get_random_word(game->guess_word, words);
         log_trace("generated new guess word: %s", game->guess_word); // segfault todo
 
         game->start_sec = time(NULL) + TIME_BEFORE_START_SEC;
@@ -346,7 +346,7 @@ void validate_round(struct Game *game) {
     }
 }
 
-void end_round(struct Game *game) {
+void end_round(struct Game *game, struct Words *words) {
     game->in_progress = false;
 
 //    remove_offline_player_lists(game);
@@ -357,7 +357,7 @@ void end_round(struct Game *game) {
 
     memset(game->canvas->bitarray_grid, 0, sizeof(game->canvas->bitarray_grid));
 
-    validate_round(game);
+    validate_round(game, words);
 
     log_debug("round ended");
 }
@@ -367,7 +367,7 @@ void end_round(struct Game *game) {
 //                              MAIN LOOP                                  //
 // ======================================================================= //
 
-void start(char *addr, char *port, int lobby_size, int game_size) {
+void start(char *addr, char *port, int lobby_size, int game_size, struct Words *words) {
     setup_signal_handling();
 
     int listener, timeout_sec, timeout_sec_new, new_fd, sender_fd, recv_res, poll_res;
@@ -410,7 +410,7 @@ void start(char *addr, char *port, int lobby_size, int game_size) {
 
         for (int i = 0; i < lobby_size; i++) {
             if (lobby.games[i]->in_progress && time(NULL) + SOCKOPT_TIMEOUT_SEC >= lobby.games[i]->end_sec)
-                end_round(lobby.games[i]);
+                end_round(lobby.games[i], words);
         }
 
         for (int i = 0; i < lobby.fd_count; i++) {
@@ -470,7 +470,7 @@ void start(char *addr, char *port, int lobby_size, int game_size) {
                             remove_player_from_server(cur_player);
                         }
                     } else {
-                        validate_round(cur_player->game);
+                        validate_round(cur_player->game, words);
                     }
                 }
             } else {

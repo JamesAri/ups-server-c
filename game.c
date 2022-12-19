@@ -94,7 +94,6 @@ struct Game *new_game(int listener) {
 }
 
 void free_game(struct Game *game) {
-    free_words();
     free_players_shallow(&(game->players));
     free_canvas(&(game->canvas));
 }

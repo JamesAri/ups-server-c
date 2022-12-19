@@ -55,3 +55,10 @@
 2	139	1670782390390674314	CMakeFiles/ups_server_c.dir/main.c.o	3c14b2857ab55b73
 2	151	1670782390404196592	CMakeFiles/ups_server_c.dir/server.c.o	1a40d1e2e8b6edb6
 151	212	1670782390465951581	ups_server_c	396cf7b69f4ac7f6
+5	569	1671440745392863936	CMakeFiles/ups_server_c.dir/model/word_generator.c.o	a875ca5b49ddebe7
+2	183	1671440830315900854	CMakeFiles/ups_server_c.dir/main.c.o	3c14b2857ab55b73
+3	202	1671440830335622183	CMakeFiles/ups_server_c.dir/utils/serialization.c.o	4c16ad795c93bf50
+2	209	1671440901220916812	CMakeFiles/ups_server_c.dir/game.c.o	bbda75cbe109e2da
+3	211	1671440901228108606	CMakeFiles/ups_server_c.dir/utils/stream_handlers.c.o	c7bcf2de6d0811e0
+1	286	1671440901302707457	CMakeFiles/ups_server_c.dir/server.c.o	1a40d1e2e8b6edb6
+286	428	1671440901446342922	ups_server_c	396cf7b69f4ac7f6

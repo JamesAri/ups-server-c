@@ -78,7 +78,7 @@ int main(int argc, char *argv[]) {
 
     setup_signals();
     setup_logger();
-    read_words(WORDS_RESOURCES);
-    start(addr, port, lobby_size, game_size);
+    struct Words *words = read_words(WORDS_RESOURCES);
+    start(addr, port, lobby_size, game_size, words);
     return 0;
 }

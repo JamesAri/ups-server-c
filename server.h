@@ -3,6 +3,7 @@
 
 #include "model/player.h"
 #include "lobby.h"
+#include "model/word_generator.h"
 
 
 // server settings
@@ -17,7 +18,7 @@
 #define TIME_BEFORE_START_SEC 5
 
 
-void start(char *addr, char *port, int lobby_size, int game_size);
+void start(char *addr, char *port, int lobby_size, int game_size, struct Words *words);
 
 void remove_player_from_server(struct Player *player);
 
