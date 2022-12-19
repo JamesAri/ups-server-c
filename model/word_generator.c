@@ -9,7 +9,7 @@ int read_words(char *file_name) {
     FILE *fp;
     char *line = NULL;
     size_t len = 0;
-    ssize_t read;
+    size_t read;
     words.words = (char **) malloc(INIT_SIZE * sizeof(char *));
     words.size = INIT_SIZE;
     words.word_count = 0;
@@ -43,7 +43,8 @@ void get_random_word(char *string_bfr) {
 
 
 void free_words() {
-    for (int i = 0; i < words.size; i++) {
+    int i;
+    for (i = 0; i < words.size; i++) {
         free(words.words[i]);
     }
     free(words.words);
